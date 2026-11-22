@@ -57,7 +57,8 @@ def get_latest_value(kpi_id, latest):
     return None
 
 
-def render_base_head(title, description, current_url=""):
+def render_base_head(title, description, current_url="", base=""):
+    b = base  # '' for root pages, '../' for subfolder pages
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,91 +69,95 @@ def render_base_head(title, description, current_url=""):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="{b}styles/main.css" />
   <link rel="canonical" href="https://finradar.example{current_url}" />
 </head>
 <body>
-  <!-- Navigation Component -->
-  <nav class="site-nav">
-    <div class="nav-container">
-      <a class="nav-brand" href="index.html">FinRadar</a>
-      <span class="nav-tagline">India & global macro, live from public data</span>
-      
-      <ul class="nav-primary">
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="sources.html">Sources</a></li>
-        <li><a href="category/central.html">Central Govt</a></li>
-        <li><a href="category/states.html">States</a></li>
-        <li><a href="category/financials.html">Financials</a></li>
-        <li><a href="category/geo.html">Geo</a></li>
-        <li><a href="category/transport.html">Transport</a></li>
-      </ul>
-      
-      <ul class="nav-secondary">
-        <li><a href="category/economy.html">Economy</a></li>
-        <li><a href="category/agriculture.html">Agriculture</a></li>
-        <li><a href="category/health.html">Health</a></li>
-        <li><a href="category/education.html">Education</a></li>
-        <li><a href="category/welfare.html">Welfare</a></li>
-      </ul>
-      
-      <div class="nav-dropdown">
-        <a href="#">Categories ▾</a>
-        <div class="nav-dropdown-content">
-          <a href="category/central.html">Central Government</a>
-          <a href="category/states.html">State Level</a>
-          <a href="category/financials.html">Financials</a>
-          <a href="category/geo.html">Geo Levels</a>
-          <a href="category/transport.html">Transport</a>
-          <a href="category/economy.html">Economy</a>
-          <a href="category/agriculture.html">Agriculture</a>
-          <a href="category/energy.html">Energy & Power</a>
-          <a href="category/health.html">Health</a>
-          <a href="category/education.html">Education</a>
-          <a href="category/welfare.html">Welfare & Employment</a>
-          <a href="category/environment.html">Environment & Climate</a>
-          <a href="category/commerce.html">Trade & Commerce</a>
-          <a href="category/housing.html">Housing & Urban</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="{b}index.html">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">FinRadar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="{b}index.html" class="nav-link">Dashboard</a>
+        <div class="nav-drop">
+          <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Categories <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Government &amp; Economy</div>
+            <a href="{b}category/central.html" role="menuitem">Central Government</a>
+            <a href="{b}category/states.html" role="menuitem">State Level</a>
+            <a href="{b}category/economy.html" role="menuitem">Economy</a>
+            <a href="{b}category/financials.html" role="menuitem">Finance &amp; Banking</a>
+            <div class="nav-drop-heading">Sectors</div>
+            <a href="{b}category/agriculture.html" role="menuitem">Agriculture</a>
+            <a href="{b}category/energy.html" role="menuitem">Energy &amp; Power</a>
+            <a href="{b}category/transport.html" role="menuitem">Transport</a>
+            <a href="{b}category/geo.html" role="menuitem">Geo Levels</a>
+            <a href="{b}category/health.html" role="menuitem">Health</a>
+            <a href="{b}category/education.html" role="menuitem">Education</a>
+            <div class="nav-drop-heading">Society &amp; Environment</div>
+            <a href="{b}category/welfare.html" role="menuitem">Welfare &amp; Employment</a>
+            <a href="{b}category/environment.html" role="menuitem">Environment &amp; Climate</a>
+            <a href="{b}category/commerce.html" role="menuitem">Trade &amp; Commerce</a>
+            <a href="{b}category/housing.html" role="menuitem">Housing &amp; Urban</a>
+          </div>
         </div>
-      </div>
+        <a href="{b}search.html" class="nav-link">Search</a>
+        <a href="{b}sources.html" class="nav-link">Sources</a>
+      </nav>
     </div>
-  </nav>
-  <!-- End Navigation Component -->
-  
-  <main class="container">"""
+  </header>
+  <main class="site-main container">"""
 
 
-def render_footer():
+def render_footer(base=""):
+    b = base
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     return f"""  </main>
   <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <a class="footer-logo" href="index.html">FinRadar</a>
-        <p class="footer-tagline">India & global macro, live from public data</p>
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <a class="brand" href="{b}index.html">
+          <span class="brand-mark">F</span>
+          <span class="brand-name">FinRadar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">{ts}</span></p>
       </div>
-      
-      <ul class="footer-links">
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="sources.html">Sources</a></li>
-      </ul>
-      
-      <ul class="footer-category">
-        <li><a href="category/central.html">Central Govt</a></li>
-        <li><a href="category/states.html">States</a></li>
-        <li><a href="category/financials.html">Financials</a></li>
-        <li><a href="category/geo.html">Geo</a></li>
-        <li><a href="category/transport.html">Transport</a></li>
-      </ul>
-      
-      <div class="footer-bottom">
-        <p class="footer-small">Data refreshed: <span id="footer-refresh">{datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</span> | <a href="https://github.com/finradar/finradar">Source code</a></p>
+      <div class="footer-col">
+        <h4 class="footer-heading">Explore</h4>
+        <a href="{b}index.html">Dashboard</a>
+        <a href="{b}search.html">Search</a>
+        <a href="{b}sources.html">Data Sources</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Key Sectors</h4>
+        <a href="{b}category/central.html">Central Government</a>
+        <a href="{b}category/states.html">State Level</a>
+        <a href="{b}category/financials.html">Finance &amp; Banking</a>
+        <a href="{b}category/geo.html">Geo Levels</a>
+        <a href="{b}category/transport.html">Transport</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">More Sectors</h4>
+        <a href="{b}category/economy.html">Economy</a>
+        <a href="{b}category/agriculture.html">Agriculture</a>
+        <a href="{b}category/health.html">Health</a>
+        <a href="{b}category/education.html">Education</a>
+        <a href="{b}category/welfare.html">Welfare &amp; Employment</a>
       </div>
     </div>
+    <div class="container footer-bottom">
+      <p>© {datetime.now(timezone.utc).year} FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+    </div>
   </footer>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/charts.js"></script>
+  <script src="{b}scripts/app.js"></script>
+  <script src="{b}scripts/charts.js"></script>
 </body>
 </html>"""
 
@@ -182,7 +187,7 @@ def render_category_page(sector_id, latest):
           <h3>{f['fact'][:80]}…</h3>
           <p class="muted small">Source: {f['source']}</p>
           <p class="small">{f['why_it_matters']}</p>
-          <a href="/facts/{f['id']}.html" class="btn">Read more</a>
+          <a href="../facts/{f['id']}.html" class="btn">Read more</a>
         </article>"""
 
     # Build KPIs HTML
@@ -199,7 +204,7 @@ def render_category_page(sector_id, latest):
           <td>{verdict_html}</td>
           <td>{kpi.get('insight', '')}</td>
           <td class="muted small">{kpi.get('formula', '')}</td>
-          <td><a href="/kpi/{kpi['id']}.html" class="btn small">Detail</a></td>
+          <td><a href="../kpi/{kpi['id']}.html" class="btn small">Detail</a></td>
         </tr>"""
 
     # Build trends HTML
@@ -214,13 +219,14 @@ def render_category_page(sector_id, latest):
               <p class="muted small">{trend['source']}</p>
               <div class="sparkline" data-points='{json.dumps([p["value"] for p in pts])}'></div>
               <p class="trend-value">{humanize(latest_pt["value"])} {trend["unit"]} <span class="muted">({latest_pt["year"]})</span></p>
-              <a href="/trend/{kpi_id}.html" class="btn small">View history</a>
+              <a href="../trend/{kpi_id}.html" class="btn small">View history</a>
             </div>"""
 
     html = render_base_head(
         f"{sector['icon']} {sector['title']}",
         sector["description"],
-        f"/category/{sector_id}.html"
+        f"/category/{sector_id}.html",
+        base="../"
     )
     html += f"""
     <section class="category-hero">
@@ -245,7 +251,7 @@ def render_category_page(sector_id, latest):
       <h2>Historical Trends</h2>
       <div class="trend-grid">{trends_html}</div>
     </section>"""
-    html += render_footer()
+    html += render_footer("../")
     return html
 
 
@@ -261,7 +267,8 @@ def render_fact_page(fact, latest):
     html = render_base_head(
         fact["kpi_id"].replace("_", " ").title(),
         fact["fact"][:160],
-        f"/facts/{fact['id']}.html"
+        f"/facts/{fact['id']}.html",
+        base="../"
     )
     html += f"""
     <section class="fact-detail">
@@ -273,10 +280,10 @@ def render_fact_page(fact, latest):
         <span><strong>Why it matters:</strong> {fact['why_it_matters']}</span>
       </div>
       {f'<p class="latest-value">Latest value: <strong>{humanize(val)}</strong></p>' if val is not None else ''}
-      {f'<div class="trend-embed"><h3>{trend["label"]} (history)</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="/trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
-      <a href="category/{fact['category']}.html" class="btn">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
+      {f'<div class="trend-embed"><h3>{trend["label"]} (history)</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="../trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
+      <a href="../category/{fact['category']}.html" class="btn">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
     </section>"""
-    html += render_footer()
+    html += render_footer("../")
     return html
 
 
@@ -303,7 +310,8 @@ def render_trend_page(kpi_id, latest):
     html = render_base_head(
         f"{trend['label']} — Historical Trend",
         f"Historical trend for {trend['label']} from {trend['source']}",
-        f"/trend/{kpi_id}.html"
+        f"/trend/{kpi_id}.html",
+        base="../"
     )
     html += f"""
     <section class="trend-detail">
@@ -331,9 +339,9 @@ def render_trend_page(kpi_id, latest):
 
       <h3>What this trend tells you</h3>
       <p>""" + (kpi_def.get("insight", "Trend data for this metric.") if kpi_def else "Trend data for this metric.") + """</p>
-      <a href="category/""" + (next((c for c, facts in FACTS_BY_CATEGORY.items() if any(fi["kpi_id"]==kpi_id for fi in facts)), "economy")) + """.html" class="btn">← Back</a>
+      <a href="../category/""" + (next((c for c, facts in FACTS_BY_CATEGORY.items() if any(fi["kpi_id"]==kpi_id for fi in facts)), "economy")) + """.html" class="btn">← Back</a>
     </section>"""
-    html += render_footer()
+    html += render_footer("../")
     # Inline the chart data for the simple JS chart
     html = html.replace("</body>", f"""
   <script>
@@ -375,7 +383,8 @@ def render_kpi_page(kpi_id, latest):
     html = render_base_head(
         kpi_def["name"],
         kpi_def.get("insight", "")[:160],
-        f"/kpi/{kpi_id}.html"
+        f"/kpi/{kpi_id}.html",
+        base="../"
     )
     html += f"""
     <section class="kpi-detail">
@@ -402,11 +411,11 @@ def render_kpi_page(kpi_id, latest):
         {f'<p class="muted small"><strong>Source:</strong> {kpi_def.get("source_resource_id", "")}</p>' if kpi_def.get("source_resource_id") else ''}
       </div>
 
-      {f'<div class="trend-embed"><h3>Historical trend</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="/trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
+      {f'<div class="trend-embed"><h3>Historical trend</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="../trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
 
-      <a href="category/{cat}.html" class="btn">← Back to {SECTOR_MAP[cat]['title'] if cat else 'Dashboard'}</a>
+      <a href="../category/{cat}.html" class="btn">← Back to {SECTOR_MAP[cat]['title'] if cat else 'Dashboard'}</a>
     </section>"""
-    html += render_footer()
+    html += render_footer("../")
     return html
 
 
@@ -420,7 +429,8 @@ def render_search_page(latest):
     html = render_base_head(
         "Search — Find any data fact or KPI",
         "Search across 35+ KPIs, historical trends and plain-English facts from Indian government data.",
-        "/search.html"
+        "/search.html",
+        base=""
     )
     html += """
     <section class="search-page">
@@ -437,7 +447,7 @@ def render_search_page(latest):
     function render(resultsArr) {
       if (!resultsArr.length) { results.innerHTML = '<p class="muted">No matches.</p>'; return; }
       results.innerHTML = resultsArr.map(r => `
-        <a href="${r.type==='fact' ? '/facts/'+r.id+'.html' : '/kpi/'+r.id+'.html'}" class="search-result">
+        <a href="${r.type==='fact' ? 'facts/'+r.id+'.html' : 'kpi/'+r.id+'.html'}" class="search-result">
           <strong>${r.title}</strong>
           <span class="badge">${r.category}</span>
           <p>${r.text.slice(0,120)}…</p>
@@ -457,7 +467,7 @@ def render_search_page(latest):
       render(filtered);
     });
   </script>
-""" + render_footer()
+""" + render_footer("")
     return html
 
 
@@ -469,7 +479,8 @@ def render_sources_page():
     html = render_base_head(
         "Data Sources — Catalog",
         "Every API, dataset and portal FinRadar draws from, with links and field notes.",
-        "/sources.html"
+        "/sources.html",
+        base=""
     )
     html += """
     <section>
@@ -509,7 +520,7 @@ def render_sources_page():
         <li><a href="https://data.imf.org" target="_blank">IMF DataMapper</a> — fiscal, debt, cross-country comparables.</li>
         <li><a href="https://fred.stlouisfed.org" target="_blank">FRED</a> — US rates, commodities, global indicators.</li>
       </ul>
-    </section>""" + render_footer()
+    </section>""" + render_footer("")
     return html
 
 
@@ -521,7 +532,8 @@ def render_index(latest):
     html = render_base_head(
         "FinRadar — India & Global Macro KPIs & Benchmarks",
         "Live macroeconomic KPIs, benchmarks and interactive tools built from public government data.",
-        "/"
+        "/",
+        base=""
     )
     html += """
     <section class="hero">
@@ -607,8 +619,8 @@ def render_index(latest):
     html += """
       </div>
     </section>
-    <p style="text-align:center; margin-top:24px;"><a href="/search.html" class="btn">🔍 Search all facts & KPIs</a></p>"""
-    html += render_footer()
+    <p style="text-align:center; margin-top:24px;"><a href="search.html" class="btn">🔍 Search all facts &amp; KPIs</a></p>"""
+    html += render_footer("")
     return html
 
 
