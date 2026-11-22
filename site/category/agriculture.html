@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌾 Agriculture — FinRadar</title>
+  <meta name="description" content="Crop production, fertiliser, irrigation, MSP and farmer welfare." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="canonical" href="https://finradar.example/category/agriculture.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">FinRadar</a>
+      <span class="tagline">India & global macro, live from public data</span>
+      <nav class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/search.html">Search</a>
+        <a href="/sources.html">Sources</a>
+        <a href="#" class="nav-dropdown">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/category/central.html">Central Government</a>
+          <a href="/category/states.html">State Level</a>
+          <a href="/category/financials.html">Financials</a>
+          <a href="/category/geo.html">Geo Levels</a>
+          <a href="/category/transport.html">Transport</a>
+          <a href="/category/economy.html">Economy</a>
+          <a href="/category/agriculture.html">Agriculture</a>
+          <a href="/category/energy.html">Energy & Power</a>
+          <a href="/category/health.html">Health</a>
+          <a href="/category/education.html">Education</a>
+          <a href="/category/welfare.html">Welfare & Employment</a>
+          <a href="/category/environment.html">Environment & Climate</a>
+          <a href="/category/commerce.html">Trade & Commerce</a>
+          <a href="/category/housing.html">Housing & Urban</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="category-hero">
+      <h1>🌾 Agriculture</h1>
+      <p>Crop production, fertiliser, irrigation, MSP and farmer welfare.</p>
+    </section>
+
+    <section>
+      <h2>Key Facts</h2>
+      <div class="grid">
+        <article class="fact-card">
+          <h3>Foodgrain production grew ~1.4% YoY — modest growth despite normal monsoon.…</h3>
+          <p class="muted small">Source: MoAFW</p>
+          <p class="small">Food output growth anchors food inflation and rural incomes.</p>
+          <a href="/facts/a1.html" class="btn">Read more</a>
+        </article>
+        <article class="fact-card">
+          <h3>Fertiliser intensity is ~145 kg/ha — above the 120 kg/ha recommended for balance…</h3>
+          <p class="muted small">Source: MoAFW / FAI</p>
+          <p class="small">Overuse degrades soil, pollutes water and raises input costs.</p>
+          <a href="/facts/a2.html" class="btn">Read more</a>
+        </article></div>
+    </section>
+
+    <section>
+      <h2>KPIs — 4 metrics</h2>
+      <table class="kpi-library-table">
+        <thead><tr><th>KPI</th><th>Latest</th><th>Verdict</th><th>Insight</th><th>Formula</th><th></th></tr></thead>
+        <tbody>
+        <tr>
+          <td><strong>Foodgrain Production Growth</strong></td>
+          <td class="num">1.40 %</td>
+          <td><span class="verdict-badge moderate">MODERATE</span></td>
+          <td>Food output growth. Two bad monsoon years in a row push food inflation up and squeeze rural incomes — the first domino in a rural distress cycle.</td>
+          <td class="muted small">YoY growth in total foodgrain output</td>
+          <td><a href="/kpi/foodgrain_growth_pct.html" class="btn small">Detail</a></td>
+        </tr>
+        <tr>
+          <td><strong>Fertilizer Intensity (kg / hectare)</strong></td>
+          <td class="num">145.00 kg/ha</td>
+          <td><span class="verdict-badge on target">ON TARGET</span></td>
+          <td>How much plant nutrient each hectare of farmland receives. Too low means soil mining and falling yields; too high (above ~200 kg/ha) means overuse, water pollution and rising input costs.</td>
+          <td class="muted small">Fertilizer consumption ÷ net sown area</td>
+          <td><a href="/kpi/fertilizer_intensity.html" class="btn small">Detail</a></td>
+        </tr>
+        <tr>
+          <td><strong>Irrigation Coverage</strong></td>
+          <td class="num">55.00 %</td>
+          <td><span class="verdict-badge moderate">MODERATE</span></td>
+          <td>Share of farmland with assured irrigation. Above 60% insulates farmers from monsoon failure; below 40% means a single dry year can wipe out a harvest.</td>
+          <td class="muted small">Net irrigated area ÷ net sown area × 100</td>
+          <td><a href="/kpi/irrigation_coverage_pct.html" class="btn small">Detail</a></td>
+        </tr>
+        <tr>
+          <td><strong>Crop Insurance Penetration</strong></td>
+          <td class="num">37.00 %</td>
+          <td><span class="verdict-badge moderate">MODERATE</span></td>
+          <td>Share of farmland covered by PMFBY or state schemes. Low coverage means a single failed monsoon translates directly into farmer distress and rural NPA spikes.</td>
+          <td class="muted small">Insured area ÷ net sown area × 100</td>
+          <td><a href="/kpi/crop_insurance_penetration_pct.html" class="btn small">Detail</a></td>
+        </tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Historical Trends</h2>
+      <div class="trend-grid"></div>
+    </section>  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
+      <p class="small">Data refreshed: 2026-11-22 20:26 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/charts.js"></script>
+</body>
+</html>

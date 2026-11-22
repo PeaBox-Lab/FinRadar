@@ -1,0 +1,13 @@
+{
+  "source": "Illustrative MoSPI-style sub-indices for the personal inflation calculator; replaced by live MoSPI values when wired in.",
+  "last_updated": "2026-11-22",
+  "subindices": {
+    "food": 40,
+    "fuel & light": 7,
+    "clothing": 6,
+    "education": 4,
+    "healthcare": 4,
+    "housing": 20,
+    "other stuff": 19
+  }
+}

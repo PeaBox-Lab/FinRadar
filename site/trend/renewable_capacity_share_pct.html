@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renewable Capacity Share (%) — Historical Trend — FinRadar</title>
+  <meta name="description" content="Historical trend for Renewable Capacity Share (%) from MNRE" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="canonical" href="https://finradar.example/trend/renewable_capacity_share_pct.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">FinRadar</a>
+      <span class="tagline">India & global macro, live from public data</span>
+      <nav class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/search.html">Search</a>
+        <a href="/sources.html">Sources</a>
+        <a href="#" class="nav-dropdown">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/category/central.html">Central Government</a>
+          <a href="/category/states.html">State Level</a>
+          <a href="/category/financials.html">Financials</a>
+          <a href="/category/geo.html">Geo Levels</a>
+          <a href="/category/transport.html">Transport</a>
+          <a href="/category/economy.html">Economy</a>
+          <a href="/category/agriculture.html">Agriculture</a>
+          <a href="/category/energy.html">Energy & Power</a>
+          <a href="/category/health.html">Health</a>
+          <a href="/category/education.html">Education</a>
+          <a href="/category/welfare.html">Welfare & Employment</a>
+          <a href="/category/environment.html">Environment & Climate</a>
+          <a href="/category/commerce.html">Trade & Commerce</a>
+          <a href="/category/housing.html">Housing & Urban</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="trend-detail">
+      <h1>Renewable Capacity Share (%)</h1>
+      <p class="muted"><strong>Source:</strong> MNRE</p>
+      <p class="latest-value">Latest (2024): <strong>46.10 %</strong></p>
+
+      <div class="chart-wrap">
+        <canvas id="trend-chart"></canvas>
+      </div>
+
+      <table class="trend-table">
+        <thead><tr><th>Year</th><th>Value (%)</th><th>YoY Δ</th></tr></thead>
+        <tbody>
+    <tr><td>2017</td><td class='num'>32.20</td><td class='num'>—</td></tr><tr><td>2018</td><td class='num'>34.90</td><td class='num'>+2.70</td></tr><tr><td>2019</td><td class='num'>36.60</td><td class='num'>+1.70</td></tr><tr><td>2020</td><td class='num'>38.80</td><td class='num'>+2.20</td></tr><tr><td>2021</td><td class='num'>40.50</td><td class='num'>+1.70</td></tr><tr><td>2022</td><td class='num'>42.50</td><td class='num'>+2.00</td></tr><tr><td>2023</td><td class='num'>44.30</td><td class='num'>+1.80</td></tr><tr><td>2024</td><td class='num'>46.10</td><td class='num'>+1.80</td></tr></tbody></table>
+
+      <h3>What this trend tells you</h3>
+      <p>How much of India's power generation capacity comes from solar, wind, hydro and biomass. Above 40% signals a genuine energy transition; below 20% means fossil dependence is still deepening.</p>
+      <a href="/category/energy.html" class="btn">← Back</a>
+    </section>  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
+      <p class="small">Data refreshed: 2026-11-22 20:26 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/charts.js"></script>
+
+  <script>
+    const chartData = {
+      labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      values: [32.2, 34.9, 36.6, 38.8, 40.5, 42.5, 44.3, 46.1],
+      label: "Renewable Capacity Share (%)",
+      unit: "%"
+    };
+  </script>
+  </body>
+</html>

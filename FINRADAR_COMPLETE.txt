@@ -1,0 +1,19 @@
+FinRadar — Multi-Page Static Site Complete
+============================================
+
+Pages: 96 HTML files across 12 sectors + index + search + sources
+Sectors: central, states, financials, geo, transport, economy, agriculture,
+  energy, health, education, welfare, environment, commerce, housing
+Features:
+- Glassmorphic dark UI with teal/violet/orange accents
+- Responsive nav with dropdown menu (all 14 sectors)
+- KPI library tables with verdict badges (Strong/Moderate/Weak)
+- Historical trend sparklines + canvas line charts
+- Personal inflation calculator + salary parity tool
+- Client-side search across 36 facts + 35 KPIs
+- 36 fact detail pages with scale/why-it-matters/trend embed
+- 35 KPI deep-dive pages with formula, insight, verdict, trend embed
+- Data source citations (World Bank, RBI, MoSPI, NPCI, GST, MNRE, Census, API Setu)
+- Daily GitHub Action: fetch_kpis.py at 02:30 UTC → latest_kpis.json → auto-rebuild
+
+Generated: site/ directory ready for GitHub Pages / Cloudflare Pages deployment.

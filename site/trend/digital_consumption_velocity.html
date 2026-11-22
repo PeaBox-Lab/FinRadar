@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avg UPI Ticket Size (USD/tx) — Historical Trend — FinRadar</title>
+  <meta name="description" content="Historical trend for Avg UPI Ticket Size (USD/tx) from NPCI / GST" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="canonical" href="https://finradar.example/trend/digital_consumption_velocity.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">FinRadar</a>
+      <span class="tagline">India & global macro, live from public data</span>
+      <nav class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/search.html">Search</a>
+        <a href="/sources.html">Sources</a>
+        <a href="#" class="nav-dropdown">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/category/central.html">Central Government</a>
+          <a href="/category/states.html">State Level</a>
+          <a href="/category/financials.html">Financials</a>
+          <a href="/category/geo.html">Geo Levels</a>
+          <a href="/category/transport.html">Transport</a>
+          <a href="/category/economy.html">Economy</a>
+          <a href="/category/agriculture.html">Agriculture</a>
+          <a href="/category/energy.html">Energy & Power</a>
+          <a href="/category/health.html">Health</a>
+          <a href="/category/education.html">Education</a>
+          <a href="/category/welfare.html">Welfare & Employment</a>
+          <a href="/category/environment.html">Environment & Climate</a>
+          <a href="/category/commerce.html">Trade & Commerce</a>
+          <a href="/category/housing.html">Housing & Urban</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="trend-detail">
+      <h1>Avg UPI Ticket Size (USD/tx)</h1>
+      <p class="muted"><strong>Source:</strong> NPCI / GST</p>
+      <p class="latest-value">Latest (2025): <strong>1.40 USD/tx</strong></p>
+
+      <div class="chart-wrap">
+        <canvas id="trend-chart"></canvas>
+      </div>
+
+      <table class="trend-table">
+        <thead><tr><th>Year</th><th>Value (USD/tx)</th><th>YoY Δ</th></tr></thead>
+        <tbody>
+    <tr><td>2020</td><td class='num'>0.90</td><td class='num'>—</td></tr><tr><td>2021</td><td class='num'>1.05</td><td class='num'>+0.15</td></tr><tr><td>2022</td><td class='num'>1.35</td><td class='num'>+0.30</td></tr><tr><td>2023</td><td class='num'>1.42</td><td class='num'>+0.07</td></tr><tr><td>2024</td><td class='num'>1.38</td><td class='num'>-0.04</td></tr><tr><td>2025</td><td class='num'>1.40</td><td class='num'>+0.02</td></tr></tbody></table>
+
+      <h3>What this trend tells you</h3>
+      <p>The average amount Indians move per UPI payment. Rising ticket size means bigger-ticket transactions are going digital — a sign of formalisation and consumption upgrading. Track it with GST growth.</p>
+      <a href="/category/transport.html" class="btn">← Back</a>
+    </section>  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
+      <p class="small">Data refreshed: 2026-11-22 20:26 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/charts.js"></script>
+
+  <script>
+    const chartData = {
+      labels: [2020, 2021, 2022, 2023, 2024, 2025],
+      values: [0.9, 1.05, 1.35, 1.42, 1.38, 1.4],
+      label: "Avg UPI Ticket Size (USD/tx)",
+      unit: "USD/tx"
+    };
+  </script>
+  </body>
+</html>

@@ -1,0 +1,1278 @@
+{
+  "generated_at": "2026-11-22T19:30:17Z",
+  "sources": {
+    "world_bank": "api.worldbank.org/v2",
+    "data_gov_in": "api.data.gov.in (sample key by default; DATA_GOV_IN_TOKEN to enable live feeds)",
+    "snapshots": "data/snapshots/ (demo fallbacks for India-specific figures)"
+  },
+  "india": {
+    "real_inflation_rate": 2.39884954182294,
+    "gdp_per_capita_usd": 2702.47987141553,
+    "gdp_per_capita_ppp_usd": 11747.9160436011,
+    "gdp_growth_pct": 7.56666179284244,
+    "current_account": null,
+    "fdi_inflows": null,
+    "rank_by_growth": 4
+  },
+  "peers": [
+    {
+      "iso": "VNM",
+      "name": "Vietnam",
+      "real_gdp_growth": 8.01882998978245,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "IDN",
+      "name": "Indonesia",
+      "real_gdp_growth": 5.10808904438025,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "BRA",
+      "name": "Brazil",
+      "real_gdp_growth": 2.2857464902475,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "MEX",
+      "name": "Mexico",
+      "real_gdp_growth": 0.561683456144578,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    }
+  ],
+  "kpis": [
+    {
+      "kpi_id": "real_interest_rate",
+      "name": "Real Interest Rate (Saver's Yield)",
+      "sector": "Economy",
+      "value": 5.451150458177059,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        0.5,
+        8
+      ],
+      "moderate_range": [
+        -1.0,
+        0.5
+      ],
+      "poor_range": [
+        -20,
+        -1.0
+      ],
+      "formula": "10Y G-Sec Yield − CPI Inflation",
+      "source_fields": [
+        "FP.CPI.TOTL.ZG",
+        "10Y_GSEC_YIELD"
+      ],
+      "source_resource_id": "wb:FP.CPI.TOTL.ZG + RBI 10Y G-Sec yield",
+      "insight_text": "Positive means savers beat price rises; negative means money in the bank quietly loses value. Every 100bps of fall is a signal to lock FD rates before they drop further.",
+      "benchmark": "RBI 10Y G-Sec vs World Bank CPI",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Positive means savers beat price rises; negative means money in the bank quietly loses value. Every 100bps of fall is a signal to lock FD rates before they drop further.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "real_inflation_rate",
+      "name": "Real Inflation Rate (Headline)",
+      "sector": "Economy",
+      "value": 2.39884954182294,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        2
+      ],
+      "moderate_range": [
+        2,
+        4
+      ],
+      "poor_range": [
+        4,
+        50
+      ],
+      "formula": "Headline CPI growth (annual %)",
+      "source_fields": [
+        "FP.CPI.TOTL.ZG"
+      ],
+      "source_resource_id": "wb:FP.CPI.TOTL.ZG",
+      "insight_text": "The single most quoted cost-of-living number. Below 2% is stable; 2-4% is the RBI comfort zone; above 4% erodes real wages and usually triggers rate hikes.",
+      "benchmark": "RBI target: 4% (±2%)",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. The single most quoted cost-of-living number. Below 2% is stable; 2-4% is the RBI comfort zone; above 4% erodes real wages and usually triggers rate hikes.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "gdp_growth_pct",
+      "name": "GDP Growth (Annual %)",
+      "sector": "Economy",
+      "value": 7.56666179284244,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        6,
+        15
+      ],
+      "moderate_range": [
+        3,
+        6
+      ],
+      "poor_range": [
+        -10,
+        3
+      ],
+      "formula": "Real GDP growth, year over year",
+      "source_fields": [
+        "NY.GDP.MKTP.KD.ZG"
+      ],
+      "source_resource_id": "wb:NY.GDP.MKTP.KD.ZG",
+      "insight_text": "Above 6% is strong expansion; 3-6% is steady; below 3% is a slowdown worth watching for job and income stress.",
+      "benchmark": "World Bank; IMF WEO",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Above 6% is strong expansion; 3-6% is steady; below 3% is a slowdown worth watching for job and income stress.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "gdp_per_capita_usd",
+      "name": "GDP per Capita (Nominal)",
+      "sector": "Economy",
+      "value": 2702.47987141553,
+      "unit": "USD",
+      "direction": "higher_better",
+      "verdict": "weak",
+      "good_range": [
+        10000,
+        200000
+      ],
+      "moderate_range": [
+        3000,
+        10000
+      ],
+      "poor_range": [
+        0,
+        3000
+      ],
+      "formula": "GDP ÷ population, in current US$",
+      "source_fields": [
+        "NY.GDP.PCAP.CD"
+      ],
+      "source_resource_id": "wb:NY.GDP.PCAP.CD",
+      "insight_text": "Average economic output per person. It is the usual headline number global rankings use, but it hides inequality — always pair with the PPP gap.",
+      "benchmark": "World Bank",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. Average economic output per person. It is the usual headline number global rankings use, but it hides inequality — always pair with the PPP gap.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "gdp_per_capita_ppp_usd",
+      "name": "GDP per Capita, PPP",
+      "sector": "Economy",
+      "value": 11747.9160436011,
+      "unit": "int$",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        20000,
+        500000
+      ],
+      "moderate_range": [
+        8000,
+        20000
+      ],
+      "poor_range": [
+        0,
+        8000
+      ],
+      "formula": "GDP per capita adjusted for purchasing power",
+      "source_fields": [
+        "NY.GDP.PCAP.PP.CD"
+      ],
+      "source_resource_id": "wb:NY.GDP.PCAP.PP.CD",
+      "insight_text": "What the same output buys inside the country. The gap vs nominal tells you how much cheaper daily life is — which is why a ₹20 LPA salary in Jaipur buys more than in Mumbai.",
+      "benchmark": "World Bank",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. What the same output buys inside the country. The gap vs nominal tells you how much cheaper daily life is — which is why a ₹20 LPA salary in Jaipur buys more than in Mumbai.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "ppp_gap_usd",
+      "name": "PPP Gap (Nominal − PPP)",
+      "sector": "Economy",
+      "value": -9045.436172185571,
+      "unit": "USD",
+      "direction": "lower_better",
+      "verdict": "strong",
+      "good_range": [
+        -40000,
+        0
+      ],
+      "moderate_range": [
+        -40000,
+        -10000
+      ],
+      "poor_range": [
+        -10000,
+        100000
+      ],
+      "formula": "Nominal GDP per capita − PPP GDP per capita",
+      "source_fields": [
+        "NY.GDP.PCAP.CD",
+        "NY.GDP.PCAP.PP.CD"
+      ],
+      "source_resource_id": "wb:NY.GDP.PCAP.CD − NY.GDP.PCAP.PP.CD",
+      "insight_text": "A large negative gap means local prices are far cheaper than the exchange rate implies — money goes further inside the country. The bigger the gap, the more a remote or migrant salary is worth relative to its dollar figure.",
+      "benchmark": "World Bank",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. A large negative gap means local prices are far cheaper than the exchange rate implies — money goes further inside the country. The bigger the gap, the more a remote or migrant salary is worth relative to its dollar figure.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "current_account_pct_gdp",
+      "name": "Current Account Balance (% of GDP)",
+      "sector": "Economy",
+      "value": null,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "no data available yet",
+      "good_range": [
+        0,
+        5
+      ],
+      "moderate_range": [
+        -3,
+        0
+      ],
+      "poor_range": [
+        -20,
+        -3
+      ],
+      "formula": "Trade balance + net transfers, as % of GDP",
+      "source_fields": [
+        "NE.CAB.TOTL.PT"
+      ],
+      "source_resource_id": "wb:NE.CAB.TOTL.PT",
+      "insight_text": "A surplus means more money flows in than out (exports, remittances). A deficit above -3% is a warning that the country depends on foreign capital to fund its imports.",
+      "benchmark": "IMF BOP statistics",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "No data available yet.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "fdi_inflows_pct_gdp",
+      "name": "FDI Inflows (% of GDP)",
+      "sector": "Economy",
+      "value": null,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "no data available yet",
+      "good_range": [
+        2,
+        15
+      ],
+      "moderate_range": [
+        0.5,
+        2
+      ],
+      "poor_range": [
+        -5,
+        0.5
+      ],
+      "formula": "Foreign direct investment as % of GDP",
+      "source_fields": [
+        "BX.KD.FDI.DT.GP"
+      ],
+      "source_resource_id": "wb:BX.KD.FDI.DT.GP",
+      "insight_text": "Foreign money building factories, offices and infrastructure. Above 2% signals confidence; near zero means capital is staying home or leaving.",
+      "benchmark": "UNCTAD World Investment Report",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "No data available yet.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "debt_service_burden",
+      "name": "Debt Service Burden (% of Revenue)",
+      "sector": "Economy",
+      "value": 11.3,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        8
+      ],
+      "moderate_range": [
+        8,
+        15
+      ],
+      "poor_range": [
+        15,
+        100
+      ],
+      "formula": "Interest paid on public debt ÷ total revenue",
+      "source_fields": [
+        "share_of_revenue_pct"
+      ],
+      "source_resource_id": "rbi:debt_service",
+      "insight_text": "Every rupee of interest is a rupee that cannot fund schools, hospitals or roads. Rising debt service crowds out development spending — watch it alongside the fiscal deficit.",
+      "benchmark": "RBI DBIE / Union Budget",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Every rupee of interest is a rupee that cannot fund schools, hospitals or roads. Rising debt service crowds out development spending — watch it alongside the fiscal deficit.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "import_cover_ratio",
+      "name": "Import Cover Ratio",
+      "sector": "Economy",
+      "value": 16.392714349178142,
+      "unit": "months",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        6,
+        24
+      ],
+      "moderate_range": [
+        3,
+        6
+      ],
+      "poor_range": [
+        0,
+        3
+      ],
+      "formula": "Forex reserves ÷ (annual imports ÷ 12)",
+      "source_fields": [
+        "fx_reserves_usd",
+        "annual_imports_usd"
+      ],
+      "source_resource_id": "rbi:reserves ÷ (annual imports / 12)",
+      "insight_text": "How many months the country can keep importing if all export earnings stopped. Below 3 months is a balance-of-payments crisis zone; 6+ months is comfortable.",
+      "benchmark": "IMF reserve adequacy metric",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. How many months the country can keep importing if all export earnings stopped. Below 3 months is a balance-of-payments crisis zone; 6+ months is comfortable.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "reserve_adequacy_ratio",
+      "name": "Reserve Adequacy Ratio",
+      "sector": "Economy",
+      "value": 1.2070657507360156,
+      "unit": "x",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        1.5,
+        10
+      ],
+      "moderate_range": [
+        1.0,
+        1.5
+      ],
+      "poor_range": [
+        0,
+        1.0
+      ],
+      "formula": "Forex reserves ÷ short-term external debt",
+      "source_fields": [
+        "fx_reserves_usd",
+        "short_term_debt_usd"
+      ],
+      "source_resource_id": "rbi:reserves ÷ short-term debt",
+      "insight_text": "Can the country repay all debt due within a year? Above 1.0x means yes; below 1.0x means reserves alone cannot cover near-term obligations — a downgrade risk.",
+      "benchmark": "Guidotti-Greenspan rule: >1.0x",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Can the country repay all debt due within a year? Above 1.0x means yes; below 1.0x means reserves alone cannot cover near-term obligations — a downgrade risk.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "fiscal_deficit_pct_gdp",
+      "name": "Fiscal Deficit (% of GDP)",
+      "sector": "Economy",
+      "value": 5.1,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        3
+      ],
+      "moderate_range": [
+        3,
+        6
+      ],
+      "poor_range": [
+        6,
+        20
+      ],
+      "formula": "Government borrowing ÷ GDP",
+      "source_fields": [
+        "fiscal_deficit_pct",
+        "GC.DOD.TOTL.GD.ZG"
+      ],
+      "source_resource_id": "rbi:fiscal_deficit + wb:GC.DOD.TOTL.GD.ZG",
+      "insight_text": "How much the government must borrow to fund its spending. Above 6% is typically inflationary and crowds out private investment; below 3% is the FRBM target.",
+      "benchmark": "FRBM Act target: 3%",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. How much the government must borrow to fund its spending. Above 6% is typically inflationary and crowds out private investment; below 3% is the FRBM target.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "power_demand_growth_pct",
+      "name": "Power Demand Growth",
+      "sector": "Energy",
+      "value": -1.1,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "weak",
+      "good_range": [
+        3,
+        15
+      ],
+      "moderate_range": [
+        0,
+        3
+      ],
+      "poor_range": [
+        -10,
+        0
+      ],
+      "formula": "YoY growth in electricity consumption",
+      "source_fields": [
+        "growth_pct"
+      ],
+      "source_resource_id": "cea:pwr_demand",
+      "insight_text": "Electricity demand is a near-real-time proxy for industrial and commercial activity. Falling demand is an early warning that factories are idling.",
+      "benchmark": "CEA / POSOCO monthly reports",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. Electricity demand is a near-real-time proxy for industrial and commercial activity. Falling demand is an early warning that factories are idling.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "iip_growth_pct",
+      "name": "Index of Industrial Production Growth",
+      "sector": "Economy",
+      "value": -0.4,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "weak",
+      "good_range": [
+        4,
+        15
+      ],
+      "moderate_range": [
+        0,
+        4
+      ],
+      "poor_range": [
+        -10,
+        0
+      ],
+      "formula": "YoY growth in industrial output (factory, mine, utility)",
+      "source_fields": [
+        "growth_pct"
+      ],
+      "source_resource_id": "mospi:iip",
+      "insight_text": "The cleanest read on whether factories are actually producing more. IIP leads GDP by a quarter — a falling IIP today is a slower GDP tomorrow.",
+      "benchmark": "MoSPI IIP series",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. The cleanest read on whether factories are actually producing more. IIP leads GDP by a quarter — a falling IIP today is a slower GDP tomorrow.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "gst_growth_pct",
+      "name": "GST Collections Growth",
+      "sector": "Economy",
+      "value": 11.7,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        8,
+        25
+      ],
+      "moderate_range": [
+        3,
+        8
+      ],
+      "poor_range": [
+        -10,
+        3
+      ],
+      "formula": "YoY growth in GST collections",
+      "source_fields": [
+        "current_year_growth_pct"
+      ],
+      "source_resource_id": "gst:gst_growth",
+      "insight_text": "GST is levied on consumption, so its growth is a high-frequency read on consumer and business spending. Below 5% growth often means households are pulling back.",
+      "benchmark": "GST portal monthly collections",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. GST is levied on consumption, so its growth is a high-frequency read on consumer and business spending. Below 5% growth often means households are pulling back.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "digital_consumption_velocity",
+      "name": "Digital Consumption Velocity (UPI Ticket)",
+      "sector": "Economy",
+      "value": 1.398,
+      "unit": "USD/tx",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        1.5,
+        5
+      ],
+      "moderate_range": [
+        0.5,
+        1.5
+      ],
+      "poor_range": [
+        0,
+        0.5
+      ],
+      "formula": "UPI transaction value ÷ UPI volume",
+      "source_fields": [
+        "avg_ticket_usd"
+      ],
+      "source_resource_id": "npci:upi",
+      "insight_text": "The average amount Indians move per UPI payment. Rising ticket size means bigger-ticket transactions are going digital — a sign of formalisation and consumption upgrading. Track it with GST growth.",
+      "benchmark": "NPCI monthly UPI statistics",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. The average amount Indians move per UPI payment. Rising ticket size means bigger-ticket transactions are going digital — a sign of formalisation and consumption upgrading. Track it with GST growth.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "foodgrain_growth_pct",
+      "name": "Foodgrain Production Growth",
+      "sector": "Agriculture",
+      "value": 1.4,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        2,
+        15
+      ],
+      "moderate_range": [
+        -2,
+        2
+      ],
+      "poor_range": [
+        -20,
+        -2
+      ],
+      "formula": "YoY growth in total foodgrain output",
+      "source_fields": [
+        "growth_pct"
+      ],
+      "source_resource_id": "agri:foodgrain",
+      "insight_text": "Food output growth. Two bad monsoon years in a row push food inflation up and squeeze rural incomes — the first domino in a rural distress cycle.",
+      "benchmark": "Ministry of Agriculture 4th Advance Estimates",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Food output growth. Two bad monsoon years in a row push food inflation up and squeeze rural incomes — the first domino in a rural distress cycle.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "fertilizer_intensity",
+      "name": "Fertilizer Intensity (kg / hectare)",
+      "sector": "Agriculture",
+      "value": 145.0,
+      "unit": "kg/ha",
+      "direction": "closer_to_target",
+      "verdict": "on target",
+      "good_range": [
+        120,
+        200
+      ],
+      "moderate_range": [
+        80,
+        120
+      ],
+      "poor_range": [
+        0,
+        80
+      ],
+      "formula": "Fertilizer consumption ÷ net sown area",
+      "source_fields": [
+        "consumption_kg",
+        "net_sown_area_ha"
+      ],
+      "source_resource_id": "agri:fertilizer",
+      "insight_text": "How much plant nutrient each hectare of farmland receives. Too low means soil mining and falling yields; too high (above ~200 kg/ha) means overuse, water pollution and rising input costs.",
+      "benchmark": "Recommended: 120-200 kg/ha (varies by crop mix)",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "On target. How much plant nutrient each hectare of farmland receives. Too low means soil mining and falling yields; too high (above ~200 kg/ha) means overuse, water pollution and rising input costs.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "irrigation_coverage_pct",
+      "name": "Irrigation Coverage",
+      "sector": "Agriculture",
+      "value": 55.0,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        60,
+        100
+      ],
+      "moderate_range": [
+        40,
+        60
+      ],
+      "poor_range": [
+        0,
+        40
+      ],
+      "formula": "Net irrigated area ÷ net sown area × 100",
+      "source_fields": [
+        "irrigated_area_ha",
+        "net_sown_area_ha"
+      ],
+      "source_resource_id": "agri:irrigation",
+      "insight_text": "Share of farmland with assured irrigation. Above 60% insulates farmers from monsoon failure; below 40% means a single dry year can wipe out a harvest.",
+      "benchmark": "Economic Survey of India",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Share of farmland with assured irrigation. Above 60% insulates farmers from monsoon failure; below 40% means a single dry year can wipe out a harvest.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "crop_insurance_penetration_pct",
+      "name": "Crop Insurance Penetration",
+      "sector": "Agriculture",
+      "value": 37.0,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        40,
+        100
+      ],
+      "moderate_range": [
+        15,
+        40
+      ],
+      "poor_range": [
+        0,
+        15
+      ],
+      "formula": "Insured area ÷ net sown area × 100",
+      "source_fields": [
+        "insured_area_ha",
+        "net_sown_area_ha"
+      ],
+      "source_resource_id": "agri:insurance",
+      "insight_text": "Share of farmland covered by PMFBY or state schemes. Low coverage means a single failed monsoon translates directly into farmer distress and rural NPA spikes.",
+      "benchmark": "PMFBY annual reports",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Share of farmland covered by PMFBY or state schemes. Low coverage means a single failed monsoon translates directly into farmer distress and rural NPA spikes.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "bank_credit_deposit_ratio",
+      "name": "Bank Credit-to-Deposit Ratio",
+      "sector": "Finance",
+      "value": 82.4,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        70,
+        90
+      ],
+      "moderate_range": [
+        50,
+        70
+      ],
+      "poor_range": [
+        30,
+        50
+      ],
+      "formula": "Total bank credit ÷ total deposits × 100",
+      "source_fields": [
+        "credit_outstanding",
+        "deposits_outstanding"
+      ],
+      "source_resource_id": "rbi:cd_ratio",
+      "insight_text": "How much of every rupee Indians deposit is lent back out. Above 80% is a fast-growing, credit-hungry economy; below 60% signals weak loan demand or cautious banks — often a slowdown signal.",
+      "benchmark": "RBI DBIE — Scheduled Commercial Banks",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. How much of every rupee Indians deposit is lent back out. Above 80% is a fast-growing, credit-hungry economy; below 60% signals weak loan demand or cautious banks — often a slowdown signal.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "priority_sector_lending_pct",
+      "name": "Priority Sector Lending Share",
+      "sector": "Finance",
+      "value": 42.1,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        40,
+        75
+      ],
+      "moderate_range": [
+        30,
+        40
+      ],
+      "poor_range": [
+        0,
+        30
+      ],
+      "formula": "PSL advances ÷ total bank credit × 100",
+      "source_fields": [
+        "psl_outstanding",
+        "total_bank_credit"
+      ],
+      "source_resource_id": "rbi:psl",
+      "insight_text": "Share of bank credit mandated to flow to agriculture, MSMEs and low-income housing. The RBI target is 40%; shortfalls mean credit is not reaching the sectors that employ the most people.",
+      "benchmark": "RBI PSL master directions: 40% target",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Share of bank credit mandated to flow to agriculture, MSMEs and low-income housing. The RBI target is 40%; shortfalls mean credit is not reaching the sectors that employ the most people.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "gnpa_ratio_pct",
+      "name": "Gross NPA Ratio",
+      "sector": "Finance",
+      "value": 2.8,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        2
+      ],
+      "moderate_range": [
+        2,
+        5
+      ],
+      "poor_range": [
+        5,
+        20
+      ],
+      "formula": "Gross non-performing assets ÷ gross advances × 100",
+      "source_fields": [
+        "gross_np_as",
+        "gross_advances"
+      ],
+      "source_resource_id": "rbi:gnpa",
+      "insight_text": "Share of bank loans that borrowers have stopped repaying. Below 2% is healthy; above 5% means banks are sitting on losses that eat into capital and choke new lending.",
+      "benchmark": "RBI Financial Stability Report",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Share of bank loans that borrowers have stopped repaying. Below 2% is healthy; above 5% means banks are sitting on losses that eat into capital and choke new lending.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "msme_credit_penetration_pct",
+      "name": "MSME Credit Penetration",
+      "sector": "Finance",
+      "value": 12.6,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        15,
+        60
+      ],
+      "moderate_range": [
+        8,
+        15
+      ],
+      "poor_range": [
+        0,
+        8
+      ],
+      "formula": "Outstanding MSME credit ÷ estimated MSME GDP × 100",
+      "source_fields": [
+        "msme_loans_outstanding",
+        "msme_gdp_estimate"
+      ],
+      "source_resource_id": "msme:units + rbi:msme_credit",
+      "insight_text": "How much bank credit reaches the MSME sector relative to its economic weight. India's MSMEs contribute ~30% of GDP but receive a far smaller share of formal credit — a large, persistent gap worth tracking.",
+      "benchmark": "RBI MSME surveys",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. How much bank credit reaches the MSME sector relative to its economic weight. India's MSMEs contribute ~30% of GDP but receive a far smaller share of formal credit — a large, persistent gap worth tracking.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "hospital_bed_density",
+      "name": "Hospital Bed Density (per 1,000 people)",
+      "sector": "Health",
+      "value": 1.3,
+      "unit": "beds/1000",
+      "direction": "higher_better",
+      "verdict": "weak",
+      "good_range": [
+        3,
+        8
+      ],
+      "moderate_range": [
+        1.5,
+        3
+      ],
+      "poor_range": [
+        0,
+        1.5
+      ],
+      "formula": "Total hospital beds ÷ population × 1,000",
+      "source_fields": [
+        "total_beds",
+        "population"
+      ],
+      "source_resource_id": "health:hMIS",
+      "insight_text": "How many hospital beds exist for every 1,000 people. Below 2 is a capacity crisis — a pandemic or even a bad flu season overwhelms the system. WHO recommends ~5 per 1,000 for ageing populations.",
+      "benchmark": "WHO / NHP India",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. How many hospital beds exist for every 1,000 people. Below 2 is a capacity crisis — a pandemic or even a bad flu season overwhelms the system. WHO recommends ~5 per 1,000 for ageing populations.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "immunization_coverage_pct",
+      "name": "Full Immunization Coverage",
+      "sector": "Health",
+      "value": 76.0,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        90,
+        100
+      ],
+      "moderate_range": [
+        70,
+        90
+      ],
+      "poor_range": [
+        0,
+        70
+      ],
+      "formula": "Fully immunized children ÷ children aged 12-35 months × 100",
+      "source_fields": [
+        "immunized_children",
+        "total_children_12_35m"
+      ],
+      "source_resource_id": "health:nfHS",
+      "insight_text": "Share of young children who received all basic vaccines. Below 85% means pockets of population remain vulnerable to outbreaks — measles, diphtheria, polio.",
+      "benchmark": "NFHS-5; WHO target ≥90%",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Share of young children who received all basic vaccines. Below 85% means pockets of population remain vulnerable to outbreaks — measles, diphtheria, polio.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "oope_share_pct",
+      "name": "Out-of-Pocket Health Expenditure Share",
+      "sector": "Health",
+      "value": 47.1,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        30
+      ],
+      "moderate_range": [
+        30,
+        50
+      ],
+      "poor_range": [
+        50,
+        100
+      ],
+      "formula": "Household out-of-pocket spending ÷ total health spending × 100",
+      "source_fields": [
+        "household_health_spend",
+        "total_health_spend"
+      ],
+      "source_resource_id": "health:oope",
+      "insight_text": "How much of all health spending comes directly from patients' pockets. Above 50% means a serious illness can bankrupt a family — a key driver of poverty and of demand for health insurance.",
+      "benchmark": "National Health Accounts; WHO target <30%",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. How much of all health spending comes directly from patients' pockets. Above 50% means a serious illness can bankrupt a family — a key driver of poverty and of demand for health insurance.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "pupil_teacher_ratio",
+      "name": "Pupil-Teacher Ratio",
+      "sector": "Education",
+      "value": 26.0,
+      "unit": "students/teacher",
+      "direction": "lower_better",
+      "verdict": "strong",
+      "good_range": [
+        0,
+        30
+      ],
+      "moderate_range": [
+        30,
+        40
+      ],
+      "poor_range": [
+        40,
+        100
+      ],
+      "formula": "Total enrolled students ÷ total teachers",
+      "source_fields": [
+        "total_students",
+        "total_teachers"
+      ],
+      "source_resource_id": "edu:udise",
+      "insight_text": "How many students each teacher is responsible for. Above 35-40, individual attention collapses and learning outcomes fall — a leading indicator of future workforce quality.",
+      "benchmark": "RTE Act norm: ≤30 (primary), ≤35 (upper primary)",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. How many students each teacher is responsible for. Above 35-40, individual attention collapses and learning outcomes fall — a leading indicator of future workforce quality.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "literacy_rate_pct",
+      "name": "Literacy Rate",
+      "sector": "Education",
+      "value": 73.0,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        85,
+        100
+      ],
+      "moderate_range": [
+        65,
+        85
+      ],
+      "poor_range": [
+        0,
+        65
+      ],
+      "formula": "Literate population (age 7+) ÷ total population (age 7+) × 100",
+      "source_fields": [
+        "literate_population",
+        "total_population_7plus"
+      ],
+      "source_resource_id": "census:literacy",
+      "insight_text": "Share of people aged 7+ who can read and write with understanding. Above 85% is near-universal literacy; below 65% means large segments of the workforce cannot fully participate in a modern economy.",
+      "benchmark": "Census of India 2011; UNESCO",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Share of people aged 7+ who can read and write with understanding. Above 85% is near-universal literacy; below 65% means large segments of the workforce cannot fully participate in a modern economy.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "road_density",
+      "name": "Road Density (km per 100 sq km)",
+      "sector": "Transport",
+      "value": 192.0,
+      "unit": "km/100km²",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        150,
+        600
+      ],
+      "moderate_range": [
+        80,
+        150
+      ],
+      "poor_range": [
+        0,
+        80
+      ],
+      "formula": "Total road length ÷ geographical area",
+      "source_fields": [
+        "total_road_length_km",
+        "geographical_area_sq_km"
+      ],
+      "source_resource_id": "morth:road",
+      "insight_text": "How densely roads blanket a region. Higher density means lower logistics costs and better market access; very high density in cities often signals congestion rather than connectivity.",
+      "benchmark": "Ministry of Road Transport & Highways",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. How densely roads blanket a region. Higher density means lower logistics costs and better market access; very high density in cities often signals congestion rather than connectivity.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "vehicle_density",
+      "name": "Vehicle Density (per 1,000 people)",
+      "sector": "Transport",
+      "value": 22.0,
+      "unit": "veh/1000",
+      "direction": "closer_to_target",
+      "verdict": "off target",
+      "good_range": [
+        100,
+        300
+      ],
+      "moderate_range": [
+        50,
+        100
+      ],
+      "poor_range": [
+        0,
+        50
+      ],
+      "formula": "Registered vehicles ÷ population × 1,000",
+      "source_fields": [
+        "registered_vehicles",
+        "population"
+      ],
+      "source_resource_id": "morth:vehicles",
+      "insight_text": "Vehicle ownership intensity. Rising density signals mobility and prosperity, but beyond ~300 per 1,000 cities face severe congestion and pollution — the point where public transport investment becomes urgent.",
+      "benchmark": "MoRTH / SIAM",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Off target. Vehicle ownership intensity. Rising density signals mobility and prosperity, but beyond ~300 per 1,000 cities face severe congestion and pollution — the point where public transport investment becomes urgent.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "mgnrega_person_days",
+      "name": "MGNREGA Person-Days Generated",
+      "sector": "Welfare",
+      "value": 235.0,
+      "unit": "crore person-days",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        150,
+        400
+      ],
+      "moderate_range": [
+        80,
+        150
+      ],
+      "poor_range": [
+        0,
+        80
+      ],
+      "formula": "Total person-days of wage employment generated under MGNREGA",
+      "source_fields": [
+        "person_days_generated"
+      ],
+      "source_resource_id": "mgnrega:person_days",
+      "insight_text": "Demand for rural wage work under MGNREGA. Spikes above 250 crore person-days typically signal rural distress — people are turning to guaranteed wage work because private rural employment has dried up.",
+      "benchmark": "MGNREGA MIS monthly reports",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Demand for rural wage work under MGNREGA. Spikes above 250 crore person-days typically signal rural distress — people are turning to guaranteed wage work because private rural employment has dried up.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "pds_coverage_pct",
+      "name": "PDS / Food Security Coverage",
+      "sector": "Welfare",
+      "value": 88.0,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        85,
+        100
+      ],
+      "moderate_range": [
+        60,
+        85
+      ],
+      "poor_range": [
+        0,
+        60
+      ],
+      "formula": "Active ration cards ÷ estimated eligible population × 100",
+      "source_fields": [
+        "ration_cards_active",
+        "estimated_eligible_population"
+      ],
+      "source_resource_id": "food:pds",
+      "insight_text": "Share of eligible households actually holding an active ration card under NFSA. Below 85% means entitled families are missing subsidised food — a direct food-security risk.",
+      "benchmark": "NFSA coverage target: 81 crore people",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Share of eligible households actually holding an active ration card under NFSA. Below 85% means entitled families are missing subsidised food — a direct food-security risk.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "renewable_capacity_share_pct",
+      "name": "Renewable Energy Share of Installed Capacity",
+      "sector": "Environment",
+      "value": 42.5,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        40,
+        100
+      ],
+      "moderate_range": [
+        20,
+        40
+      ],
+      "poor_range": [
+        0,
+        20
+      ],
+      "formula": "Renewable installed capacity ÷ total installed capacity × 100",
+      "source_fields": [
+        "renewable_capacity_mw",
+        "total_capacity_mw"
+      ],
+      "source_resource_id": "mnre:renewable",
+      "insight_text": "How much of India's power generation capacity comes from solar, wind, hydro and biomass. Above 40% signals a genuine energy transition; below 20% means fossil dependence is still deepening.",
+      "benchmark": "India's NDC target: 50% non-fossil by 2030",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. How much of India's power generation capacity comes from solar, wind, hydro and biomass. Above 40% signals a genuine energy transition; below 20% means fossil dependence is still deepening.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "per_capita_co2_emissions",
+      "name": "Per-Capita CO₂ Emissions",
+      "sector": "Environment",
+      "value": 2.0,
+      "unit": "tonnes/capita",
+      "direction": "lower_better",
+      "verdict": "strong",
+      "good_range": [
+        0,
+        2
+      ],
+      "moderate_range": [
+        2,
+        5
+      ],
+      "poor_range": [
+        5,
+        30
+      ],
+      "formula": "Total CO₂ emissions ÷ population",
+      "source_fields": [
+        "EN.ATM.CO2E.PC"
+      ],
+      "source_resource_id": "wb:EN.ATM.CO2E.PC",
+      "insight_text": "Carbon footprint per person. India's ~2 t/capita is well below the world average (~4.7) — a key equity argument in climate negotiations and a growing focus for ESG investors.",
+      "benchmark": "World Bank / Global Carbon Project",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Carbon footprint per person. India's ~2 t/capita is well below the world average (~4.7) — a key equity argument in climate negotiations and a growing focus for ESG investors.",
+      "source_live": true
+    }
+  ],
+  "benchmarks": {
+    "india_macro_cycle_score": 44,
+    "india_macro_cycle_parts": {
+      "Growth Score": 75.6666179284244,
+      "Inflation Score": 12.60115045817706,
+      "Digital Velocity Score": 44.9
+    },
+    "digital_velocity_benchmark": {
+      "avg_ticket_usd": 1.398,
+      "total_value_usd": 135940.0,
+      "total_volume": 971500,
+      "gst_momentum_ratio": 0.61
+    },
+    "state_inflation_spread_benchmark": {
+      "top_states": [
+        {
+          "name": "Rajasthan",
+          "cpi_pct": 8.7
+        },
+        {
+          "name": "Madhya Pradesh",
+          "cpi_pct": 7.2
+        },
+        {
+          "name": "Chhattisgarh",
+          "cpi_pct": 7.0
+        }
+      ],
+      "latest_spread_pct": 8.7,
+      "source": "MoSPI — DEMO SNAPSHOT"
+    },
+    "global_resilience": {
+      "india_rank_by_real_gdp_growth": 4,
+      "of": 5,
+      "peers": [
+        {
+          "iso": "VNM",
+          "name": "Vietnam",
+          "real_gdp_growth": 8.01882998978245,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "IDN",
+          "name": "Indonesia",
+          "real_gdp_growth": 5.10808904438025,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "BRA",
+          "name": "Brazil",
+          "real_gdp_growth": 2.2857464902475,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "MEX",
+          "name": "Mexico",
+          "real_gdp_growth": 0.561683456144578,
+          "current_account": null,
+          "fdi_inflows": null
+        }
+      ],
+      "note": "Ranked against India on real GDP growth where World Bank data is available. Current account and FDI columns fill in where data exists."
+    }
+  },
+  "subindices": {
+    "food": 40,
+    "fuel & light": 7,
+    "clothing": 6,
+    "education": 4,
+    "healthcare": 4,
+    "housing": 20,
+    "other stuff": 19
+  },
+  "city_indices": {
+    "Pune": 120,
+    "Mumbai": 132,
+    "Delhi": 118,
+    "Jaipur": 89,
+    "Bengaluru": 116,
+    "Hyderabad": 105
+  }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinRadar — India & Global Macro KPIs & Benchmarks — FinRadar</title>
+  <meta name="description" content="Live macroeconomic KPIs, benchmarks and interactive tools built from public government data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="canonical" href="https://finradar.example/" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">FinRadar</a>
+      <span class="tagline">India & global macro, live from public data</span>
+      <nav class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/search.html">Search</a>
+        <a href="/sources.html">Sources</a>
+        <a href="#" class="nav-dropdown">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/category/central.html">Central Government</a>
+          <a href="/category/states.html">State Level</a>
+          <a href="/category/financials.html">Financials</a>
+          <a href="/category/geo.html">Geo Levels</a>
+          <a href="/category/transport.html">Transport</a>
+          <a href="/category/economy.html">Economy</a>
+          <a href="/category/agriculture.html">Agriculture</a>
+          <a href="/category/energy.html">Energy & Power</a>
+          <a href="/category/health.html">Health</a>
+          <a href="/category/education.html">Education</a>
+          <a href="/category/welfare.html">Welfare & Employment</a>
+          <a href="/category/environment.html">Environment & Climate</a>
+          <a href="/category/commerce.html">Trade & Commerce</a>
+          <a href="/category/housing.html">Housing & Urban</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Real economy numbers, plain English.</h1>
+        <p class="hero-sub">FinRadar turns public government data into living KPIs — real interest rates, digital velocity, fiscal health — and publishes benchmarks and reports you can cite. Every number is a derived metric, not a raw table.</p>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <h2>Live KPIs — what it actually costs</h2>
+      <p class="section-intro">These are not raw tables. They are spreads, velocities and composite scores. Values update daily.</p>
+      <div class="grid" id="kpi-grid"></div>
+    </section>
+
+    <section class="benchmarks">
+      <h2>Original benchmarks we publish</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>1. India High-Frequency Macro Cycle Index</h3>
+          <p>A 0–100 score blending GST, UPI, power demand, IIP, inflation, repo rate and GDP growth into one number that classifies the economy.</p>
+          <div class="bench-stat" id="bench-macro-cycle-value"></div>
+        </article>
+        <article class="card">
+          <h3>2. City Salary-Parity Benchmark</h3>
+          <p>What salary in Jaipur gives the same purchasing power as ₹20 LPA in Mumbai? Interactive calculator below.</p>
+        </article>
+        <article class="card">
+          <h3>3. State-Wise Fiscal Health Scorecard</h3>
+          <p>Ranks all 28 states quarterly on GST growth, debt-to-GSDP, capex ratio.</p>
+        </article>
+        <article class="card">
+          <h3>4. Global Emerging Market Resilience</h3>
+          <p>India vs Vietnam, Indonesia, Brazil, Mexico on GDP growth, current account, FDI, digital infra.</p>
+          <div class="bench-stat" id="bench-resilience-value"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tools">
+      <h2>Interactive tools</h2>
+      <div class="tool-card">
+        <h3>Your personal inflation rate</h3>
+        <p class="sub">Enter your spending split — food, fuel, education, healthcare, housing — and see your personal inflation vs the headline.</p>
+        <div id="personal-inflation-rows"></div>
+        <button id="personal-inflation-btn" class="btn">Calculate</button>
+        <div id="personal-inflation-result"></div>
+      </div>
+      <div class="tool-card">
+        <h3>Salary parity between two cities</h3>
+        <p class="sub">Enter a base salary and pick two cities. We tell you the equivalent purchasing-power salary.</p>
+        <div class="tool-form">
+          <input type="number" id="salary-parity-salary" value="200000" placeholder="INR" />
+          <select id="salary-parity-from"></select>
+          <select id="salary-parity-to"></select>
+          <button id="salary-parity-btn" class="btn">Calculate</button>
+        </div>
+        <div id="salary-parity-result"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Explore by category</h2>
+      <div class="grid">
+    
+        <a href="/category/central.html" class="card category-link">
+          <h3>🏛️ Central Government</h3>
+          <p class="muted">All-India macro data from the Union Government: GDP, inflation, fiscal deficit, monetary policy, forex reserves, trade balance.</p>
+        </a>
+        <a href="/category/states.html" class="card category-link">
+          <h3>🗺️ State Level</h3>
+          <p class="muted">State-wise data: GST collections, state debt, state CPI, power demand, agri production, literacy, health and roads.</p>
+        </a>
+        <a href="/category/financials.html" class="card category-link">
+          <h3>🏦 Financials</h3>
+          <p class="muted">Banking, credit, insurance, pensions, NBFCs, capital markets and fiscal sustainability.</p>
+        </a>
+        <a href="/category/geo.html" class="card category-link">
+          <h3>📍 Geo Levels</h3>
+          <p class="muted">Geographic and district-level data: population density, urbanisation, boundaries, land use, climate zones.</p>
+        </a>
+        <a href="/category/transport.html" class="card category-link">
+          <h3>🚗 Transport</h3>
+          <p class="muted">Roads, railways, aviation, shipping, vehicles, FASTag, UPI mobility and logistics.</p>
+        </a>
+        <a href="/category/economy.html" class="card category-link">
+          <h3>💰 Economy</h3>
+          <p class="muted">GDP, inflation, trade flows, PPP and global comparisons.</p>
+        </a>
+        <a href="/category/agriculture.html" class="card category-link">
+          <h3>🌾 Agriculture</h3>
+          <p class="muted">Crop production, fertiliser, irrigation, MSP and farmer welfare.</p>
+        </a>
+        <a href="/category/energy.html" class="card category-link">
+          <h3>⚡ Energy & Power</h3>
+          <p class="muted">Electricity demand, renewables, fossil-fuel dependency and grid data.</p>
+        </a>
+        <a href="/category/health.html" class="card category-link">
+          <h3>🏥 Health</h3>
+          <p class="muted">Hospital capacity, immunisation, healthcare finance and disease surveillance.</p>
+        </a>
+        <a href="/category/education.html" class="card category-link">
+          <h3>📚 Education</h3>
+          <p class="muted">Literacy, enrolment, teacher-pupil ratios and learning outcomes.</p>
+        </a>
+        <a href="/category/welfare.html" class="card category-link">
+          <h3>🤝 Welfare & Employment</h3>
+          <p class="muted">Food security, MGNREGA, social protection and employment.</p>
+        </a>
+        <a href="/category/environment.html" class="card category-link">
+          <h3>🌍 Environment & Climate</h3>
+          <p class="muted">Emissions, renewable share, air and water quality.</p>
+        </a>
+        <a href="/category/commerce.html" class="card category-link">
+          <h3>🛒 Trade & Commerce</h3>
+          <p class="muted">Exports, imports, GST collections, trade balance and digital payments.</p>
+        </a>
+        <a href="/category/housing.html" class="card category-link">
+          <h3>🏠 Housing & Urban</h3>
+          <p class="muted">Urbanisation, housing costs, municipal finance and smart cities.</p>
+        </a>
+      </div>
+    </section>
+    <p style="text-align:center; margin-top:24px;"><a href="/search.html" class="btn">🔍 Search all facts & KPIs</a></p>  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
+      <p class="small">Data refreshed: 2026-11-22 20:26 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/charts.js"></script>
+</body>
+</html>

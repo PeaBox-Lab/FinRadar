@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Sources — Catalog — FinRadar</title>
+  <meta name="description" content="Every API, dataset and portal FinRadar draws from, with links and field notes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="canonical" href="https://finradar.example/sources.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">FinRadar</a>
+      <span class="tagline">India & global macro, live from public data</span>
+      <nav class="nav">
+        <a href="/">Dashboard</a>
+        <a href="/search.html">Search</a>
+        <a href="/sources.html">Sources</a>
+        <a href="#" class="nav-dropdown">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="/category/central.html">Central Government</a>
+          <a href="/category/states.html">State Level</a>
+          <a href="/category/financials.html">Financials</a>
+          <a href="/category/geo.html">Geo Levels</a>
+          <a href="/category/transport.html">Transport</a>
+          <a href="/category/economy.html">Economy</a>
+          <a href="/category/agriculture.html">Agriculture</a>
+          <a href="/category/energy.html">Energy & Power</a>
+          <a href="/category/health.html">Health</a>
+          <a href="/category/education.html">Education</a>
+          <a href="/category/welfare.html">Welfare & Employment</a>
+          <a href="/category/environment.html">Environment & Climate</a>
+          <a href="/category/commerce.html">Trade & Commerce</a>
+          <a href="/category/housing.html">Housing & Urban</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section>
+      <h1>Data Sources Catalog</h1>
+      <p class="muted">FinRadar computes KPIs from these public government sources. Each row links to the live API or catalog page.</p>
+
+      <h2>World Bank Open Data</h2>
+      <ul class="source-list">
+        <li><a href="https://api.worldbank.org/v2" target="_blank">api.worldbank.org/v2</a> — GDP, inflation, trade, PPP, demographics across 200+ countries.</li>
+      </ul>
+
+      <h2>data.gov.in (OGD Platform)</h2>
+      <ul class="source-list">
+        <li><a href="https://data.gov.in/apis?sector=Economy" target="_blank">Economy sector</a> — 500+ APIs: GDP, GST, inflation, fiscal, trade.</li>
+        <li><a href="https://data.gov.in/apis?sector=Power%20and%20Energy" target="_blank">Power & Energy</a> — 300+ APIs: generation, renewables, consumption.</li>
+        <li><a href="https://data.gov.in/apis?sector=Agriculture" target="_blank">Agriculture</a> — crops, fertilizer, irrigation, wages.</li>
+        <li><a href="https://data.gov.in/apis?sector=Health%20and%20Family%20welfare" target="_blank">Health & Family Welfare</a> — hospital stats, immunization, NFHS.</li>
+        <li><a href="https://data.gov.in/apis?sector=Transport" target="_blank">Transport</a> — Vahan, roads, vehicle registrations.</li>
+        <li><a href="https://data.gov.in/apis?sector=Labour%20and%20Employment" target="_blank">Labour & Employment</a> — MGNREGA, wages, PLFS.</li>
+        <li><a href="https://api.data.gov.in/resource/8b68ae56-84cf-4728-a0a6-1be11028dea7" target="_blank">MSME Udyam registrations</a> — unit-level state/district data.</li>
+      </ul>
+
+      <h2>API Setu (apisetu.gov.in)</h2>
+      <ul class="source-list">
+        <li><a href="https://directory.apisetu.gov.in" target="_blank">API Directory</a> — 4,200+ published APIs across 2,700+ organisations.</li>
+        <li>Key APIs: DigiLocker, GSTN, MCA, Vahan, UIDAI, NPCI, PPAC, CBSE, IRCTC.</li>
+      </ul>
+
+      <h2>RBI & NPCI</h2>
+      <ul class="source-list">
+        <li><a href="https://dbie.rbi.org.in" target="_blank">RBI DBIE</a> — interest rates, reserves, sectoral credit, money supply.</li>
+        <li><a href="https://www.npci.org.in" target="_blank">NPCI</a> — UPI/IMPS/FASTag volumes, ticket sizes.</li>
+      </ul>
+
+      <h2>IMF / FRED</h2>
+      <ul class="source-list">
+        <li><a href="https://data.imf.org" target="_blank">IMF DataMapper</a> — fiscal, debt, cross-country comparables.</li>
+        <li><a href="https://fred.stlouisfed.org" target="_blank">FRED</a> — US rates, commodities, global indicators.</li>
+      </ul>
+    </section>  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
+      <p class="small">Data refreshed: 2026-11-22 20:26 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    </div>
+  </footer>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/charts.js"></script>
+</body>
+</html>
