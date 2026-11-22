@@ -21,98 +21,84 @@
    </url>
 
    <!-- Category pages -->
-   <!-- Central Government -->
    <url>
       <loc>https://finradar.example/category/central.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- State Level -->
    <url>
       <loc>https://finradar.example/category/states.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- Financials -->
    <url>
       <loc>https://finradar.example/category/financials.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- Geo Levels -->
    <url>
       <loc>https://finradar.example/category/geo.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- Transport -->
    <url>
       <loc>https://finradar.example/category/transport.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- Economy -->
    <url>
       <loc>https://finradar.example/category/economy.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
    </url>
-   <!-- Agriculture -->
    <url>
       <loc>https://finradar.example/category/agriculture.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Energy & Power -->
    <url>
       <loc>https://finradar.example/category/energy.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Health -->
    <url>
       <loc>https://finradar.example/category/health.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Education -->
    <url>
       <loc>https://finradar.example/category/education.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Welfare -->
    <url>
       <loc>https://finradar.example/category/welfare.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Environment -->
    <url>
       <loc>https://finradar.example/category/environment.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Commerce -->
    <url>
       <loc>https://finradar.example/category/commerce.html</loc>
       <lastmod>2026-11-23</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
-   <!-- Housing -->
    <url>
       <loc>https://finradar.example/category/housing.html</loc>
       <lastmod>2026-11-23</lastmod>
@@ -120,8 +106,7 @@
       <priority>0.5</priority>
    </url>
 
-   <!-- Fact pages (selected important facts) -->
-   <!-- Central facts -->
+   <!-- Fact pages (important examples) -->
    <url>
       <loc>https://finradar.example/facts/c1.html</loc>
       <lastmod>2026-11-23</lastmod>
@@ -153,7 +138,7 @@
       <priority>0.4</priority>
    </url>
 
-   <!-- KPI detail pages (selected important KPIs) -->
+   <!-- KPI detail pages (important examples) -->
    <url>
       <loc>https://finradar.example/kpi/real_interest_rate.html</loc>
       <lastmod>2026-11-23</lastmod>

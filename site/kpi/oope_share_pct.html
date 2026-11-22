@@ -12,27 +12,54 @@
   <link rel="canonical" href="https://finradar.example/kpi/oope_share_pct.html" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/">FinRadar</a>
-      <span class="tagline">India & global macro, live from public data</span>
-      <nav class="nav">
-        <a href="index.html">Dashboard</a>
-        <a href="search.html">Search</a>
-        <a href="sources.html">Sources</a>
-        <a href="category/central.html">Central Govt</a>
-        <a href="category/states.html">States</a>
-        <a href="category/financials.html">Financials</a>
-        <a href="category/geo.html">Geo</a>
-        <a href="category/transport.html">Transport</a>
-        <a href="category/economy.html">Economy</a>
-        <a href="category/agriculture.html">Agriculture</a>
-        <a href="category/health.html">Health</a>
-        <a href="category/education.html">Education</a>
-        <a href="category/welfare.html">Welfare</a>
-      </nav>
+  <!-- Navigation Component -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html">FinRadar</a>
+      <span class="nav-tagline">India & global macro, live from public data</span>
+      
+      <ul class="nav-primary">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="sources.html">Sources</a></li>
+        <li><a href="category/central.html">Central Govt</a></li>
+        <li><a href="category/states.html">States</a></li>
+        <li><a href="category/financials.html">Financials</a></li>
+        <li><a href="category/geo.html">Geo</a></li>
+        <li><a href="category/transport.html">Transport</a></li>
+      </ul>
+      
+      <ul class="nav-secondary">
+        <li><a href="category/economy.html">Economy</a></li>
+        <li><a href="category/agriculture.html">Agriculture</a></li>
+        <li><a href="category/health.html">Health</a></li>
+        <li><a href="category/education.html">Education</a></li>
+        <li><a href="category/welfare.html">Welfare</a></li>
+      </ul>
+      
+      <div class="nav-dropdown">
+        <a href="#">Categories ▾</a>
+        <div class="nav-dropdown-content">
+          <a href="category/central.html">Central Government</a>
+          <a href="category/states.html">State Level</a>
+          <a href="category/financials.html">Financials</a>
+          <a href="category/geo.html">Geo Levels</a>
+          <a href="category/transport.html">Transport</a>
+          <a href="category/economy.html">Economy</a>
+          <a href="category/agriculture.html">Agriculture</a>
+          <a href="category/energy.html">Energy & Power</a>
+          <a href="category/health.html">Health</a>
+          <a href="category/education.html">Education</a>
+          <a href="category/welfare.html">Welfare & Employment</a>
+          <a href="category/environment.html">Environment & Climate</a>
+          <a href="category/commerce.html">Trade & Commerce</a>
+          <a href="category/housing.html">Housing & Urban</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </nav>
+  <!-- End Navigation Component -->
+  
   <main class="container">
     <section class="kpi-detail">
       <header>
@@ -63,9 +90,29 @@
       <a href="category/None.html" class="btn">← Back to Dashboard</a>
     </section>  </main>
   <footer class="site-footer">
-    <div class="container">
-      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data.</p>
-      <p class="small">Data refreshed: 2026-11-22 20:44 UTC | <a href="https://github.com/finradar/finradar">Source code</a></p>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">FinRadar</a>
+        <p class="footer-tagline">India & global macro, live from public data</p>
+      </div>
+      
+      <ul class="footer-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="sources.html">Sources</a></li>
+      </ul>
+      
+      <ul class="footer-category">
+        <li><a href="category/central.html">Central Govt</a></li>
+        <li><a href="category/states.html">States</a></li>
+        <li><a href="category/financials.html">Financials</a></li>
+        <li><a href="category/geo.html">Geo</a></li>
+        <li><a href="category/transport.html">Transport</a></li>
+      </ul>
+      
+      <div class="footer-bottom">
+        <p class="footer-small">Data refreshed: <span id="footer-refresh">2026-11-22 20:49 UTC</span> | <a href="https://github.com/finradar/finradar">Source code</a></p>
+      </div>
     </div>
   </footer>
   <script src="scripts/app.js"></script>
