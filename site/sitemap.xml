@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Main pages -->
+   <url>
+      <loc>https://finradar.example/</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/search.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/sources.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Category pages -->
+   <!-- Central Government -->
+   <url>
+      <loc>https://finradar.example/category/central.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- State Level -->
+   <url>
+      <loc>https://finradar.example/category/states.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- Financials -->
+   <url>
+      <loc>https://finradar.example/category/financials.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- Geo Levels -->
+   <url>
+      <loc>https://finradar.example/category/geo.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- Transport -->
+   <url>
+      <loc>https://finradar.example/category/transport.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- Economy -->
+   <url>
+      <loc>https://finradar.example/category/economy.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <!-- Agriculture -->
+   <url>
+      <loc>https://finradar.example/category/agriculture.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Energy & Power -->
+   <url>
+      <loc>https://finradar.example/category/energy.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Health -->
+   <url>
+      <loc>https://finradar.example/category/health.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Education -->
+   <url>
+      <loc>https://finradar.example/category/education.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Welfare -->
+   <url>
+      <loc>https://finradar.example/category/welfare.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Environment -->
+   <url>
+      <loc>https://finradar.example/category/environment.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Commerce -->
+   <url>
+      <loc>https://finradar.example/category/commerce.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <!-- Housing -->
+   <url>
+      <loc>https://finradar.example/category/housing.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+   </url>
+
+   <!-- Fact pages (selected important facts) -->
+   <!-- Central facts -->
+   <url>
+      <loc>https://finradar.example/facts/c1.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/facts/c2.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/facts/c3.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/facts/c4.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/facts/c5.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+
+   <!-- KPI detail pages (selected important KPIs) -->
+   <url>
+      <loc>https://finradar.example/kpi/real_interest_rate.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/kpi/gdp_growth_pct.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/kpi/import_cover_ratio.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/kpi/gdp_per_capita_usd.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.4</priority>
+   </url>
+
+   <!-- Trend pages -->
+   <url>
+      <loc>https://finradar.example/trend/real_inflation_rate.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://finradar.example/trend/gdp_growth_pct.html</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.3</priority>
+   </url>
+
+   <!-- Data pages -->
+   <url>
+      <loc>https://finradar.example/data/latest_kpis.json</loc>
+      <lastmod>2026-11-23</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.2</priority>
+   </url>
+</urlset>

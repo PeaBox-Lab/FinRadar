@@ -80,23 +80,16 @@ def render_base_head(title, description, current_url=""):
         <a href="index.html">Dashboard</a>
         <a href="search.html">Search</a>
         <a href="sources.html">Sources</a>
-        <a href="#" class="nav-dropdown">Categories ▾</a>
-        <div class="nav-dropdown-content">
-          <a href="category/central.html">Central Government</a>
-          <a href="category/states.html">State Level</a>
-          <a href="category/financials.html">Financials</a>
-          <a href="category/geo.html">Geo Levels</a>
-          <a href="category/transport.html">Transport</a>
-          <a href="category/economy.html">Economy</a>
-          <a href="category/agriculture.html">Agriculture</a>
-          <a href="category/energy.html">Energy & Power</a>
-          <a href="category/health.html">Health</a>
-          <a href="category/education.html">Education</a>
-          <a href="category/welfare.html">Welfare & Employment</a>
-          <a href="category/environment.html">Environment & Climate</a>
-          <a href="category/commerce.html">Trade & Commerce</a>
-          <a href="category/housing.html">Housing & Urban</a>
-        </div>
+        <a href="category/central.html">Central Govt</a>
+        <a href="category/states.html">States</a>
+        <a href="category/financials.html">Financials</a>
+        <a href="category/geo.html">Geo</a>
+        <a href="category/transport.html">Transport</a>
+        <a href="category/economy.html">Economy</a>
+        <a href="category/agriculture.html">Agriculture</a>
+        <a href="category/health.html">Health</a>
+        <a href="category/education.html">Education</a>
+        <a href="category/welfare.html">Welfare</a>
       </nav>
     </div>
   </header>
@@ -234,7 +227,7 @@ def render_fact_page(fact, latest):
       </div>
       {f'<p class="latest-value">Latest value: <strong>{humanize(val)}</strong></p>' if val is not None else ''}
       {f'<div class="trend-embed"><h3>{trend["label"]} (history)</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="/trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
-      <a href="/category/{fact['category']}.html" class="btn">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
+      <a href="category/{fact['category']}.html" class="btn">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
     </section>"""
     html += render_footer()
     return html
@@ -291,7 +284,7 @@ def render_trend_page(kpi_id, latest):
 
       <h3>What this trend tells you</h3>
       <p>""" + (kpi_def.get("insight", "Trend data for this metric.") if kpi_def else "Trend data for this metric.") + """</p>
-      <a href="/category/""" + (next((c for c, facts in FACTS_BY_CATEGORY.items() if any(fi["kpi_id"]==kpi_id for fi in facts)), "economy")) + """.html" class="btn">← Back</a>
+      <a href="category/""" + (next((c for c, facts in FACTS_BY_CATEGORY.items() if any(fi["kpi_id"]==kpi_id for fi in facts)), "economy")) + """.html" class="btn">← Back</a>
     </section>"""
     html += render_footer()
     # Inline the chart data for the simple JS chart
@@ -364,7 +357,7 @@ def render_kpi_page(kpi_id, latest):
 
       {f'<div class="trend-embed"><h3>Historical trend</h3><div class="sparkline" data-points=\'{json.dumps([p["value"] for p in trend["points"]])}\'></div><a href="/trend/{kpi_id}.html" class="btn">Full history</a></div>' if trend else ''}
 
-      <a href="/category/{cat}.html" class="btn">← Back to {SECTOR_MAP[cat]['title'] if cat else 'Dashboard'}</a>
+      <a href="category/{cat}.html" class="btn">← Back to {SECTOR_MAP[cat]['title'] if cat else 'Dashboard'}</a>
     </section>"""
     html += render_footer()
     return html
@@ -549,11 +542,20 @@ def render_index(latest):
       <div class="grid">
     """
     for s in SECTORS:
+        facts_in_cat = FACTS_BY_CATEGORY.get(s["id"], [])
+        kpis_in_cat = len(kpis_by_sector(s["title"]))
         html += f"""
-        <a href="/category/{s['id']}.html" class="card category-link">
-          <h3>{s['icon']} {s['title']}</h3>
-          <p class="muted">{s['description']}</p>
-        </a>"""
+        <article class="card category-card">
+          <div class="card-header">
+            <h3>{s['icon']} {s['title']}</h3>
+            <span class="kpi-count small">{kpis_in_cat} KPIs</span>
+          </div>
+          <p class="card-desc">{s['description']}</p>
+          <div class="card-footer">
+            <span class="muted small">{len(facts_in_cat)} facts</span>
+            <a href="category/{s['id']}.html" class="btn small">View</a>
+          </div>
+        </article>"""
 
     html += """
       </div>

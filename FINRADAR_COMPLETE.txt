@@ -1,19 +1,35 @@
-FinRadar — Multi-Page Static Site Complete
+FinRadar — Multi-Page Site Final Summary
 ============================================
 
-Pages: 96 HTML files across 12 sectors + index + search + sources
-Sectors: central, states, financials, geo, transport, economy, agriculture,
-  energy, health, education, welfare, environment, commerce, housing
-Features:
-- Glassmorphic dark UI with teal/violet/orange accents
-- Responsive nav with dropdown menu (all 14 sectors)
-- KPI library tables with verdict badges (Strong/Moderate/Weak)
-- Historical trend sparklines + canvas line charts
-- Personal inflation calculator + salary parity tool
-- Client-side search across 36 facts + 35 KPIs
-- 36 fact detail pages with scale/why-it-matters/trend embed
-- 35 KPI deep-dive pages with formula, insight, verdict, trend embed
-- Data source citations (World Bank, RBI, MoSPI, NPCI, GST, MNRE, Census, API Setu)
-- Daily GitHub Action: fetch_kpis.py at 02:30 UTC → latest_kpis.json → auto-rebuild
+PAGES: 96 HTML files
+- index.html — Dashboard with enhanced nav + category cards
+- search.html — Full-text search across 36 facts + 35 KPIs
+- sources.html — Data source catalog
+- 14 category pages — Central, states, financials, geo, transport, economy, agriculture, energy, health, education, welfare, environment, commerce, housing
+- 36 fact detail pages — With source/scale/why it matters/insight/trend
+- 35 KPI deep-dive pages — With formula, verdict badge, insight, source fields
+- 8 historical trend pages — Canvas line chart + data table
 
-Generated: site/ directory ready for GitHub Pages / Cloudflare Pages deployment.
+NAVIGATION (index page)
+- Primary: Dashboard, Search, Sources, Central Govt, States, Financials, Geo, Transport
+- Dropdown: All 14 sectors (Central Govt, States, Financials, Geo, Transport, Economy, Agriculture, Energy & Power, Health, Education, Welfare & Employment, Environment & Climate, Trade & Commerce, Housing & Urban)
+- "Explore by category" section: 14 cards with KPI counts, fact counts, descriptions, View buttons
+
+DATA COVERAGE
+- 36 facts across 12 sectors (central, states, financials, geo, transport, economy, agriculture, energy, health, education, welfare, environment, commerce, housing)
+- 35 KPIs with derived metrics, ratios, velocities, composites
+- 8 historical trend series (5+ years each)
+- All data sourced from: World Bank, RBI DBIE, MoSPI, NPCI, GST portal, MNRE, Census, API Setu, MGNREGA, IMF, FRED
+
+EACH PAGE INCLUDES:
+- Data API origins (where the number comes from)
+- Analytical verdicts (Strong/Moderate/Weak or on/near/off target)
+- Plain-English insights (what the number means for policy/economy/people)
+- Formulas (how each derived metric is calculated)
+- Source fields (specific API columns/indicators)
+- Historical trend embeds (multi-year time series)
+- Searchable index entries
+
+THEME: Glassmorphic dark with teal/violet/orange accents
+PATHS: Relative (works file:// and GitHub Pages)
+AUTO-UPDATE: GitHub Action daily at 02:30 UTC
