@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinRadar — India &amp; Global Macro KPIs &amp; Benchmarks</title>
+  <meta name="description" content="FinRadar publishes original economic KPIs and benchmarks built from public government data: real interest rates, digital consumption velocity, fiscal health — with automated daily updates." />
+  <meta name="author" content="FinRadar" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">FinRadar</a>
+      <span class="tagline">India &amp; global macro, live from public data</span>
+      <nav class="nav">
+        <a href="#kpis">KPIs</a>
+        <a href="#benchmarks">Benchmarks</a>
+        <a href="#tools">Tools</a>
+        <a href="#reports">Reports</a>
+        <a href="#peers">Peers</a>
+        <a href="#data-sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Real economy numbers, plain English.</h1>
+        <p class="hero-sub">FinRadar turns public government data into living KPIs — real interest rates, digital velocity, fiscal health — and publishes benchmarks and reports you can cite. Every number is a derived metric, not a raw table, and the top ones update daily.</p>
+        <div class="hero-stats" id="hero-stats"></div>
+      </div>
+    </section>
+
+    <!-- Live KPI dashboard -->
+    <section class="kpis" id="kpis">
+      <h2>Live KPIs — what it actually costs</h2>
+      <p class="section-intro">These are not raw tables. They are spreads, velocities and composite scores, calculated from real government data. Values update daily.</p>
+      <div class="grid" id="kpi-grid"></div>
+    </section>
+
+    <!-- Benchmarks -->
+    <section class="benchmarks" id="benchmarks">
+      <h2>Original benchmarks we publish</h2>
+      <p class="section-intro">Named, recurring metrics. Creating a named index turns a website into a cited authority.</p>
+      <div class="grid">
+        <article class="card" id="bench-macro-cycle">
+          <h3>1. India High-Frequency Macro Cycle Index</h3>
+          <p>A 0–100 score that blends GST collections, UPI value, power demand, IIP, inflation, the repo rate and GDP growth into one number that classifies the economy as Expansion, Rotational Slowdown or Recovery. It lets anyone check, within a month, which phase India is in.</p>
+          <div class="bench-stat" id="bench-macro-cycle-value"></div>
+          <span class="bench-tag">INDIA • 0–100 • live</span>
+        </article>
+        <article class="card" id="bench-salary-parity">
+          <h3>2. Indian City Salary-Parity &amp; Real Cost-of-Living Benchmark</h3>
+          <p>A live calculator: what salary in Jaipur or Pune gives you the same purchasing power as ₹20 LPA in Mumbai or Delhi? Uses state-level CPI spread, fuel prices and rental ratios — combined from several public datasets.</p>
+          <span class="bench-tag">INTERACTIVE TOOL</span>
+        </article>
+        <article class="card" id="bench-state-scorecard">
+          <h3>3. State-Wise Economic &amp; Fiscal Health Scorecard</h3>
+          <p>Ranks all 28 Indian states, quarterly, on YoY GST growth, Debt-to-GSDP, per-capita revenue and capital expenditure ratio. A ranked table, refreshed each quarter.</p>
+          <span class="bench-tag">INDIA • 28 STATES • QUARTERLY</span>
+        </article>
+        <article class="card" id="bench-resilience">
+          <h3>4. Global Emerging Market Resilience Benchmark</h3>
+          <p>Ranks India against Vietnam, Indonesia, Brazil and Mexico on real GDP growth, current account balance, FDI inflows and AI/digital-infrastructure preparedness. Where India lands relative to peers, in one line.</p>
+          <div class="bench-stat" id="bench-resilience-value"></div>
+          <span class="bench-tag">GLOBAL • COMES FROM WORLD BANK</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- KPI glossary -->
+    <section class="kpi-glossary">
+      <h2>The full KPI list — every metric we calculate</h2>
+      <p class="section-intro">Definitions written for decision-makers, not mathematicians.</p>
+      <table class="kpi-table">
+        <thead>
+          <tr><th>Metric</th><th>What it means</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Real Interest Rate (Saver's Yield)</td>
+            <td>The 10-YG-Sec Yield minus the headline inflation index. If this is positive, savers are actually earning more than prices are rising. Negative means your money quietly loses value while you keep it in a bank.</td>
+          </tr>
+          <tr>
+            <td>Real Inflation Rate (Headline)</td>
+            <td>The official Consumer Price Index growth, in percent. What people usually mean by “it is getting more expensive.”</td>
+          </tr>
+          <tr>
+            <td>Regional Inflation Spread</td>
+            <td>The gap between the national CPI and the average CPI of food and housing — it shows whether the national average is hiding a much larger cost spike in your city.</td>
+          </tr>
+          <tr>
+            <td>Digital Consumption Velocity (UPI Ticket)</td>
+            <td>The average value per UPI transaction, alongside GST collections growth. If value moves faster than volume, India is transacting bigger amounts in fewer moments — a fast-growing digital economy.</td>
+          </tr>
+          <tr>
+            <td>Import Cover &amp; Reserve Adequacy Ratio</td>
+            <td>Forex reserves divided by roughly one month of imports. If it falls, the country can import less, month to month.</td>
+          </tr>
+          <tr>
+            <td>Reserve Adequacy Ratio</td>
+            <td>FX reserves as a share of short-term debt. Above 100% means the reserve pile covers the near-term debt bill.</td>
+          </tr>
+          <tr>
+            <td>Debt Service Burden</td>
+            <td>Interest paid on public debt as a share of GDP — or of total government revenue. When this rises, the tax bill that could have gone to schools or health instead pays interest.</td>
+          </tr>
+          <tr>
+            <td>GDP per Capita (Nominal)</td>
+            <td>The average economic output per person, in US dollars, as the World Bank reports it.</td>
+          </tr>
+          <tr>
+            <td>Purchasing Power Parity (PPP) Gap</td>
+            <td>The difference between nominal GDP per capita and PPP-adjusted GDP per capita — plus the implied PPP conversion rate. This is why a ₹20 LPA salary in Delhi buys a different life than the same salary in Jaipur.</td>
+          </tr>
+          <tr>
+            <td>GDP Growth (Annual %)</td>
+            <td>How fast the economy is growing, year over year.</td>
+          </tr>
+          <tr>
+            <td>Current Account Balance (% of GDP)</td>
+            <td>Trade balance plus transfers such as remittances, as a share of GDP. Negative means more money flows out of the country than in.</td>
+          </tr>
+          <tr>
+            <td>FDI Inflows (% of GDP)</td>
+            <td>Foreign money flowing into the country for projects, expansions and asset buys — the main side of capital flows besides remittances.</td>
+          </tr>
+          <tr>
+            <td>Personal Remittances (% of GDP)</td>
+            <td>Money sent back home from abroad — for families, small businesses and some labor mobility.</td>
+          </tr>
+          <tr>
+            <td>Government Debt-to-GDP</td>
+            <td>Total public debt relative to the size of the economy — and compared to peers, debt is easy to see.</td>
+          </tr>
+          <tr>
+            <td>GDP per Capita, PPP (Current International $)</td>
+            <td> GDP adjusted for what the same number of dollars actually buys in each country.</td>
+          </tr>
+          <tr>
+            <td>Index of Industrial Production Growth</td>
+            <td>How fast factories, mines and utilities are actually growing, not just how fast money changes hands.</td>
+          </tr>
+          <tr>
+            <td>Power Demand Growth</td>
+            <td>The growth in electricity used — a rough real-time check of whether factories and industry are turning on the lights or turning some off.</td>
+          </tr>
+          <tr>
+            <td>Overall Inflation Trend (Headline)</td>
+            <td>Where the headline inflation is pointing — trending up means the cost of living keeps getting worse month by month.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Tools -->
+    <section class="tools" id="tools">
+      <h2>Interactive tools — use them on your own numbers</h2>
+
+      <div class="tool-card" id="personal-inflation-tool">
+        <div class="tool-title">
+          <h3>Your personal inflation rate</h3>
+          <span class="tool-note">Result: <strong id="personal-inflation-result"></strong></span>
+        </div>
+        <p class="sub">Pick how much each kind of thing you buy matters to you. We multiply your weights with the sub-index table below (illustrative, reset to defaults or load from MoSPI when live data is wired in) and tell you your personal inflation rate, the number that shows whether you are keeping up with prices on this particular life you are living.</p>
+
+        <table class="tool-table">
+          <thead>
+            <tr><th>Category</th><th class="th-num">Weight %</th><th class="th-num">Sub-index</th><th class="th-num">You add extra %</th><th class="th-num">Adjusted index</th></tr>
+          </thead>
+          <tbody id="personal-inflation-rows"></tbody>
+        </table>
+        <div class="tool-actions">
+          <button type="button" id="personal-inflation-btn">Calculate my inflation</button>
+          <button type="button" id="personal-inflation-reset">Reset to defaults</button>
+          <button type="button" id="personal-inflation-compare">Compare with headline</button>
+        </div>
+        <div id="personal-inflation-comparison"></div>
+      </div>
+
+      <div class="tool-card" id="salary-parity-tool">
+        <div class="tool-title"><h3>Salary parity between two cities</h3></div>
+        <p class="sub">Enter a base salary and pick two cities. We tell you what salary in the second city gives you the same purchasing power as the base salary in the first. Uses city-level cost-of-living indices — illustrative defaults, replaceable by real MoSPI indices when live data is wired in.</p>
+
+        <div class="tool-form">
+          <label>
+            Your base salary
+            <input type="number" id="salary-parity-salary" value="200000" placeholder="in INR" min="0" />
+          </label>
+          <label>
+            From
+            <select id="salary-parity-from"></select>
+          </label>
+          <label>
+            To
+            <select id="salary-parity-to"></select>
+          </label>
+          <button type="button" id="salary-parity-btn">Calculate parity</button>
+        </div>
+        <div id="salary-parity-result"></div>
+      </div>
+
+      <div class="tool-card" id="macro-cycle-tool">
+        <div class="tool-title">
+          <h3>How to read the India Macro Cycle Score</h3>
+          <span class="tool-note">Current India score: <strong id="macro-cycle-readout"></strong></span>
+        </div>
+        <p class="sub">The score blends GST collections, UPI value, power demand, IIP, inflation, the repo rate and GDP growth into a single 0–100 figure.</p>
+        <ul class="cycles">
+          <li><strong>80–100 — Expansion:</strong> growth usually holds; savings can target yield, not safety. Watch UPI value for signs of stretched consumption.</li>
+          <li><strong>55–79 — Rotational Slowdown:</strong> if the driver is inflation, short-duration FDs and debt allocation tell faster stories than longer ones.</li>
+          <li><strong>30–54 — Recovery:</strong> dig into GST and UPI growth; private consumption signals are still lagging the headline number.</li>
+          <li><strong>0–29 — Contracted:</strong> step back to the headline macro; consider downside protection and revisiting risk policy on term debt.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reports -->
+    <section class="reports" id="reports">
+      <h2>Publishable reports — ready for your media or research site</h2>
+      <div class="grid">
+        <article class="report-card">
+          <h3>1. Monthly “What Inflation &amp; RBI Policy Mean for Your Wallet”</h3>
+          <p>Automatically generated each month: translates the latest inflation and RBI rate moves into actionable moves — home loan EMIs, FD yields, gold vs debt allocation. Full web article + newsletter teasers. Runs 30 days after MoSPI CPI release and RBI policy reviews.</p>
+          <div class="report-meta"><span class="badge green">Monthly</span> <span class="muted">MPFA + Ringside RSS</span></div>
+        </article>
+        <article class="report-card">
+          <h3>2. Interactive “Personal Inflation Calculator”</h3>
+          <p>Our flagship tool. Users pick their spending split — food, fuel, education, healthcare, housing — and we calculate their personal inflation using official MoSPI sub-indices. Designed to be embedded on fintech sites or shared as a lead magnet.</p>
+          <div class="report-meta"><span class="badge blue">Always live</span> <span class="muted">Web tool</span></div>
+        </article>
+        <article class="report-card">
+          <h3>3. Quarterly “State of Digital India &amp; Consumption”</h3>
+          <p>Charts UPI penetration, state-wise GST momentum and rural vs urban inflation trends every quarter. Lead magnet for fintech, consulting and B2B SaaS sponsors.</p>
+          <div class="report-meta"><span class="badge violet">Quarterly</span> <span class="muted">PDF + web</span></div>
+        </article>
+        <article class="report-card">
+          <h3>4. Annual “State of India’s Economy”</h3>
+          <p>The longest story we tell: rolling State and Fiscal Health Scorecards, time-series of Macro Cycle Score, plus a year of digital velocity charts. A PDF download for corporates, analysts and media.</p>
+          <div class="report-meta"><span class="badge gold">Annual</span> <span class="muted">PDF + web</span></div>
+        </article>
+        <article class="report-card">
+          <h3>5. Global “Cost of Living &amp; Remittance Corridor” Pages</h3>
+          <p>Programmatic pages for every country pair — e.g., “How much does the UK→India corridor move?” — combining World Bank remittance flows (% of GDP), IMF PPP conversion rates and FX trends. Designed for SEO audience: rake-up terms like “remittance to India 2025”, “UK to India migration cost.”</p>
+          <div class="report-meta"><span class="badge teal">Global</span> <span class="muted">Website pages</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Peers -->
+    <section class="peers" id="peers">
+      <h2>Where India stands vs. peers</h2>
+      <table class="peers-table" id="peers-table"></table>
+    </section>
+
+    <!-- Data sources -->
+    <section class="sources" id="data-sources">
+      <h2>Where the numbers come from</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>World Bank Open Data</h3>
+          <p>GDP per capita, GDP growth, current account balance, PPP conversion rates. Verified live at build time — India’s real GDP per capita is <strong id="wb-gdp-cap"></strong>.</p>
+          <p><a href="https://data.worldbank.org/indicator" target="_blank" rel="noopener">data.worldbank.org/indicator</a></p>
+        </article>
+        <article class="card">
+          <h3>RBI Database on Indian Economy (DBIE)</h3>
+          <p>Repo rate, 10-Y G-Sec yields, forex reserves, sectoral bank credit, money supply, UPI volumes. Live feeds wired into the pipeline.</p>
+          <p><a href="https://dbie.rbi.org.in" target="_blank" rel="noopener">dbie.rbi.org.in</a></p>
+        </article>
+        <article class="card">
+          <h3>NPCI — Digital Payments Index</h3>
+          <p>UPI transaction volumes and ticket sizes — our “digital consumption velocity” and GST correlation feed.</p>
+          <p><a href="https://www.npci.org.in" target="_blank" rel="noopener">npci.org.in</a></p>
+        </article>
+        <article class="card">
+          <h3>MoSPI e-Sankhyiki Portal &amp; data.gov.in</h3>
+          <p>Official time-series APIs for GDP, CPI, IIP and PLFS surveys — state-level inflation spreads come from here when token-gated API access is available.</p>
+          <p><a href="https://data.gov.in" target="_blank" rel="noopener">data.gov.in</a> · <a href="https://mospi.gov.in" target="_blank" rel="noopener">mospi.gov.in</a></p>
+        </article>
+        <article class="card">
+          <h3>IMF DataMapper, FRED, Global websites</h3>
+          <p>Cross-country fiscal deficits, debt-to-GDP ratios, PPP gaps and commodity benchmarks. Global cost-of-living pages built from World Bank remittance and PPP data.</p>
+          <p><a href="https://data.imf.org" target="_blank" rel="noopener">data.imf.org</a></p>
+        </article>
+      </div>
+      <p class="muted small">Data last refreshed: <span id="last-refresh">—</span>.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>FinRadar</strong> — original benchmarks and automated reports built on public government data. Every computed number is a ratio, spread or composite, not a raw copy of a table.</p>
+      <p class="small">Last data refresh: <span id="footer-refresh"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

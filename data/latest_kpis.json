@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-11-22T14:42:27Z",
+  "sources": {
+    "world_bank": "api.worldbank.org/v2",
+    "india_specific": "data.gov.in (token-gated) + snapshots in data/snapshots/ (demo fallbacks)"
+  },
+  "india": {
+    "real_inflation_rate": 2.39884954182294,
+    "gdp_per_capita_usd": 2702.47987141553,
+    "gdp_per_capita_ppp_usd": 11747.9160436011,
+    "gdp_growth_pct": 7.56666179284244,
+    "current_account": null,
+    "fdi_inflows": null,
+    "rank_by_growth": 4
+  },
+  "peers": [
+    {
+      "iso": "VNM",
+      "name": "Vietnam",
+      "real_gdp_growth": 8.01882998978245,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "IDN",
+      "name": "Indonesia",
+      "real_gdp_growth": 5.10808904438025,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "BRA",
+      "name": "Brazil",
+      "real_gdp_growth": 2.2857464902475,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    },
+    {
+      "iso": "MEX",
+      "name": "Mexico",
+      "real_gdp_growth": 0.561683456144578,
+      "current_account": null,
+      "fdi_inflows": null,
+      "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "real_interest_rate",
+      "name": "Real Interest Rate (Saver's Yield)",
+      "value": 5.45,
+      "unit": "%",
+      "subtitle": "G-Sec 10Y yield minus inflation: if positive, savers beat the price rise; if negative, savings quietly lose value.",
+      "source": "RBI DBIE 10Y G-Sec Yield — DEMO SNAPSHOT − World Bank CPI",
+      "benchmark": "positive is better"
+    },
+    {
+      "id": "real_inflation_rate",
+      "name": "Real Inflation Rate (Headline)",
+      "value": 2.39884954182294,
+      "unit": "%",
+      "subtitle": "The official Consumer Price Index growth — the number people usually mean by 'it is getting more expensive.'",
+      "source": "World Bank FP.CPI.TOTL.ZG",
+      "benchmark": null
+    },
+    {
+      "id": "state_inflation_spread",
+      "name": "Regional Inflation Spread",
+      "value": 8.7,
+      "unit": "%",
+      "subtitle": "The gap the national average hides — e.g. Rajasthan shows much bigger spikes than the headline number.",
+      "source": "State CPIs (MoSPI) − National CPI — DEMO SNAPSHOT",
+      "benchmark": null
+    },
+    {
+      "id": "digital_consumption_velocity",
+      "name": "Digital Consumption Velocity (UPI Ticket)",
+      "value": 1.4,
+      "unit": "USD/tx",
+      "subtitle": "Average value per UPI transaction, tracked alongside GST collections growth — value moving faster than volume means faster digital money flow.",
+      "source": "NPCI UPI Volumes/Value — DEMO SNAPSHOT",
+      "benchmark": "tracked with GST momentum"
+    },
+    {
+      "id": "import_cover_ratio",
+      "name": "Import Cover Ratio",
+      "value": 16.4,
+      "unit": "months",
+      "subtitle": "Forex reserves as a multiple of one month's imports — if it falls, India can import less month to month.",
+      "source": "RBI DBIE Forex Reserves — DEMO SNAPSHOT",
+      "benchmark": null
+    },
+    {
+      "id": "reserve_adequacy_ratio",
+      "name": "Reserve Adequacy Ratio",
+      "value": 1.21,
+      "unit": "x",
+      "subtitle": "FX reserves as a share of short-term debt — above 1.0 means the reserve pile covers the near-term debt bill.",
+      "source": "RBI DBIE Forex Reserves — DEMO SNAPSHOT",
+      "benchmark": null
+    },
+    {
+      "id": "debt_service_burden",
+      "name": "Debt Service Burden",
+      "value": 11.3,
+      "unit": "% of revenue",
+      "subtitle": "Interest paid on public debt as a share of revenue — when it rises, tax money that could fund health or schools instead pays interest.",
+      "source": "RBI DBIE debt-service composition — DEMO SNAPSHOT",
+      "benchmark": null
+    },
+    {
+      "id": "gdp_per_capita_usd",
+      "name": "GDP per Capita (Nominal)",
+      "value": 2702.47987141553,
+      "unit": "USD",
+      "subtitle": "Average economic output per person — the usual headline number global rankings use.",
+      "source": "World Bank NY.GDP.PCAP.CD",
+      "benchmark": null
+    },
+    {
+      "id": "ppp_gap_usd",
+      "name": "PPP Gap (Nominal − PPP)",
+      "value": -9045.44,
+      "unit": "USD",
+      "subtitle": "The difference between nominal and purchasing-power-parity GDP per capita — the gap that explains why the same salary buys a different life in Jaipur vs Delhi.",
+      "source": "World Bank NY.GDP.PCAP.CD − NY.GDP.PCAP.PP.CD",
+      "benchmark": null
+    },
+    {
+      "id": "ppp_multiple",
+      "name": "PPP Conversion Multiple",
+      "value": 4.35,
+      "unit": "×",
+      "subtitle": "How many times bigger the PPP-adjusted GDP per capita is versus the nominal one — a quick picture of how prices change a salary.",
+      "source": "World Bank NY.GDP.PCAP.PP.CD ÷ NY.GDP.PCAP.CD",
+      "benchmark": null
+    },
+    {
+      "id": "gdp_growth_pct",
+      "name": "GDP Growth (Annual %)",
+      "value": 7.56666179284244,
+      "unit": "%",
+      "subtitle": "How fast the economy is growing, year over year.",
+      "source": "World Bank NY.GDP.MKTP.KD.ZG",
+      "benchmark": null
+    },
+    {
+      "id": "iip_growth_pct",
+      "name": "Index of Industrial Production Growth",
+      "value": -0.4,
+      "unit": "%",
+      "subtitle": "How fast factories, mines and utilities are actually growing — a real-time check of business activity.",
+      "source": "MoSPI PLFS IIP — DEMO SNAPSHOT",
+      "benchmark": null
+    },
+    {
+      "id": "power_demand_growth_pct",
+      "name": "Power Demand Growth",
+      "value": -1.1,
+      "unit": "%",
+      "subtitle": "Growth in electricity use — a rough check of whether industry is turning on the lights or the meters are moving fast.",
+      "source": "PX/SECL — DEMO SNAPSHOT",
+      "benchmark": null
+    }
+  ],
+  "benchmarks": {
+    "india_macro_cycle_score": 44,
+    "india_macro_cycle_parts": {
+      "Growth Score": 75.6666179284244,
+      "Inflation Score": 12.60115045817706,
+      "Digital Velocity Score": 44.9
+    },
+    "digital_velocity_benchmark": {
+      "avg_ticket_usd": 1.398,
+      "total_value_usd": 135940.0,
+      "total_volume": 971500,
+      "gst_momentum_ratio": 0.61
+    },
+    "state_inflation_spread_benchmark": {
+      "top_states": [
+        {
+          "name": "Rajasthan",
+          "cpi_pct": 8.7
+        },
+        {
+          "name": "Madhya Pradesh",
+          "cpi_pct": 7.2
+        },
+        {
+          "name": "Chhattisgarh",
+          "cpi_pct": 7.0
+        }
+      ],
+      "latest_spread_pct": 8.7,
+      "source": "MoSPI — DEMO SNAPSHOT"
+    },
+    "global_resilience": {
+      "india_rank_by_real_gdp_growth": 4,
+      "of": 5,
+      "peers": [
+        {
+          "iso": "VNM",
+          "name": "Vietnam",
+          "real_gdp_growth": 8.01882998978245,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "IDN",
+          "name": "Indonesia",
+          "real_gdp_growth": 5.10808904438025,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "BRA",
+          "name": "Brazil",
+          "real_gdp_growth": 2.2857464902475,
+          "current_account": null,
+          "fdi_inflows": null
+        },
+        {
+          "iso": "MEX",
+          "name": "Mexico",
+          "real_gdp_growth": 0.561683456144578,
+          "current_account": null,
+          "fdi_inflows": null
+        }
+      ],
+      "note": "Ranked against India on real GDP growth where World Bank data is available. Current account and FDI columns fill in where data exists."
+    }
+  },
+  "subindices": {
+    "food": 40,
+    "fuel & light": 7,
+    "clothing": 6,
+    "education": 4,
+    "healthcare": 4,
+    "housing": 20,
+    "other stuff": 19
+  },
+  "city_indices": {
+    "Pune": 120,
+    "Mumbai": 132,
+    "Delhi": 118,
+    "Jaipur": 89,
+    "Bengaluru": 116,
+    "Hyderabad": 105
+  }
+}

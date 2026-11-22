@@ -1,0 +1,7 @@
+{
+  "source": "RBI Database on Indian Economy — 10Y G-Sec Yield (illustrative fallback; live values replace this when fetched from data.gov.in or RBI).",
+  "last_fetched": "2026-11-22",
+  "latest_10y_yield_pct": 7.85,
+  "prior_month_10y_yield_pct": 7.91,
+  "history": [["2026-10", 7.91], ["2026-09", 8.01], ["2026-08", 8.10]]
+}

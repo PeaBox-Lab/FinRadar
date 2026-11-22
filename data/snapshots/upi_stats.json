@@ -1,0 +1,15 @@
+{
+  "source": "NPCI UPI transaction volumes and values — illustrative fallback; live NPCI figures replace this when available.",
+  "last_fetched": "2026-11",
+  "current_month": "2026-11",
+  "total_value_usd": 135940.0,
+  "total_volume": 971500,
+  "avg_ticket_usd": 1.398,
+  "prior_year_same_month": {
+    "total_value_usd": 125940.0,
+    "total_volume": 882100,
+    "avg_ticket_usd": 1.427
+  },
+  "momentum_ratio_vs_prior_year": 1.08,
+  "notes": "Demo values for the FinRadar dashboard; ticket size and volume should be pulled from NPCI when a live feed is wired in."
+}
