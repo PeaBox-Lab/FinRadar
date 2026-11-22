@@ -63,8 +63,13 @@ function renderHeroStats(data) {
   if (data.benchmarks && data.benchmarks.india_macro_cycle_score != null) {
     items.push(`<span class="stat-pill">📈 <strong>${data.benchmarks.india_macro_cycle_score}/100</strong> macro cycle score — expansion vs slowdown</span>`);
   }
-  if (data.india && data.india.rank_by_growth != null) {
-    items.push(`<span class="stat-pill">🥇 <strong>India: #${data.india.rank_by_growth}</strong> on real GDP growth</span>`);
+  if (data.kpis) {
+    const strongCount = data.kpis.filter(k => k.verdict === "strong" || k.verdict === "on target").length;
+    const total = data.kpis.length;
+    if (total) items.push(`<span class="stat-pill">✅ <strong>${strongCount}/${total}</strong> KPIs strong or on target</span>`);
+  }
+  if (data.peers && data.peers[0] && data.peers[0].rank) {
+    items.push(`<span class="stat-pill">🥇 <strong>${data.peers[0].name}: #${data.peers[0].rank}</strong> of ${data.peers.length}</span>`);
   }
   container.innerHTML = items.join("");
 }
@@ -90,7 +95,47 @@ function renderBenchmarks(data) {
   }
 }
 
-/* ---------------- Peer table ---------------- */
+/* ---------------- KPI Library (sector-grouped) ---------------- */
+
+function renderKpiLibrary(data) {
+  const container = document.getElementById("kpi-library");
+  if (!container || !data.kpis) return;
+
+  // Group KPIs by sector.
+  const bySector = {};
+  data.kpis.forEach(k => {
+    const sector = k.sector || "General";
+    if (!bySector[sector]) bySector[sector] = [];
+    bySector[sector].push(k);
+  });
+
+  const sortedSectors = Object.keys(bySector).sort();
+  const sections = sortedSectors.map(sector => {
+    const kpis = bySector[sector];
+    const rows = kpis.map(k => {
+      const val = k.value != null ? `${humanizeNumber(k.value)}${k.unit ? " " + k.unit : ""}` : "—";
+      const verdict = k.verdict ? `<span class="verdict-badge ${k.verdict === "strong" || k.verdict === "on target" ? "good" : k.verdict === "moderate" || k.verdict === "near target" ? "moderate" : "weak"}">${k.verdict.toUpperCase()}</span>` : "";
+      return `<tr>
+        <td><strong>${k.name}</strong></td>
+        <td class="num">${val}</td>
+        <td>${verdict}</td>
+        <td>${k.insight_text || ""}</td>
+        <td><span class="muted small">${k.formula || ""}</span></td>
+      </tr>`;
+    }).join("");
+
+    return `
+      <div class="sector-block">
+        <h3 class="sector-title">${sector} <span class="sector-count">${kpis.length} KPIs</span></h3>
+        <table class="kpi-library-table">
+          <thead><tr><th>KPI</th><th>Value</th><th>Verdict</th><th>What it means</th><th>Formula</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  });
+
+  container.innerHTML = sections.join("");
+}
 
 function renderPeers(data) {
   const table = document.getElementById("peers-table");
@@ -264,4 +309,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initPersonalInflationTool(data);
   initSalaryParityTool(data);
   renderFooter(data);
+  renderKpiLibrary(data);
 });
