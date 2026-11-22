@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T19:00:22Z",
+  "generated_at": "2026-11-22T19:01:39Z",
   "sources": {
     "world_bank": "api.worldbank.org/v2",
     "india_specific": "data.gov.in (token-gated) + snapshots in data/snapshots/ (demo fallbacks)"
