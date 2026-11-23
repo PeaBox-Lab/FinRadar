@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T17:22:27Z",
+  "generated_at": "2026-11-23T19:05:43Z",
   "sources": {
     "world_bank": "api.worldbank.org/v2",
     "data_gov_in": "api.data.gov.in (sample key by default; DATA_GOV_IN_TOKEN to enable live feeds)",
@@ -12,7 +12,7 @@
     "gdp_growth_pct": 7.56666179284244,
     "current_account": null,
     "fdi_inflows": null,
-    "rank_by_growth": 3
+    "rank_by_growth": 4
   },
   "peers": [
     {
@@ -42,7 +42,7 @@
     {
       "iso": "MEX",
       "name": "Mexico",
-      "real_gdp_growth": null,
+      "real_gdp_growth": 0.561683456144578,
       "current_account": null,
       "fdi_inflows": null,
       "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
@@ -1545,7 +1545,7 @@
       "source": "MoSPI — DEMO SNAPSHOT"
     },
     "global_resilience": {
-      "india_rank_by_real_gdp_growth": 3,
+      "india_rank_by_real_gdp_growth": 4,
       "of": 5,
       "peers": [
         {
@@ -1572,7 +1572,7 @@
         {
           "iso": "MEX",
           "name": "Mexico",
-          "real_gdp_growth": null,
+          "real_gdp_growth": 0.561683456144578,
           "current_account": null,
           "fdi_inflows": null
         }
