@@ -536,6 +536,152 @@ KPI_REGISTRY = [
         "Carbon footprint per person. India's ~2 t/capita is well below the world average (~4.7) — a key equity argument in climate negotiations and a growing focus for ESG investors.",
         "World Bank / Global Carbon Project",
     ),
+
+    # =======================================================================
+    # SECTOR: TRANSPORT (expanded)
+    # =======================================================================
+    kpi(
+        "railway_passenger_growth_pct",
+        "Railway Passenger Growth",
+        "Transport",
+        "indian_rails:passenger_growth",
+        ["passenger_growth_pct"],
+        "YoY growth in railway passenger traffic",
+        "%",
+        "higher_better",
+        {"good": (5, 15), "moderate": (-5, 5), "poor": (-20, -5)},
+        "Railway passenger traffic is a key indicator of mass mobility and business travel demand. Strong growth signals recovery and expanding connectivity.",
+        "Indian Railways Annual Traffic Report",
+    ),
+    kpi(
+        "port_cargo_volume_mt",
+        "Port Cargo Volume (million tonnes)",
+        "Transport",
+        "shipping:port_cargo",
+        ["cargo_volume_mt"],
+        "Total cargo handled at major ports per annum",
+        "million tonnes",
+        "higher_better",
+        {"good": (50, 200), "moderate": (20, 50), "poor": (0, 20)},
+        "Port cargo volume reflects India's external trade throughput. Growth indicates expanding export-import activity.",
+        "DG Shipping / Ministry of Ports",
+    ),
+
+    # =======================================================================
+    # SECTOR: GEO (expanded)
+    # =======================================================================
+    kpi(
+        "coastline_length_km",
+        "Coastline Length",
+        "Geo",
+        "mo_env:coastline",
+        ["coastline_length_km"],
+        "Total mainland coastline length along peninsular India",
+        "km",
+        "higher_better",
+        {"good": (5000, 7000), "moderate": (3000, 5000), "poor": (0, 3000)},
+        "India's extensive coastline is vital for trade, fisheries and maritime security. Longer coastline provides greater EEZ and economic potential.",
+        "MoES / National Centre for Coastal Research",
+    ),
+    kpi(
+        "wetland_area_ha",
+        "Wetland Area",
+        "Geo",
+        "mo_env:wetlands",
+        ["wetland_area_ha"],
+        "Total reported wetland area (Ramsar + other wetlands)",
+        "hectares",
+        "higher_better",
+        {"good": (3000000, 5000000), "moderate": (1500000, 3000000), "poor": (0, 1500000)},
+        "Wetlands provide flood protection, water filtration and biodiversity habitat. Loss of wetlands increases flood risk and carbon emissions.",
+        "MoEF&CC — Wetland Inventory",
+    ),
+    kpi(
+        "forest_cover_pct",
+        "Forest Cover as % of Geographical Area",
+        "Geo",
+        "moef:forest_cover",
+        ["forest_cover_pct"],
+        "Total forest cover as percentage of India's geographical area",
+        "%",
+        "higher_better",
+        {"good": (33, 50), "moderate": (21, 33), "poor": (0, 21)},
+        "Forest cover is critical for carbon sequestration, biodiversity and soil conservation. The National Forest Policy target is 33%.",
+        "India State of Forest Report",
+    ),
+
+    # =======================================================================
+    # SECTOR: COMMERCE (expanded)
+    # =======================================================================
+    kpi(
+        "exports_pct_gdp",
+        "Exports (% of GDP)",
+        "Commerce",
+        "wb:NE.Exports.GNFS.ZS",
+        ["NE.Exports.GNFS.ZS"],
+        "Goods and non-factor services exports as % of GDP",
+        "%",
+        "higher_better",
+        {"good": (15, 30), "moderate": (8, 15), "poor": (0, 8)},
+        "Export intensity measures how much of domestic production goes abroad. Above 15% is typical of emerging exporters; above 25% signals a major global player.",
+        "World Bank World Development Indicators",
+    ),
+    kpi(
+        "imports_pct_gdp",
+        "Imports (% of GDP)",
+        "Commerce",
+        "wb:NE.Imports.GNFS.ZS",
+        ["NE.Imports.GNFS.ZS"],
+        "Goods and non-factor services imports as % of GDP",
+        "%",
+        "lower_better",
+        {"good": (0, 15), "moderate": (15, 25), "poor": (25, 40)},
+        "Import dependence shows how much of domestic consumption comes from abroad. Above 25% can signal trade vulnerability.",
+        "World Bank World Development Indicators",
+    ),
+    kpi(
+        "trade_balance_pct_gdp",
+        "Trade Balance (% of GDP)",
+        "Commerce",
+        "wb:NE.TRK.GNFS.CD",
+        ["NE.TRK.GNFS.CD"],
+        "Net exports (exports minus imports) as % of GDP",
+        "%",
+        "higher_better",
+        {"good": (3, 8), "moderate": (-3, 3), "poor": (-20, -3)},
+        "A positive trade balance (surplus) means India earns more from exports than it spends on imports. Sustained deficits above -3% warrant monitoring.",
+        "World Bank; IMF BOP",
+    ),
+
+    # =======================================================================
+    # SECTOR: HOUSING (expanded)
+    # =======================================================================
+    kpi(
+        "housing_affordability_ratio",
+        "Housing Affordability Ratio (price-to-income)",
+        "Housing",
+        "rbi:housing_affordability",
+        ["median_price_rs", "median_income_rs"],
+        "Median house price ÷ median annual household income",
+        "ratio",
+        "lower_better",
+        {"good": (1, 3), "moderate": (3, 5), "poor": (5, 20)},
+        "Measures how many years of median income are needed to buy a median home. Above 5× means housing is severely unaffordable for median earners.",
+        "RBI Residential Property Price Index",
+    ),
+    kpi(
+        "urban_household_deficit_pct",
+        "Urban Housing Shortage",
+        "Housing",
+        "nhb:urban_deficit",
+        ["estimated_shortage_units", "urban_households"],
+        "Estimated urban housing shortage units ÷ total urban households × 100",
+        "%",
+        "lower_better",
+        {"good": (0, 5), "moderate": (5, 15), "poor": (15, 50)},
+        "India's rapid urbanisation has outpaced housing supply. A shortage above 15% means significant affordability pressure and slum growth risk.",
+        "NHB Urban Housing Shortage Estimates",
+    ),
 ]
 
 

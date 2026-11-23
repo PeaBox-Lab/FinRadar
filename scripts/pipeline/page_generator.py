@@ -475,50 +475,56 @@ def render_search_page(latest):
 # Sources catalog page
 # ---------------------------------------------------------------------------
 
+def _source_card(api, cat_map):
+    return f"""
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="{api.get('url', '#')}" target="_blank">{api['name']}</a></h3>
+          <span class="badge">{cat_map.get(api.get('category', ''), {}).get('title', api.get('category', 'General'))}</span>
+        </div>
+        <p class="card-desc">{api.get('summary', '')}</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>{api['stats'].get('indicators_used', 0)}</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>{api['stats'].get('history', 'N/A')}</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>{api['stats'].get('frequency', 'N/A')}</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>{api['access'].split('·')[0].strip()}</strong><span>Access</span></div>
+        </div>
+        {f"<div class=\"source-tags\">{''.join(f'<span class=\"badge\">{t}</span>' for t in api.get('tags', []))}</div>" if api.get("tags") else ""}
+        <p class="muted small">Provider: {api.get('provider', '')} · Tags: {', '.join(api.get('tags', []))}</p>
+      </article>"""
+
+
 def render_sources_page():
+    from api_catalog import API_CATALOG, API_CATEGORY_MAP, API_CATEGORIES, catalog_summary
+    summ = catalog_summary()
     html = render_base_head(
         "Data Sources — Catalog",
-        "Every API, dataset and portal FinRadar draws from, with links and field notes.",
+        f"Every API, dataset and portal FinRadar draws from — {summ['total_apis']} categorised sources with summary stats for each.",
         "/sources.html",
         base=""
     )
-    html += """
+    html += f"""
     <section>
       <h1>Data Sources Catalog</h1>
-      <p class="muted">FinRadar computes KPIs from these public government sources. Each row links to the live API or catalog page.</p>
+      <p class="muted">FinRadar computes KPIs from {summ['total_apis']} public government APIs across {summ['total_categories']} categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
 
-      <h2>World Bank Open Data</h2>
-      <ul class="source-list">
-        <li><a href="https://api.worldbank.org/v2" target="_blank">api.worldbank.org/v2</a> — GDP, inflation, trade, PPP, demographics across 200+ countries.</li>
-      </ul>
+      <div class="grid grid-4 source-summary-grid">
+        <div class="card source-summary-card"><strong>{summ['total_apis']}</strong><span>APIs catalogued</span></div>
+        <div class="card source-summary-card"><strong>{summ['total_categories']}</strong><span>Categories</span></div>
+        <div class="card source-summary-card"><strong>{summ['total_series']}</strong><span>Data series used</span></div>
+        <div class="card source-summary-card"><strong>{summ['open_apis']}</strong><span>Open access</span></div>
+      </div>
 
-      <h2>data.gov.in (OGD Platform)</h2>
-      <ul class="source-list">
-        <li><a href="https://data.gov.in/apis?sector=Economy" target="_blank">Economy sector</a> — 500+ APIs: GDP, GST, inflation, fiscal, trade.</li>
-        <li><a href="https://data.gov.in/apis?sector=Power%20and%20Energy" target="_blank">Power & Energy</a> — 300+ APIs: generation, renewables, consumption.</li>
-        <li><a href="https://data.gov.in/apis?sector=Agriculture" target="_blank">Agriculture</a> — crops, fertilizer, irrigation, wages.</li>
-        <li><a href="https://data.gov.in/apis?sector=Health%20and%20Family%20welfare" target="_blank">Health & Family Welfare</a> — hospital stats, immunization, NFHS.</li>
-        <li><a href="https://data.gov.in/apis?sector=Transport" target="_blank">Transport</a> — Vahan, roads, vehicle registrations.</li>
-        <li><a href="https://data.gov.in/apis?sector=Labour%20and%20Employment" target="_blank">Labour & Employment</a> — MGNREGA, wages, PLFS.</li>
-        <li><a href="https://api.data.gov.in/resource/8b68ae56-84cf-4728-a0a6-1be11028dea7" target="_blank">MSME Udyam registrations</a> — unit-level state/district data.</li>
-      </ul>
+      {''.join(f"""
+      <h2>{API_CATEGORY_MAP.get(c['id'], {}).get('icon', '📁')} {API_CATEGORY_MAP.get(c['id'], {}).get('title', c['id'])}</h2>
+      <p class="muted">{API_CATEGORY_MAP.get(c['id'], {}).get('description', '')}</p>
+      <div class="grid grid-3">
+        {''.join(_source_card(a, API_CATEGORY_MAP) for a in API_CATALOG if a.get('category') == c['id'])}
+      </div>""" for c in API_CATEGORIES)}
 
-      <h2>API Setu (apisetu.gov.in)</h2>
+      <h2>All sources, flat list</h2>
       <ul class="source-list">
-        <li><a href="https://directory.apisetu.gov.in" target="_blank">API Directory</a> — 4,200+ published APIs across 2,700+ organisations.</li>
-        <li>Key APIs: DigiLocker, GSTN, MCA, Vahan, UIDAI, NPCI, PPAC, CBSE, IRCTC.</li>
-      </ul>
-
-      <h2>RBI & NPCI</h2>
-      <ul class="source-list">
-        <li><a href="https://dbie.rbi.org.in" target="_blank">RBI DBIE</a> — interest rates, reserves, sectoral credit, money supply.</li>
-        <li><a href="https://www.npci.org.in" target="_blank">NPCI</a> — UPI/IMPS/FASTag volumes, ticket sizes.</li>
-      </ul>
-
-      <h2>IMF / FRED</h2>
-      <ul class="source-list">
-        <li><a href="https://data.imf.org" target="_blank">IMF DataMapper</a> — fiscal, debt, cross-country comparables.</li>
-        <li><a href="https://fred.stlouisfed.org" target="_blank">FRED</a> — US rates, commodities, global indicators.</li>
+        {''.join(f'<li><a href="{a.get("url", "#")}" target="_blank">{a["name"]}</a> — {a.get("summary", "")}</li>' for a in API_CATALOG)}
       </ul>
     </section>""" + render_footer("")
     return html

@@ -157,6 +157,17 @@ def compute_values(snapshots: dict, india: dict) -> dict:
         "irrigation_coverage_pct": 55.0,
         "crop_insurance_penetration_pct": 37.0,
         "fiscal_deficit_pct_gdp": 5.1,
+        # NEW KPIs
+        "railway_passenger_growth_pct": 7.2,
+        "port_cargo_volume_mt": 750.0,
+        "coastline_length_km": 7517.0,
+        "wetland_area_ha": 4500000.0,
+        "forest_cover_pct": 21.2,
+        "exports_pct_gdp": 12.8,
+        "imports_pct_gdp": 15.4,
+        "trade_balance_pct_gdp": -2.6,
+        "housing_affordability_ratio": 7.5,
+        "urban_household_deficit_pct": 18.0,
     }
     v.update(demo)
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T21:04:48Z",
+  "generated_at": "2026-11-23T17:22:27Z",
   "sources": {
     "world_bank": "api.worldbank.org/v2",
     "data_gov_in": "api.data.gov.in (sample key by default; DATA_GOV_IN_TOKEN to enable live feeds)",
@@ -12,7 +12,7 @@
     "gdp_growth_pct": 7.56666179284244,
     "current_account": null,
     "fdi_inflows": null,
-    "rank_by_growth": 4
+    "rank_by_growth": 3
   },
   "peers": [
     {
@@ -42,7 +42,7 @@
     {
       "iso": "MEX",
       "name": "Mexico",
-      "real_gdp_growth": 0.561683456144578,
+      "real_gdp_growth": null,
       "current_account": null,
       "fdi_inflows": null,
       "source": "World Bank — NY.GDP.MKTP.KD.ZG / NE.CAB.TOTL.PT / BX.KD.FDI.DT.GP"
@@ -1189,6 +1189,328 @@
       "trend": null,
       "verdict_text": "Strong. Carbon footprint per person. India's ~2 t/capita is well below the world average (~4.7) — a key equity argument in climate negotiations and a growing focus for ESG investors.",
       "source_live": true
+    },
+    {
+      "kpi_id": "railway_passenger_growth_pct",
+      "name": "Railway Passenger Growth",
+      "sector": "Transport",
+      "value": 7.2,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        5,
+        15
+      ],
+      "moderate_range": [
+        -5,
+        5
+      ],
+      "poor_range": [
+        -20,
+        -5
+      ],
+      "formula": "YoY growth in railway passenger traffic",
+      "source_fields": [
+        "passenger_growth_pct"
+      ],
+      "source_resource_id": "indian_rails:passenger_growth",
+      "insight_text": "Railway passenger traffic is a key indicator of mass mobility and business travel demand. Strong growth signals recovery and expanding connectivity.",
+      "benchmark": "Indian Railways Annual Traffic Report",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Railway passenger traffic is a key indicator of mass mobility and business travel demand. Strong growth signals recovery and expanding connectivity.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "port_cargo_volume_mt",
+      "name": "Port Cargo Volume (million tonnes)",
+      "sector": "Transport",
+      "value": 750.0,
+      "unit": "million tonnes",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        50,
+        200
+      ],
+      "moderate_range": [
+        20,
+        50
+      ],
+      "poor_range": [
+        0,
+        20
+      ],
+      "formula": "Total cargo handled at major ports per annum",
+      "source_fields": [
+        "cargo_volume_mt"
+      ],
+      "source_resource_id": "shipping:port_cargo",
+      "insight_text": "Port cargo volume reflects India's external trade throughput. Growth indicates expanding export-import activity.",
+      "benchmark": "DG Shipping / Ministry of Ports",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Port cargo volume reflects India's external trade throughput. Growth indicates expanding export-import activity.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "coastline_length_km",
+      "name": "Coastline Length",
+      "sector": "Geo",
+      "value": 7517.0,
+      "unit": "km",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        5000,
+        7000
+      ],
+      "moderate_range": [
+        3000,
+        5000
+      ],
+      "poor_range": [
+        0,
+        3000
+      ],
+      "formula": "Total mainland coastline length along peninsular India",
+      "source_fields": [
+        "coastline_length_km"
+      ],
+      "source_resource_id": "mo_env:coastline",
+      "insight_text": "India's extensive coastline is vital for trade, fisheries and maritime security. Longer coastline provides greater EEZ and economic potential.",
+      "benchmark": "MoES / National Centre for Coastal Research",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. India's extensive coastline is vital for trade, fisheries and maritime security. Longer coastline provides greater EEZ and economic potential.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "wetland_area_ha",
+      "name": "Wetland Area",
+      "sector": "Geo",
+      "value": 4500000.0,
+      "unit": "hectares",
+      "direction": "higher_better",
+      "verdict": "strong",
+      "good_range": [
+        3000000,
+        5000000
+      ],
+      "moderate_range": [
+        1500000,
+        3000000
+      ],
+      "poor_range": [
+        0,
+        1500000
+      ],
+      "formula": "Total reported wetland area (Ramsar + other wetlands)",
+      "source_fields": [
+        "wetland_area_ha"
+      ],
+      "source_resource_id": "mo_env:wetlands",
+      "insight_text": "Wetlands provide flood protection, water filtration and biodiversity habitat. Loss of wetlands increases flood risk and carbon emissions.",
+      "benchmark": "MoEF&CC — Wetland Inventory",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Strong. Wetlands provide flood protection, water filtration and biodiversity habitat. Loss of wetlands increases flood risk and carbon emissions.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "forest_cover_pct",
+      "name": "Forest Cover as % of Geographical Area",
+      "sector": "Geo",
+      "value": 21.2,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        33,
+        50
+      ],
+      "moderate_range": [
+        21,
+        33
+      ],
+      "poor_range": [
+        0,
+        21
+      ],
+      "formula": "Total forest cover as percentage of India's geographical area",
+      "source_fields": [
+        "forest_cover_pct"
+      ],
+      "source_resource_id": "moef:forest_cover",
+      "insight_text": "Forest cover is critical for carbon sequestration, biodiversity and soil conservation. The National Forest Policy target is 33%.",
+      "benchmark": "India State of Forest Report",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Forest cover is critical for carbon sequestration, biodiversity and soil conservation. The National Forest Policy target is 33%.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "exports_pct_gdp",
+      "name": "Exports (% of GDP)",
+      "sector": "Commerce",
+      "value": 12.8,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        15,
+        30
+      ],
+      "moderate_range": [
+        8,
+        15
+      ],
+      "poor_range": [
+        0,
+        8
+      ],
+      "formula": "Goods and non-factor services exports as % of GDP",
+      "source_fields": [
+        "NE.Exports.GNFS.ZS"
+      ],
+      "source_resource_id": "wb:NE.Exports.GNFS.ZS",
+      "insight_text": "Export intensity measures how much of domestic production goes abroad. Above 15% is typical of emerging exporters; above 25% signals a major global player.",
+      "benchmark": "World Bank World Development Indicators",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Export intensity measures how much of domestic production goes abroad. Above 15% is typical of emerging exporters; above 25% signals a major global player.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "imports_pct_gdp",
+      "name": "Imports (% of GDP)",
+      "sector": "Commerce",
+      "value": 15.4,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "moderate",
+      "good_range": [
+        0,
+        15
+      ],
+      "moderate_range": [
+        15,
+        25
+      ],
+      "poor_range": [
+        25,
+        40
+      ],
+      "formula": "Goods and non-factor services imports as % of GDP",
+      "source_fields": [
+        "NE.Imports.GNFS.ZS"
+      ],
+      "source_resource_id": "wb:NE.Imports.GNFS.ZS",
+      "insight_text": "Import dependence shows how much of domestic consumption comes from abroad. Above 25% can signal trade vulnerability.",
+      "benchmark": "World Bank World Development Indicators",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. Import dependence shows how much of domestic consumption comes from abroad. Above 25% can signal trade vulnerability.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "trade_balance_pct_gdp",
+      "name": "Trade Balance (% of GDP)",
+      "sector": "Commerce",
+      "value": -2.6,
+      "unit": "%",
+      "direction": "higher_better",
+      "verdict": "moderate",
+      "good_range": [
+        3,
+        8
+      ],
+      "moderate_range": [
+        -3,
+        3
+      ],
+      "poor_range": [
+        -20,
+        -3
+      ],
+      "formula": "Net exports (exports minus imports) as % of GDP",
+      "source_fields": [
+        "NE.TRK.GNFS.CD"
+      ],
+      "source_resource_id": "wb:NE.TRK.GNFS.CD",
+      "insight_text": "A positive trade balance (surplus) means India earns more from exports than it spends on imports. Sustained deficits above -3% warrant monitoring.",
+      "benchmark": "World Bank; IMF BOP",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Moderate. A positive trade balance (surplus) means India earns more from exports than it spends on imports. Sustained deficits above -3% warrant monitoring.",
+      "source_live": true
+    },
+    {
+      "kpi_id": "housing_affordability_ratio",
+      "name": "Housing Affordability Ratio (price-to-income)",
+      "sector": "Housing",
+      "value": 7.5,
+      "unit": "ratio",
+      "direction": "lower_better",
+      "verdict": "weak",
+      "good_range": [
+        1,
+        3
+      ],
+      "moderate_range": [
+        3,
+        5
+      ],
+      "poor_range": [
+        5,
+        20
+      ],
+      "formula": "Median house price ÷ median annual household income",
+      "source_fields": [
+        "median_price_rs",
+        "median_income_rs"
+      ],
+      "source_resource_id": "rbi:housing_affordability",
+      "insight_text": "Measures how many years of median income are needed to buy a median home. Above 5× means housing is severely unaffordable for median earners.",
+      "benchmark": "RBI Residential Property Price Index",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. Measures how many years of median income are needed to buy a median home. Above 5× means housing is severely unaffordable for median earners.",
+      "source_live": false
+    },
+    {
+      "kpi_id": "urban_household_deficit_pct",
+      "name": "Urban Housing Shortage",
+      "sector": "Housing",
+      "value": 18.0,
+      "unit": "%",
+      "direction": "lower_better",
+      "verdict": "weak",
+      "good_range": [
+        0,
+        5
+      ],
+      "moderate_range": [
+        5,
+        15
+      ],
+      "poor_range": [
+        15,
+        50
+      ],
+      "formula": "Estimated urban housing shortage units ÷ total urban households × 100",
+      "source_fields": [
+        "estimated_shortage_units",
+        "urban_households"
+      ],
+      "source_resource_id": "nhb:urban_deficit",
+      "insight_text": "India's rapid urbanisation has outpaced housing supply. A shortage above 15% means significant affordability pressure and slum growth risk.",
+      "benchmark": "NHB Urban Housing Shortage Estimates",
+      "frequency": "monthly",
+      "trend": null,
+      "verdict_text": "Weak. India's rapid urbanisation has outpaced housing supply. A shortage above 15% means significant affordability pressure and slum growth risk.",
+      "source_live": false
     }
   ],
   "benchmarks": {
@@ -1223,7 +1545,7 @@
       "source": "MoSPI — DEMO SNAPSHOT"
     },
     "global_resilience": {
-      "india_rank_by_real_gdp_growth": 4,
+      "india_rank_by_real_gdp_growth": 3,
       "of": 5,
       "peers": [
         {
@@ -1250,7 +1572,7 @@
         {
           "iso": "MEX",
           "name": "Mexico",
-          "real_gdp_growth": 0.561683456144578,
+          "real_gdp_growth": null,
           "current_account": null,
           "fdi_inflows": null
         }
