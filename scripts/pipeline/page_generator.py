@@ -70,6 +70,7 @@ def render_base_head(title, description, current_url="", base=""):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{b}styles/main.css" />
+  <link rel="stylesheet" href="{b}styles/european-theme.css" />
   <link rel="canonical" href="https://finradar.example{current_url}" />
 </head>
 <body>
@@ -83,7 +84,11 @@ def render_base_head(title, description, current_url="", base=""):
         <span></span><span></span><span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="{b}index.html" class="nav-link">Dashboard</a>
+        <div class="nav-primary">
+          <a href="{b}index.html" class="nav-link">Dashboard</a>
+          <a href="{b}search.html" class="nav-link">Search</a>
+          <a href="{b}sources.html" class="nav-link">Sources</a>
+        </div>
         <div class="nav-drop">
           <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Categories <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-drop-menu" role="menu">
@@ -106,8 +111,6 @@ def render_base_head(title, description, current_url="", base=""):
             <a href="{b}category/housing.html" role="menuitem">Housing &amp; Urban</a>
           </div>
         </div>
-        <a href="{b}search.html" class="nav-link">Search</a>
-        <a href="{b}sources.html" class="nav-link">Sources</a>
       </nav>
     </div>
   </header>
