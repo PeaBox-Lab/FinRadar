@@ -1,8 +1,8 @@
 name: Daily KPI Update
 
 # Runs the FinRadar data pipeline daily: fetches public data, computes KPIs
-# and benchmarks, and commits the updated data/latest_kpis.json to main.
-# GitHub Pages then publishes the refreshed site on the next push.
+# and benchmarks, regenerates the static site under `site/`, commits to main,
+# and deploys `site/` to the `gh-pages` branch for GitHub Pages.
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
       - name: Regenerate static site
         run: python3 scripts/pipeline/page_generator.py
 
-      - name: Commit and push if data changed
+      - name: Commit and push data + site to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -39,3 +39,17 @@ jobs:
           git commit -m "chore: daily KPI update $(date -u +%F)" || echo "No changes; skipping commit"
           git push origin HEAD:main
           echo "Done."
+
+      # Deploy the built `site/` folder to the `gh-pages` branch.
+      # This keeps GitHub Pages serving the site from gh-pages (no /site prefix)
+      # while the repo's main branch holds the source + build output.
+      - name: Deploy site/ to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          keep_files: true
+          commit_message: "deploy: update gh-pages from main (site/)"
+          user_name: "github-actions[bot]"
+          user_email: "41898282+github-actions[bot]@users.noreply.github.com"
