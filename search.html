@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search — Find any data fact or KPI — FinRadar</title>
+  <meta name="description" content="Search across 35+ KPIs, historical trends and plain-English facts from Indian government data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://finradar.example/search.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">FinRadar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="search.html" class="nav-link">Search</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="sources.html" class="nav-link">Sources</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse Sectors <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+            <div class="nav-drop-heading">Sector Categories</div>
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+            <div class="nav-drop-heading">Social Services</div>
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+            <div class="nav-drop-heading">More</div>
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main container">
+    <section class="search-page">
+      <h1>Search FinRadar</h1>
+      <div class="search-input-wrap">
+        <input type="text" id="search-input" placeholder="Type a metric, sector, year or keyword…" autocomplete="off" />
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </section>
+  <script>
+    const INDEX = [{"type": "fact", "id": "c1", "category": "central", "title": "Real Inflation Rate", "text": "India's headline CPI inflation has been around 2.4% over the last year \u2014 near the RBI's 4% midpoint.", "source": "World Bank / MoSPI"}, {"type": "fact", "id": "c2", "category": "central", "title": "Gdp Growth Pct", "text": "India's real GDP grew ~7.57% in the latest year \u2014 among the fastest of any large economy.", "source": "World Bank / MoSPI"}, {"type": "fact", "id": "c3", "category": "central", "title": "Import Cover Ratio", "text": "Forex reserves cover ~16.4 months of imports \u2014 comfortably above the 3-month comfort floor.", "source": "RBI"}, {"type": "fact", "id": "c4", "category": "central", "title": "Fiscal Deficit Pct Gdp", "text": "Centre's fiscal deficit is ~5.1% of GDP \u2014 above the FRBM target of 3%.", "source": "RBI / Union Budget"}, {"type": "fact", "id": "c5", "category": "central", "title": "Current Account Pct Gdp", "text": "Current account deficit is ~-1.5% of GDP \u2014 manageable but widening on oil and electronics imports.", "source": "World Bank / IMF"}, {"type": "fact", "id": "s1", "category": "states", "title": "Gst Growth Pct", "text": "Maharashtra, Karnataka and Tamil Nadu together contribute ~45% of all-India GST \u2014 state divergence is large.", "source": "GST Portal / MoF"}, {"type": "fact", "id": "s2", "category": "states", "title": "State Inflation Spread", "text": "State-level CPI spread reached 8.7 pp \u2014 Rajasthan (8.7%) vs national (2.4%) shows massive divergence.", "source": "MoSPI"}, {"type": "fact", "id": "s3", "category": "states", "title": "State Debt To Gsdp", "text": "Punjab and Rajasthan have debt-to-GSDP above 40% \u2014 well above the 20% FRBM anchor for states.", "source": "RBI State Finances"}, {"type": "fact", "id": "s4", "category": "states", "title": "Power Demand Growth Pct", "text": "Gujarat and Tamil Nadu saw power demand growth >8% YoY \u2014 industrial states pulling ahead.", "source": "CEA / POSOCO"}, {"type": "fact", "id": "s5", "category": "states", "title": "State Literacy Rate", "text": "Kerala (96.2%) vs Bihar (61.8%) \u2014 the literacy gap between top and bottom states is 34 pp.", "source": "Census / NFHS"}, {"type": "fact", "id": "fn1", "category": "financials", "title": "Real Interest Rate", "text": "Real interest rate (G-Sec yield 7.85% \u2212 inflation 2.40%) is ~5.45% \u2014 a healthy positive saver yield.", "source": "RBI / World Bank"}, {"type": "fact", "id": "fn2", "category": "financials", "title": "Bank Credit Deposit Ratio", "text": "Bank credit-to-deposit ratio is ~82.4% \u2014 a fast-growing credit environment.", "source": "RBI"}, {"type": "fact", "id": "fn3", "category": "financials", "title": "Gnpa Ratio Pct", "text": "Gross NPA ratio fell to ~2.8% from a peak of 5.8% in 2021 \u2014 banking health has improved sharply.", "source": "RBI"}, {"type": "fact", "id": "fn4", "category": "financials", "title": "Msme Credit Penetration Pct", "text": "MSME credit penetration is ~12.6% \u2014 India's MSMEs contribute ~30% of GDP but get a small share of formal credit.", "source": "RBI / MSME Ministry"}, {"type": "fact", "id": "fn5", "category": "financials", "title": "Priority Sector Lending Pct", "text": "Priority sector lending is ~42.1% of bank credit \u2014 just above the 40% RBI mandate.", "source": "RBI"}, {"type": "fact", "id": "g1", "category": "geo", "title": "Population Density", "text": "India's population density is ~464 people/sq km \u2014 Bihar (1,106) is 10\u00d7 Arunachal Pradesh (17).", "source": "Census 2011 / World Bank"}, {"type": "fact", "id": "g2", "category": "geo", "title": "Urbanisation Rate Pct", "text": "Urbanisation is ~35% \u2014 Goa (62%) vs Himachal (10%) shows massive inter-state variation.", "source": "Census / World Bank"}, {"type": "fact", "id": "g3", "category": "geo", "title": "Road Density", "text": "Road density is ~192 km per 100 sq km \u2014 Kerala (550) vs J&K (20) reflects terrain and investment.", "source": "MoRTH"}, {"type": "fact", "id": "g4", "category": "geo", "title": "District Gdp Per Capita", "text": "District GDP per capita ranges from ~\u20b92 Lakh (lowest) to \u20b920 Lakh (highest) \u2014 a 10\u00d7 gap.", "source": "MoSPI / State Directorates"}, {"type": "fact", "id": "g5", "category": "geo", "title": "Agri Land Holding", "text": "Average operational holding is 1.08 ha \u2014 86% of farmers are small/marginal (<2 ha).", "source": "Agriculture Census"}, {"type": "fact", "id": "t1", "category": "transport", "title": "Digital Consumption Velocity", "text": "Average UPI ticket is ~$1.40 per transaction, moving $136 billion monthly.", "source": "NPCI / GST"}, {"type": "fact", "id": "t2", "category": "transport", "title": "Fastag Volume", "text": "FASTag processes ~350 million toll transactions/month \u2014 ~97% of toll revenue is now digital.", "source": "NHAI / NPCI"}, {"type": "fact", "id": "t3", "category": "transport", "title": "Vehicle Density", "text": "Vehicle density is ~22 per 1,000 people \u2014 Delhi (450) vs Bihar (8) shows extreme divergence.", "source": "MoRTH"}, {"type": "fact", "id": "t4", "category": "transport", "title": "Railway Freight Growth", "text": "Railway freight grew ~7% YoY \u2014 coal and iron ore dominate but container traffic is rising fast.", "source": "Indian Railways"}, {"type": "fact", "id": "t5", "category": "transport", "title": "Aviation Passenger Growth", "text": "Domestic air passengers crossed 150 million/year \u2014 recovery above pre-COVID levels.", "source": "DGCA / MoCA"}, {"type": "fact", "id": "e1", "category": "economy", "title": "Gdp Per Capita Usd", "text": "India ranks roughly 138th globally on GDP per capita (~$2,702 nominal).", "source": "World Bank"}, {"type": "fact", "id": "e2", "category": "economy", "title": "Ppp Gap Usd", "text": "The PPP gap is ~$9,045 per person \u2014 the same salary buys far more inside India than the dollar figure suggests.", "source": "World Bank"}, {"type": "fact", "id": "a1", "category": "agriculture", "title": "Foodgrain Growth Pct", "text": "Foodgrain production grew ~1.4% YoY \u2014 modest growth despite normal monsoon.", "source": "MoAFW"}, {"type": "fact", "id": "a2", "category": "agriculture", "title": "Fertilizer Intensity", "text": "Fertiliser intensity is ~145 kg/ha \u2014 above the 120 kg/ha recommended for balanced soil health.", "source": "MoAFW / FAI"}, {"type": "fact", "id": "en1", "category": "energy", "title": "Renewable Capacity Share Pct", "text": "Renewable capacity share is ~42.5% \u2014 close to India's 2030 NDC target of 50% non-fossil.", "source": "MNRE"}, {"type": "fact", "id": "h1", "category": "health", "title": "Hospital Bed Density", "text": "Hospital bed density is ~1.3 beds per 1,000 people \u2014 below the WHO comfort zone of ~3.", "source": "MoSPI / WHO"}, {"type": "fact", "id": "ed1", "category": "education", "title": "Pupil Teacher Ratio", "text": "Pupil-teacher ratio is ~26:1 \u2014 within the RTE norm of 30:1 but varies sharply by state.", "source": "UDISE / MoE"}, {"type": "fact", "id": "w1", "category": "welfare", "title": "Mgnrega Person Days", "text": "MGNREGA generated ~235 crore person-days in the latest year \u2014 a signal of rural distress pressure.", "source": "MGNREGA MIS"}, {"type": "fact", "id": "ev1", "category": "environment", "title": "Per Capita Co2 Emissions", "text": "India's per-capita CO\u2082 is ~2.0 tonnes \u2014 well below the world average of ~4.7.", "source": "World Bank / Global Carbon Project"}, {"type": "fact", "id": "cm1", "category": "commerce", "title": "Fdi Inflows Pct Gdp", "text": "FDI inflows are ~1.8% of GDP \u2014 below the 2.5% peak but above the 1% floor.", "source": "World Bank / DIPP"}, {"type": "fact", "id": "hs1", "category": "housing", "title": "Housing Price To Income", "text": "Housing price-to-income ratio in top 7 cities is ~7.5\u00d7 \u2014 above the 5\u00d7 affordability threshold.", "source": "RBI / NHB"}];
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+    function render(resultsArr) {
+      if (!resultsArr.length) { results.innerHTML = '<p class="muted">No matches.</p>'; return; }
+      results.innerHTML = resultsArr.map(r => `
+        <a href="${r.type==='fact' ? 'facts/'+r.id+'.html' : 'kpi/'+r.id+'.html'}" class="search-result">
+          <strong>${r.title}</strong>
+          <span class="badge">${r.category}</span>
+          <p>${r.text.slice(0,120)}…</p>
+          <small class="muted">Source: ${r.source}</small>
+        </a>
+      `).join('');
+    }
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      if (!q) { results.innerHTML = ''; return; }
+      const filtered = INDEX.filter(r =>
+        r.title.toLowerCase().includes(q) ||
+        r.text.toLowerCase().includes(q) ||
+        r.category.toLowerCase().includes(q) ||
+        r.source.toLowerCase().includes(q)
+      );
+      render(filtered);
+    });
+  </script>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">F</span>
+          <span class="brand-name">FinRadar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-23 19:05 UTC</span></p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Explore</h4>
+        <a href="index.html">Dashboard</a>
+        <a href="search.html">Search</a>
+        <a href="sources.html">Data Sources</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Key Sectors</h4>
+        <a href="category/central.html">Central Government</a>
+        <a href="category/states.html">State Level</a>
+        <a href="category/financials.html">Finance &amp; Banking</a>
+        <a href="category/geo.html">Geo Levels</a>
+        <a href="category/transport.html">Transport</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">More Sectors</h4>
+        <a href="category/economy.html">Economy</a>
+        <a href="category/agriculture.html">Agriculture</a>
+        <a href="category/health.html">Health</a>
+        <a href="category/education.html">Education</a>
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+    </div>
+  </footer>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/charts.js"></script>
+</body>
+</html>

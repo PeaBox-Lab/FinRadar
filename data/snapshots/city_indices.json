@@ -1,0 +1,12 @@
+{
+  "source": "Illustrative city-level cost-of-living indices for the salary-parity tool; replaced by live MoSPI data when wired in.",
+  "last_updated": "2026-11-22",
+  "city_indices": {
+    "Pune": 120,
+    "Mumbai": 132,
+    "Delhi": 118,
+    "Jaipur": 89,
+    "Bengaluru": 116,
+    "Hyderabad": 105
+  }
+}

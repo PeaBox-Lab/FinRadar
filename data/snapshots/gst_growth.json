@@ -1,0 +1,9 @@
+{
+  "source": "Ministry of Finance — GST portal collections (YoY growth) — illustrative fallback; live data replaces this when available.",
+  "last_fetched": "2026-11-22",
+  "current_year_growth_pct": 11.7,
+  "prior_year_growth_pct": 19.1,
+  "current_month": "2026-10",
+  "collections_usd": 135000000000,
+  "notes": "Both years' YoY growth figures are illustrative for demo purposes."
+}

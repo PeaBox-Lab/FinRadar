@@ -1,0 +1,8 @@
+{
+  "source": "RBI Database on Indian Economy — Forex reserves and imports (illustrative fallback; replaced by live data when available).",
+  "last_fetched": "2026-11-22",
+  "fx_reserves_usd": 61500000000.0,
+  "annual_imports_usd": 45020000000.0,
+  "short_term_debt_usd": 50950000000.0,
+  "notes": "Numbers are illustrative; the pipeline divides reserves by (imports/12) for the import cover and by short-term debt for the reserve adequacy ratio."
+}

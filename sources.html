@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Sources — Catalog — FinRadar</title>
+  <meta name="description" content="Every API, dataset and portal FinRadar draws from — 20 categorised sources with summary stats for each." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://finradar.example/sources.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">F</span>
+        <span class="brand-name">FinRadar</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="search.html" class="nav-link">Search</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="sources.html" class="nav-link">Sources</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse Sectors <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+            <div class="nav-drop-heading">Sector Categories</div>
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+            <div class="nav-drop-heading">Social Services</div>
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+            <div class="nav-drop-heading">More</div>
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main container">
+    <section>
+      <h1>Data Sources Catalog</h1>
+      <p class="muted">FinRadar computes KPIs from 20 public government APIs across 10 categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
+
+      <div class="grid grid-4 source-summary-grid">
+        <div class="card source-summary-card"><strong>20</strong><span>APIs catalogued</span></div>
+        <div class="card source-summary-card"><strong>10</strong><span>Categories</span></div>
+        <div class="card source-summary-card"><strong>60</strong><span>Data series used</span></div>
+        <div class="card source-summary-card"><strong>18</strong><span>Open access</span></div>
+      </div>
+
+      
+      <h2>🌐 Macro & National Accounts</h2>
+      <p class="muted">Cross-country macro indicators, national accounts, growth and prices.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://api.worldbank.org/v2" target="_blank">World Bank Open Data</a></h3>
+          <span class="badge">Macro & National Accounts</span>
+        </div>
+        <p class="card-desc">The backbone for cross-country macro comparisons and India's headline GDP, inflation, PPP and external-sector series.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>11</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1960 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">GDP</span><span class="badge">Inflation</span><span class="badge">Trade</span><span class="badge">PPP</span><span class="badge">Cross-country</span></div>
+        <p class="muted small">Provider: World Bank · Tags: GDP, Inflation, Trade, PPP, Cross-country</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://api.data.gov.in" target="_blank">data.gov.in (OGD Platform)</a></h3>
+          <span class="badge">Macro & National Accounts</span>
+        </div>
+        <p class="card-desc">India's national open-data platform. The widest catalogue of state- and district-level government datasets.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>Varies by dataset</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>API key (free registration); sample key for development</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Multi-sector</span><span class="badge">State-level</span><span class="badge">District-level</span><span class="badge">GST</span><span class="badge">Transport</span></div>
+        <p class="muted small">Provider: Ministry of Electronics & IT · Tags: Multi-sector, State-level, District-level, GST, Transport</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://apisetu.gov.in" target="_blank">API Setu</a></h3>
+          <span class="badge">Macro & National Accounts</span>
+        </div>
+        <p class="card-desc">The government's API gateway. Useful for identity, document and transactional lookups rather than time-series statistics.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>Transactional</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Partner registration (scoped keys)</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">DigiLocker</span><span class="badge">GSTN</span><span class="badge">MCA</span><span class="badge">Vahan</span><span class="badge">UIDAI</span><span class="badge">NPCI</span></div>
+        <p class="muted small">Provider: MeitY / NIC · Tags: DigiLocker, GSTN, MCA, Vahan, UIDAI, NPCI</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://data.imf.org" target="_blank">IMF DataMapper / WEO</a></h3>
+          <span class="badge">Macro & National Accounts</span>
+        </div>
+        <p class="card-desc">Cross-country fiscal and debt comparables, plus forward-looking macro forecasts.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1980 → 2030 (forecasts)</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Fiscal</span><span class="badge">Debt</span><span class="badge">Cross-country</span><span class="badge">Forecasts</span></div>
+        <p class="muted small">Provider: International Monetary Fund · Tags: Fiscal, Debt, Cross-country, Forecasts</p>
+      </article>
+      </div>
+      <h2>💹 Money, Prices & Markets</h2>
+      <p class="muted">Interest rates, money supply, inflation, banking and payments.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://dbie.rbi.org.in" target="_blank">RBI Database on Indian Economy (DBIE)</a></h3>
+          <span class="badge">Money, Prices & Markets</span>
+        </div>
+        <p class="card-desc">The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1990s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open portal; bulk downloads</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Repo rate</span><span class="badge">G-Sec</span><span class="badge">Reserves</span><span class="badge">Credit</span><span class="badge">Banking</span></div>
+        <p class="muted small">Provider: Reserve Bank of India · Tags: Repo rate, G-Sec, Reserves, Credit, Banking</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics" target="_blank">NPCI Statistics</a></h3>
+          <span class="badge">Money, Prices & Markets</span>
+        </div>
+        <p class="card-desc">The definitive read on India's digital-payment velocity, ticket sizes and tolling volumes.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2016 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open monthly statistics</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">UPI</span><span class="badge">IMPS</span><span class="badge">FASTag</span><span class="badge">Digital payments</span></div>
+        <p class="muted small">Provider: National Payments Corporation of India · Tags: UPI, IMPS, FASTag, Digital payments</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://mospi.gov.in" target="_blank">MoSPI — National Statistics</a></h3>
+          <span class="badge">Money, Prices & Markets</span>
+        </div>
+        <p class="card-desc">The official source for India's inflation, industrial production, national accounts and employment statistics.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2011 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open downloads</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">CPI</span><span class="badge">IIP</span><span class="badge">GDP</span><span class="badge">PLFS</span><span class="badge">State CPI</span></div>
+        <p class="muted small">Provider: Ministry of Statistics & Programme Implementation · Tags: CPI, IIP, GDP, PLFS, State CPI</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://fred.stlouisfed.org" target="_blank">FRED (St. Louis Fed)</a></h3>
+          <span class="badge">Money, Prices & Markets</span>
+        </div>
+        <p class="card-desc">Global rates and commodity benchmarks used for context alongside Indian data.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>Varies (some pre-1900)</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open API key (free)</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">US rates</span><span class="badge">Commodities</span><span class="badge">Global indicators</span></div>
+        <p class="muted small">Provider: Federal Reserve Bank of St. Louis · Tags: US rates, Commodities, Global indicators</p>
+      </article>
+      </div>
+      <h2>🏛️ Fiscal & Government Finance</h2>
+      <p class="muted">Union and state budgets, deficits, debt, subsidies and tax collections.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://www.gst.gov.in" target="_blank">GST Portal — Collections</a></h3>
+          <span class="badge">Fiscal & Government Finance</span>
+        </div>
+        <p class="card-desc">A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2017 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open monthly press releases</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">GST</span><span class="badge">Indirect tax</span><span class="badge">Consumption</span><span class="badge">State revenue</span></div>
+        <p class="muted small">Provider: GST Council / CBIC · Tags: GST, Indirect tax, Consumption, State revenue</p>
+      </article>
+      </div>
+      <h2>🚢 Trade & Commerce</h2>
+      <p class="muted">Exports, imports, FDI, ports and external-sector flows.</p>
+      <div class="grid grid-3">
+        
+      </div>
+      <h2>🌾 Agriculture & Rural</h2>
+      <p class="muted">Crop output, fertiliser, irrigation, MSP and rural employment.</p>
+      <div class="grid grid-3">
+        
+      </div>
+      <h2>⚡ Energy & Power</h2>
+      <p class="muted">Electricity demand, generation, renewables and grid statistics.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://cea.nic.in" target="_blank">CEA / POSOCO Power Data</a></h3>
+          <span class="badge">Energy & Power</span>
+        </div>
+        <p class="card-desc">Near-real-time electricity demand and generation — one of the best proxies for industrial activity.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2010s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open daily / monthly reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Power demand</span><span class="badge">Generation</span><span class="badge">Renewables</span><span class="badge">Grid</span></div>
+        <p class="muted small">Provider: Central Electricity Authority · Tags: Power demand, Generation, Renewables, Grid</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://mnre.gov.in" target="_blank">MNRE Renewable Capacity</a></h3>
+          <span class="badge">Energy & Power</span>
+        </div>
+        <p class="card-desc">Tracks India's energy transition against the 50% non-fossil capacity target for 2030.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2014 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open monthly progress reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Solar</span><span class="badge">Wind</span><span class="badge">Hydro</span><span class="badge">Biomass</span><span class="badge">NDC</span></div>
+        <p class="muted small">Provider: Ministry of New & Renewable Energy · Tags: Solar, Wind, Hydro, Biomass, NDC</p>
+      </article>
+      </div>
+      <h2>🚗 Transport & Logistics</h2>
+      <p class="muted">Roads, railways, aviation, ports and vehicle registrations.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://morth.nic.in" target="_blank">MoRTH / NHAI Transport Data</a></h3>
+          <span class="badge">Transport & Logistics</span>
+        </div>
+        <p class="card-desc">The source for road density, vehicle ownership and digital tolling across states.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2000s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open annual reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Roads</span><span class="badge">Vehicles</span><span class="badge">FASTag</span><span class="badge">Highways</span><span class="badge">Logistics</span></div>
+        <p class="muted small">Provider: Ministry of Road Transport & Highways · Tags: Roads, Vehicles, FASTag, Highways, Logistics</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://indianrailways.gov.in" target="_blank">Indian Railways Statistics</a></h3>
+          <span class="badge">Transport & Logistics</span>
+        </div>
+        <p class="card-desc">Freight and passenger trends for the world's fourth-largest rail network.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2000s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open annual statistical statements</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Freight</span><span class="badge">Passengers</span><span class="badge">Rail network</span><span class="badge">Coal</span></div>
+        <p class="muted small">Provider: Ministry of Railways · Tags: Freight, Passengers, Rail network, Coal</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://www.dgca.gov.in" target="_blank">DGCA Civil Aviation Statistics</a></h3>
+          <span class="badge">Transport & Logistics</span>
+        </div>
+        <p class="card-desc">Domestic aviation traffic — a leading indicator of business travel and premium consumption.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2000s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open monthly traffic reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Aviation</span><span class="badge">Passengers</span><span class="badge">Airports</span><span class="badge">Airlines</span></div>
+        <p class="muted small">Provider: Directorate General of Civil Aviation · Tags: Aviation, Passengers, Airports, Airlines</p>
+      </article>
+      </div>
+      <h2>🏥 Health, Education & Welfare</h2>
+      <p class="muted">Hospital capacity, immunisation, schooling, food security and jobs.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://mohfw.gov.in" target="_blank">MoHFW / NFHS Health Data</a></h3>
+          <span class="badge">Health, Education & Welfare</span>
+        </div>
+        <p class="card-desc">The census of Indian health capacity, immunisation and household health spending.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1992 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open reports / microdata on request</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Hospitals</span><span class="badge">Immunisation</span><span class="badge">NFHS</span><span class="badge">Health spending</span></div>
+        <p class="muted small">Provider: Ministry of Health & Family Welfare · Tags: Hospitals, Immunisation, NFHS, Health spending</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://udiseplus.gov.in" target="_blank">UDISE+ School Education</a></h3>
+          <span class="badge">Health, Education & Welfare</span>
+        </div>
+        <p class="card-desc">School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2012 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open reports / dashboards</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Enrolment</span><span class="badge">Teachers</span><span class="badge">Pupil-teacher ratio</span><span class="badge">Schools</span></div>
+        <p class="muted small">Provider: Ministry of Education · Tags: Enrolment, Teachers, Pupil-teacher ratio, Schools</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://nrega.nic.in" target="_blank">MGNREGA MIS</a></h3>
+          <span class="badge">Health, Education & Welfare</span>
+        </div>
+        <p class="card-desc">Rural wage demand under the employment guarantee — a real-time distress signal.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2006 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open MIS reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Rural employment</span><span class="badge">Wages</span><span class="badge">Person-days</span><span class="badge">Distress</span></div>
+        <p class="muted small">Provider: Ministry of Rural Development · Tags: Rural employment, Wages, Person-days, Distress</p>
+      </article>
+      </div>
+      <h2>🌍 Geo, Environment & Climate</h2>
+      <p class="muted">Land, forests, wetlands, emissions, population and urbanisation.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://censusindia.gov.in" target="_blank">Census of India</a></h3>
+          <span class="badge">Geo, Environment & Climate</span>
+        </div>
+        <p class="card-desc">The demographic base layer for population density, urbanisation and literacy KPIs.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1872 → 2011 (next: 2027)</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open tables</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Population</span><span class="badge">Density</span><span class="badge">Urbanisation</span><span class="badge">Literacy</span></div>
+        <p class="muted small">Provider: Office of the Registrar General · Tags: Population, Density, Urbanisation, Literacy</p>
+      </article>
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://moef.gov.in" target="_blank">MoEF&CC Environment Data</a></h3>
+          <span class="badge">Geo, Environment & Climate</span>
+        </div>
+        <p class="card-desc">Land, forest and wetlands statistics behind the environment and geo KPIs.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>1987 → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">Forest cover</span><span class="badge">Wetlands</span><span class="badge">Emissions</span><span class="badge">Coastline</span></div>
+        <p class="muted small">Provider: Ministry of Environment, Forest & Climate Change · Tags: Forest cover, Wetlands, Emissions, Coastline</p>
+      </article>
+      </div>
+      <h2>🏠 Housing & Urban</h2>
+      <p class="muted">House prices, affordability, housing shortage and municipal finance.</p>
+      <div class="grid grid-3">
+        
+      <article class="card source-card">
+        <div class="card-header">
+          <h3><a href="https://nhb.org.in" target="_blank">NHB / RBI Housing Data</a></h3>
+          <span class="badge">Housing & Urban</span>
+        </div>
+        <p class="card-desc">House-price and affordability series for the housing KPIs.</p>
+        <div class="source-stats">
+          <div class="source-stat"><strong>0</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>2010s → present</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>N/A</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>Open reports</strong><span>Access</span></div>
+        </div>
+        <div class="source-tags"><span class="badge">House prices</span><span class="badge">Affordability</span><span class="badge">Housing shortage</span></div>
+        <p class="muted small">Provider: National Housing Bank / RBI · Tags: House prices, Affordability, Housing shortage</p>
+      </article>
+      </div>
+
+      <h2>All sources, flat list</h2>
+      <ul class="source-list">
+        <li><a href="https://api.worldbank.org/v2" target="_blank">World Bank Open Data</a> — The backbone for cross-country macro comparisons and India's headline GDP, inflation, PPP and external-sector series.</li><li><a href="https://api.data.gov.in" target="_blank">data.gov.in (OGD Platform)</a> — India's national open-data platform. The widest catalogue of state- and district-level government datasets.</li><li><a href="https://apisetu.gov.in" target="_blank">API Setu</a> — The government's API gateway. Useful for identity, document and transactional lookups rather than time-series statistics.</li><li><a href="https://dbie.rbi.org.in" target="_blank">RBI Database on Indian Economy (DBIE)</a> — The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs.</li><li><a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics" target="_blank">NPCI Statistics</a> — The definitive read on India's digital-payment velocity, ticket sizes and tolling volumes.</li><li><a href="https://www.gst.gov.in" target="_blank">GST Portal — Collections</a> — A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states.</li><li><a href="https://mospi.gov.in" target="_blank">MoSPI — National Statistics</a> — The official source for India's inflation, industrial production, national accounts and employment statistics.</li><li><a href="https://cea.nic.in" target="_blank">CEA / POSOCO Power Data</a> — Near-real-time electricity demand and generation — one of the best proxies for industrial activity.</li><li><a href="https://mnre.gov.in" target="_blank">MNRE Renewable Capacity</a> — Tracks India's energy transition against the 50% non-fossil capacity target for 2030.</li><li><a href="https://morth.nic.in" target="_blank">MoRTH / NHAI Transport Data</a> — The source for road density, vehicle ownership and digital tolling across states.</li><li><a href="https://indianrailways.gov.in" target="_blank">Indian Railways Statistics</a> — Freight and passenger trends for the world's fourth-largest rail network.</li><li><a href="https://www.dgca.gov.in" target="_blank">DGCA Civil Aviation Statistics</a> — Domestic aviation traffic — a leading indicator of business travel and premium consumption.</li><li><a href="https://mohfw.gov.in" target="_blank">MoHFW / NFHS Health Data</a> — The census of Indian health capacity, immunisation and household health spending.</li><li><a href="https://udiseplus.gov.in" target="_blank">UDISE+ School Education</a> — School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs.</li><li><a href="https://nrega.nic.in" target="_blank">MGNREGA MIS</a> — Rural wage demand under the employment guarantee — a real-time distress signal.</li><li><a href="https://censusindia.gov.in" target="_blank">Census of India</a> — The demographic base layer for population density, urbanisation and literacy KPIs.</li><li><a href="https://moef.gov.in" target="_blank">MoEF&CC Environment Data</a> — Land, forest and wetlands statistics behind the environment and geo KPIs.</li><li><a href="https://nhb.org.in" target="_blank">NHB / RBI Housing Data</a> — House-price and affordability series for the housing KPIs.</li><li><a href="https://data.imf.org" target="_blank">IMF DataMapper / WEO</a> — Cross-country fiscal and debt comparables, plus forward-looking macro forecasts.</li><li><a href="https://fred.stlouisfed.org" target="_blank">FRED (St. Louis Fed)</a> — Global rates and commodity benchmarks used for context alongside Indian data.</li>
+      </ul>
+    </section>  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">F</span>
+          <span class="brand-name">FinRadar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-23 19:05 UTC</span></p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Explore</h4>
+        <a href="index.html">Dashboard</a>
+        <a href="search.html">Search</a>
+        <a href="sources.html">Data Sources</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Key Sectors</h4>
+        <a href="category/central.html">Central Government</a>
+        <a href="category/states.html">State Level</a>
+        <a href="category/financials.html">Finance &amp; Banking</a>
+        <a href="category/geo.html">Geo Levels</a>
+        <a href="category/transport.html">Transport</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">More Sectors</h4>
+        <a href="category/economy.html">Economy</a>
+        <a href="category/agriculture.html">Agriculture</a>
+        <a href="category/health.html">Health</a>
+        <a href="category/education.html">Education</a>
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+    </div>
+  </footer>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/charts.js"></script>
+</body>
+</html>
