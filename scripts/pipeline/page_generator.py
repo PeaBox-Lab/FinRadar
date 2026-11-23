@@ -29,6 +29,7 @@ from kpi_registry import KPI_REGISTRY, interpret, kpis_by_sector
 from site_data import (
     SECTORS, SECTOR_MAP, FACTS, FACTS_BY_CATEGORY,
     HISTORICAL_TRENDS, get_trend, search_index, trends_by_category,
+    CATEGORY_GROUPS,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -87,28 +88,33 @@ def render_base_head(title, description, current_url="", base=""):
         <div class="nav-primary">
           <a href="{b}index.html" class="nav-link">Dashboard</a>
           <a href="{b}search.html" class="nav-link">Search</a>
+          <a href="{b}categories.html" class="nav-link">Categories</a>
           <a href="{b}sources.html" class="nav-link">Sources</a>
         </div>
         <div class="nav-drop">
-          <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Categories <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse Sectors <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-drop-menu" role="menu">
-            <div class="nav-drop-heading">Government &amp; Economy</div>
-            <a href="{b}category/central.html" role="menuitem">Central Government</a>
-            <a href="{b}category/states.html" role="menuitem">State Level</a>
-            <a href="{b}category/economy.html" role="menuitem">Economy</a>
-            <a href="{b}category/financials.html" role="menuitem">Finance &amp; Banking</a>
-            <div class="nav-drop-heading">Sectors</div>
-            <a href="{b}category/agriculture.html" role="menuitem">Agriculture</a>
-            <a href="{b}category/energy.html" role="menuitem">Energy &amp; Power</a>
-            <a href="{b}category/transport.html" role="menuitem">Transport</a>
-            <a href="{b}category/geo.html" role="menuitem">Geo Levels</a>
-            <a href="{b}category/health.html" role="menuitem">Health</a>
-            <a href="{b}category/education.html" role="menuitem">Education</a>
-            <div class="nav-drop-heading">Society &amp; Environment</div>
-            <a href="{b}category/welfare.html" role="menuitem">Welfare &amp; Employment</a>
-            <a href="{b}category/environment.html" role="menuitem">Environment &amp; Climate</a>
-            <a href="{b}category/commerce.html" role="menuitem">Trade &amp; Commerce</a>
-            <a href="{b}category/housing.html" role="menuitem">Housing &amp; Urban</a>
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+            <a href="{b}category/central.html" role="menuitem">🏛️ Central Government</a>
+            <a href="{b}category/economy.html" role="menuitem">💰 Economy</a>
+            <a href="{b}category/financials.html" role="menuitem">🏦 Financials</a>
+            <div class="nav-drop-heading">Sector Categories</div>
+            <a href="{b}category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+            <a href="{b}category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+            <a href="{b}category/transport.html" role="menuitem">🚗 Transport</a>
+            <a href="{b}category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+            <a href="{b}category/geo.html" role="menuitem">📍 Geo Levels</a>
+            <a href="{b}category/states.html" role="menuitem">🗺️ State Level</a>
+            <div class="nav-drop-heading">Social Services</div>
+            <a href="{b}category/health.html" role="menuitem">🏥 Health</a>
+            <a href="{b}category/education.html" role="menuitem">📚 Education</a>
+            <a href="{b}category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+            <a href="{b}category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+            <a href="{b}category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+            <div class="nav-drop-heading">More</div>
+            <a href="{b}categories.html" role="menuitem">📂 View All Categories</a>
           </div>
         </div>
       </nav>
@@ -634,6 +640,59 @@ def render_index(latest):
 
 
 # ---------------------------------------------------------------------------
+# Categories Index page (top-level category landing page)
+# ---------------------------------------------------------------------------
+
+def render_categories_index():
+    html = render_base_head(
+        "Categories — All FinRadar Data",
+        "Browse all 14 categories of macro and sector data on FinRadar — government, economy, agriculture, energy, transport, geo, health, education, welfare, environment, commerce, housing.",
+        "/categories.html",
+        base=""
+    )
+    html += """
+    <section class="category-index-hero">
+      <h1>All Categories</h1>
+      <p class="hero-sub">Browse our 14 categories spanning macro-economics, sectors, geography, social services and environment — each with KPIs, facts and historical trends built from public government data.</p>
+    </section>
+    """
+
+    for grp in CATEGORY_GROUPS:
+        html += f"""
+    <section class="category-group">
+      <div class="category-group-header">
+        <h2>{grp['icon']} {grp['group']}</h2>
+        <p>{grp['description']}</p>
+      </div>
+      <div class="category-group-grid">
+    """
+        for cid in grp["categories"]:
+            sector = SECTOR_MAP.get(cid)
+            if not sector:
+                continue
+            facts_in_cat = FACTS_BY_CATEGORY.get(cid, [])
+            kpis_in_cat = len(kpis_by_sector(sector["title"]))
+            html += f"""
+        <a class="category-tile" href="category/{cid}.html">
+          <div class="cat-tile-header">
+            <span class="cat-tile-icon">{sector['icon']}</span>
+            <h3>{sector['title']}</h3>
+          </div>
+          <p class="cat-tile-desc">{sector['description'][:120]}…</p>
+          <div class="cat-tile-footer">
+            <span>{kpis_in_cat} KPIs</span>
+            <span>{len(facts_in_cat)} facts</span>
+          </div>
+        </a>"""
+        html += """
+      </div>
+    </section>"""
+
+    html += render_footer("")
+    return html
+
+
+# ---------------------------------------------------------------------------
 # Main generator
 # ---------------------------------------------------------------------------
 
@@ -671,6 +730,9 @@ def main():
 
     print("Generating sources.html…")
     (SITE_DIR / "sources.html").write_text(render_sources_page(), encoding="utf-8")
+
+    print("Generating categories index.html…")
+    (SITE_DIR / "categories.html").write_text(render_categories_index(), encoding="utf-8")
 
     print("Generating category pages…")
     for sector in SECTORS:

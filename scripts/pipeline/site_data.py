@@ -43,6 +43,47 @@ SECTORS = [
 
 SECTOR_MAP = {s["id"]: s for s in SECTORS}
 
+# ---------------------------------------------------------------------------
+# CATEGORY GROUPS — used for the top-level index page and segregated nav
+# ---------------------------------------------------------------------------
+CATEGORY_GROUPS = [
+    # Macro & National Accounts
+    {
+        "group": "Macro & National Accounts",
+        "icon": "🏛️",
+        "categories": ["central", "economy", "financials"],
+        "description": "India's top-level economic indicators, fiscal metrics and financial system health.",
+    },
+    # Sector Categories
+    {
+        "group": "Sector Categories",
+        "icon": "🌾",
+        "categories": ["agriculture", "energy", "transport", "commerce"],
+        "description": "Production, infrastructure and commerce across key productive sectors.",
+    },
+    # Geographic & Sub-national
+    {
+        "group": "Geographic & Sub-national",
+        "icon": "📍",
+        "categories": ["geo", "states"],
+        "description": "Region-level data, district metrics and state-wise performance.",
+    },
+    # Social Services
+    {
+        "group": "Social Services",
+        "icon": "🏥",
+        "categories": ["health", "education", "welfare"],
+        "description": "Healthcare access, education outcomes and social protection programmes.",
+    },
+    # Environment & Urban
+    {
+        "group": "Environment & Urban",
+        "icon": "🌍",
+        "categories": ["environment", "housing"],
+        "description": "Climate metrics, urban development and housing markets.",
+    },
+]
+
 
 # ---------------------------------------------------------------------------
 # FACTS — straight, defensible numbers across sources
