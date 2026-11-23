@@ -28,11 +28,14 @@ jobs:
         env:
           DATA_GOV_IN_TOKEN: ${{ secrets.DATA_GOV_IN_TOKEN }}
 
+      - name: Regenerate static site
+        run: python3 scripts/pipeline/page_generator.py
+
       - name: Commit and push if data changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest_kpis.json
+          git add data/latest_kpis.json site/
           git commit -m "chore: daily KPI update $(date -u +%F)" || echo "No changes; skipping commit"
           git push origin HEAD:main
           echo "Done."
