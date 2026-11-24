@@ -1,326 +1,976 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+
+
 <head>
+
+
   <meta charset="UTF-8" />
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
   <title>FinRadar — India & Global Macro KPIs & Benchmarks — FinRadar</title>
+
+
   <meta name="description" content="Live macroeconomic KPIs, benchmarks and interactive tools built from public government data." />
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+
   <link rel="stylesheet" href="styles/main.css" />
+
+
   <link rel="stylesheet" href="styles/european-theme.css" />
+
+
   <link rel="canonical" href="https://finradar.example/" />
+
+
 </head>
+
+
 <body>
+
+
   <header class="site-header">
+
+
     <div class="nav-inner container">
+
+
       <a class="brand" href="index.html">
+
+
         <span class="brand-mark">F</span>
+
+
         <span class="brand-name">FinRadar</span>
+
+
       </a>
+
+
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+
+
         <span></span><span></span><span></span>
+
+
       </button>
+
+
       <nav id="site-nav" class="site-nav" aria-label="Primary">
+
+
         <div class="nav-primary">
+
+
           <a href="index.html" class="nav-link">Dashboard</a>
+
+
           <a href="tools.html" class="nav-link">Tools</a>
+
+
           <a href="search.html" class="nav-link">Search</a>
+
+
           <a href="categories.html" class="nav-link">Categories</a>
+
+
           <a href="sources.html" class="nav-link">Sources</a>
+
+
         </div>
+
+
         <div class="nav-drop">
+
+
           <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse Sectors <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+
+
           <div class="nav-drop-menu" role="menu">
+
+
             <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
             <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
             <a href="category/economy.html" role="menuitem">💰 Economy</a>
+
+
             <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+
+
             <div class="nav-drop-heading">Sector Categories</div>
+
+
             <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
             <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
             <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+
+
             <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
             <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
             <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
             <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+
+
             <div class="nav-drop-heading">Social Services</div>
+
+
             <a href="category/health.html" role="menuitem">🏥 Health</a>
+
+
             <a href="category/education.html" role="menuitem">📚 Education</a>
+
+
             <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
             <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
             <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
             <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
             <div class="nav-drop-heading">More</div>
+
+
             <a href="categories.html" role="menuitem">📂 View All Categories</a>
+
+
           </div>
+
+
         </div>
+
+
       </nav>
+
+
     </div>
+
+
   </header>
+
+
   <main class="site-main container">
+
+
     <section class="hero">
+
+
       <div class="hero-inner">
+
+
         <h1>Real economy numbers, plain English.</h1>
+
+
         <p class="hero-sub">FinRadar turns public government data into living KPIs — real interest rates, digital velocity, fiscal health — and publishes benchmarks and reports you can cite. Every number is a derived metric, not a raw table.</p>
+
+
         <div class="hero-stats" id="hero-stats"></div>
+
+
       </div>
+
+
     </section>
+
+
+
+
 
     <section class="kpis">
+
+
       <h2>Live KPIs — what it actually costs</h2>
+
+
       <p class="section-intro">These are not raw tables. They are spreads, velocities and composite scores. Values update daily.</p>
+
+
       <div class="grid" id="kpi-grid"></div>
+
+
     </section>
+
+
+
+
 
     <section class="benchmarks">
+
+
       <h2>Original benchmarks we publish</h2>
+
+
       <div class="grid">
+
+
         <article class="card">
+
+
           <h3>1. India High-Frequency Macro Cycle Index</h3>
+
+
           <p>A 0–100 score blending GST, UPI, power demand, IIP, inflation, repo rate and GDP growth into one number that classifies the economy.</p>
+
+
           <div class="bench-stat" id="bench-macro-cycle-value"></div>
+
+
         </article>
+
+
         <article class="card">
+
+
           <h3>2. City Salary-Parity Benchmark</h3>
+
+
           <p>What salary in Jaipur gives the same purchasing power as ₹20 LPA in Mumbai? Interactive calculator below.</p>
+
+
         </article>
+
+
         <article class="card">
+
+
           <h3>3. State-Wise Fiscal Health Scorecard</h3>
+
+
           <p>Ranks all 28 states quarterly on GST growth, debt-to-GSDP, capex ratio.</p>
+
+
         </article>
+
+
         <article class="card">
+
+
           <h3>4. Global Emerging Market Resilience</h3>
+
+
           <p>India vs Vietnam, Indonesia, Brazil, Mexico on GDP growth, current account, FDI, digital infra.</p>
+
+
           <div class="bench-stat" id="bench-resilience-value"></div>
+
+
         </article>
+
+
       </div>
+
+
     </section>
+
+
+
+
 
     <section class="tools">
+
+
       <h2>Interactive tools</h2>
+
+
       <div class="tool-card">
+
+
         <h3>Your personal inflation rate</h3>
+
+
         <p class="sub">Enter your spending split — food, fuel, education, healthcare, housing — and see your personal inflation vs the headline.</p>
+
+
         <div id="personal-inflation-rows"></div>
+
+
         <button id="personal-inflation-btn" class="btn">Calculate</button>
+
+
         <div id="personal-inflation-result"></div>
+
+
       </div>
+
+
       <div class="tool-card">
+
+
         <h3>Salary parity between two cities</h3>
+
+
         <p class="sub">Enter a base salary and pick two cities. We tell you the equivalent purchasing-power salary.</p>
+
+
         <div class="tool-form">
+
+
           <input type="number" id="salary-parity-salary" value="200000" placeholder="INR" />
+
+
           <select id="salary-parity-from"></select>
+
+
           <select id="salary-parity-to"></select>
+
+
           <button id="salary-parity-btn" class="btn">Calculate</button>
+
+
         </div>
+
+
         <div id="salary-parity-result"></div>
+
+
       </div>
+
+
     </section>
 
+
+
+
+
     <section>
+
+
       <h2>Explore by category</h2>
+
+
       <div class="grid">
+
+
     
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🏛️ Central Government</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">All-India macro data from the Union Government: GDP, inflation, fiscal deficit, monetary policy, forex reserves, trade balance.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">5 facts</span>
+
+
             <a href="category/central.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🗺️ State Level</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">State-wise data: GST collections, state debt, state CPI, power demand, agri production, literacy, health and roads.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">5 facts</span>
+
+
             <a href="category/states.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🏦 Financials</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Banking, credit, insurance, pensions, NBFCs, capital markets and fiscal sustainability.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">5 facts</span>
+
+
             <a href="category/financials.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>📍 Geo Levels</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Geographic and district-level data: population density, urbanisation, boundaries, land use, climate zones.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">5 facts</span>
+
+
             <a href="category/geo.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🚗 Transport</h3>
+
+
             <span class="kpi-count small">4 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Roads, railways, aviation, shipping, vehicles, FASTag, UPI mobility and logistics.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">5 facts</span>
+
+
             <a href="category/transport.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>💰 Economy</h3>
+
+
             <span class="kpi-count small">15 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">GDP, inflation, trade flows, PPP and global comparisons.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">2 facts</span>
+
+
             <a href="category/economy.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🌾 Agriculture</h3>
+
+
             <span class="kpi-count small">4 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Crop production, fertiliser, irrigation, MSP and farmer welfare.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">2 facts</span>
+
+
             <a href="category/agriculture.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>⚡ Energy & Power</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Electricity demand, renewables, fossil-fuel dependency and grid data.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/energy.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🏥 Health</h3>
+
+
             <span class="kpi-count small">3 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Hospital capacity, immunisation, healthcare finance and disease surveillance.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/health.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>📚 Education</h3>
+
+
             <span class="kpi-count small">2 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Literacy, enrolment, teacher-pupil ratios and learning outcomes.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/education.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🤝 Welfare & Employment</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Food security, MGNREGA, social protection and employment.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/welfare.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🌍 Environment & Climate</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Emissions, renewable share, air and water quality.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/environment.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🛒 Trade & Commerce</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Exports, imports, GST collections, trade balance and digital payments.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/commerce.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
         <article class="card category-card">
+
+
           <div class="card-header">
+
+
             <h3>🏠 Housing & Urban</h3>
+
+
             <span class="kpi-count small">0 KPIs</span>
+
+
           </div>
+
+
           <p class="card-desc">Urbanisation, housing costs, municipal finance and smart cities.</p>
+
+
           <div class="card-footer">
+
+
             <span class="muted small">1 facts</span>
+
+
             <a href="category/housing.html" class="btn small">View</a>
+
+
           </div>
+
+
         </article>
+
+
       </div>
+
+
     </section>
+
+
     <p style="text-align:center; margin-top:24px;"><a href="search.html" class="btn">🔍 Search all facts &amp; KPIs</a></p>  </main>
+
+
   <footer class="site-footer">
+
+
     <div class="container footer-inner">
+
+
       <div class="footer-brand-col">
-        <a class="brand" href="index.html">
+
+
+        <a class="brand" href="../index.html">
+
+
           <span class="brand-mark">F</span>
+
+
           <span class="brand-name">FinRadar</span>
+
+
         </a>
+
+
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-24 13:10 UTC</span></p>
+
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-24 17:40 UTC</span></p>
+
+
       </div>
+
+
       <div class="footer-col">
+
+
         <h4 class="footer-heading">Explore</h4>
-        <a href="index.html">Dashboard</a>
-        <a href="search.html">Search</a>
-        <a href="sources.html">Data Sources</a>
+
+
+        <a href="../index.html">Dashboard</a>
+
+
+        <a href="../search.html">Search</a>
+
+
+        <a href="../sources.html">Data Sources</a>
+
+
       </div>
+
+
       <div class="footer-col">
+
+
         <h4 class="footer-heading">Key Sectors</h4>
-        <a href="category/central.html">Central Government</a>
-        <a href="category/states.html">State Level</a>
-        <a href="category/financials.html">Finance &amp; Banking</a>
-        <a href="category/geo.html">Geo Levels</a>
-        <a href="category/transport.html">Transport</a>
+
+
+        <a href="../category/central.html">Central Government</a>
+
+
+        <a href="../category/states.html">State Level</a>
+
+
+        <a href="../category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="../category/geo.html">Geo Levels</a>
+
+
+        <a href="../category/transport.html">Transport</a>
+
+
       </div>
+
+
       <div class="footer-col">
+
+
         <h4 class="footer-heading">More Sectors</h4>
-        <a href="category/economy.html">Economy</a>
-        <a href="category/agriculture.html">Agriculture</a>
-        <a href="category/health.html">Health</a>
-        <a href="category/education.html">Education</a>
-        <a href="category/welfare.html">Welfare &amp; Employment</a>
+
+
+        <a href="../category/economy.html">Economy</a>
+
+
+        <a href="../category/agriculture.html">Agriculture</a>
+
+
+        <a href="../category/health.html">Health</a>
+
+
+        <a href="../category/education.html">Education</a>
+
+
+        <a href="../category/welfare.html">Welfare &amp; Employment</a>
+
+
       </div>
+
+
     </div>
+
+
     <div class="container footer-bottom">
+
+
       <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
       <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
       <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+
+
     </div>
+
+
   </footer>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/charts.js"></script>
+
+
+  <script src="../scripts/app.js"></script>
+
+
+  <script src="../scripts/charts.js"></script>
+
+
 </body>
+
+
 </html>
