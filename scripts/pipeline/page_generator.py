@@ -87,6 +87,7 @@ def render_base_head(title, description, current_url="", base=""):
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <div class="nav-primary">
           <a href="{b}index.html" class="nav-link">Dashboard</a>
+          <a href="{b}tools.html" class="nav-link">Tools</a>
           <a href="{b}search.html" class="nav-link">Search</a>
           <a href="{b}categories.html" class="nav-link">Categories</a>
           <a href="{b}sources.html" class="nav-link">Sources</a>
@@ -162,6 +163,7 @@ def render_footer(base=""):
     </div>
     <div class="container footer-bottom">
       <p>© {datetime.now(timezone.utc).year} FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
       <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
     </div>
   </footer>
