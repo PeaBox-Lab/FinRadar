@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T19:05:43Z",
+  "generated_at": "2026-11-24T12:52:06Z",
   "sources": {
     "world_bank": "api.worldbank.org/v2",
     "data_gov_in": "api.data.gov.in (sample key by default; DATA_GOV_IN_TOKEN to enable live feeds)",
