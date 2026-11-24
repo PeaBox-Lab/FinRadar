@@ -693,6 +693,208 @@ def render_categories_index():
 
 
 # ---------------------------------------------------------------------------
+# Tools pages
+# ---------------------------------------------------------------------------
+
+def render_tools_index():
+    """Render the tools index page listing all available calculators."""
+    html = render_base_head(
+        "Tools — FinRadar",
+        "Interactive calculators and utilities for macroeconomic analysis — personal inflation, salary parity, and more.",
+        "/tools.html",
+        base=""
+    )
+    html += """
+    <section class="tool-index-hero">
+      <h1>Interactive Tools</h1>
+      <p class="hero-sub">Use our calculators and utilities to explore macroeconomic data in practical ways. Each tool gets its own dedicated page for a focused experience.</p>
+    </section>
+    """
+
+    tools = [
+        {
+            "id": "personal-inflation",
+            "title": "Personal Inflation Rate",
+            "icon": "📊",
+            "description": "Enter your spending split across categories and see how your personal inflation compares to the official headline rate.",
+            "href": "personal-inflation.html",
+            "category": "Personal Finance"
+        },
+        {
+            "id": "salary-parity",
+            "title": "Salary Parity",
+            "icon": "💼",
+            "description": "Find the equivalent salary in another Indian city that maintains the same purchasing power.",
+            "href": "salary-parity.html",
+            "category": "Personal Finance"
+        },
+        {
+            "id": "investment-growth",
+            "title": "Investment Growth",
+            "icon": "𓂀",
+            "description": "Calculate the future value of your investments with compound interest.",
+            "href": "#",
+            "category": "Finance"
+        },
+        {
+            "id": "emi-calculator",
+            "title": "EMI Calculator",
+            "icon": "💰",
+            "description": "Estimate your Equated Monthly Installment for home, car, or personal loans.",
+            "href": "#",
+            "category": "Finance"
+        },
+        {
+            "id": "cagr-calculator",
+            "title": "CAGR Calculator",
+            "icon": "𓂀",
+            "description": "Compute the Compound Annual Growth Rate for your investments.",
+            "href": "#",
+            "category": "Finance"
+        },
+        {
+            "id": "inflation-adjuster",
+            "title": "Inflation Adjuster",
+            "icon": "📈",
+            "description": "Calculate the inflation-adjusted value of money across years.",
+            "href": "#",
+            "category": "Personal Finance"
+        },
+    ]
+
+    for tool in tools:
+        html += f"""
+    <article class="tool-card">
+      <div class="tool-icon">{tool['icon']}</div>
+      <div>
+        <h3>{tool['title']}</h3>
+        <p>{tool['description']}</p>
+      </div>
+      <a href="{tool['href']}" class="tool-link">Open tool</a>
+    </article>"""
+
+    html += render_footer("")
+    return html
+
+
+def render_personal_inflation_page():
+    """Render the personal inflation calculator page."""
+    data = load_latest()
+    html = render_base_head(
+        "Personal Inflation Calculator — FinRadar",
+        "Calculate your personal inflation rate based on your spending split across categories.",
+        "/tools/personal-inflation.html",
+        base=""
+    )
+    html += render_personal_inflation_form(data)
+    html += render_footer("")
+    return html
+
+
+def render_salary_parity_page():
+    """Render the salary parity calculator page."""
+    data = load_latest()
+    html = render_base_head(
+        "Salary Parity Calculator — FinRadar",
+        "Find the equivalent salary in another Indian city that maintains the same purchasing power.",
+        "/tools/salary-parity.html",
+        base=""
+    )
+    html += render_salary_parity_form(data)
+    html += render_footer("")
+    return html
+
+
+def render_personal_inflation_form(data):
+    """Render the personal inflation calculator form."""
+    # Use data for headline if available
+    headline = data.get("india", {}).get("real_inflation_rate", 2.4)
+    
+    subindices = {
+        "food": 36, "fuel & light": 7, "clothing": 5, "education": 3,
+        "healthcare": 3, "housing": 25, "other stuff": 17
+    }
+    n = len(subindices)
+    base_weight = 100 // n
+    default_weights = [base_weight + (1 if i < (100 - base_weight * n) else 0) for i in range(n)]
+    default_weight_at = lambda i: default_weights[i]
+    
+    categories = list(subindices.keys())
+    
+    rows = []
+    for i, c in enumerate(categories):
+        rows.append(f"""
+      <tr>
+        <td>{c}</td>
+        <td class="num"><input type="number" id="w-{i}" min="0" max="100" value="{default_weight_at(i)}" aria-label="Weight % for {c}"></td>
+        <td class="muted" id="s-{i}">{subindices[c]}</td>
+        <td class="num"><input type="number" id="e-{i}" step="0.25" min="0" value="0" aria-label="Extra % for {c}"></td>
+        <td class="muted" id="a-{i}"></td>
+      </tr>""")
+    
+    table_html = "<table>" + "".join(rows) + "</table>"
+    
+    html = f"""
+    <section class="tool-card">
+      <div class="tool-section">
+        <h3>Spending Weights</h3>
+        <p class="tool-note">Distribute 100% total weight across the categories below.</p>
+        {table_html}
+      </div>
+
+      <div class="tool-actions">
+        <button id="personal-inflation-btn" class="btn">Calculate Personal Inflation</button>
+        <button id="personal-inflation-reset" class="btn small" style="margin-left: 10px;">Reset</button>
+      </div>
+
+      <div id="personal-inflation-result" class="tool-result" style="margin-top: 20px; padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); border-radius: 12px; min-height: 80px; display: none;">
+        <h3>Your personal inflation rate: <span id="personal-inflation-result-rate">—</span>%</h3>
+        <p id="personal-inflation-result-comment">Give the weights a total above 0.</p>
+        <p class="muted" id="personal-inflation-result-headline">The official headline is <span id="personal-inflation-result-headline-val">{headline:.2f}</span>%.</p>
+        <p class="muted small" id="personal-inflation-result-comparison"></p>
+      </div>
+    </section>"""
+
+    return html
+
+
+def render_salary_parity_form(data):
+    """Render the salary parity calculator form."""
+    city_indices = data.get("city_indices", {
+        "Pune": 120, "Mumbai": 130, "Delhi": 118, "Jaipur": 90, 
+        "Bengaluru": 115, "Hyderabad": 105
+    })
+    names = [k for k in city_indices.keys() if isinstance(city_indices[k], (int, float))]
+    
+    html = f"""
+    <section class="tool-card">
+      <div class="tool-section">
+        <h3>Enter Your Salary</h3>
+        <div class="tool-form">
+          <input type="number" id="salary-parity-salary" value="200000" placeholder="INR" aria-label="Base salary in INR" />
+          <select id="salary-parity-from">
+{''.join([f'<option>{name}</option>' for name in names])}
+          </select>
+          <span>₹ Base in</span>
+          <select id="salary-parity-to">
+{''.join([f'<option>{name}</option>' for name in names])}
+          </select>
+          <button id="salary-parity-btn" class="btn">Calculate</button>
+        </div>
+      </div>
+
+      <section class="tool-section" style="margin-top: 24px;">
+        <h3>Result</h3>
+        <div id="salary-parity-result" class="tool-result" style="margin-top: 16px; padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--card-border); border-radius: 12px; min-height: 80px; display: none;">
+          <p id="salary-parity-result-text">Enter a salary and pick two cities above.</p>
+        </div>
+      </section>
+    </section>"""
+
+    return html
+
+
+# ---------------------------------------------------------------------------
 # Main generator
 # ---------------------------------------------------------------------------
 
@@ -710,6 +912,7 @@ def main():
     (SITE_DIR / "styles").mkdir()
     (SITE_DIR / "scripts").mkdir()
     (SITE_DIR / "data").mkdir()
+    (SITE_DIR / "tools").mkdir()  # NEW: tools directory
 
     # Copy static assets (styles + only the client JS, not the pipeline)
     shutil.copytree(ROOT / "styles", SITE_DIR / "styles", dirs_exist_ok=True)
@@ -730,6 +933,15 @@ def main():
 
     print("Generating sources.html…")
     (SITE_DIR / "sources.html").write_text(render_sources_page(), encoding="utf-8")
+
+    print("Generating tools index.html…")
+    (SITE_DIR / "tools.html").write_text(render_tools_index(), encoding="utf-8")
+
+    print("Generating personal inflation page…")
+    (SITE_DIR / "tools" / "personal-inflation.html").write_text(render_personal_inflation_page(), encoding="utf-8")
+
+    print("Generating salary parity page…")
+    (SITE_DIR / "tools" / "salary-parity.html").write_text(render_salary_parity_page(), encoding="utf-8")
 
     print("Generating categories index.html…")
     (SITE_DIR / "categories.html").write_text(render_categories_index(), encoding="utf-8")
