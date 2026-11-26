@@ -48,8 +48,8 @@ FinRadar/
 │       ├── page_generator.py     # Generates complete static site under site/ (97 pages)
 │       └── api_catalog.py        # API catalog: 17 APIs across 11 categories with summary stats
 ├── styles/
-│   ├── main.css                  # Base dark glassmorphic theme + components
-│   └── european-theme.css        # European navy/slate/cream palette + nav/footer overrides
+│   ├── main.css                  # UI foundation: tokens, layout, nav, cards, tables, footer
+│   └── european-theme.css        # FinRadar theme layer: hero, KPIs, tools, detail pages
 ├── site/                         # BUILD OUTPUT (committed to main; deployed to gh-pages)
 │   ├── index.html                # Dashboard / landing page
 │   ├── search.html               # Full-text search across facts & KPIs
@@ -194,38 +194,29 @@ This makes the site work both on GitHub Pages and when opened via `file://`.
 
 ### 5.1 `styles/main.css`
 
-Base dark glassmorphic theme:
-- Background: radial gradient navy `#0b1120`
-- Cards: `rgba(255,255,255,0.03)` with `rgba(255,255,255,0.09)` borders
-- Accent teal: `#14b8a6`
-- Accent violet: `#a855f7`
-- Accent orange: `#f97316`
-- Font: Inter (Google Fonts)
+Modern, light-first design foundation:
+- Canvas: warm paper `#f5f7f8` with soft teal/indigo radial washes
+- Surfaces: white cards with `#dfe7ec` borders and layered shadows
+- Ink: deep navy `#0c1c2e`, text `#31485a`, muted `#6b7d8b`
+- Brand teal `#0e7c70`, indigo `#4f46e5`, green/amber/red verdicts
+- Type: Inter for UI, Plus Jakarta Sans for headings
 
 Includes styles for:
-- Header / nav / dropdown / mobile overlay
-- Footer (4-column grid)
-- Cards, KPI cards, stat pills, verdict badges
-- Benchmarks, tools, reports, peers table
-- Category pages, fact detail, KPI detail, trend pages
-- Search results, sources page
-- Responsive breakpoints (980px, 860px, 780px)
+- Sticky blurred header, primary nav, sector dropdown, mobile overlay
+- Four-column dark footer
+- Buttons, badges, cards, grids, tables
+- Skip link, focus rings, reduced-motion support
+- Responsive breakpoints (1050px, 900px, 760px, 480px)
 
 ### 5.2 `styles/european-theme.css`
 
-Overrides with European palette:
-- Background: `#0f172a` (slate navy)
-- Nav: `rgba(15,23,42,0.88)` with backdrop blur
-- Accent teal: `#2d6a4f`
-- Accent orange: `#fbbf24`
-- Accent violet: `#e879f2`
-- Accent coral: `#ff6b6b`
-
-Also contains:
-- `.nav-primary` — inline primary nav styling
-- `.nav-drop-menu` — scrollable dropdown (`max-height: 82vh`, `overflow-y: auto`, styled scrollbar)
-- Footer navigation overrides
-- Responsive mobile nav overlay
+FinRadar-specific component layer:
+- Dark gradient hero with grid texture, radar visual and live signal card
+- KPI cards with sector chip, live badge, verdict and insight
+- Benchmark cards, tool forms, result panels and data tables
+- Category tiles, fact cards, trend previews and canvas chart panel
+- KPI/fact/trend detail pages, search results, sources catalogue
+- Closing CTA band and mobile adaptations
 
 ### 5.3 How themes load
 
@@ -235,7 +226,7 @@ Every page head includes:
 <link rel="stylesheet" href="styles/european-theme.css" />
 ```
 
-`european-theme.css` overrides variables and component styles from `main.css`.
+`european-theme.css` builds on the tokens and primitives in `main.css` with FinRadar-specific components.
 
 ---
 

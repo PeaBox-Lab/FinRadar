@@ -1,14 +1,16 @@
 /* ==========================================================================
-   FinRadar — Extended Client Script
-   Adds support for the multi-page architecture: Sparklines, Charts, and Search.
+   FinRadar — Charts
+   Lightweight SVG sparklines and a canvas trend chart. No dependencies.
    ========================================================================== */
 
 "use strict";
 
-/**
- * Simple Sparkline Renderer
- * Renders a minimal SVG path from a data-points attribute.
- */
+function themeColor(name, fallback) {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return value || fallback;
+}
+
+/** Render a minimal SVG sparkline from the data-points attribute. */
 function renderSparklines() {
   const sparklines = document.querySelectorAll(".sparkline");
   sparklines.forEach(el => {
@@ -20,6 +22,7 @@ function renderSparklines() {
     const min = Math.min(...pts);
     const max = Math.max(...pts);
     const range = max - min || 1;
+    const color = themeColor("--brand", "#0e7c70");
 
     const coords = pts.map((v, i) => {
       const x = (i / (pts.length - 1)) * width;
@@ -28,72 +31,105 @@ function renderSparklines() {
     }).join(" ");
 
     el.innerHTML = `
-      <svg width="${width}" height="${height}" style="overflow:visible">
-        <polyline points="${coords}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" />
-      </svg>
-    `;
+      <svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" role="img" aria-label="Trend sparkline">
+        <polyline points="${coords}" fill="none" stroke="${color}" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+      </svg>`;
   });
 }
 
-/**
- * Historical Trend Chart
- * Uses a simple Canvas-based line chart for detail pages.
- */
+/** Draw the historical trend chart on detail pages. */
 function renderTrendChart() {
   const canvas = document.getElementById("trend-chart");
   if (!canvas) return;
 
-  const data = window.__TREND_CHART_DATA__;
-  if (!data) return;
+  const data = window.__TREND_CHART_DATA__ || window.chartData;
+  if (!data || !data.values || data.values.length < 2) return;
 
   const ctx = canvas.getContext("2d");
-  const padding = 40;
+  const padding = 44;
   const w = canvas.width = canvas.parentElement.clientWidth;
   const h = canvas.height = 300;
+
+  const brand = themeColor("--brand", "#0e7c70");
+  const line = themeColor("--line", "#dfe7ec");
+  const muted = themeColor("--muted", "#6b7d8b");
+  const axis = themeColor("--ink", "#0c1c2e");
 
   const labels = data.labels;
   const values = data.values;
   const min = Math.min(...values);
   const max = Math.max(...values);
   const range = max - min || 1;
+  const xAt = i => padding + (i / (values.length - 1)) * (w - 2 * padding);
+  const yAt = v => (h - padding) - ((v - min) / range) * (h - 2 * padding);
 
   ctx.clearRect(0, 0, w, h);
-  
-  // Draw axes
-  ctx.strokeStyle = "#444";
+
+  // Horizontal guides
+  ctx.strokeStyle = line;
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 3; i++) {
+    const y = padding + (i * (h - 2 * padding)) / 3;
+    ctx.beginPath();
+    ctx.moveTo(padding, y);
+    ctx.lineTo(w - padding, y);
+    ctx.stroke();
+  }
+
+  // Baseline
+  ctx.strokeStyle = axis;
+  ctx.globalAlpha = 0.25;
   ctx.beginPath();
   ctx.moveTo(padding, padding);
   ctx.lineTo(padding, h - padding);
   ctx.lineTo(w - padding, h - padding);
   ctx.stroke();
+  ctx.globalAlpha = 1;
 
-  // Draw line
-  ctx.strokeStyle = "var(--accent)";
-  ctx.lineWidth = 3;
+  // Filled area under the series
+  const gradient = ctx.createLinearGradient(0, padding, 0, h - padding);
+  gradient.addColorStop(0, "rgba(14, 124, 112, 0.22)");
+  gradient.addColorStop(1, "rgba(14, 124, 112, 0.01)");
   ctx.beginPath();
-  
-  values.forEach((v, i) => {
-    const x = padding + (i / (values.length - 1)) * (w - 2 * padding);
-    const y = (h - padding) - ((v - min) / range) * (h - 2 * padding);
-    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-  });
+  values.forEach((v, i) => i === 0 ? ctx.moveTo(xAt(i), yAt(v)) : ctx.lineTo(xAt(i), yAt(v)));
+  ctx.lineTo(xAt(values.length - 1), h - padding);
+  ctx.lineTo(xAt(0), h - padding);
+  ctx.closePath();
+  ctx.fillStyle = gradient;
+  ctx.fill();
+
+  // Series line
+  ctx.beginPath();
+  values.forEach((v, i) => i === 0 ? ctx.moveTo(xAt(i), yAt(v)) : ctx.lineTo(xAt(i), yAt(v)));
+  ctx.strokeStyle = brand;
+  ctx.lineWidth = 3;
+  ctx.lineJoin = "round";
   ctx.stroke();
 
+  // Point markers
+  values.forEach((v, i) => {
+    ctx.beginPath();
+    ctx.arc(xAt(i), yAt(v), 3.5, 0, Math.PI * 2);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = brand;
+    ctx.stroke();
+  });
+
   // Labels
-  ctx.fillStyle = "#aaa";
-  ctx.font = "12px Inter";
-  ctx.fillText(max.toFixed(2) + " " + data.unit, 5, padding);
-  ctx.fillText(min.toFixed(2) + " " + data.unit, 5, h - padding);
-  
-  labels.forEach((l, i) => {
-    const x = padding + (i / (labels.length - 1)) * (w - 2 * padding);
-    ctx.fillText(l, x - 10, h - padding + 20);
+  ctx.fillStyle = muted;
+  ctx.font = '12px Inter, sans-serif';
+  ctx.fillText(`${max.toFixed(2)} ${data.unit}`, 6, padding + 4);
+  ctx.fillText(`${min.toFixed(2)} ${data.unit}`, 6, h - padding + 4);
+
+  labels.forEach((label, i) => {
+    if (labels.length > 10 && i % 2 !== 0 && i !== labels.length - 1) return;
+    ctx.fillText(label, xAt(i) - ctx.measureText(label).width / 2, h - padding + 22);
   });
 }
 
-// Integration into DOMContentLoaded
-const originalDOMContentLoaded = document.addEventListener;
-// We wrap the logic to ensure it runs on every page
 document.addEventListener("DOMContentLoaded", () => {
   renderSparklines();
   renderTrendChart();

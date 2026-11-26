@@ -33,7 +33,7 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 | **Search Index** | Full-text lookup across all facts and KPIs |
 | **Sources Catalog** | 17 public APIs across 11 categories with summary statistics |
 | **Historical Trends** | 8 trend series with sparkline SVG and canvas chart rendering |
-| **Dark Glassmorphic UI** | European navy/slate/cream palette with teal/violet/orange accents |
+| **Modern Dashboard UI** | Light paper canvas, deep-navy dark hero/footer, teal + indigo accents, responsive cards and charts |
 | **Mobile Responsive** | Hamburger nav, scrollable sector dropdown, touch-friendly cards |
 | **SEO Ready** | Sitemap with 97 URLs, canonical links, meta descriptions |
 | **File:// Compatible** | All links use relative paths — works on GitHub Pages and local filesystem |
@@ -42,12 +42,12 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 
 ## 🏗️ Tech Stack
 
-- **Frontend:** HTML5, CSS3 (glassmorphic dark theme), vanilla JavaScript
+- **Frontend:** HTML5, CSS3 (modern light dashboard theme), vanilla JavaScript
 - **Charts:** Canvas trend charts + SVG sparklines
 - **Data Pipeline:** Python 3, World Bank API, public government snapshots
 - **Static Site Generation:** Custom Python generator (`scripts/pipeline/page_generator.py`)
 - **Deployment:** GitHub Actions → `gh-pages` branch → GitHub Pages
-- **Fonts:** Inter (Google Fonts)
+- **Fonts:** Inter + Plus Jakarta Sans (Google Fonts)
 
 ---
 
@@ -91,7 +91,7 @@ FinRadar/
 │       ├── page_generator.py     # Static site generator (97 pages)
 │       └── api_catalog.py        # API catalog with summary stats
 ├── styles/
-│   ├── main.css                  # Base dark glassmorphic theme
+│   ├── main.css                  # UI foundation: tokens, layout, nav, cards, tables, footer
 │   └── european-theme.css        # European palette + nav/footer overrides
 ├── site/                         # Build output (committed to main, deployed to gh-pages)
 │   ├── index.html                # Dashboard / landing page

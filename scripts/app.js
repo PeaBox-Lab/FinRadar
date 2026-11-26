@@ -6,14 +6,21 @@
 
 "use strict";
 
+// Pages live both at the site root and in subfolders (category/, kpi/, ...).
+// The generator emits the correct relative prefix on <body data-base>.
+const SITE_BASE = document.body.dataset.base || "";
+const LIVE_DATA_URL = `${SITE_BASE}data/latest_kpis.json`;
+const SNAPSHOT_URL = `${SITE_BASE}data/snapshots/indicators.json`;
+
 async function loadKPIs() {
   try {
-    const res = await fetch("data/latest_kpis.json");
+    const res = await fetch(LIVE_DATA_URL);
     if (!res.ok) throw new Error("not ok: " + res.status);
     return await res.json();
   } catch (err) {
     console.warn("FinRadar: live data unavailable, using snapshot.");
-    const res = await fetch("data/snapshots/indicators.json");
+    const res = await fetch(SNAPSHOT_URL);
+    if (!res.ok) throw new Error("snapshot not ok: " + res.status);
     return res.json();
   }
 }
@@ -25,22 +32,46 @@ function humanizeNumber(n) {
 
 /* ---------------- KPI grid ---------------- */
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+  }[ch]));
+}
+
+function verdictClass(verdict) {
+  const v = (verdict || "").toLowerCase();
+  if (v === "strong" || v === "on target" || v === "good") return "good";
+  if (v === "moderate" || v === "near target") return "moderate";
+  return "weak";
+}
+
 function renderKPI(k) {
-  const el = document.createElement("div");
-  el.className = "kpi-card";
-  if (k.value === null || k.value === undefined) el.classList.add("demo");
+  const el = document.createElement("article");
+  el.className = "card kpi-card";
+  const isLive = k.value != null && k.source_live !== false;
+  if (!isLive) el.classList.add("demo");
 
   const parts = [];
-  if (k.value !== null && k.value !== undefined) {
-    parts.push(`<div class="kpi-value">${humanizeNumber(k.value)}<span class="kpi-unit"> ${k.unit || ""}</span></div>`);
+  parts.push(`<div class="kpi-top">
+    <span class="kpi-sector">${escapeHtml(k.sector || "General")}</span>
+    <span class="kpi-badge ${isLive ? "live" : "demo"}">${isLive ? "Live" : "Demo"}</span>
+  </div>`);
+  parts.push(`<h3 class="kpi-name">${escapeHtml(k.name || "")}</h3>`);
+  if (k.value != null) {
+    parts.push(`<div class="kpi-value">${humanizeNumber(k.value)}<span class="kpi-unit">${escapeHtml(k.unit || "")}</span></div>`);
   } else {
     parts.push(`<div class="kpi-value">—</div>`);
   }
-  if (k.subtitle) parts.push(`<div class="kpi-sub">${k.subtitle}</div>`);
-  parts.push(`<div class="kpi-meta">${k.source || ""}</div>`);
-  if (k.benchmark) parts.push(`<div class="kpi-meta">${k.benchmark}</div>`);
-  const isDemo = el.classList.contains("demo");
-  parts.push(`<span class="kpi-badge ${isDemo ? "demo" : "live"}">${isDemo ? "demo" : "live"}</span>`);
+  if (k.verdict) {
+    parts.push(`<span class="verdict-badge ${verdictClass(k.verdict)}">${escapeHtml(k.verdict.toUpperCase())}</span>`);
+  }
+  if (k.insight_text) parts.push(`<p class="kpi-sub clamp-2">${escapeHtml(k.insight_text)}</p>`);
+  else if (k.subtitle) parts.push(`<div class="kpi-sub">${escapeHtml(k.subtitle)}</div>`);
+  if (k.benchmark) parts.push(`<p class="kpi-meta">${escapeHtml(k.benchmark)}</p>`);
+  else if (k.source_resource_id) parts.push(`<p class="kpi-meta">${escapeHtml(k.source_resource_id)}</p>`);
+  if (k.kpi_id) {
+    parts.push(`<a class="kpi-link" href="kpi/${encodeURIComponent(k.kpi_id)}.html">View detail →</a>`);
+  }
   el.innerHTML = parts.join("");
   return el;
 }
@@ -78,8 +109,11 @@ function renderHeroStats(data) {
 
 function renderBenchmarks(data) {
   if (data.benchmarks && data.benchmarks.india_macro_cycle_score != null) {
+    const score = data.benchmarks.india_macro_cycle_score;
     const v = document.getElementById("bench-macro-cycle-value");
-    if (v) v.textContent = `${data.benchmarks.india_macro_cycle_score} / 100`;
+    if (v) v.textContent = `${score} / 100`;
+    const hero = document.getElementById("hero-signal-value");
+    if (hero) hero.textContent = score;
   }
   const t = document.getElementById("macro-cycle-readout");
   if (t && data.benchmarks && data.benchmarks.india_macro_cycle_score != null) {
@@ -239,7 +273,8 @@ function initPersonalInflationTool(data) {
       `<br><small class="muted">Adjusted sub-indices are illustrative until live MoSPI data is wired in.</small>`;
   });
 
-  document.getElementById("personal-inflation-reset").addEventListener("click", () => {
+  const resetBtn = document.getElementById("personal-inflation-reset");
+  if (resetBtn) resetBtn.addEventListener("click", () => {
     categories.forEach((c, i) => {
       document.getElementById(`w-${i}`).value = defaultWeightAt(i);
       document.getElementById(`e-${i}`).value = 0;
@@ -336,6 +371,15 @@ function initNav() {
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-drop')) {
       document.querySelectorAll('.nav-drop.open').forEach(d => { d.classList.remove('open'); d.querySelector('.nav-drop-btn')?.setAttribute('aria-expanded','false'); });
+    }
+  });
+
+  // Highlight the section the reader is in.
+  const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.nav-primary a').forEach(a => {
+    const target = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+    if (target === page || (page === 'index.html' && target === 'index.html')) {
+      a.setAttribute('aria-current', 'page');
     }
   });
 }
