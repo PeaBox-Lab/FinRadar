@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T09:06:00Z",
+  "generated_at": "2026-11-26T09:58:28Z",
   "methodology": "Public official APIs only. All derived values are computed from the series listed in this file.",
   "series": [
     {
@@ -3357,7 +3357,7 @@
         "Modal Price",
         "Arrival Date"
       ],
-      "status": "live",
+      "status": "cached",
       "stats": {
         "records_in_page": 5,
         "total_records": 13205,
@@ -3375,7 +3375,8 @@
           "Min_x0020_Price",
           "Max_x0020_Price"
         ]
-      }
+      },
+      "note": "The portal's public key is rate-limited; set DATA_GOV_IN_TOKEN for full access."
     }
   ],
   "kpis": [
@@ -3739,7 +3740,7 @@
     }
   ],
   "discovery": {
-    "scanned_at": "2026-11-26T09:06:00Z",
+    "scanned_at": "2026-11-26T09:58:28Z",
     "scope": "Curated scan: official portal metadata plus live series actually fetched in this run.",
     "key_mode": "public sample key (rate-limited)",
     "portals": [
@@ -3990,7 +3991,7 @@
           "Modal Price",
           "Arrival Date"
         ],
-        "status": "live",
+        "status": "cached",
         "stats": {
           "records_in_page": 5,
           "total_records": 13205,
@@ -4008,7 +4009,8 @@
             "Min_x0020_Price",
             "Max_x0020_Price"
           ]
-        }
+        },
+        "note": "The portal's public key is rate-limited; set DATA_GOV_IN_TOKEN for full access."
       }
     ],
     "api_setu": {
