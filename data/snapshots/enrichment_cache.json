@@ -1,6 +1,6 @@
 {
   "wb:IND:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:24Z",
     "points": [
       {
         "year": 2000,
@@ -109,7 +109,7 @@
     ]
   },
   "wb:IND:NY.GDP.PCAP.CD": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:24Z",
     "points": [
       {
         "year": 2000,
@@ -218,7 +218,7 @@
     ]
   },
   "wb:IND:NY.GDP.PCAP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -327,7 +327,7 @@
     ]
   },
   "wb:IND:FP.CPI.TOTL.ZG": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -436,7 +436,7 @@
     ]
   },
   "wb:IND:SP.POP.TOTL": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -545,7 +545,7 @@
     ]
   },
   "wb:IND:SP.POP.GROW": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -654,7 +654,7 @@
     ]
   },
   "wb:IND:SP.URB.TOTL.IN.ZS": {
-    "fetched_at": "2026-11-26T09:05:57Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -763,7 +763,7 @@
     ]
   },
   "wb:IND:SP.POP.1564.TO.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -872,7 +872,7 @@
     ]
   },
   "wb:IND:SP.DYN.LE00.IN": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -977,7 +977,7 @@
     ]
   },
   "wb:IND:SE.ADT.LITR.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2001,
@@ -1030,7 +1030,7 @@
     ]
   },
   "wb:IND:NY.GDS.TOTL.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -1139,7 +1139,7 @@
     ]
   },
   "wb:IND:FS.AST.PRVT.GD.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -1248,7 +1248,7 @@
     ]
   },
   "wb:IND:FR.INR.RINR": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:25Z",
     "points": [
       {
         "year": 2000,
@@ -1345,7 +1345,7 @@
     ]
   },
   "wb:IND:BX.KLT.DINV.WD.GD.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1454,7 +1454,7 @@
     ]
   },
   "wb:IND:BN.CAB.XOKA.GD.ZS": {
-    "fetched_at": "2026-11-26T09:05:58Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1563,7 +1563,7 @@
     ]
   },
   "wb:IND:FI.RES.TOTL.MO": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1672,7 +1672,7 @@
     ]
   },
   "wb:IND:EG.ELC.ACCS.ZS": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1777,7 +1777,7 @@
     ]
   },
   "wb:IND:IT.NET.USER.ZS": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1886,7 +1886,7 @@
     ]
   },
   "wb:IND:PA.NUS.FCRF": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -1995,7 +1995,7 @@
     ]
   },
   "wb:IND:SL.UEM.TOTL.ZS": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -2104,7 +2104,7 @@
     ]
   },
   "wb:IND:SI.POV.DDAY": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2004,
@@ -2129,7 +2129,7 @@
     ]
   },
   "wb:WLD:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -2238,7 +2238,7 @@
     ]
   },
   "wb:WLD:FP.CPI.TOTL.ZG": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:27Z",
     "points": [
       {
         "year": 2000,
@@ -2347,7 +2347,7 @@
     ]
   },
   "wb:VNM:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:27Z",
     "points": [
       {
         "year": 2000,
@@ -2456,7 +2456,7 @@
     ]
   },
   "wb:IND:EN.ATM.PM25.MC.M3": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:26Z",
     "points": [
       {
         "year": 2000,
@@ -2557,7 +2557,7 @@
     ]
   },
   "wb:IDN:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:05:59Z",
+    "fetched_at": "2026-11-26T09:58:27Z",
     "points": [
       {
         "year": 2000,
@@ -2666,7 +2666,7 @@
     ]
   },
   "wb:BRA:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:06:00Z",
+    "fetched_at": "2026-11-26T09:58:27Z",
     "points": [
       {
         "year": 2000,
@@ -2775,7 +2775,7 @@
     ]
   },
   "wb:MEX:NY.GDP.MKTP.KD.ZG": {
-    "fetched_at": "2026-11-26T09:06:00Z",
+    "fetched_at": "2026-11-26T09:58:27Z",
     "points": [
       {
         "year": 2000,
