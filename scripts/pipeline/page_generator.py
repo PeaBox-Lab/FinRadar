@@ -372,7 +372,7 @@ def render_global_section(section: dict, limit: int = 12) -> str:
         values = [p.get("value") for p in points if p.get("value") is not None]
         spark = ""
         if len(values) >= 2:
-            spark = (f'<div class="sparkline" data-points=\''
+            spark = (f'<div class="sparkline" data-label="{html_lib.escape(row.get("label", row.get("name", "Series")), quote=True)} recent values" data-points=\''
                      f'{html_lib.escape(json.dumps(values), quote=True)}\'></div>')
         latest_value = row.get("latest_value", row.get("value"))
         latest_period = row.get("latest_period", row.get("as_of", ""))
@@ -409,7 +409,7 @@ def render_market_context(extra: dict, limit: int = 12) -> str:
         values = [p.get("value") for p in row.get("points", []) if p.get("value") is not None]
         spark = ""
         if len(values) >= 2:
-            spark = f'<div class="sparkline" data-points=\'{html_lib.escape(json.dumps(values), quote=True)}\'></div>'
+            spark = f'<div class="sparkline" data-label="{html_lib.escape(row.get("label", "Index"), quote=True)} recent values" data-points=\'{html_lib.escape(json.dumps(values), quote=True)}\'></div>'
         change = row.get("change_pct")
         change_text = f'{change:+.2f}%' if isinstance(change, (int, float)) else ""
         cards.append(f"""<article class="card market-card">
@@ -596,18 +596,31 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 
 def render_trend_embed(trend, kpi_id, heading=None, latest=None):
-    """Compact sparkline preview linking through to the full history page."""
+    """Compact history preview, placed beside the latest value it explains."""
     if not trend:
         return ""
-    points = json.dumps([p["value"] for p in trend["points"]])
-    label = heading or f'{trend["label"]} (history)'
+    points = trend.get("points") or []
+    values = [p.get("value") for p in points if isinstance(p.get("value"), (int, float))]
+    if len(values) < 2:
+        return ""
+    years = [str(p.get("year", "")) for p in points]
+    label = heading or f'{trend["label"]} history'
+    label_html = html_lib.escape(label)
+    spark_label = html_lib.escape(f'{trend["label"]}, {years[0]} to {years[-1]}', quote=True)
+    source = html_lib.escape(str(trend.get("source", "Published series")))
     badge = curated_badge(latest) if latest else ""
-    return f'''<div class="trend-embed">
-      <h3>{label}</h3>
+    return f'''<section class="trend-embed" aria-label="{label_html}">
+      <div class="trend-embed-head">
+        <h3>{label_html}</h3>
+        <span class="chart-range">{html_lib.escape(years[0])} → {html_lib.escape(years[-1])}</span>
+      </div>
       {f'<div class="disclosure-row">{badge}</div>' if badge else ''}
-      <div class="sparkline" data-points='{points}'></div>
-      <a href="../trend/{kpi_id}.html" class="btn">Full history</a>
-    </div>'''
+      <div class="sparkline" data-label="{spark_label}" data-points='{json.dumps(values)}'></div>
+      <div class="trend-embed-foot">
+        <span class="small muted">Published series · {source}</span>
+        <a href="../trend/{kpi_id}.html" class="btn small">Full history →</a>
+      </div>
+    </section>'''
 
 
 def render_source_tags(api):
@@ -1108,7 +1121,7 @@ def render_category_page(sector_id, latest):
               <p class="muted small">{trend['source']}</p>
               <div class="disclosure-row">{curated_badge(latest)}</div>
 
-              <div class="sparkline" data-points='{json.dumps([p["value"] for p in pts])}'></div>
+              <div class="sparkline" data-label="{html_lib.escape(trend['label'], quote=True)} history" data-points='{json.dumps([p["value"] for p in pts])}'></div>
 
 
               <p class="trend-value">{humanize(latest_pt["value"])} {trend["unit"]} <span class="muted">({latest_pt["year"]})</span></p>
@@ -1365,11 +1378,25 @@ def render_trend_page(kpi_id, latest):
       <div class="disclosure-row">{curated_badge(latest)}</div>
       {f'<p class="latest-value">Latest ({years[-1]}): <strong>{humanize(values[-1])} {trend["unit"]}</strong></p>' if values else ''}
 
-      <div class="chart-wrap">
-        <canvas id="trend-chart" aria-label="Historical chart for {trend['label']}" role="img"></canvas>
-      </div>
+      <section class="chart-section" aria-labelledby="chart-heading">
+        <div class="chart-section-head">
+          <div>
+            <h2 id="chart-heading">Trend over time</h2>
+            <p class="muted small">Hover or tap a point for its value. Use ← → keys to step through years.</p>
+          </div>
+          <div class="disclosure-row">{curated_badge(latest)}</div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="trend-chart" aria-label="Historical chart for {html_lib.escape(trend['label'], quote=True)}" role="img"></canvas>
+          <div class="chart-tooltip" hidden></div>
+        </div>
+        <div class="chart-caption">
+          <span>{html_lib.escape(str(years[0]))} → {html_lib.escape(str(years[-1]))} · Values in {html_lib.escape(str(trend['unit']))}</span>
+          <span>Source: {html_lib.escape(trend['source'])}</span>
+        </div>
+      </section>
 
-      <h3>Year-by-year values</h3>
+      <h3 class="detail-section-title">Year-by-year values</h3>
       <div class="table-wrap">
       <table class="trend-table">
         <thead><tr><th>Year</th><th>Value ({trend['unit']})</th><th>YoY Δ</th></tr></thead>
@@ -1591,6 +1618,8 @@ def render_kpi_page(kpi_id, latest):
 
 
 
+      {render_trend_embed(trend, kpi_id, "Historical trend", latest=latest)}
+
       <div class="kpi-insight">
 
 
@@ -1604,16 +1633,6 @@ def render_kpi_page(kpi_id, latest):
 
 
       </div>
-
-
-
-
-
-      {render_trend_embed(trend, kpi_id, "Historical trend", latest=latest)}
-
-
-
-
 
       <a href="{back_href}" class="btn">← Back to {back_label}</a>
 

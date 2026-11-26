@@ -162,11 +162,25 @@
       <div class="disclosure-row"><span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span></div>
       <p class="latest-value">Latest (2025): <strong>2.80 %</strong></p>
 
-      <div class="chart-wrap">
-        <canvas id="trend-chart" aria-label="Historical chart for Gross NPA Ratio (%)" role="img"></canvas>
-      </div>
+      <section class="chart-section" aria-labelledby="chart-heading">
+        <div class="chart-section-head">
+          <div>
+            <h2 id="chart-heading">Trend over time</h2>
+            <p class="muted small">Hover or tap a point for its value. Use ← → keys to step through years.</p>
+          </div>
+          <div class="disclosure-row"><span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span></div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="trend-chart" aria-label="Historical chart for Gross NPA Ratio (%)" role="img"></canvas>
+          <div class="chart-tooltip" hidden></div>
+        </div>
+        <div class="chart-caption">
+          <span>2017 → 2025 · Values in %</span>
+          <span>Source: RBI</span>
+        </div>
+      </section>
 
-      <h3>Year-by-year values</h3>
+      <h3 class="detail-section-title">Year-by-year values</h3>
       <div class="table-wrap">
       <table class="trend-table">
         <thead><tr><th>Year</th><th>Value (%)</th><th>YoY Δ</th></tr></thead>
@@ -199,7 +213,7 @@
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:15 UTC</span></p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 13:18 UTC</span></p>
 
 
       </div>
