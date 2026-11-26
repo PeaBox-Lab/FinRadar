@@ -348,6 +348,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
+/* ---------------- Data Lab table filters ---------------- */
+function initDataLabFilters() {
+  document.querySelectorAll('[data-filter-input]').forEach(input => {
+    const target = document.getElementById(input.dataset.filterTarget);
+    if (!target) return;
+    input.addEventListener('input', () => {
+      const term = input.value.trim().toLowerCase();
+      target.querySelectorAll('tr').forEach(row => {
+        row.hidden = term ? !row.textContent.toLowerCase().includes(term) : false;
+      });
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initDataLabFilters);
+
 /* ---------------- Nav ---------------- */
 function initNav() {
   const toggle = document.querySelector('.nav-toggle');

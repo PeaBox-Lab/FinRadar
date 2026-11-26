@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Sources — Catalog — FinRadar</title>
-  <meta name="description" content="Every API, dataset and portal FinRadar draws from — 20 categorised sources with summary stats for each." />
+  <meta name="description" content="Every API, dataset and portal FinRadar draws from — 25 categorised sources with summary stats for each." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -136,13 +136,13 @@
     <section>
       <span class="eyebrow dark">Provenance</span>
       <h1>Data Sources Catalog</h1>
-      <p class="muted">FinRadar computes KPIs from 20 public government APIs across 10 categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
+      <p class="muted">FinRadar computes KPIs from 25 public government APIs across 10 categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
 
       <div class="grid grid-4 source-summary-grid">
-        <div class="card source-summary-card"><strong>20</strong><span>APIs catalogued</span></div>
+        <div class="card source-summary-card"><strong>25</strong><span>APIs catalogued</span></div>
         <div class="card source-summary-card"><strong>10</strong><span>Categories</span></div>
-        <div class="card source-summary-card"><strong>60</strong><span>Data series used</span></div>
-        <div class="card source-summary-card"><strong>18</strong><span>Open access</span></div>
+        <div class="card source-summary-card"><strong>267</strong><span>Data series used</span></div>
+        <div class="card source-summary-card"><strong>23</strong><span>Open access</span></div>
       </div>
 
       
@@ -327,6 +327,51 @@
 
 
         <p class="muted small">Provider: International Monetary Fund · Tags: Fiscal, Debt, Cross-country, Forecasts</p>
+
+
+      </article>
+
+
+      <article class="card source-card">
+
+
+        <div class="card-header">
+
+
+          <h3><a href="https://www.worldbank.org/en/research/commodity-markets" target="_blank">World Bank Pink Sheet</a></h3>
+
+
+          <span class="badge">Macro & National Accounts</span>
+
+
+        </div>
+
+
+        <p class="card-desc">Official monthly nominal commodity prices with per-commodity units, parsed from the published workbook.</p>
+
+
+        <div class="source-stats">
+
+
+          <div class="source-stat"><strong>71</strong><span>Series used</span></div>
+
+
+          <div class="source-stat"><strong>1960 → present</strong><span>Coverage / era</span></div>
+
+
+          <div class="source-stat"><strong>Monthly</strong><span>Frequency</span></div>
+
+
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+
+
+        </div>
+
+
+        <div class="source-tags"><span class="badge">Commodities</span><span class="badge">Gold</span><span class="badge">Silver</span><span class="badge">Copper</span><span class="badge">Oil</span><span class="badge">Agriculture</span></div>
+
+
+        <p class="muted small">Provider: World Bank Commodity Markets · Tags: Commodities, Gold, Silver, Copper, Oil, Agriculture</p>
 
 
       </article>
@@ -515,6 +560,141 @@
 
 
       </article>
+
+
+      <article class="card source-card">
+
+
+        <div class="card-header">
+
+
+          <h3><a href="https://data-api.ecb.europa.eu/service/data/EXR" target="_blank">ECB Data Portal — EXR</a></h3>
+
+
+          <span class="badge">Money, Prices & Markets</span>
+
+
+        </div>
+
+
+        <p class="card-desc">Official daily euro reference rates used for the FX table and derived INR/USD cross rate.</p>
+
+
+        <div class="source-stats">
+
+
+          <div class="source-stat"><strong>14</strong><span>Series used</span></div>
+
+
+          <div class="source-stat"><strong>1999 → present</strong><span>Coverage / era</span></div>
+
+
+          <div class="source-stat"><strong>Daily</strong><span>Frequency</span></div>
+
+
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+
+
+        </div>
+
+
+        <div class="source-tags"><span class="badge">FX</span><span class="badge">Reference rates</span><span class="badge">Euro</span><span class="badge">Cross rates</span></div>
+
+
+        <p class="muted small">Provider: European Central Bank · Tags: FX, Reference rates, Euro, Cross rates</p>
+
+
+      </article>
+
+
+      <article class="card source-card">
+
+
+        <div class="card-header">
+
+
+          <h3><a href="https://stats.bis.org/api/v2/data/dataflow/BIS" target="_blank">BIS Statistics API v2</a></h3>
+
+
+          <span class="badge">Money, Prices & Markets</span>
+
+
+        </div>
+
+
+        <p class="card-desc">Curated BIS dataflows for policy rates, debt-service burdens, credit gaps and effective exchange rates.</p>
+
+
+        <div class="source-stats">
+
+
+          <div class="source-stat"><strong>72</strong><span>Series used</span></div>
+
+
+          <div class="source-stat"><strong>Varies by dataflow</strong><span>Coverage / era</span></div>
+
+
+          <div class="source-stat"><strong>Monthly / quarterly</strong><span>Frequency</span></div>
+
+
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+
+
+        </div>
+
+
+        <div class="source-tags"><span class="badge">Policy rates</span><span class="badge">Debt service</span><span class="badge">Credit gaps</span><span class="badge">Effective FX</span></div>
+
+
+        <p class="muted small">Provider: Bank for International Settlements · Tags: Policy rates, Debt service, Credit gaps, Effective FX</p>
+
+
+      </article>
+
+
+      <article class="card source-card">
+
+
+        <div class="card-header">
+
+
+          <h3><a href="https://finance.yahoo.com/" target="_blank">Yahoo Finance market quotes</a></h3>
+
+
+          <span class="badge">Money, Prices & Markets</span>
+
+
+        </div>
+
+
+        <p class="card-desc">Delayed market-reference snapshots clearly labelled as secondary data; never presented as official statistics.</p>
+
+
+        <div class="source-stats">
+
+
+          <div class="source-stat"><strong>34</strong><span>Series used</span></div>
+
+
+          <div class="source-stat"><strong>5-day snapshot</strong><span>Coverage / era</span></div>
+
+
+          <div class="source-stat"><strong>Intraday / daily</strong><span>Frequency</span></div>
+
+
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+
+
+        </div>
+
+
+        <div class="source-tags"><span class="badge">Equity indices</span><span class="badge">Futures</span><span class="badge">FX</span><span class="badge">Secondary source</span></div>
+
+
+        <p class="muted small">Provider: Yahoo Finance (secondary market data) · Tags: Equity indices, Futures, FX, Secondary source</p>
+
+
+      </article>
       </div>
       <h2>🏛️ Fiscal & Government Finance</h2>
       <p class="muted">Union and state budgets, deficits, debt, subsidies and tax collections.</p>
@@ -570,6 +750,51 @@
       <p class="muted">Exports, imports, FDI, ports and external-sector flows.</p>
       <div class="grid grid-3">
         
+
+
+      <article class="card source-card">
+
+
+        <div class="card-header">
+
+
+          <h3><a href="https://timeseries.wto.org/" target="_blank">WTO Timeseries API</a></h3>
+
+
+          <span class="badge">Trade & Commerce</span>
+
+
+        </div>
+
+
+        <p class="card-desc">Annual merchandise exports and imports with the world for eight major trading economies.</p>
+
+
+        <div class="source-stats">
+
+
+          <div class="source-stat"><strong>16</strong><span>Series used</span></div>
+
+
+          <div class="source-stat"><strong>1950 → present</strong><span>Coverage / era</span></div>
+
+
+          <div class="source-stat"><strong>Annual / quarterly / monthly</strong><span>Frequency</span></div>
+
+
+          <div class="source-stat"><strong>Open</strong><span>Access</span></div>
+
+
+        </div>
+
+
+        <div class="source-tags"><span class="badge">Exports</span><span class="badge">Imports</span><span class="badge">Merchandise trade</span><span class="badge">Major economies</span></div>
+
+
+        <p class="muted small">Provider: World Trade Organization · Tags: Exports, Imports, Merchandise trade, Major economies</p>
+
+
+      </article>
       </div>
       <h2>🌾 Agriculture & Rural</h2>
       <p class="muted">Crop output, fertiliser, irrigation, MSP and rural employment.</p>
@@ -1099,7 +1324,7 @@
 
       <h2>All sources, flat list</h2>
       <ul class="source-list">
-        <li><a href="https://api.worldbank.org/v2" target="_blank" rel="noopener">World Bank Open Data</a> — The backbone for cross-country macro comparisons and India's headline GDP, inflation, PPP and external-sector series.</li><li><a href="https://api.data.gov.in" target="_blank" rel="noopener">data.gov.in (OGD Platform)</a> — India's national open-data platform. The widest catalogue of state- and district-level government datasets.</li><li><a href="https://apisetu.gov.in" target="_blank" rel="noopener">API Setu</a> — The government's API gateway. Useful for identity, document and transactional lookups rather than time-series statistics.</li><li><a href="https://dbie.rbi.org.in" target="_blank" rel="noopener">RBI Database on Indian Economy (DBIE)</a> — The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs.</li><li><a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics" target="_blank" rel="noopener">NPCI Statistics</a> — The definitive read on India's digital-payment velocity, ticket sizes and tolling volumes.</li><li><a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST Portal — Collections</a> — A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states.</li><li><a href="https://mospi.gov.in" target="_blank" rel="noopener">MoSPI — National Statistics</a> — The official source for India's inflation, industrial production, national accounts and employment statistics.</li><li><a href="https://cea.nic.in" target="_blank" rel="noopener">CEA / POSOCO Power Data</a> — Near-real-time electricity demand and generation — one of the best proxies for industrial activity.</li><li><a href="https://mnre.gov.in" target="_blank" rel="noopener">MNRE Renewable Capacity</a> — Tracks India's energy transition against the 50% non-fossil capacity target for 2030.</li><li><a href="https://morth.nic.in" target="_blank" rel="noopener">MoRTH / NHAI Transport Data</a> — The source for road density, vehicle ownership and digital tolling across states.</li><li><a href="https://indianrailways.gov.in" target="_blank" rel="noopener">Indian Railways Statistics</a> — Freight and passenger trends for the world's fourth-largest rail network.</li><li><a href="https://www.dgca.gov.in" target="_blank" rel="noopener">DGCA Civil Aviation Statistics</a> — Domestic aviation traffic — a leading indicator of business travel and premium consumption.</li><li><a href="https://mohfw.gov.in" target="_blank" rel="noopener">MoHFW / NFHS Health Data</a> — The census of Indian health capacity, immunisation and household health spending.</li><li><a href="https://udiseplus.gov.in" target="_blank" rel="noopener">UDISE+ School Education</a> — School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs.</li><li><a href="https://nrega.nic.in" target="_blank" rel="noopener">MGNREGA MIS</a> — Rural wage demand under the employment guarantee — a real-time distress signal.</li><li><a href="https://censusindia.gov.in" target="_blank" rel="noopener">Census of India</a> — The demographic base layer for population density, urbanisation and literacy KPIs.</li><li><a href="https://moef.gov.in" target="_blank" rel="noopener">MoEF&CC Environment Data</a> — Land, forest and wetlands statistics behind the environment and geo KPIs.</li><li><a href="https://nhb.org.in" target="_blank" rel="noopener">NHB / RBI Housing Data</a> — House-price and affordability series for the housing KPIs.</li><li><a href="https://data.imf.org" target="_blank" rel="noopener">IMF DataMapper / WEO</a> — Cross-country fiscal and debt comparables, plus forward-looking macro forecasts.</li><li><a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">FRED (St. Louis Fed)</a> — Global rates and commodity benchmarks used for context alongside Indian data.</li>
+        <li><a href="https://api.worldbank.org/v2" target="_blank" rel="noopener">World Bank Open Data</a> — The backbone for cross-country macro comparisons and India's headline GDP, inflation, PPP and external-sector series.</li><li><a href="https://api.data.gov.in" target="_blank" rel="noopener">data.gov.in (OGD Platform)</a> — India's national open-data platform. The widest catalogue of state- and district-level government datasets.</li><li><a href="https://apisetu.gov.in" target="_blank" rel="noopener">API Setu</a> — The government's API gateway. Useful for identity, document and transactional lookups rather than time-series statistics.</li><li><a href="https://dbie.rbi.org.in" target="_blank" rel="noopener">RBI Database on Indian Economy (DBIE)</a> — The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs.</li><li><a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics" target="_blank" rel="noopener">NPCI Statistics</a> — The definitive read on India's digital-payment velocity, ticket sizes and tolling volumes.</li><li><a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST Portal — Collections</a> — A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states.</li><li><a href="https://mospi.gov.in" target="_blank" rel="noopener">MoSPI — National Statistics</a> — The official source for India's inflation, industrial production, national accounts and employment statistics.</li><li><a href="https://cea.nic.in" target="_blank" rel="noopener">CEA / POSOCO Power Data</a> — Near-real-time electricity demand and generation — one of the best proxies for industrial activity.</li><li><a href="https://mnre.gov.in" target="_blank" rel="noopener">MNRE Renewable Capacity</a> — Tracks India's energy transition against the 50% non-fossil capacity target for 2030.</li><li><a href="https://morth.nic.in" target="_blank" rel="noopener">MoRTH / NHAI Transport Data</a> — The source for road density, vehicle ownership and digital tolling across states.</li><li><a href="https://indianrailways.gov.in" target="_blank" rel="noopener">Indian Railways Statistics</a> — Freight and passenger trends for the world's fourth-largest rail network.</li><li><a href="https://www.dgca.gov.in" target="_blank" rel="noopener">DGCA Civil Aviation Statistics</a> — Domestic aviation traffic — a leading indicator of business travel and premium consumption.</li><li><a href="https://mohfw.gov.in" target="_blank" rel="noopener">MoHFW / NFHS Health Data</a> — The census of Indian health capacity, immunisation and household health spending.</li><li><a href="https://udiseplus.gov.in" target="_blank" rel="noopener">UDISE+ School Education</a> — School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs.</li><li><a href="https://nrega.nic.in" target="_blank" rel="noopener">MGNREGA MIS</a> — Rural wage demand under the employment guarantee — a real-time distress signal.</li><li><a href="https://censusindia.gov.in" target="_blank" rel="noopener">Census of India</a> — The demographic base layer for population density, urbanisation and literacy KPIs.</li><li><a href="https://moef.gov.in" target="_blank" rel="noopener">MoEF&CC Environment Data</a> — Land, forest and wetlands statistics behind the environment and geo KPIs.</li><li><a href="https://nhb.org.in" target="_blank" rel="noopener">NHB / RBI Housing Data</a> — House-price and affordability series for the housing KPIs.</li><li><a href="https://data.imf.org" target="_blank" rel="noopener">IMF DataMapper / WEO</a> — Cross-country fiscal and debt comparables, plus forward-looking macro forecasts.</li><li><a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">FRED (St. Louis Fed)</a> — Global rates and commodity benchmarks used for context alongside Indian data.</li><li><a href="https://data-api.ecb.europa.eu/service/data/EXR" target="_blank" rel="noopener">ECB Data Portal — EXR</a> — Official daily euro reference rates used for the FX table and derived INR/USD cross rate.</li><li><a href="https://stats.bis.org/api/v2/data/dataflow/BIS" target="_blank" rel="noopener">BIS Statistics API v2</a> — Curated BIS dataflows for policy rates, debt-service burdens, credit gaps and effective exchange rates.</li><li><a href="https://timeseries.wto.org/" target="_blank" rel="noopener">WTO Timeseries API</a> — Annual merchandise exports and imports with the world for eight major trading economies.</li><li><a href="https://www.worldbank.org/en/research/commodity-markets" target="_blank" rel="noopener">World Bank Pink Sheet</a> — Official monthly nominal commodity prices with per-commodity units, parsed from the published workbook.</li><li><a href="https://finance.yahoo.com/" target="_blank" rel="noopener">Yahoo Finance market quotes</a> — Delayed market-reference snapshots clearly labelled as secondary data; never presented as official statistics.</li>
       </ul>
     </section>  </main>
 
@@ -1119,7 +1344,7 @@
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 09:58 UTC</span></p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 11:21 UTC</span></p>
 
 
       </div>
