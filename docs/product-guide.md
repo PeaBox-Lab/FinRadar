@@ -6,7 +6,7 @@ A comprehensive user guide and technical reference for the FinRadar static site:
 
 ## 1. Project Overview
 
-**FinRadar** is a static, data-driven website that publishes derived macroeconomic KPIs, benchmarks, reports, and a Data Lab of curated official series built from public government data (World Bank, data.gov.in, RBI, NPCI, GST portal, MNRE, Census of India, IMF, FRED, etc.).
+**FinRadar** is a static, data-driven website that publishes derived macroeconomic KPIs, benchmarks, reports, and a Data Lab of curated official series built from public government and international data (World Bank, ECB, BIS, WTO, data.gov.in, RBI, NPCI, GST portal, MNRE, Census of India, IMF, FRED, etc.). The Data Lab covers India and global macro, FX, debt, trade, commodities, banking, insurance and pay parity, with clearly labelled delayed market context.
 
 - **No server-side code** — fully static HTML/CSS/JS.
 - **Two daily automated updates** — core KPIs at 02:30 UTC, expanded Data Lab at 03:15 UTC.
@@ -25,7 +25,7 @@ FinRadar/
 │       └── enrichment-update.yml # CI: Data Lab enrichment, regenerate site, deploy
 ├── data/
 │   ├── latest_kpis.json          # Core pipeline output: 45 KPIs + India + peers
-│   ├── extra_metrics.json        # Data Lab output: series, census, KPIs, relationships, catalog
+│   ├── extra_metrics.json        # Data Lab output: India + global series, commodities, markets, KPIs, relationships, catalog
 │   └── snapshots/                # Demo fallbacks + enrichment last-known-good cache
 │       ├── city_indices.json
 │       ├── debt_service.json
@@ -45,7 +45,8 @@ FinRadar/
 │   ├── tools.js                  # Shared engine for all registry calculators
 │   └── pipeline/
 │       ├── fetch_kpis.py         # Core daily pipeline: writes latest_kpis.json
-│       ├── enrichment.py         # Data Lab batch: curated series, census, derived KPIs, correlations
+│       ├── enrichment.py         # Data Lab batch: India + global feeds, census, derived KPIs, correlations
+│       ├── global_feeds.py       # Global adapters: ECB, BIS, IMF, WTO, World Bank, Pink Sheet, markets
 │       ├── datagovin_client.py   # data.gov.in client with token fallback
 │       ├── kpi_registry.py       # Core KPI definitions: formulas, units, verdict ranges, insights
 │       ├── analytics.py          # Plain-English insights per KPI
@@ -58,7 +59,7 @@ FinRadar/
 │   └── european-theme.css        # FinRadar theme layer: hero, KPIs, tools, detail pages
 ├── site/                         # BUILD OUTPUT (committed to main; deployed to gh-pages)
 │   ├── index.html                # Dashboard / landing page
-│   ├── search.html               # Full-text search across facts, KPIs and Data Lab content
+│   ├── search.html               # Full-text search across facts, KPIs, global series, commodities, markets and guides
 │   ├── sources.html              # Categorized API catalog with summary stats
 │   ├── data-lab.html             # Expanded official data with definitions, guides and correlations
 │   ├── tools.html                # Categorized calculator hub (4 groups, 23 calculators)
@@ -125,9 +126,13 @@ The separate Data Lab batch publishes the expanded data layer without touching t
 3. **Curated data.gov.in resource** — a daily mandi price feed fetched with `DATA_GOV_IN_TOKEN` when present, otherwise the rate-limited public sample key. Responses are cached in `data/snapshots/enrichment_cache.json`.
 4. **Innovative derived KPIs** — 12 reproducible metrics such as per-capita growth spread, demographic dividend index, credit–savings gap, external resilience score, peer growth spread, global inflation gap and growth tailwind ratio.
 5. **Relationships** — Pearson coefficients between Indian metrics and macro/demographic/global factors, with observation windows and a causation caveat.
-6. **Discovery catalog** — official portal metadata, access mode and APIsetu's credential boundary, published under `data-lab.html#discovery`.
+6. **Curated global feeds** (`scripts/pipeline/global_feeds.py`) — 368 series across 23 sections: ECB daily FX (13 currencies plus a derived INR/USD cross rate), BIS policy rates/debt-service ratios/credit gaps/effective exchange rates, IMF WEO growth/inflation/debt/current account (with World Bank fallback when DataMapper is blocked), WTO merchandise exports and imports, and World Bank PPP, official exchange rate, gender wage gap, bank capital/NPLs, life and non-life insurance depth, central-government debt and equity-market development. Each series carries units, a definition, a user guide and a live/cached status badge.
+7. **Official commodity prices** — all 71 monthly series from the World Bank Pink Sheet workbook, with per-commodity units and a definitions guide covering why a single global steel price is not published.
+8. **Delayed market snapshots** — 34 index, futures and FX quotes from Yahoo Finance, explicitly labelled as secondary, delayed context and never presented as official statistics.
+9. **Global derived KPIs** — 13 reproducible cross-country metrics with explicit formulas (policy-rate spread, household debt-service burden, commodity momentum, gold/silver and copper/gold ratios, debt-to-growth gap, bank-cushion gap, insurance mix, pay parity, equity depth, cost-of-living proxy spread and trade concentration).
+10. **Discovery catalog** — official portal metadata, access mode and APIsetu's credential boundary, published under `data-lab.html#discovery`.
 
-It writes `data/extra_metrics.json`. The generator consumes that file to build `site/data-lab.html` and enrich the search index. If the batch has never run, the page degrades to an instruction rather than breaking the build.
+Every global feed keeps a last-known-good copy in the shared cache: when a source is rate-limited or unavailable, the cached values are published with a `cached` badge and a status note. It writes `data/extra_metrics.json` with a top-level `global` payload. The generator consumes that file to build `site/data-lab.html` and enrich the search index. If the batch has never run, the page degrades to an instruction rather than breaking the build.
 
 ### 3.3 `scripts/pipeline/kpi_registry.py`
 
@@ -159,7 +164,7 @@ Single source of truth for site content:
 
 ### 3.5 `scripts/pipeline/api_catalog.py`
 
-Catalogs 20 public APIs/data portals across 10 categories with summary statistics:
+Catalogs 25 public APIs/data portals across 9 categories with summary statistics:
 - Indicators used
 - Coverage era
 - Update frequency
@@ -237,6 +242,7 @@ FinRadar-specific component layer:
 - Benchmark cards, tool forms, result panels and data tables
 - Category tiles, fact cards, trend previews and canvas chart panel
 - KPI/fact/trend detail pages, search results, sources catalogue
+- Data Lab global sections: filter bars, market cards, guide cards, sparklines and status badges
 - Closing CTA band and mobile adaptations
 
 ### 5.3 How themes load
@@ -304,6 +310,7 @@ File: `.github/workflows/enrichment-update.yml` · **Schedule:** 03:15 UTC (`cro
 1. Check out `main`, set up Python 3.x
 2. Run `enrichment.py` — writes `data/extra_metrics.json` and refreshes the last-known-good cache
    - Env: `DATA_GOV_IN_TOKEN`, `APISETU_TOKEN` (secrets; optional — APIsetu token only reports credential readiness; gated data endpoints are not called)
+   - The global feed step uses keyless official endpoints only; no API keys are required for ECB, BIS, WTO or the World Bank. IMF DataMapper may return `403` in some networks, in which case equivalent World Bank series are used and labelled as a fallback. Pink Sheet commodity prices are downloaded from the World Bank research page (hardened fallback URL included). Yahoo Finance quotes are secondary and delayed.
 3. Run `page_generator.py` — regenerates the site with the refreshed Data Lab
 4. Commit `data/extra_metrics.json`, `data/snapshots/enrichment_cache.json` and `site/` to `main`
 5. Deploy `site/` to the `gh-pages` branch
@@ -418,9 +425,10 @@ Requires internet access for World Bank API. Uses demo snapshots if `DATA_GOV_IN
 | `.github/workflows/daily-update.yml` | CI: core KPI pipeline + deploy |
 | `.github/workflows/enrichment-update.yml` | CI: Data Lab enrichment + deploy |
 | `scripts/pipeline/enrichment.py` | Daily Data Lab batch |
+| `scripts/pipeline/global_feeds.py` | Curated global feed adapters and derived KPIs |
 | `site/index.html` | Dashboard landing page |
 | `site/categories.html` | Category index page |
-| `site/data-lab.html` | Expanded official data, definitions, guides, derived KPIs and relationships |
+| `site/data-lab.html` | India + global data, commodity prices, market snapshots, definitions, guides, derived KPIs and relationships |
 
 ---
 

@@ -2,7 +2,7 @@
 
 **India & Global Macro KPIs, Benchmarks & Reports — live from public government data.**
 
-FinRadar turns public government data into derived macroeconomic KPIs, benchmarks, plain-English decision tools, and a curated Data Lab of raw official series with definitions and user guides. Derived numbers always show their formulas.
+FinRadar turns public government and international data into derived macroeconomic KPIs, benchmarks, plain-English decision tools, and a curated Data Lab of raw official series with definitions and user guides. Derived numbers always show their formulas. The Data Lab now spans India and the world: FX and policy rates, debt and credit, trade, PPP cost-of-living proxies, pay parity, banking, insurance, equity-market depth, official commodity prices and clearly labelled delayed market snapshots.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen)](https://finradar.peabox.in/)
 [![Daily Pipeline](https://img.shields.io/badge/Pipeline-Daily%2002%3A30%20UTC-blue)](.github/workflows/daily-update.yml)
@@ -27,13 +27,13 @@ Two nightly GitHub Actions fetch live public data, compute KPIs, refresh the Dat
 | Feature | Description |
 |---------|-------------|
 | **45 Live KPIs** | Derived metrics across 14 sectors with verdict badges (Good / Moderate / Weak) |
-| **Data Lab** | 28 curated official series, 12 innovative derived KPIs, 14 macro/global correlations, Census benchmarks and a source-discovery catalog |
+| **Data Lab** | 28 India series plus 368 global series, 12 India + 13 global derived KPIs, 14 macro correlations, 71 official commodity prices, 34 delayed market quotes, Census benchmarks and a source-discovery catalog |
 | **Benchmarks** | India High-Frequency Macro Cycle Index (0–100), State-Wise Fiscal Health Scorecard, Global Emerging Market Resilience |
 | **Interactive Tools** | 23 calculators across loans, deposits/returns, insurance and personal finance — including EMI, amortization schedules, interest/principal split, SIP, FD/RD, CAGR, term cover and retirement planning |
 | **Category Pages** | 14 sector pages with facts, KPIs, and historical trends |
 | **Categories Index** | Top-level landing page grouping all categories into 6 logical groups |
-| **Search Index** | Full-text lookup across facts, KPIs, raw series, derived metrics and relationships |
-| **Sources Catalog** | 20 public APIs across 10 categories with summary statistics |
+| **Search Index** | Full-text lookup across facts, KPIs, India and global series, commodity prices, market quotes, derived metrics, relationships and guides |
+| **Sources Catalog** | 25 public APIs across 9 categories with summary statistics, including ECB, BIS, WTO, the World Bank Pink Sheet and clearly labelled Yahoo Finance quotes |
 | **Historical Trends** | 8 trend series with sparkline SVG and canvas chart rendering |
 | **Modern Dashboard UI** | Light paper canvas, deep-navy dark hero/footer, teal + indigo accents, responsive cards and charts |
 | **Mobile Responsive** | Hamburger nav, scrollable sector dropdown, touch-friendly cards |
@@ -57,7 +57,13 @@ Two nightly GitHub Actions fetch live public data, compute KPIs, refresh the Dat
 
 | Source | Type | Used For |
 |--------|------|----------|
-| World Bank (api.worldbank.org/v2) | Live API | Core KPI history plus 28 curated India, world and peer series for GDP, demographics, finance, digital adoption and environment |
+| World Bank (api.worldbank.org/v2) | Live API | Core KPI history, 28 curated India/world series, plus global PPP, pay parity, banking, insurance, treasury debt and equity-market indicators |
+| World Bank Pink Sheet | Live monthly workbook | 71 official nominal commodity prices (oil, gas, metals, gold, silver, grains, softs) with per-commodity units |
+| ECB Data Portal | Live API | Daily euro reference rates for 13 currencies plus a derived INR/USD cross rate |
+| BIS Statistics API v2 | Live API | Policy rates, debt-service ratios, credit-to-GDP gaps and effective exchange rates |
+| IMF DataMapper / WEO | Live API with World Bank fallback | GDP growth, inflation, government debt and current-account balances for major economies |
+| WTO Timeseries | Live API | Annual merchandise exports and imports for eight major trading economies |
+| Yahoo Finance | Live API — delayed, secondary | Index, futures and FX reference quotes, clearly labelled as non-official context |
 | data.gov.in | Live API (sample key / personal token) | Curated mandi price feed; token unlocks higher record limits. A discovery catalog documents the broader portal |
 | Census of India | Decadal benchmark | 2011 population, literacy, urbanisation and sex-ratio benchmarks with definitions |
 | RBI DBIE | Live / Snapshot | Interest rates, credit-deposit ratio, GNPAs, forex reserves |
@@ -67,7 +73,7 @@ Two nightly GitHub Actions fetch live public data, compute KPIs, refresh the Dat
 | Census / MoSPI | Snapshot | Population density, urbanisation, literacy |
 | IMF / FRED | Live / Snapshot | Global macro benchmarks |
 
-> **Note:** `DATA_GOV_IN_TOKEN` is optional. Without it, the enrichment batch uses data.gov.in's rate-limited public sample key and keeps the last known good response in `data/snapshots/enrichment_cache.json`. `APISETU_TOKEN` is read to report credential readiness in the discovery catalog; APIsetu remains metadata-only because its data endpoints require consumer registration.
+> **Note:** `DATA_GOV_IN_TOKEN` is optional. Without it, the enrichment batch uses data.gov.in's rate-limited public sample key and keeps the last known good response in `data/snapshots/enrichment_cache.json`. `APISETU_TOKEN` is read to report credential readiness in the discovery catalog; APIsetu remains metadata-only because its data endpoints require consumer registration. IMF DataMapper can be blocked in some networks (`403`); the global feed then falls back to equivalent World Bank series and labels the source accordingly. Every global feed keeps a last-known-good copy in the shared cache, and status badges show whether a table came from the live call or the cache.
 
 ---
 
@@ -81,7 +87,7 @@ FinRadar/
 │       └── enrichment-update.yml # CI: daily 03:15 UTC Data Lab enrichment + deploy
 ├── data/
 │   ├── latest_kpis.json          # Computed KPIs + benchmarks (pipeline output)
-│   ├── extra_metrics.json        # Curated series, derived KPIs, census, relationships, catalog
+│   ├── extra_metrics.json        # India + global curated series, derived KPIs, commodities, markets, census, relationships, catalog
 │   └── snapshots/                # Demo fallbacks and last-known-good enrichment cache
 ├── docs/
 │   └── product-guide.md          # Detailed product & site knowledge document
@@ -91,7 +97,8 @@ FinRadar/
 │   ├── tools.js                  # Shared calculator engine for all registry tools
 │   └── pipeline/
 │       ├── fetch_kpis.py         # Daily core KPI pipeline
-│       ├── enrichment.py         # Daily Data Lab batch (curated feeds + derived KPIs)
+│       ├── enrichment.py         # Daily Data Lab batch (India + global feeds + derived KPIs)
+│       ├── global_feeds.py       # Global adapters: ECB, BIS, IMF, WTO, World Bank, Pink Sheet, markets
 │       ├── datagovin_client.py   # data.gov.in request client with token fallback
 │       ├── kpi_registry.py       # Core KPI definitions: formulas, units, verdicts, insights
 │       ├── analytics.py          # Plain-English insights per KPI
@@ -105,9 +112,9 @@ FinRadar/
 ├── site/                         # Build output (committed to main, deployed to gh-pages)
 │   ├── index.html                # Dashboard / landing page
 │   ├── categories.html           # Category index page
-│   ├── search.html               # Search across facts & KPIs
+│   ├── search.html               # Search across facts, KPIs, global series, commodities, markets & guides
 │   ├── sources.html              # API catalog page
-│   ├── data-lab.html             # Expanded official data, definitions, guides and relationships
+│   ├── data-lab.html             # India + global data, definitions, guides, charts and relationships
 │   ├── tools.html                # Categorized calculator hub
 │   ├── tools/                    # 23 dedicated calculator pages (21 registry + 2 legacy)
 │   ├── category/                 # 14 sector pages
@@ -168,7 +175,7 @@ Two GitHub Actions run every day:
 | Time (UTC) | Workflow | Work |
 |------------|----------|------|
 | 02:30 | `daily-update.yml` | Runs `fetch_kpis.py`, computes the 45 core KPIs, regenerates the site, commits `data/latest_kpis.json` and `site/`, and deploys to `gh-pages` |
-| 03:15 | `enrichment-update.yml` | Runs `enrichment.py`, refreshes the 28 curated series, 12 derived KPIs, 14 relationships, Census benchmarks and discovery catalog, regenerates the site, commits `data/extra_metrics.json`, the last-known-good cache and `site/`, then deploys to `gh-pages` |
+| 03:15 | `enrichment-update.yml` | Runs `enrichment.py`, refreshes the 28 India series plus 368 global series, 12 India + 13 global derived KPIs, 14 relationships, 71 commodity prices, 34 market quotes, Census benchmarks and discovery catalog, regenerates the site, commits `data/extra_metrics.json`, the last-known-good cache and `site/`, then deploys to `gh-pages` |
 
 Both workflows support manual triggers from the Actions tab (`workflow_dispatch`). The separation means a slow official API cannot delay the core dashboard update.
 

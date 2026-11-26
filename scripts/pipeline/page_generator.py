@@ -1535,6 +1535,152 @@ def fmt_coefficient(value):
     return f"{value:+.3f}"
 
 
+def fmt_change(value):
+    """Signed percentage change with a directional colour class."""
+    if not isinstance(value, (int, float)):
+        return '<span class="muted">—</span>'
+    direction = "up" if value >= 0 else "down"
+    return f'<span class="change {direction}">{value:+.2f}%</span>'
+
+
+def status_badge(value):
+    status = str(value or "unavailable")
+    kind = "good" if status == "live" else "moderate" if status == "cached" else "weak"
+    return f'<span class="badge {kind}">{esc(status)}</span>'
+
+
+def _sparkline(points):
+    values = [p.get("value") for p in points if isinstance(p.get("value"), (int, float))]
+    if len(values) < 2:
+        return ""
+    payload = json.dumps(values).replace("'", "\\u0027")
+    return f'<div class="sparkline" data-points=\'{payload}\'></div>'
+
+
+def render_global_series_section(section):
+    """One filterable table for a curated global feed section."""
+    section_id = str(section.get("id", "global"))
+    anchor = "global-" + section_id
+    target = "rows-" + section_id
+    rows = []
+    for item in section.get("items", []):
+        key = esc(item.get("key", ""))
+        rows.append(f"""
+        <tr id="{key}">
+          <td><strong>{esc(item.get('label'))}</strong><br><small class="muted">{esc(item.get('country'))} · {esc(item.get('frequency'))}</small></td>
+          <td>{fmt_extra_value(item.get('latest_value'), item.get('unit'))}<br><small class="muted">{esc(item.get('latest_period'))}</small></td>
+          <td>{fmt_change(item.get('change_pct'))}</td>
+          <td>{_sparkline(item.get('points', []))}</td>
+          <td>{status_badge(item.get('status'))}</td>
+          <td><details><summary>Definition</summary><p>{esc(item.get('definition'))}</p></details></td>
+          <td><details><summary>Guide</summary><p>{esc(item.get('guide'))}</p></details><small class="muted"><a href="{esc(item.get('source_url'))}" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>""")
+    if not rows:
+        note = section.get("status_note") or "No observations were available in this run."
+        rows.append(f'<tr><td colspan="7" class="muted">{esc(note)}</td></tr>')
+    note = section.get("status_note")
+    note_html = f'<p class="muted small">{esc(note)}</p>' if note else ""
+    return f"""
+    <section id="{esc(anchor)}" class="global-section">
+      {section_head(esc(section.get('title', 'Global data')), 'Global data', esc(section.get('description', '')))}
+      <p class="muted small">Source: <a href="{esc(section.get('source_url'))}" target="_blank" rel="noopener">{esc(section.get('source'))} ↗</a></p>
+      {note_html}
+      <div class="filter-bar">
+        <label class="filter-input-wrap"><span>Filter rows</span><input type="search" class="filter-input" data-filter-input data-filter-target="{esc(target)}" placeholder="Country, series or keyword"></label>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table filter-table">
+          <thead><tr><th>Series</th><th>Latest</th><th>Change</th><th>History</th><th>Status</th><th>Definition</th><th>Guide</th></tr></thead>
+          <tbody id="{esc(target)}">{"".join(rows)}</tbody>
+        </table>
+      </div>
+      <p class="muted small">{esc(section.get('guide'))}</p>
+    </section>"""
+
+
+def render_commodity_section(commodities):
+    """Publish the full Pink Sheet commodity price board."""
+    target = "rows-commodities"
+    headline_ids = set(commodities.get("headline_ids", []))
+    cards = []
+    for item in commodities.get("items", []):
+        if item.get("key") in headline_ids:
+            cards.append(f"""
+            <article class="card market-card" id="{esc(item.get('key'))}">
+              <div class="card-header"><h3>{esc(item.get('label'))}</h3>{status_badge(item.get('status'))}</div>
+              <div class="data-kpi-value">{fmt_extra_value(item.get('latest_value'), item.get('unit'))}</div>
+              <p class="muted small">{esc(item.get('latest_period'))} · {fmt_change(item.get('change_pct'))} month-on-month</p>
+              {_sparkline(item.get('points', []))}
+            </article>""")
+    rows = []
+    for item in commodities.get("items", []):
+        rows.append(f"""
+        <tr id="{esc(item.get('key'))}">
+          <td><strong>{esc(item.get('label'))}</strong></td>
+          <td>{fmt_extra_value(item.get('latest_value'), item.get('unit'))}<br><small class="muted">{esc(item.get('latest_period'))}</small></td>
+          <td>{fmt_change(item.get('change_pct'))}</td>
+          <td>{_sparkline(item.get('points', []))}</td>
+          <td><details><summary>Definition</summary><p>{esc(item.get('definition'))}</p></details></td>
+          <td><a href="{esc(commodities.get('source_url'))}" target="_blank" rel="noopener">Source ↗</a></td>
+        </tr>""")
+    if not rows:
+        rows.append('<tr><td colspan="6" class="muted">No commodity prices were available in this run.</td></tr>')
+    note = commodities.get("status_note")
+    note_html = f'<p class="muted small">{esc(note)}</p>' if note else ""
+    return f"""
+    <section id="commodities" class="global-section">
+      {section_head('Official monthly commodity prices', 'World Bank Pink Sheet', f"All {len(commodities.get('items', []))} published commodity series with their own units. These are monthly benchmarks, not live quotes.")}
+      <p class="muted small">Source: <a href="{esc(commodities.get('source_url'))}" target="_blank" rel="noopener">{esc(commodities.get('source'))} ↗</a></p>
+      {note_html}
+      <div class="grid grid-4">{"".join(cards)}</div>
+      <div class="filter-bar">
+        <label class="filter-input-wrap"><span>Filter commodities</span><input type="search" class="filter-input" data-filter-input data-filter-target="{target}" placeholder="Gold, copper, wheat…"></label>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table filter-table">
+          <thead><tr><th>Commodity</th><th>Latest price</th><th>Monthly change</th><th>History</th><th>Definition</th><th>Source</th></tr></thead>
+          <tbody id="{target}">{"".join(rows)}</tbody>
+        </table>
+      </div>
+      <p class="muted small">{esc(commodities.get('guide'))}</p>
+    </section>"""
+
+
+def render_market_section(market):
+    """Publish delayed market-reference snapshots with an explicit caveat."""
+    groups = []
+    for group in market.get("groups", []):
+        cards = []
+        for item in group.get("items", []):
+            cards.append(f"""
+            <article class="card market-card" id="{esc(item.get('key'))}">
+              <div class="card-header"><h3>{esc(item.get('label'))}</h3>{status_badge(item.get('status'))}</div>
+              <div class="market-value">{fmt_extra_value(item.get('value'), item.get('unit'))}</div>
+              <p>{fmt_change(item.get('change_pct'))} <span class="muted small">{esc(item.get('as_of'))} · {esc(item.get('exchange'))}</span></p>
+              {_sparkline(item.get('points', []))}
+              <p class="muted small">{esc(item.get('symbol'))}</p>
+            </article>""")
+        if cards:
+            groups.append(f"""
+            <div class="market-group">
+              <h3>{esc(group.get('title'))}</h3>
+              <div class="grid grid-4">{"".join(cards)}</div>
+            </div>""")
+    note = market.get("status_note")
+    note_html = f'<p class="muted small">{esc(note)}</p>' if note else ""
+    return f"""
+    <section id="markets" class="global-section">
+      {section_head('Market reference snapshots', 'Delayed · secondary source', 'Index, futures and FX quotes for context. They are not official statistics and may be delayed.')}
+      <div class="callout">
+        <h3>Read this before using market quotes</h3>
+        <p>{esc(market.get('definition'))} {esc(market.get('guide'))}</p>
+        <p class="muted small"><a href="{esc(market.get('source_url'))}" target="_blank" rel="noopener">{esc(market.get('source'))} ↗</a></p>
+      </div>
+      {note_html}
+      {''.join(groups)}
+    </section>"""
+
+
 def build_extra_search_items(extra):
     """Make enrichment content searchable from the existing search page."""
     items = []
@@ -1591,6 +1737,59 @@ def build_extra_search_items(extra):
             "relationship",
         )
 
+    glob = extra.get("global", {})
+    for section in glob.get("sections", []):
+        for item in section.get("items", []):
+            add(
+                "data-lab.html#global-" + str(section.get("id", "global")),
+                item.get("label", "Global series"),
+                section.get("title", "Global data"),
+                item.get("source", ""),
+                (item.get("definition", "") + " " + item.get("guide", "")).strip(),
+                "global-series",
+            )
+
+    for item in glob.get("commodities", {}).get("items", []):
+        add(
+            "data-lab.html#commodities",
+            item.get("label", "Commodity price"),
+            "Commodity prices",
+            item.get("source", "World Bank Pink Sheet"),
+            (item.get("definition", "") + " " + item.get("guide", "")).strip(),
+            "commodity",
+        )
+
+    for group in glob.get("market", {}).get("groups", []):
+        for item in group.get("items", []):
+            add(
+                "data-lab.html#markets",
+                item.get("label", "Market quote"),
+                group.get("title", "Market snapshots"),
+                item.get("source", "Yahoo Finance (secondary market data)"),
+                (item.get("definition", "") + " " + item.get("guide", "")).strip(),
+                "market",
+            )
+
+    for kpi in glob.get("kpis", []):
+        add(
+            "data-lab.html#global-kpis",
+            kpi.get("name", "Global derived KPI"),
+            kpi.get("sector", "Global"),
+            ", ".join(kpi.get("sources", [])),
+            (kpi.get("formula", "") + " " + kpi.get("definition", "") + " " + kpi.get("guide", "")).strip(),
+            "global-kpi",
+        )
+
+    for guide in glob.get("guides", []):
+        add(
+            "data-lab.html#global-guides",
+            guide.get("title", "Global data guide"),
+            "Global data guide",
+            guide.get("source", ""),
+            (guide.get("definition", "") + " " + guide.get("guide", "")).strip(),
+            "guide",
+        )
+
     return items
 
 
@@ -1616,6 +1815,7 @@ def render_data_lab(extra):
     census = extra.get("census", {})
     datagov = extra.get("data_gov_resources", [])
     discovery = extra.get("discovery", {})
+    glob = extra.get("global", {})
     live_count = sum(1 for item in series if item.get("status") == "live")
 
     hero += f"""
@@ -1628,6 +1828,17 @@ def render_data_lab(extra):
         <div class="card source-summary-card"><strong>{live_count}</strong><span>Live this run</span></div>
         <div class="card source-summary-card"><strong>{len(derived)}</strong><span>Derived KPIs</span></div>
         <div class="card source-summary-card"><strong>{len(relationships)}</strong><span>Relationships</span></div>
+      </div>
+      <div class="grid grid-4 source-summary-grid">
+        <div class="card source-summary-card"><strong>{glob.get('counts', {}).get('sections', 0)}</strong><span>Global feeds</span></div>
+        <div class="card source-summary-card"><strong>{glob.get('counts', {}).get('series', 0)}</strong><span>Global series</span></div>
+        <div class="card source-summary-card"><strong>{len(glob.get('commodities', {}).get('items', []))}</strong><span>Commodity prices</span></div>
+        <div class="card source-summary-card"><strong>{glob.get('counts', {}).get('derived_kpis', 0)}</strong><span>Global KPIs</span></div>
+      </div>
+      <div class="lab-jump">
+        <a href="#series">India series</a><a href="#derived">Derived KPIs</a><a href="#relationships">Relationships</a>
+        <a href="#global-fx-rates">FX &amp; rates</a><a href="#global-policy-rates">Policy rates</a><a href="#commodities">Commodities</a>
+        <a href="#markets">Markets</a><a href="#global-kpis">Global KPIs</a><a href="#global-guides">Guides</a>
       </div>
     </section>"""
 
@@ -1705,6 +1916,57 @@ def render_data_lab(extra):
           <tbody>{rel_table}</tbody>
         </table>
       </div>
+    </section>"""
+
+    # ---- Global feed sections ----
+    hero += f"""
+    <section id="global" class="global-section">
+      {section_head('Global data feeds', 'Worldwide coverage', 'Curated official feeds for exchange rates, interest rates, debt, trade, banking, insurance, pay parity and markets. Every table carries its source, unit, definition and guide.')}
+      <div class="callout">
+        <h3>Official first, clearly labelled</h3>
+        <p>{esc(glob.get('methodology', 'Official sources are used wherever possible.'))}</p>
+        <p class="muted small">Last known good values are reused when a feed is rate-limited or unavailable; the status badge tells you which run supplied each series.</p>
+      </div>
+    </section>"""
+
+    for global_section in glob.get("sections", []):
+        hero += render_global_series_section(global_section)
+
+    hero += render_commodity_section(glob.get("commodities", {}))
+    hero += render_market_section(glob.get("market", {}))
+
+    global_kpi_cards = []
+    for item in glob.get("kpis", []):
+        anchor = "global-kpi-" + str(item.get("id", ""))
+        sources = ", ".join(item.get("sources", []))
+        global_kpi_cards.append(f"""
+        <article class="card data-kpi-card" id="{esc(anchor)}">
+          <div class="card-header"><h3>{esc(item.get('name'))}</h3><span class="badge">{esc(item.get('status'))}</span></div>
+          <div class="data-kpi-value">{fmt_extra_value(item.get('value'), item.get('unit'))}</div>
+          <p><strong>Formula:</strong> {esc(item.get('formula'))}</p>
+          <p><strong>Definition:</strong> {esc(item.get('definition'))}</p>
+          <p><strong>User guide:</strong> {esc(item.get('guide'))}</p>
+          <p class="muted small">Sources: {esc(sources)} · Latest: {esc(item.get('latest_period'))}</p>
+        </article>""")
+    hero += f"""
+    <section id="global-kpis" class="global-section">
+      {section_head('Global derived KPIs', 'Computed from global feeds', 'Cross-country metrics calculated from the published feeds above. Each card states the exact inputs and formula.')}
+      <div class="grid grid-2">{"".join(global_kpi_cards)}</div>
+    </section>"""
+
+    guide_cards = []
+    for guide in glob.get("guides", []):
+        guide_cards.append(f"""
+        <details class="card guide-card" id="guide-{esc(guide.get('id'))}">
+          <summary>{esc(guide.get('title'))}</summary>
+          <p><strong>Definition:</strong> {esc(guide.get('definition'))}</p>
+          <p><strong>User guide:</strong> {esc(guide.get('guide'))}</p>
+          <p class="muted small">Source: <a href="{esc(guide.get('source_url'))}" target="_blank" rel="noopener">{esc(guide.get('source'))} ↗</a></p>
+        </details>""")
+    hero += f"""
+    <section id="global-guides" class="global-section">
+      {section_head('Global definitions & guides', 'Read before comparing', 'Plain-English explanations of the indicators, units and caveats used in the global sections.')}
+      <div class="guide-grid">{"".join(guide_cards)}</div>
     </section>"""
 
     census_cards = []

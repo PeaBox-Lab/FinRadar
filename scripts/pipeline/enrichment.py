@@ -12,6 +12,9 @@ Publishes an expanded, sourced data layer on top of the core KPI pipeline:
   curated batch does not call gated APIsetu endpoints;
 * innovative derived KPIs with explicit formulas and user guidance;
 * Pearson relationships between Indian metrics and macro/global factors;
+* curated global feeds (ECB FX, BIS rates/debt/credit, IMF/WEO, WTO trade,
+  World Bank PPP/pay/insurance/banking/debt/equity, Pink Sheet commodities)
+  and clearly labelled delayed market snapshots;
 * a discovery catalog of official sources and their access status.
 
 Output: data/extra_metrics.json (consumed by page_generator.py).
@@ -47,6 +50,7 @@ USER_AGENT = "FinRadar enrichment batch/1.0"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from datagovin_client import fetch_resource  # noqa: E402
+from global_feeds import build_global_data  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -667,31 +671,41 @@ def build_discovery(series: list[dict[str, Any]], datagov: list[dict[str, Any]])
 
 def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    print("[1/5] Fetching curated World Bank series…")
+    print("[1/6] Fetching curated World Bank series…")
     series, fresh = build_series()
-    print("[2/5] Checking curated data.gov.in resources…")
+    print("[2/6] Checking curated data.gov.in resources…")
     datagov = build_datagov_stats()
-    print("[3/5] Deriving innovative KPIs…")
+    print("[3/6] Deriving innovative KPIs…")
     kpis = derive_kpis(fresh)
-    print("[4/5] Computing relationships with macro and global factors…")
+    print("[4/6] Computing relationships with macro and global factors…")
     relationships = build_relationships(fresh)
-    print("[5/5] Building discovery catalog…")
+    print("[5/6] Fetching curated global feeds…")
+    cache = load_cache()
+    global_data = build_global_data(cache)
+    save_cache(cache)
+    print("[6/6] Building discovery catalog…")
     discovery = build_discovery(series, datagov)
 
     payload = {
         "generated_at": now_iso(),
-        "methodology": "Public official APIs only. All derived values are computed from the series listed in this file.",
+        "methodology": (
+            "Public official APIs first. Derived values are computed from the series listed "
+            "in this file; Yahoo Finance market snapshots are secondary, delayed references."
+        ),
         "series": series,
         "census": {"facts": CENSUS_FACTS, "source": CENSUS_SOURCE},
         "data_gov_resources": datagov,
         "kpis": kpis,
         "relationships": relationships,
+        "global": global_data,
         "discovery": discovery,
     }
     OUTPUT.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     live = sum(1 for s in series if s["status"] == "live")
     print(f"[OK] {OUTPUT.relative_to(ROOT)} written")
-    print(f"     series live={live}/{len(series)} | derived KPIs={len(kpis)} | relationships={len(relationships)}")
+    print(f"     series live={live}/{len(series)} | derived KPIs={len(kpis)} | "
+          f"relationships={len(relationships)} | global series={global_data['counts']['series']} | "
+          f"global KPIs={global_data['counts']['derived_kpis']}")
 
 
 if __name__ == "__main__":
