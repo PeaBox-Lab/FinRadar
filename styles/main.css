@@ -1,8 +1,8 @@
 /* ==========================================================================
-   FinRadar — UI foundation
+   Radar — UI foundation
    A modern, light-first financial intelligence design system.
    Palette: warm paper canvas, deep navy ink, teal + indigo accents.
-   The theme layer (european-theme.css) adds the FinRadar-specific surfaces.
+   The theme layer (european-theme.css) adds the Radar-specific surfaces.
    ========================================================================== */
 
 :root {
@@ -588,4 +588,180 @@ section { padding: 48px 0; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ==========================================================================
+   Radar dashboards + snapshot disclosure
+   Light-first foundation; the theme layer adds Radar surface refinements.
+   Opaque badge backgrounds keep disclosure text legible on any surface.
+   ========================================================================== */
+.snapshot-badge, .live-badge {
+  --snapshot-badge-bg: var(--amber-soft);
+  --snapshot-badge-fg: #6b3f00;
+  --snapshot-badge-line: rgba(107, 63, 0, 0.26);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid var(--snapshot-badge-line);
+  border-radius: 999px;
+  background: var(--snapshot-badge-bg);
+  color: var(--snapshot-badge-fg);
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-align: left;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.snapshot-badge::before, .live-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+}
+.snapshot-badge.unavailable {
+  --snapshot-badge-bg: var(--red-soft);
+  --snapshot-badge-fg: #9c2f2a;
+  --snapshot-badge-line: rgba(156, 47, 42, 0.28);
+}
+.snapshot-updated {
+  flex: 1 1 100%;
+  display: block;
+  padding-top: 3px;
+  border-top: 1px solid var(--snapshot-badge-line);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.live-badge {
+  --snapshot-badge-bg: var(--green-soft);
+  --snapshot-badge-fg: #0a6b4a;
+  --snapshot-badge-line: rgba(10, 107, 74, 0.26);
+}
+.disclosure-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.dashboard-grid, .snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.dashboard-card, .snapshot-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dashboard-card .card-top, .snapshot-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  min-width: 0;
+}
+.dashboard-card .card-top > * { min-width: 0; }
+.snapshot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-color: rgba(185, 116, 13, 0.3);
+}
+.snapshot-card h3 { margin: 0; }
+.snapshot-card-foot {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* Snapshot tables scroll horizontally instead of crushing numeric columns. */
+.snapshot-table-wrap {
+  max-width: 100%;
+  margin: 12px 0 14px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.snapshot-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+  font-variant-numeric: tabular-nums;
+}
+.snapshot-table th, .snapshot-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.snapshot-table thead th {
+  background: var(--surface-soft);
+  color: var(--ink-2);
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.snapshot-table tbody th {
+  min-width: 220px;
+  color: var(--ink-2);
+  font-weight: 650;
+}
+.snapshot-table td.num { text-align: right; white-space: nowrap; }
+.snapshot-table tbody tr:last-child th,
+.snapshot-table tbody tr:last-child td { border-bottom: 0; }
+
+.snapshot-kpi { border-color: rgba(185, 116, 13, 0.32); }
+.unavailable-kpi {
+  border-style: dashed;
+  background: var(--surface-soft);
+}
+.unavailable-kpi .kpi-value { color: var(--ink-2); }
+
+/* Dense dropdown items leave room for the dashboard link group. */
+.nav-drop-menu.dense a,
+.nav-drop-menu.compact a,
+.nav-drop-menu .dashboard-links a,
+.nav-drop-menu .nav-drop-dashboards a,
+.nav-drop-menu a.dashboard-link {
+  padding: 5px 9px;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+  .dashboard-grid, .snapshot-grid { grid-template-columns: minmax(0, 1fr); }
+  .dashboard-card .card-top, .snapshot-card-top { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .snapshot-badge, .live-badge { padding: 5px 8px; border-radius: 12px; }
+  .snapshot-table { min-width: 560px; }
+  .snapshot-table-wrap { padding: 10px; }
 }

@@ -1,0 +1,430 @@
+{
+  "dataset_id": "irdai-insurance",
+  "title": "IRDAI insurance sector KPIs",
+  "category": "Insurance",
+  "page": "insurance.html#irdai-insurance",
+  "last_updated": "2026-11-26",
+  "coverage": "FY2019-20 to FY2024-25",
+  "source": {
+    "organization": "Insurance Regulatory and Development Authority of India (IRDAI)",
+    "title": "IRDAI Annual Reports 2020-21, 2021-22, 2022-23, 2023-24 and 2024-25",
+    "url": "https://irdai.gov.in/web/guest/annual-reports",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Every figure is transcribed from an official IRDAI annual-report table or the report's Bird's Eye View. FY2019-20 comparatives come from IRDAI Annual Report 2020-21 because the scanned FY2019-20 report has no usable text layer. Penetration and density are Swiss Re figures reproduced by IRDAI and are labelled as such. Period labels follow IRDAI's own April-March fiscal-year convention, including tables that print calendar-style year headings.",
+  "metrics": [
+    {
+      "id": "life_policies_issued",
+      "name": "Life insurers - new individual policies",
+      "unit": "lakh policies",
+      "category": "Life",
+      "definition": "IRDAI 'Number of new policies issued' / 'New Individual Policies issued' for life insurers.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 288.47
+        },
+        {
+          "period": "FY2020-21",
+          "value": 281.27
+        },
+        {
+          "period": "FY2021-22",
+          "value": 291.13
+        },
+        {
+          "period": "FY2022-23",
+          "value": 284.7
+        },
+        {
+          "period": "FY2023-24",
+          "value": 291.77
+        },
+        {
+          "period": "FY2024-25",
+          "value": 270.22
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 270.22,
+      "yoy_change_pct": -7.385954690338265
+    },
+    {
+      "id": "non_life_policies_issued",
+      "name": "General, health and specialised insurers - policies issued",
+      "unit": "lakh policies",
+      "category": "Non-life",
+      "definition": "IRDAI 'Number of new policies issued' / 'Policies Issued' for general, health and specialised insurers.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 2415.09
+        },
+        {
+          "period": "FY2020-21",
+          "value": 2467.33
+        },
+        {
+          "period": "FY2021-22",
+          "value": 2656.7
+        },
+        {
+          "period": "FY2022-23",
+          "value": 3018.1
+        },
+        {
+          "period": "FY2023-24",
+          "value": 3359.88
+        },
+        {
+          "period": "FY2024-25",
+          "value": 3913.53
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 3913.53,
+      "yoy_change_pct": 16.47826708096718
+    },
+    {
+      "id": "life_total_premium",
+      "name": "Life insurers - total premium",
+      "unit": "INR crore",
+      "category": "Life",
+      "definition": "Total premium underwritten by life insurers, including new and renewal business within India, as published by IRDAI.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 572910.19
+        },
+        {
+          "period": "FY2020-21",
+          "value": 628731.04
+        },
+        {
+          "period": "FY2021-22",
+          "value": 692614.14
+        },
+        {
+          "period": "FY2022-23",
+          "value": 782503.97
+        },
+        {
+          "period": "FY2023-24",
+          "value": 829929.46
+        },
+        {
+          "period": "FY2024-25",
+          "value": 885771.73
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 885771.73,
+      "yoy_change_pct": 6.728556183558061
+    },
+    {
+      "id": "non_life_total_premium",
+      "name": "Non-life insurers - premium",
+      "unit": "INR crore",
+      "category": "Non-life",
+      "definition": "IRDAI gross direct premium within and outside India for general, health and specialised insurers.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 202082.3
+        },
+        {
+          "period": "FY2020-21",
+          "value": 202082.3
+        },
+        {
+          "period": "FY2021-22",
+          "value": 224002.82
+        },
+        {
+          "period": "FY2022-23",
+          "value": 260327.82
+        },
+        {
+          "period": "FY2023-24",
+          "value": 293622.3
+        },
+        {
+          "period": "FY2024-25",
+          "value": 311666
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 311666,
+      "yoy_change_pct": 6.149029174689171
+    },
+    {
+      "id": "non_life_within_india_premium",
+      "name": "Non-life insurers - gross direct premium within India",
+      "unit": "INR crore",
+      "category": "Non-life",
+      "definition": "IRDAI gross direct premium within India for general, health and specialised insurers; distinct from the within-and-outside-India total.",
+      "source": {
+        "organization": "IRDAI",
+        "title": "Annual Reports 2020-21 to 2024-25, gross direct premium tables",
+        "url": "https://irdai.gov.in/web/guest/annual-reports"
+      },
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 188916.62
+        },
+        {
+          "period": "FY2020-21",
+          "value": 198714.72
+        },
+        {
+          "period": "FY2021-22",
+          "value": 220700.21
+        },
+        {
+          "period": "FY2022-23",
+          "value": 256894.27
+        },
+        {
+          "period": "FY2023-24",
+          "value": 289683.22
+        },
+        {
+          "period": "FY2024-25",
+          "value": 307611
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 307611,
+      "yoy_change_pct": 6.188753356166101
+    },
+    {
+      "id": "insurance_penetration_total",
+      "name": "Total insurance penetration",
+      "unit": "% of GDP",
+      "category": "Penetration",
+      "definition": "Swiss Re penetration estimate for total insurance (life plus non-life), reproduced in IRDAI annual reports.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 3.76
+        },
+        {
+          "period": "FY2020-21",
+          "value": 4.2
+        },
+        {
+          "period": "FY2021-22",
+          "value": 4.2
+        },
+        {
+          "period": "FY2022-23",
+          "value": 4.0
+        },
+        {
+          "period": "FY2023-24",
+          "value": 3.7
+        },
+        {
+          "period": "FY2024-25",
+          "value": 3.7
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 3.7,
+      "yoy_change_pct": 0.0
+    },
+    {
+      "id": "insurance_penetration_life",
+      "name": "Life insurance penetration",
+      "unit": "% of GDP",
+      "category": "Penetration",
+      "definition": "Swiss Re life-insurance penetration estimate reproduced in IRDAI annual reports, percent of GDP.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 2.82
+        },
+        {
+          "period": "FY2020-21",
+          "value": 3.2
+        },
+        {
+          "period": "FY2021-22",
+          "value": 3.2
+        },
+        {
+          "period": "FY2022-23",
+          "value": 3.0
+        },
+        {
+          "period": "FY2023-24",
+          "value": 2.8
+        },
+        {
+          "period": "FY2024-25",
+          "value": 2.7
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 2.7,
+      "yoy_change_pct": -3.5714285714285587
+    },
+    {
+      "id": "insurance_penetration_non_life",
+      "name": "Non-life insurance penetration",
+      "unit": "% of GDP",
+      "category": "Penetration",
+      "definition": "Swiss Re non-life penetration estimate reproduced in IRDAI annual reports, percent of GDP.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 0.94
+        },
+        {
+          "period": "FY2020-21",
+          "value": 1.0
+        },
+        {
+          "period": "FY2021-22",
+          "value": 1.0
+        },
+        {
+          "period": "FY2022-23",
+          "value": 1.0
+        },
+        {
+          "period": "FY2023-24",
+          "value": 1.0
+        },
+        {
+          "period": "FY2024-25",
+          "value": 1.0
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 1.0,
+      "yoy_change_pct": 0.0
+    },
+    {
+      "id": "insurance_density_total",
+      "name": "Total insurance density",
+      "unit": "USD per capita",
+      "category": "Density",
+      "definition": "Swiss Re insurance-density estimate for total insurance, reproduced in IRDAI annual reports.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 78
+        },
+        {
+          "period": "FY2020-21",
+          "value": 78
+        },
+        {
+          "period": "FY2021-22",
+          "value": 91
+        },
+        {
+          "period": "FY2022-23",
+          "value": 92
+        },
+        {
+          "period": "FY2023-24",
+          "value": 95
+        },
+        {
+          "period": "FY2024-25",
+          "value": 97
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 97,
+      "yoy_change_pct": 2.1052631578947367
+    },
+    {
+      "id": "insurance_density_life",
+      "name": "Life insurance density",
+      "unit": "USD per capita",
+      "category": "Density",
+      "definition": "Swiss Re life-insurance density estimate reproduced in IRDAI annual reports, USD per capita.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 58
+        },
+        {
+          "period": "FY2020-21",
+          "value": 59
+        },
+        {
+          "period": "FY2021-22",
+          "value": 69
+        },
+        {
+          "period": "FY2022-23",
+          "value": 70
+        },
+        {
+          "period": "FY2023-24",
+          "value": 70
+        },
+        {
+          "period": "FY2024-25",
+          "value": 72
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 72,
+      "yoy_change_pct": 2.857142857142857
+    },
+    {
+      "id": "insurance_density_non_life",
+      "name": "Non-life insurance density",
+      "unit": "USD per capita",
+      "category": "Density",
+      "definition": "Swiss Re non-life density estimate reproduced in IRDAI annual reports, USD per capita.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 19
+        },
+        {
+          "period": "FY2020-21",
+          "value": 19
+        },
+        {
+          "period": "FY2021-22",
+          "value": 22
+        },
+        {
+          "period": "FY2022-23",
+          "value": 22
+        },
+        {
+          "period": "FY2023-24",
+          "value": 25
+        },
+        {
+          "period": "FY2024-25",
+          "value": 25
+        }
+      ],
+      "latest_period": "FY2024-25",
+      "latest_value": 25,
+      "yoy_change_pct": 0.0
+    }
+  ],
+  "notes": [
+    "Evidence: IRDAI Annual Report 2020-21 Table I.7 and premium/policy tables supply FY2019-20 comparatives: life penetration 2.82 percent, non-life 0.94 percent, total 3.76 percent; life density USD 58, non-life USD 19, total USD 78; life premium INR 572910.19 crore; life policies 288.47 lakh; non-life policies 2415.09 lakh; within-India non-life premium INR 188916.62 crore.",
+    "Evidence: IRDAI Annual Report 2021-22 Tables I.7-I.10 and I.18 supply FY2020-21 and FY2021-22 premiums, policies, penetration and density.",
+    "Evidence: IRDAI Annual Report 2023-24 Tables I.7-I.9 and I.12 supply FY2022-23 and FY2023-24 series; the FY2023-24 non-life within-India premium uses Table I.12 row 1 (289683.22) and within-and-outside total uses row 2 (293622.30).",
+    "Evidence: IRDAI Annual Report 2024-25 Tables I.7-I.9 and I.12 supply FY2024-25 penetration 2.7 / 1.0 / 3.7 percent, density USD 72 / 25 / 97, life premium INR 885771.73 crore, non-life premiums INR 311666 crore (within and outside) and INR 307611 crore (within India), life policies 270.22 lakh and non-life policies 3913.53 lakh.",
+    "Period-label caveat: FY2023-24 and FY2024-25 penetration/density tables print India columns headed 2023 and 2024, but report notes and narrative sections assign those columns to April-March fiscal years.",
+    "Source discrepancy: the FY2024-25 report restates FY2023-24 non-life premiums slightly lower than the FY2023-24 report. This series keeps each figure from its first published annual report rather than blending restatements.",
+    "No FY2025-26 annual KPI value is shown: the IRDAI annual-reports listing had FY2024-25 as the latest published report when checked on 2026-11-26.",
+    "Report URLs: 2020-21 https://irdai.gov.in/documents/37343/366637/Annual+Report+2020-21.pdf/e187558c-00dd-078c-b679-90c6488f4dd0?version=1.1&t=1640254592193&download=true ; 2021-22 https://irdai.gov.in/documents/37343/366637/Annual+Report+2021-22.pdf/5ac27b18-2520-1186-8807-00e0342d9f2d?version=1.0&t=1671780581841&download=true ; 2022-23 https://irdai.gov.in/documents/37343/366637/%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+_+Annual+Report+2022-23.pdf/c3ecf83d-ddc1-3d13-da8c-c64364baf20f?version=1.0&t=1703656400415&download=true ; 2023-24 https://irdai.gov.in/documents/37343/366637/%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+2023-24+_+Annual+Report+2023-24.pdf/22950192-b116-35ed-a3a9-d2cfdb660206?version=1.0&t=1734934358396&download=true ; 2024-25 https://irdai.gov.in/documents/37343/366637/%E0%A4%86%E0%A4%88%E0%A4%86%E0%A4%B0%E0%A4%A1%E0%A5%80%E0%A4%8F%E0%A4%86%E0%A4%88+%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+_+IRDAI+Annual+Report+2024-25.pdf/06f02832-66a3-6308-a16f-f46a6640fc93?version=2.0&t=1767598639163&download=true"
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

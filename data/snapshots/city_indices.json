@@ -1,12 +1,16 @@
 {
-  "source": "Illustrative city-level cost-of-living indices for the salary-parity tool; replaced by live MoSPI data when wired in.",
-  "last_updated": "2026-11-22",
+  "source": "Labour Bureau, Ministry of Labour and Employment, Government of India — CPI for Industrial Workers (CPI-IW), September 2026, base 2016=100.",
+  "source_url": "https://labourbureau.gov.in/uploads/public/notice/MIL-CPI-IW-Sept-2026Epdf-d46dafe9e4b6e4b76ccf4832e8d48d9f.pdf",
+  "last_updated": "2026-11-26",
+  "month": "2026-09",
+  "base": "2016=100",
   "city_indices": {
-    "Pune": 120,
-    "Mumbai": 132,
-    "Delhi": 118,
-    "Jaipur": 89,
-    "Bengaluru": 116,
-    "Hyderabad": 105
-  }
+    "Mumbai": 142.8,
+    "Delhi": 152.9,
+    "Pune": 151.1,
+    "Jaipur": 138.8,
+    "Bengaluru": 153.4,
+    "Hyderabad": 155.7
+  },
+  "notes": "CPI-IW covers industrial-worker households and is used as a published proxy for city-level price levels. It is not a general all-resident cost-of-living index. MoSPI's current CPI release publishes all-India, rural, urban and state/UT indices, not city-level figures, so no MoSPI city index is substituted. Labour Bureau home page: https://labourbureau.gov.in/en"
 }

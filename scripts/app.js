@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FinRadar — client script
+   Radar — client script
    Renders live KPIs, benchmarks, tools and peer rankings from the
    data/latest_kpis.json file that the daily pipeline produces.
    ========================================================================== */
@@ -11,6 +11,19 @@
 const SITE_BASE = document.body.dataset.base || "";
 const LIVE_DATA_URL = `${SITE_BASE}data/latest_kpis.json`;
 const SNAPSHOT_URL = `${SITE_BASE}data/snapshots/indicators.json`;
+const BADGE_TEXT = "Static Snapshot • Updated Monthly (Not Live)";
+
+function monthLabel(stamp) {
+  if (!stamp) return "Unknown";
+  const date = new Date(`${String(stamp).slice(0, 7)}-01T00:00:00Z`);
+  return Number.isNaN(date.getTime())
+    ? String(stamp)
+    : date.toLocaleString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+
+function snapshotBadge(data) {
+  return `<span class="snapshot-badge">${BADGE_TEXT}<span class="snapshot-updated">Last Updated: ${monthLabel(data?.last_updated_month)}</span></span>`;
+}
 
 async function loadKPIs() {
   try {
@@ -18,7 +31,7 @@ async function loadKPIs() {
     if (!res.ok) throw new Error("not ok: " + res.status);
     return await res.json();
   } catch (err) {
-    console.warn("FinRadar: live data unavailable, using snapshot.");
+    console.warn("Radar: live data unavailable, using snapshot.");
     const res = await fetch(SNAPSHOT_URL);
     if (!res.ok) throw new Error("snapshot not ok: " + res.status);
     return res.json();
@@ -45,16 +58,25 @@ function verdictClass(verdict) {
   return "weak";
 }
 
-function renderKPI(k) {
+function renderKPI(k, data) {
   const el = document.createElement("article");
   el.className = "card kpi-card";
-  const isLive = k.value != null && k.source_live !== false;
-  if (!isLive) el.classList.add("demo");
+  const sourceType = k.source_type || (k.source_live === false ? "curated_snapshot" : "live_api");
+  const isLive = sourceType === "live_api";
+
+  let statusBadge = `<span class="live-badge">Live API</span>`;
+  if (sourceType === "curated_snapshot") {
+    el.classList.add("snapshot-kpi");
+    statusBadge = snapshotBadge(data);
+  } else if (sourceType === "unavailable") {
+    el.classList.add("unavailable-kpi");
+    statusBadge = `<span class="snapshot-badge unavailable">Official series unavailable — no value published</span>`;
+  }
 
   const parts = [];
   parts.push(`<div class="kpi-top">
     <span class="kpi-sector">${escapeHtml(k.sector || "General")}</span>
-    <span class="kpi-badge ${isLive ? "live" : "demo"}">${isLive ? "Live" : "Demo"}</span>
+    ${statusBadge}
   </div>`);
   parts.push(`<h3 class="kpi-name">${escapeHtml(k.name || "")}</h3>`);
   if (k.value != null) {
@@ -79,7 +101,7 @@ function renderKPI(k) {
 function renderKPIs(data) {
   const grid = document.getElementById("kpi-grid");
   if (!grid || !data.kpis) return;
-  data.kpis.forEach(k => grid.appendChild(renderKPI(k)));
+  data.kpis.forEach(k => grid.appendChild(renderKPI(k, data)));
 }
 
 /* ---------------- Hero stats ---------------- */
@@ -219,15 +241,22 @@ function initPersonalInflationTool(data) {
   const heading = document.getElementById("personal-inflation-result");
   if (!table || !heading) return;
 
-  const subindices = data?.subindices || {
-    food: 36, "fuel & light": 7, clothing: 5, education: 3,
-    healthcare: 3, housing: 25, "other stuff": 17
-  };
-  const categories = Object.entries(subindices).map(([name, subindex]) => ({ name, subindex }));
+  const subindices = data?.subindices;
+  const publishedWeights = data?.subindex_weights || {};
+  const categories = Object.entries(subindices || {})
+    .filter(([, value]) => typeof value === "number")
+    .map(([name, subindex]) => ({ name, subindex, weight: publishedWeights[name] }));
+  if (!categories.length) {
+    heading.innerHTML = '<p class="muted">Official CPI sub-indices are unavailable for this build, so the calculator is disabled. No placeholder figures are used.</p>';
+    document.getElementById("personal-inflation-btn")?.setAttribute("disabled", "disabled");
+    return;
+  }
   const n = categories.length;
-  // Distribute the total weight 100 evenly (remainder to the first rows).
+  // Use published CPI group weights where available; otherwise start from an
+  // equal, user-editable split (not presented as an official statistic).
   const baseWeight = Math.floor(100 / n);
-  const defaultWeights = categories.map((c, i) => baseWeight + (i < (100 - baseWeight * n) ? 1 : 0));
+  const defaultWeights = categories.map((c, i) =>
+    typeof c.weight === "number" ? c.weight : baseWeight + (i < (100 - baseWeight * n) ? 1 : 0));
   const defaultWeightAt = (i) => defaultWeights[i];
 
   table.innerHTML = categories.map((c, i) => `
@@ -270,7 +299,7 @@ function initPersonalInflationTool(data) {
       : "Your personal rate is close to the official headline inflation.";
     heading.innerHTML = `Your personal inflation rate comes to <strong>${result.toFixed(1)}%</strong> — how much your own spending mix is really inflating at.` +
       (headline != null ? ` The official headline is ${headline.toFixed(2)}%. ` + deltaNote : "") +
-      `<br><small class="muted">Adjusted sub-indices are illustrative until live MoSPI data is wired in.</small>`;
+      `<br><small class="muted">Sub-indices: ${escapeHtml(data?.subindex_metadata?.source || "Official CPI release")}${data?.subindex_metadata?.month ? ` (${escapeHtml(data.subindex_metadata.month)}, base ${escapeHtml(data.subindex_metadata.base || "—")})` : ""}. Starting weights are published CPI group weights; change them to match your own spending.</small>`;
   });
 
   const resetBtn = document.getElementById("personal-inflation-reset");
@@ -292,8 +321,13 @@ function initSalaryParityTool(data) {
   const result = document.getElementById("salary-parity-result");
   if (!salaryInput || !fromSel || !toSel || !result) return;
 
-  const cityIndices = data?.city_indices || { Pune: 120, Mumbai: 130, Delhi: 118, Jaipur: 90, Bengaluru: 115, Hyderabad: 105 };
-  const names = Object.keys(cityIndices).filter(k => typeof cityIndices[k] === "number");
+  const cityIndices = data?.city_indices;
+  const names = Object.keys(cityIndices || {}).filter(k => typeof cityIndices[k] === "number");
+  if (!names.length) {
+    result.innerHTML = '<p class="muted">Official city index data is unavailable for this build, so the calculator is disabled. No placeholder figures are used.</p>';
+    document.getElementById("salary-parity-btn")?.setAttribute("disabled", "disabled");
+    return;
+  }
 
   [fromSel, toSel].forEach(sel => {
     sel.innerHTML = names.map(k => `<option>${k}</option>`).join("");
@@ -315,7 +349,7 @@ function initSalaryParityTool(data) {
       : "Your money buys less there, so the equivalent salary is bigger.";
     result.innerHTML = `<strong>₹${parity.toLocaleString("en-IN")}</strong> — the salary in <strong>${toSel.value}</strong> that matches your <strong>₹${base.toLocaleString("en-IN")}</strong> in <strong>${fromSel.value}</strong> for purchasing power.` +
       ` <br>${direction}` +
-      ` <br><small class="muted">City indices are illustrative until live MoSPI data is wired in.</small>`;
+      ` <br><small class="muted">City figures: ${escapeHtml(data?.city_indices_metadata?.source || "official city index")}${data?.city_indices_metadata?.month ? ` (${escapeHtml(data.city_indices_metadata.month)}, base ${escapeHtml(data.city_indices_metadata.base || "—")})` : ""}. Published proxy for industrial-worker households, not a general cost-of-living index.</small>`;
   });
 }
 
@@ -335,8 +369,14 @@ function renderFooter(data) {
 /* ---------------- Boot ---------------- */
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const data = await loadKPIs();
-  window.__FINRADAR_DATA__ = data;
+  let data;
+  try {
+    data = await loadKPIs();
+  } catch (err) {
+    console.error("Radar: no KPI data could be loaded.", err);
+    return;
+  }
+  window.__RADAR_DATA__ = data;
   renderKPIs(data);
   renderHeroStats(data);
   renderBenchmarks(data);

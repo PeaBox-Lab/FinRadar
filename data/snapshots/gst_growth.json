@@ -1,9 +1,15 @@
 {
-  "source": "Ministry of Finance — GST portal collections (YoY growth) — illustrative fallback; live data replaces this when available.",
-  "last_fetched": "2026-11-22",
-  "current_year_growth_pct": 11.7,
-  "prior_year_growth_pct": 19.1,
+  "source": "GSTN / Ministry of Finance, Government of India — GST Revenue Report for October 2026 (published 2026-11-01).",
+  "source_url": "https://tutorial.gst.gov.in/downloads/news/gst_revenue_report_final_for_publishing_oct_2026.pdf",
+  "last_fetched": "2026-11-26",
+  "current_year_growth_pct": 22.9,
+  "prior_year_growth_pct": null,
   "current_month": "2026-10",
-  "collections_usd": 135000000000,
-  "notes": "Both years' YoY growth figures are illustrative for demo purposes."
+  "collections_inr_crore": 231290,
+  "collections_usd": null,
+  "notes": "October 2026 total gross GST revenue (comparable ex-cess series) was ₹231,290 crore, 22.9% above the ₹188,125 crore comparable October 2025 base. The October 2025 headline PIB growth of 4.6% included cess and is not definitionally identical, so it is not used as the prior-year field. Figures are provisional. Source: https://tutorial.gst.gov.in/downloads/news/gst_revenue_report_final_for_publishing_oct_2026.pdf ; cross-check: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2185839",
+  "unavailable": {
+    "prior_year_growth_pct": "No definitionally identical prior-year comparable in the retrieved official October 2026 report.",
+    "collections_usd": "GSTN publishes collections in INR; no official USD conversion is published for this series."
+  }
 }

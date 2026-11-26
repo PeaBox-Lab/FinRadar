@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global markets dashboard — Radar</title>
+  <meta name="description" content="Exchange-level fundamentals and secondary market context for the world&#x27;s major equity venues." />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Global markets dashboard — Radar" />
+  <meta property="og:description" content="Exchange-level fundamentals and secondary market context for the world&#x27;s major equity venues." />
+  <meta property="og:url" content="https://radar.peabox.in/markets.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Global markets dashboard — Radar" />
+  <meta name="twitter:description" content="Exchange-level fundamentals and secondary market context for the world&#x27;s major equity venues." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://radar.peabox.in/markets.html" />
+</head>
+<body data-base="">
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Radar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+        <span class="brand-name">Radar</span>
+      </a>
+      <span class="nav-status"><span class="status-dot"></span>Live data</span>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="india.html" class="nav-link">India</a>
+          <a href="global.html" class="nav-link">Global</a>
+          <a href="markets.html" class="nav-link">Markets</a>
+          <a href="insurance.html" class="nav-link">Insurance</a>
+          <a href="mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="data-lab.html" class="nav-link">Data Lab</a>
+          <a href="tools.html" class="nav-link">Tools</a>
+          <a href="search.html" class="nav-link">Search</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="india.html" role="menuitem">📊 India macro</a>
+            <a href="global.html" role="menuitem">🌐 Global macro</a>
+            <a href="markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+
+
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+
+
+            <div class="nav-drop-heading">Sector Categories</div>
+
+
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+
+
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+
+
+            <div class="nav-drop-heading">Social Services</div>
+
+
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+
+
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+
+
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
+            <div class="nav-drop-heading">More</div>
+
+
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+
+    </div>
+
+
+  </header>
+
+
+  <main id="site-main" class="site-main container"><section class="category-index-hero">
+      <span class="eyebrow dark">Exchanges &amp; assets</span>
+      <h1>Global markets dashboard</h1>
+      <p class="hero-sub">Exchange-level fundamentals and secondary market context for the world&#x27;s major equity venues.</p>
+      <p class="muted">Official exchange statistics are labelled as monthly snapshots; delayed market quotes are context only, never official statistics.</p>
+      <div class="hero-actions"><a href="search.html" class="btn btn-ghost">Search all data</a><a href="monthly-snapshots.html" class="btn btn-ghost">Snapshot catalogue</a></div>
+    </section><section id="global-exchanges" class="snapshot-section">
+          <div class="section-head"><div><span class="eyebrow dark">Static snapshot</span><h2>Global exchange fundamentals</h2></div><p class="section-intro">Country-level World Bank WDI series are used as transparent proxies where single-exchange annual series are not published. Exchange-level WFE figures are month-end snapshots and are labelled with their exact period. Country coverage is explicitly stated; exchange-specific index levels and returns are included only where the index provider or exchange published them.</p></div>
+          <div class="grid snapshot-grid"><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NSE/Nifty 50 · India market cap</h3>
+      <div class="snapshot-value">10.56 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+105.8% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2552463790000, 3548018470000, 3387366670000, 4340130780000, 5131397430000, 10559581760000]'></div>
+      <p class="small muted">India country-level domestic market capitalisation of listed companies; World Bank proxy for the NSE universe.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NSE/Nifty 50 · Listed companies</h3>
+      <div class="snapshot-value">8,510 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+218.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[1962, 2053, 2168, 2370, 2673, 8510]'></div>
+      <p class="small muted">India country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NSE/Nifty 50 · Value traded</h3>
+      <div class="snapshot-value">2.87 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change down">-14.1% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[1842421950000, 2299665720000, 1687282050000, 1945003850000, 3347429290000, 2874364660000]'></div>
+      <p class="small muted">India country-level annual value of shares traded; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NSE/Nifty 50 · Turnover ratio</h3>
+      <div class="snapshot-value">65.2 %</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change up">+45.6% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[72.182099, 64.815495, 49.8110247, 44.814406, 65.2342629]'></div>
+      <p class="small muted">Stocks traded, turnover ratio of domestic shares; World Bank India series.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Nifty 50 · Total return</h3>
+      <div class="snapshot-value">24.6 %</div>
+      <div class="snapshot-period">Latest: 2021* <span class="metric-change up">+52.8% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[16.1, 24.6]'></div>
+      <p class="small muted">Calendar-year total-return performance published by NSE; 2021 data is through 15 December 2021.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://nsearchives.nseindia.com/content/indices/25_Years_Journey_of_Nifty50_2022-01.pdf" target="_blank" rel="noopener">NSE India</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">BSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>BSE/Sensex · India market cap</h3>
+      <div class="snapshot-value">10.56 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+105.8% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2552463790000, 3548018470000, 3387366670000, 4340130780000, 5131397430000, 10559581760000]'></div>
+      <p class="small muted">India country-level domestic market capitalisation of listed companies; World Bank proxy for the BSE universe.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">BSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Sensex · Month-end level (rounded)</h3>
+      <div class="snapshot-value">72,000 index points</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change up">+26.3% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[40000, 57000, 72000]'></div>
+      <p class="small muted">Rounded month-end Sensex levels published in BSE&#x27;s SENSEX@40 white paper; not exact year-end closes.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.bseindia.com/downloads1/SENSEX@40-White-Paper.pdf" target="_blank" rel="noopener">BSE Limited</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NYSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NYSE/DJIA · United States market cap</h3>
+      <div class="snapshot-value">68.94 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+10.9% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[41569861770000, 48548538120000, 40297980320000, 48979397700000, 62185685320000, 68937866210000]'></div>
+      <p class="small muted">United States country-level domestic market capitalisation of listed companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/USA/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NYSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NYSE/DJIA · Listed companies</h3>
+      <div class="snapshot-value">3,908 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change down">-2.5% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[4104, 4774, 4642, 4317, 4010, 3908]'></div>
+      <p class="small muted">United States country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NYSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NYSE/DJIA · Value traded</h3>
+      <div class="snapshot-value">55.47 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+30.2% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[41086461430000, 45874145530000, 44315891180000, 37263213740000, 42600207070000, 55465240170000]'></div>
+      <p class="small muted">United States country-level annual value of shares traded; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">NYSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>NYSE/DJIA · Turnover ratio</h3>
+      <div class="snapshot-value">68.5 %</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change down">-10.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[98.837137, 94.491302, 109.9705018, 76.079363, 68.5048446]'></div>
+      <p class="small muted">Stocks traded, turnover ratio of domestic shares; World Bank United States series.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">DJIA</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Dow Jones Industrial Average · Price return</h3>
+      <div class="snapshot-value">12.9 %</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change down">-6.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[-8.78, 13.7, 12.88]'></div>
+      <p class="small muted">Annual price returns stated by S&amp;P Dow Jones Indices.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.spglobal.com/spdji/en/documents/commentary/market-attributes-us-equities-202508.pdf" target="_blank" rel="noopener">S&amp;P Dow Jones Indices</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">FWB</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>FWB/DAX · Germany market cap</h3>
+      <div class="snapshot-value">2.90 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+41.8% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2284108840000, 2503045830000, 1889663940000, 2178052520000, 2044248710000, 2898631590000]'></div>
+      <p class="small muted">Germany country-level domestic market capitalisation of listed companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/DEU/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">FWB</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>FWB/DAX · Listed companies</h3>
+      <div class="snapshot-value">416.0 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change down">-4.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[438, 443, 429, 453, 435, 416]'></div>
+      <p class="small muted">Germany country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">FWB</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>FWB/DAX · Value traded</h3>
+      <div class="snapshot-value">1.48 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+60.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[1835769070000, 1526211440000, 1292671760000, 1041359820000, 923998030000, 1484874220000]'></div>
+      <p class="small muted">Germany country-level annual value of shares traded; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">FWB</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>FWB/DAX · Turnover ratio</h3>
+      <div class="snapshot-value">45.2 %</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change down">-5.5% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[80.371348, 60.974171, 68.4074947, 47.811511, 45.1998832]'></div>
+      <p class="small muted">Stocks traded, turnover ratio of domestic shares; World Bank Germany series.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">LSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>LSE/FTSE 100 · United Kingdom market cap</h3>
+      <div class="snapshot-value">3.10 tn USD</div>
+      <div class="snapshot-period">Latest: 2022 <span class="metric-change down">-18.5% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[3799459240000, 3095983430000]'></div>
+      <p class="small muted">United Kingdom country-level domestic market capitalisation. Nulls are World Bank API nulls, not estimates.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/GBR/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">LSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>LSE/FTSE 100 · Listed companies</h3>
+      <div class="snapshot-value">1,606 companies</div>
+      <div class="snapshot-period">Latest: 2022 <span class="metric-change down">-2.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[1646, 1606]'></div>
+      <p class="small muted">United Kingdom country-level listed domestic companies. Nulls are World Bank API nulls.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">LSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>LSE/FTSE 100 · Value traded</h3>
+      <div class="snapshot-value">636.82 bn USD</div>
+      <div class="snapshot-period">Latest: 2023 <span class="metric-change down">-43.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[854235490000, 1124351910000, 636817970000]'></div>
+      <p class="small muted">United Kingdom country-level annual value of shares traded. Nulls are World Bank API nulls.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">TSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>TSE/Nikkei 225 · Japan market cap</h3>
+      <div class="snapshot-value">7.61 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+20.6% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[6718219550000, 6544303490000, 5380475460000, 6149200180000, 6310681430000, 7610543670000]'></div>
+      <p class="small muted">Japan country-level domestic market capitalisation of listed companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/JPN/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">TSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>TSE/Nikkei 225 · Listed companies</h3>
+      <div class="snapshot-value">3,942 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change down">-0.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[3754, 3818, 3865, 3929, 3971, 3942]'></div>
+      <p class="small muted">Japan country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">TSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>TSE/Nikkei 225 · Value traded</h3>
+      <div class="snapshot-value">8.34 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+12.9% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[6337219210000, 6343178610000, 5858127450000, 6370514330000, 7384575420000, 8335066100000]'></div>
+      <p class="small muted">Japan country-level annual value of shares traded; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">TSE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>TSE/Nikkei 225 · Turnover ratio</h3>
+      <div class="snapshot-value">117.0 %</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change up">+13.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[94.3288, 96.9267, 108.8775, 103.5991, 117.0171]'></div>
+      <p class="small muted">Stocks traded, turnover ratio of domestic shares; World Bank Japan series.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Shanghai</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Shanghai · China market cap</h3>
+      <div class="snapshot-value">15.51 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+31.9% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[12276766270000, 14437446150000, 11469346090000, 10935845590000, 11755757950000, 15508858500000]'></div>
+      <p class="small muted">China country-level domestic market capitalisation; includes Shanghai and Shenzhen.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/CHN/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Shanghai</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Shanghai · Listed companies</h3>
+      <div class="snapshot-value">11,149 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change down">-0.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[12341, 11629, 11497, 11348, 11231, 11149]'></div>
+      <p class="small muted">China country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Shanghai</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>SSE Composite Index · Month-end level</h3>
+      <div class="snapshot-value">2,975 index points</div>
+      <div class="snapshot-period">Latest: 2023-12 </div>
+      
+      <p class="small muted">December 2023 month-end index level published in WFE Market Statistics.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://focus.world-exchanges.org/issue/february-2024/market-statistics" target="_blank" rel="noopener">World Federation of Exchanges</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">HKEX</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>HKEX/Hang Seng · Hong Kong market cap</h3>
+      <div class="snapshot-value">6.09 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+33.8% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[6130420430000, 5434177120000, 4566809060000, 3974783490000, 4549720760000, 6089226700000]'></div>
+      <p class="small muted">Hong Kong SAR country-level domestic market capitalisation; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/HKG/indicator/CM.MKT.LCAP.CD?format=json&amp;date=2020:2025&amp;per_page=100" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">HKEX</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>HKEX/Hang Seng · Listed companies</h3>
+      <div class="snapshot-value">2,508 companies</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+2.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2353, 2388, 2414, 2428, 2449, 2508]'></div>
+      <p class="small muted">Hong Kong SAR country-level listed domestic companies; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">HKEX</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>HKEX/Hang Seng · Value traded</h3>
+      <div class="snapshot-value">5.86 tn USD</div>
+      <div class="snapshot-period">Latest: 2025 <span class="metric-change up">+95.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[3069358660000, 4068106120000, 2848838860000, 2279385630000, 2996539390000, 5864497780000]'></div>
+      <p class="small muted">Hong Kong SAR country-level annual value of shares traded; World Bank proxy.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&amp;date=2020:2025&amp;per_page=200" target="_blank" rel="noopener">World Bank</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">HKEX</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Hang Seng Index · Month-end level</h3>
+      <div class="snapshot-value">25,631 index points</div>
+      <div class="snapshot-period">Latest: 2025-12 </div>
+      
+      <p class="small muted">December 2025 month-end Hang Seng Index level published by HKEX.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en" target="_blank" rel="noopener">Hong Kong Exchanges and Clearing</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">HKEX</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Hang Seng Index · 12-month change</h3>
+      <div class="snapshot-value">27.8 %</div>
+      <div class="snapshot-period">Latest: 2025 </div>
+      
+      <p class="small muted">HKEX-published 12-month change to December 2025.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en" target="_blank" rel="noopener">Hong Kong Exchanges and Clearing</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">WFE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Exchange-level month-end market cap</h3>
+      <div class="snapshot-value">7,757,530 USD million</div>
+      <div class="snapshot-period">Latest: Euronext 2025-11 <span class="metric-change up">+36.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[4340130.78, 5245474.11, 5162895.97, 5298940.67, 25564650.47, 31649898.66, 32081793.14, 2074323.43, 2003287.12, 2773182.26, 6149200.18, 6400158.03, 7573002.42, 6524756.76, 7170382.22, 8852501.96, 3974783.49, 4373121.89, 6165434.37, 6889030.99, 5687221.75, 7757530.16]'></div>
+      <p class="small muted">Domestic market capitalisation reported by WFE at month-end, not an annual total. Exchange is encoded in the period label.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://focus.world-exchanges.org/issue/february-2024/market-statistics" target="_blank" rel="noopener">World Federation of Exchanges</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">WFE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Exchange-level listed companies (Dec 2023)</h3>
+      <div class="snapshot-value">1,668 domestic companies</div>
+      <div class="snapshot-period">Latest: Euronext <span class="metric-change down">-31.3% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2370, 1709, 391, 3930, 2263, 2428, 1668]'></div>
+      <p class="small muted">Domestic listed companies reported by WFE; foreign listings are excluded.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://focus.world-exchanges.org/issue/february-2024/market-statistics" target="_blank" rel="noopener">World Federation of Exchanges</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">WFE</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Exchange-level value traded (Dec 2023)</h3>
+      <div class="snapshot-value">182,869 USD million</div>
+      <div class="snapshot-period">Latest: Euronext <span class="metric-change up">+11.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[247548.46, 2384644.0, 85476.05, 570736.68, 971785.11, 164734.17, 182868.65]'></div>
+      <p class="small muted">WFE equity value of share trading for December 2023; a single month, not a full year.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://focus.world-exchanges.org/issue/february-2024/market-statistics" target="_blank" rel="noopener">World Federation of Exchanges</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">P/E</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Year-end P/E ratio (official series status)</h3>
+      <div class="snapshot-value">—</div>
+      <div class="snapshot-period">Latest: — </div>
+      
+      <p class="small muted">No authenticated official year-end P/E series was published for these index/exchange pairs in the source review. Nulls are shown rather than estimates.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://focus.world-exchanges.org/issue/february-2024/market-statistics" target="_blank" rel="noopener">Radar source review</a></span></div>
+    </article></div>
+          <div class="snapshot-table-wrap">
+      <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      <table class="data-table snapshot-table">
+        <thead><tr><th>Metric</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>2021*</th><th>2023-12</th><th>2025-12</th><th>NSE 2023-12</th><th>NSE 2024-11</th><th>NSE 2025-11</th><th>BSE 2025-11</th><th>NYSE 2023-12</th><th>NYSE 2024-11</th><th>NYSE 2025-11</th><th>Deutsche Börse 2023-12</th><th>Deutsche Börse 2024-11</th><th>Deutsche Börse 2025-11</th><th>Japan Exchange Group 2023-12</th><th>Japan Exchange Group 2024-11</th><th>Japan Exchange Group 2025-11</th><th>Shanghai 2023-12</th><th>Shanghai 2024-11</th><th>Shanghai 2025-11</th><th>HKEX 2023-12</th><th>HKEX 2024-11</th><th>HKEX 2025-11</th><th>Euronext 2023-12</th><th>Euronext 2024-11</th><th>Euronext 2025-11</th><th>NSE</th><th>NYSE</th><th>Deutsche Börse</th><th>Japan Exchange Group</th><th>Shanghai</th><th>HKEX</th><th>Euronext</th></tr></thead>
+        <tbody><tr><th scope="row">NSE/Nifty 50 · India market cap <span class="muted">(USD)</span></th><td class="num">2.55 tn</td><td class="num">3.55 tn</td><td class="num">3.39 tn</td><td class="num">4.34 tn</td><td class="num">5.13 tn</td><td class="num">10.56 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NSE/Nifty 50 · Listed companies <span class="muted">(companies)</span></th><td class="num">1,962</td><td class="num">2,053</td><td class="num">2,168</td><td class="num">2,370</td><td class="num">2,673</td><td class="num">8,510</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NSE/Nifty 50 · Value traded <span class="muted">(USD)</span></th><td class="num">1.84 tn</td><td class="num">2.30 tn</td><td class="num">1.69 tn</td><td class="num">1.95 tn</td><td class="num">3.35 tn</td><td class="num">2.87 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NSE/Nifty 50 · Turnover ratio <span class="muted">(%)</span></th><td class="num">72.2</td><td class="num">64.8</td><td class="num">49.8</td><td class="num">44.8</td><td class="num">65.2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Nifty 50 · Total return <span class="muted">(%)</span></th><td class="num">16.1</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">24.6</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">BSE/Sensex · India market cap <span class="muted">(USD)</span></th><td class="num">2.55 tn</td><td class="num">3.55 tn</td><td class="num">3.39 tn</td><td class="num">4.34 tn</td><td class="num">5.13 tn</td><td class="num">10.56 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Sensex · Month-end level (rounded) <span class="muted">(index points)</span></th><td class="num">40,000</td><td class="num">—</td><td class="num">57,000</td><td class="num">—</td><td class="num">72,000</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NYSE/DJIA · United States market cap <span class="muted">(USD)</span></th><td class="num">41.57 tn</td><td class="num">48.55 tn</td><td class="num">40.30 tn</td><td class="num">48.98 tn</td><td class="num">62.19 tn</td><td class="num">68.94 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NYSE/DJIA · Listed companies <span class="muted">(companies)</span></th><td class="num">4,104</td><td class="num">4,774</td><td class="num">4,642</td><td class="num">4,317</td><td class="num">4,010</td><td class="num">3,908</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NYSE/DJIA · Value traded <span class="muted">(USD)</span></th><td class="num">41.09 tn</td><td class="num">45.87 tn</td><td class="num">44.32 tn</td><td class="num">37.26 tn</td><td class="num">42.60 tn</td><td class="num">55.47 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">NYSE/DJIA · Turnover ratio <span class="muted">(%)</span></th><td class="num">98.8</td><td class="num">94.5</td><td class="num">110.0</td><td class="num">76.1</td><td class="num">68.5</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Dow Jones Industrial Average · Price return <span class="muted">(%)</span></th><td class="num">—</td><td class="num">—</td><td class="num">-8.78</td><td class="num">13.7</td><td class="num">12.9</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">FWB/DAX · Germany market cap <span class="muted">(USD)</span></th><td class="num">2.28 tn</td><td class="num">2.50 tn</td><td class="num">1.89 tn</td><td class="num">2.18 tn</td><td class="num">2.04 tn</td><td class="num">2.90 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">FWB/DAX · Listed companies <span class="muted">(companies)</span></th><td class="num">438.0</td><td class="num">443.0</td><td class="num">429.0</td><td class="num">453.0</td><td class="num">435.0</td><td class="num">416.0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">FWB/DAX · Value traded <span class="muted">(USD)</span></th><td class="num">1.84 tn</td><td class="num">1.53 tn</td><td class="num">1.29 tn</td><td class="num">1.04 tn</td><td class="num">924.00 bn</td><td class="num">1.48 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">FWB/DAX · Turnover ratio <span class="muted">(%)</span></th><td class="num">80.4</td><td class="num">61.0</td><td class="num">68.4</td><td class="num">47.8</td><td class="num">45.2</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">LSE/FTSE 100 · United Kingdom market cap <span class="muted">(USD)</span></th><td class="num">—</td><td class="num">3.80 tn</td><td class="num">3.10 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">LSE/FTSE 100 · Listed companies <span class="muted">(companies)</span></th><td class="num">—</td><td class="num">1,646</td><td class="num">1,606</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">LSE/FTSE 100 · Value traded <span class="muted">(USD)</span></th><td class="num">—</td><td class="num">854.24 bn</td><td class="num">1.12 tn</td><td class="num">636.82 bn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">TSE/Nikkei 225 · Japan market cap <span class="muted">(USD)</span></th><td class="num">6.72 tn</td><td class="num">6.54 tn</td><td class="num">5.38 tn</td><td class="num">6.15 tn</td><td class="num">6.31 tn</td><td class="num">7.61 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">TSE/Nikkei 225 · Listed companies <span class="muted">(companies)</span></th><td class="num">3,754</td><td class="num">3,818</td><td class="num">3,865</td><td class="num">3,929</td><td class="num">3,971</td><td class="num">3,942</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">TSE/Nikkei 225 · Value traded <span class="muted">(USD)</span></th><td class="num">6.34 tn</td><td class="num">6.34 tn</td><td class="num">5.86 tn</td><td class="num">6.37 tn</td><td class="num">7.38 tn</td><td class="num">8.34 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">TSE/Nikkei 225 · Turnover ratio <span class="muted">(%)</span></th><td class="num">94.3</td><td class="num">96.9</td><td class="num">108.9</td><td class="num">103.6</td><td class="num">117.0</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Shanghai · China market cap <span class="muted">(USD)</span></th><td class="num">12.28 tn</td><td class="num">14.44 tn</td><td class="num">11.47 tn</td><td class="num">10.94 tn</td><td class="num">11.76 tn</td><td class="num">15.51 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Shanghai · Listed companies <span class="muted">(companies)</span></th><td class="num">12,341</td><td class="num">11,629</td><td class="num">11,497</td><td class="num">11,348</td><td class="num">11,231</td><td class="num">11,149</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">SSE Composite Index · Month-end level <span class="muted">(index points)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">2,975</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">HKEX/Hang Seng · Hong Kong market cap <span class="muted">(USD)</span></th><td class="num">6.13 tn</td><td class="num">5.43 tn</td><td class="num">4.57 tn</td><td class="num">3.97 tn</td><td class="num">4.55 tn</td><td class="num">6.09 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">HKEX/Hang Seng · Listed companies <span class="muted">(companies)</span></th><td class="num">2,353</td><td class="num">2,388</td><td class="num">2,414</td><td class="num">2,428</td><td class="num">2,449</td><td class="num">2,508</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">HKEX/Hang Seng · Value traded <span class="muted">(USD)</span></th><td class="num">3.07 tn</td><td class="num">4.07 tn</td><td class="num">2.85 tn</td><td class="num">2.28 tn</td><td class="num">3.00 tn</td><td class="num">5.86 tn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Hang Seng Index · Month-end level <span class="muted">(index points)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">25,631</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Hang Seng Index · 12-month change <span class="muted">(%)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">27.8</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Exchange-level month-end market cap <span class="muted">(USD million)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">4.3 mn</td><td class="num">5.2 mn</td><td class="num">5.2 mn</td><td class="num">5.3 mn</td><td class="num">25.6 mn</td><td class="num">31.6 mn</td><td class="num">32.1 mn</td><td class="num">2.1 mn</td><td class="num">2.0 mn</td><td class="num">2.8 mn</td><td class="num">6.1 mn</td><td class="num">6.4 mn</td><td class="num">7.6 mn</td><td class="num">6.5 mn</td><td class="num">7.2 mn</td><td class="num">8.9 mn</td><td class="num">4.0 mn</td><td class="num">4.4 mn</td><td class="num">6.2 mn</td><td class="num">6.9 mn</td><td class="num">5.7 mn</td><td class="num">7.8 mn</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr><tr><th scope="row">Exchange-level listed companies (Dec 2023) <span class="muted">(domestic companies)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">2,370</td><td class="num">1,709</td><td class="num">391.0</td><td class="num">3,930</td><td class="num">2,263</td><td class="num">2,428</td><td class="num">1,668</td></tr><tr><th scope="row">Exchange-level value traded (Dec 2023) <span class="muted">(USD million)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">247,548</td><td class="num">2.4 mn</td><td class="num">85,476</td><td class="num">570,737</td><td class="num">971,785</td><td class="num">164,734</td><td class="num">182,869</td></tr><tr><th scope="row">Year-end P/E ratio (official series status) <span class="muted">(status)</span></th><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr></tbody>
+      </table>
+      <p class="small muted">Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.CD" target="_blank" rel="noopener">World Bank / World Federation of Exchanges</a> · WDI capital-market series and WFE Market Statistics</p>
+    </div>
+          <p class="small muted">World Bank series are country-level, not single-exchange values; they are used as the best official comparable proxy and labelled as such in each metric definition. · World Bank WDI lastupdated for these series: 2026-11-11. India 2025 listed-company count 8,510 and market cap USD 10.56 tn are published values with a discontinuity versus 2024; they are reported unchanged with this flag. · WFE values are month-end snapshots in USD millions. LSE is not present in the retrieved WFE exchange tables; UK country-level WDI values are used with explicit nulls where the API returned null. · EURONEXT market-cap and company-count fields are covered only by WFE because it is a multi-country venue. No pan-European World Bank country proxy exists. · Delayed Yahoo Finance index quotes shown elsewhere on the markets dashboard are secondary context only and are not mixed into this snapshot.</p>
+          <p class="small"><a href="monthly-snapshots.html#global-exchanges">Open the full Global exchange fundamentals catalogue entry →</a></p>
+        </section><div class="section-head"><div><span class="eyebrow dark">Live feed</span><h2>World Bank: Stock market capitalisation</h2></div><p class="section-intro">Market value of listed domestic companies as a share of GDP.</p></div><div class="grid global-feed-grid"><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Australia</h3>
+          <div class="snapshot-value">113.87 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +15.17%</div>
+          <div class="sparkline" data-points='[126.195790298749, 85.405471522459, 89.3185156366129, 86.2490256648578, 87.3891932530615, 87.4910333564071, 104.696759321256, 113.342362733756, 88.1139234839412, 106.382445195033, 129.041410738388, 120.939358825633, 99.0295271142089, 103.129214204538, 98.8664833716782, 113.866833517244]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Brazil</h3>
+          <div class="snapshot-value">38.22 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +26.80%</div>
+          <div class="sparkline" data-points='[69.971896461306, 46.9748793579181, 49.7904095760441, 41.2668743240925, 34.3599012775913, 27.21844342998, 42.2432294418921, 46.2664487765831, 47.8276476278758, 63.3838235244836, 66.9581653036492, 48.8359602711381, 40.699224128175, 45.2367979654704, 30.1448145071733, 38.2222400192741]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Canada</h3>
+          <div class="snapshot-value">199.20 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +34.01%</div>
+          <div class="sparkline" data-points='[134.244036514609, 106.665580807843, 112.667864598429, 114.472017681476, 116.041463119554, 102.369975829845, 130.466467760867, 143.521718251764, 112.320650719169, 138.157856301011, 159.538312062359, 163.313530417766, 125.462058104463, 141.088214795019, 148.650392675611, 199.199604436686]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — China</h3>
+          <div class="snapshot-value">79.54 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +26.73%</div>
+          <div class="sparkline" data-points='[65.0431667921056, 44.4762288163661, 42.6276108457102, 40.5326196174462, 56.2548972900922, 72.5835808340326, 63.9029590501553, 69.4813653656583, 44.7058557619521, 58.8558640185154, 81.8646786726428, 79.3192238397069, 62.6166578891979, 59.8556765846528, 62.7654354387815, 79.540605039043]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — France</h3>
+          <div class="snapshot-value">85.06 <small>% of GDP</small></div>
+          <div class="snapshot-period">2018 -19.91%</div>
+          <div class="sparkline" data-points='[72.2354205712469, 54.1371348632507, 67.3941083808224, 81.7124216877025, 72.901910850665, 85.4997526284434, 87.3963704443473, 106.197544283094, 85.0578939321398]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Germany</h3>
+          <div class="snapshot-value">57.39 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +31.54%</div>
+          <div class="sparkline" data-points='[41.2368151824591, 30.978859078058, 41.3268938999697, 50.8561638490348, 43.8485684872249, 50.0949082078409, 48.5197743240464, 60.079981755637, 43.2795387525403, 52.9855978284666, 57.9517289387954, 57.4718950080433, 44.9810563246043, 47.7411977532533, 43.6283922696023, 57.3881572341157]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — India</h3>
+          <div class="snapshot-value">266.92 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +95.63%</div>
+          <div class="sparkline" data-points='[105.182951703662, 68.2700641693541, 76.0772432428783, 68.1342663963192, 82.7172077979209, 82.9615370858036, 76.0981248580096, 96.3987783868431, 153.160482470967, 76.2695069175453, 95.4245016969537, 112.02132346833, 104.228639351922, 123.971644540276, 136.443816484113, 266.92119852826]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Indonesia</h3>
+          <div class="snapshot-value">65.69 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +20.71%</div>
+          <div class="sparkline" data-points='[47.7275709740614, 43.6864935199337, 46.6539488635364, 37.9906455128788, 47.3866252638771, 41.0372565512806, 45.6892490757793, 51.2679273589803, 46.702409553894, 46.7627486516114, 46.8423380923284, 48.7675241379637, 46.2654721024627, 55.3033869005623, 54.4172868844567, 65.6860990677901]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Japan</h3>
+          <div class="snapshot-value">171.60 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +13.93%</div>
+          <div class="sparkline" data-points='[65.8646262325499, 52.9569038140964, 54.9248375717532, 86.1705838607882, 87.8099122589042, 107.949838400187, 96.9658143386727, 123.512090450451, 102.765022446672, 118.020633625372, 129.465480808821, 125.227453889557, 120.9645737572, 140.237275891347, 150.612627620477, 171.595579915317]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — Mexico</h3>
+          <div class="snapshot-value">30.58 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 -4.85%</div>
+          <div class="sparkline" data-points='[41.1014345545803, 33.2534803203422, 41.8335048175535, 39.6264320772738, 35.1955004558889, 33.153804844908, 31.5409987585363, 35.0225076524466, 35.6461742178569, 34.917080456491, 30.9741410091956, 32.1368092160905, 30.5792121017984]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — South Africa</h3>
+          <div class="snapshot-value">327.24 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +33.18%</div>
+          <div class="sparkline" data-points='[221.63088879878, 172.203841100111, 208.959958791186, 235.18209117446, 244.998286733782, 212.265471080764, 293.993488633205, 322.710975289918, 213.52368956176, 271.322875855492, 311.126474477926, 272.152558910335, 287.477798160284, 268.934860421172, 245.720967230413, 327.242669013285]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock market capitalisation — South Korea</h3>
+          <div class="snapshot-value">147.23 <small>% of GDP</small></div>
+          <div class="snapshot-period">2025 +77.28%</div>
+          <div class="sparkline" data-points='[91.5395693932743, 76.2097215225313, 88.3232961148497, 86.0510653856641, 77.9281974337754, 79.9889501332394, 79.4440535898387, 103.600239156409, 77.4957041510036, 84.797345715138, 124.776480023799, 114.227598704334, 91.393869563349, 106.678084519135, 83.0488083580649, 147.228388896705]'></div>
+          <p class="small muted">Market value of listed domestic companies as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article></div><div class="section-head"><div><span class="eyebrow dark">Live feed</span><h2>World Bank: Stock turnover ratio</h2></div><p class="section-intro">Value of domestic shares traded divided by market capitalisation.</p></div><div class="grid global-feed-grid"><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Australia</h3>
+          <div class="snapshot-value">48.66 <small>%</small></div>
+          <div class="snapshot-period">2024 -3.04%</div>
+          <div class="sparkline" data-points='[77.7823777846838, 94.1825035534299, 65.302671051665, 57.6797555280849, 54.5884424089317, 63.233662300658, 59.7842837827179, 53.6442892676579, 61.294484, 56.0787081, 71.265573, 56.596079, 64.8795975, 50.187336, 48.6597835]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Brazil</h3>
+          <div class="snapshot-value">138.05 <small>%</small></div>
+          <div class="snapshot-period">2024 +14.10%</div>
+          <div class="sparkline" data-points='[58.7572539622807, 67.1244324858093, 67.7535515952452, 72.4851238711253, 76.3331896344352, 85.6164253287096, 73.5614432021955, 67.0192100037238, 83.8979, 87.4818, 138.9753, 172.7864, 162.6548, 120.991, 138.0542]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Canada</h3>
+          <div class="snapshot-value">63.71 <small>%</small></div>
+          <div class="snapshot-period">2024 -2.25%</div>
+          <div class="sparkline" data-points='[64.71017267156, 77.0597281531602, 65.4447335193493, 62.6155643197865, 64.1498923261557, 68.8006684827839, 57.5529926589294, 54.0834703528539, 70.883583, 59.464776, 73.976685, 66.305369, 81.4687951, 65.182755, 63.7129876]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — China</h3>
+          <div class="snapshot-value">296.65 <small>%</small></div>
+          <div class="snapshot-period">2024 +8.81%</div>
+          <div class="sparkline" data-points='[205.016627397069, 195.597103689813, 135.966672191666, 194.877219313193, 199.157924385376, 480.287296024602, 249.907289144698, 197.713255619425, 206.654399, 212.9575667, 257.262685, 279.550781, 283.0379189, 272.635643, 296.651858]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — France</h3>
+          <div class="snapshot-value">63.61 <small>%</small></div>
+          <div class="snapshot-period">2015 +13.54%</div>
+          <div class="sparkline" data-points='[70.6337389206163, 85.5851643766579, 59.4228436477739, 48.043286497852, 56.0247563660658, 63.6093]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Germany</h3>
+          <div class="snapshot-value">45.20 <small>%</small></div>
+          <div class="snapshot-period">2024 -5.46%</div>
+          <div class="sparkline" data-points='[104.541995855759, 132.849649425121, 84.0969498245126, 67.796476212003, 72.9961626516461, 84.1947008652504, 74.927518390541, 63.5776498444868, 92.847945, 64.9567612, 80.371348, 60.974171, 68.4074947, 47.811511, 45.1998832]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — India</h3>
+          <div class="snapshot-value">65.23 <small>%</small></div>
+          <div class="snapshot-period">2024 +45.57%</div>
+          <div class="sparkline" data-points='[60.193572403524, 59.510036841924, 45.8452220726783, 45.1355726426548, 45.1432401713636, 45.9662724641824, 46.2890841379545, 47.1366776809853, 30.422133, 55.8341742, 72.182099, 64.815495, 49.8110247, 44.814406, 65.2342629]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Indonesia</h3>
+          <div class="snapshot-value">18.54 <small>%</small></div>
+          <div class="snapshot-period">2023 -41.95%</div>
+          <div class="sparkline" data-points='[28.9832572163176, 27.0375819304294, 21.4676615823323, 28.5160624045987, 21.4915130409198, 21.2429858372735, 21.2337891194118, 17.7675162027953, 21.4995, 22.5271, 26.4359, 35.0434, 31.9291, 18.5357]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Japan</h3>
+          <div class="snapshot-value">117.02 <small>%</small></div>
+          <div class="snapshot-period">2024 +12.95%</div>
+          <div class="sparkline" data-points='[111.560835798517, 129.617436554226, 96.1935805387896, 133.896969770313, 110.660498862176, 113.822662099471, 105.44419599298, 92.8429265202522, 119.0166, 82.3379, 94.3288, 96.9267, 108.8775, 103.5991, 117.0171]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — Mexico</h3>
+          <div class="snapshot-value">26.22 <small>%</small></div>
+          <div class="snapshot-period">2024 +30.23%</div>
+          <div class="sparkline" data-points='[24.4572089918763, 24.41686890031, 22.7949847243159, 31.1192001819566, 26.6604138901343, 25.7683566930766, 28.1613491133413, 23.1281566888446, 24.3595, 20.4784, 20.695, 19.6435, 23.2589, 20.1334, 26.2205]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — South Africa</h3>
+          <div class="snapshot-value">25.78 <small>%</small></div>
+          <div class="snapshot-period">2024 -0.39%</div>
+          <div class="sparkline" data-points='[29.9699078001721, 28.6210852967084, 24.9926464367111, 24.6337989867355, 26.3077999256262, 31.7942707606872, 38.3680194618617, 25.7378459612674, 41.8559, 33.1328, 35.2969, 29.3677, 26.6949, 25.8813, 25.7803]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Stock turnover ratio — South Korea</h3>
+          <div class="snapshot-value">200.76 <small>%</small></div>
+          <div class="snapshot-period">2024 +16.48%</div>
+          <div class="sparkline" data-points='[149.256930593988, 194.190124415454, 134.36053840963, 107.719673722026, 105.849479005507, 149.75076668306, 126.083146853076, 112.358477156069, 173.7081, 129.8341, 238.5221, 252.4055, 185.4193, 172.3532, 200.7592]'></div>
+          <p class="small muted">Value of domestic shares traded divided by market capitalisation.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/CM.MKT.TRNR" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article></div><div class="section-head"><div><span class="eyebrow dark">Secondary data</span><h2>Delayed market context</h2></div><p class="section-intro">Index, futures and FX quotes from a secondary market-data provider.</p></div><div class="grid global-feed-grid"><article class="card market-card">
+          <span class="eyebrow dark">US</span>
+          <h3>S&amp;P 500</h3>
+          <div class="snapshot-value">7,182.78 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-25 21:32 UTC -1.92%</div>
+          <div class="sparkline" data-points='[7175.830078125, 6910.39013671875, 7237.169921875, 7201.08984375, 7182.77978515625]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">US</span>
+          <h3>NASDAQ Composite</h3>
+          <div class="snapshot-value">23,585.80 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-25 22:15 UTC -3.46%</div>
+          <div class="sparkline" data-points='[23879.19921875, 22617.73046875, 24089.560546875, 23733.5390625, 23585.80078125]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">US</span>
+          <h3>Dow Jones Industrial Average</h3>
+          <div class="snapshot-value">50,182.95 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-25 21:32 UTC -0.03%</div>
+          <div class="sparkline" data-points='[49097.05859375, 48147.328125, 49595.30859375, 50018.69921875, 50182.94921875]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">US</span>
+          <h3>Russell 2000</h3>
+          <div class="snapshot-value">2,704.06 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-25 21:30 UTC -0.38%</div>
+          <div class="sparkline" data-points='[2655.110107421875, 2581.7900390625, 2669.659912109375, 2684.93994140625, 2704.06005859375]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">UK</span>
+          <h3>FTSE 100</h3>
+          <div class="snapshot-value">10,583.54 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 11:46 UTC +1.25%</div>
+          <div class="sparkline" data-points='[10346.2998046875, 10480.7998046875, 10467.099609375, 10426.900390625, 10583.5400390625]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">Germany</span>
+          <h3>DAX</h3>
+          <div class="snapshot-value">25,155.47 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 11:46 UTC -1.21%</div>
+          <div class="sparkline" data-points='[24802.779296875, 25337.26953125, 25017.810546875, 24702.130859375, 25155.470703125]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">France</span>
+          <h3>CAC 40</h3>
+          <div class="snapshot-value">8,117.52 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 11:46 UTC +2.39%</div>
+          <div class="sparkline" data-points='[7927.75, 8044.83984375, 8040.490234375, 7980.56982421875, 8117.52001953125]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">Japan</span>
+          <h3>Nikkei 225</h3>
+          <div class="snapshot-value">57,499.16 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 06:45 UTC -3.27%</div>
+          <div class="sparkline" data-points='[59444.2109375, 56436.6484375, 58644.62890625, 57011.62109375, 57499.16015625]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">Hong Kong</span>
+          <h3>Hang Seng</h3>
+          <div class="snapshot-value">22,226.88 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 08:08 UTC -2.69%</div>
+          <div class="sparkline" data-points='[22410.80078125, 22383.740234375, 22219.650390625, 21966.009765625, 22226.880859375]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">India</span>
+          <h3>BSE SENSEX</h3>
+          <div class="snapshot-value">84,328.59 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 10:02 UTC +1.57%</div>
+          <div class="sparkline" data-points='[83021.75, 83919.7109375, 82435.9921875, 83938.28125, 84328.59375]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">India</span>
+          <h3>NIFTY 50</h3>
+          <div class="snapshot-value">25,884.50 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 10:01 UTC +1.45%</div>
+          <div class="sparkline" data-points='[25514.30078125, 25800.599609375, 25349.650390625, 25819.25, 25884.5]'></div>
+        </article><article class="card market-card">
+          <span class="eyebrow dark">South Korea</span>
+          <h3>KOSPI</h3>
+          <div class="snapshot-value">4,711.21 <small>index pts</small></div>
+          <div class="snapshot-period">2026-11-26 11:05 UTC -8.30%</div>
+          <div class="sparkline" data-points='[4869.9599609375, 4708.5400390625, 5006.02978515625, 4697.509765625, 4711.2099609375]'></div>
+        </article></div><section class="cta-band"><div><h2>Need another cut of the data?</h2><p>Search every fact, KPI, trend and monthly snapshot published on Radar.</p></div><a href="search.html" class="btn btn-ghost">Search all data</a></section>  </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand-col">
+
+
+        <a class="brand" href="index.html" aria-label="Radar home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+          <span class="brand-name">Radar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:20 UTC</span></p>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Explore</h4>
+
+
+        <a href="index.html">Overview</a>
+
+
+        <a href="india.html">India dashboard</a>
+
+
+        <a href="global.html">Global macro</a>
+
+
+        <a href="markets.html">Global markets</a>
+
+
+        <a href="insurance.html">Insurance</a>
+
+
+        <a href="mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="monthly-snapshots.html">Monthly snapshots</a>
+
+
+        <a href="search.html">Search</a>
+
+
+        <a href="sources.html">Data Sources</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Key Sectors</h4>
+
+
+        <a href="category/central.html">Central Government</a>
+
+
+        <a href="category/states.html">State Level</a>
+
+
+        <a href="category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="category/geo.html">Geo Levels</a>
+
+
+        <a href="category/transport.html">Transport</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">More Sectors</h4>
+
+
+        <a href="category/economy.html">Economy</a>
+
+
+        <a href="category/agriculture.html">Agriculture</a>
+
+
+        <a href="category/health.html">Health</a>
+
+
+        <a href="category/education.html">Education</a>
+
+
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+
+      <p>© 2026 Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <script src="scripts/app.js"></script>
+
+
+  <script src="scripts/charts.js"></script>
+
+
+  <script src="scripts/tools.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,6 +1,8 @@
 {
-  "source": "MoSPI — Index of Industrial Production growth (IIP) — illustrative fallback.",
-  "last_fetched": "2026-11",
-  "current_month": "2026-11",
-  "growth_pct": -0.4
+  "source": "MoSPI, National Statistics Office — Quick Estimates of Index of Industrial Production, September 2026 (base 2022-23=100), published 2026-10-28.",
+  "source_url": "https://mospi.gov.in/uploads/latestReleases/latest_release_1793182514284_e9b71fc1-c565-480f-81c2-91618ea42c2f_IIP_Press_Release_September_2026.pdf",
+  "last_fetched": "2026-11-26",
+  "current_month": "2026-09",
+  "growth_pct": 6.7,
+  "notes": "September 2026 IIP was 124.3 (2022-23=100) versus 116.5 a year earlier, a published YoY growth of 6.7%. Cumulative April–September 2026 growth was 6.8%. Quick Estimates are subject to revision. Cross-check: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329475&reg=48&lang=2"
 }
