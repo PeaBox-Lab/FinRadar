@@ -1,0 +1,1442 @@
+{
+  "dataset_id": "global-exchanges",
+  "title": "Global exchange fundamentals",
+  "category": "exchanges",
+  "page": "markets.html#global-exchanges",
+  "last_updated": "2026-11-26",
+  "coverage": "2020-2025 annual country series; 2023-2025 month-end WFE snapshots",
+  "source": {
+    "organization": "World Bank / World Federation of Exchanges",
+    "title": "WDI capital-market series and WFE Market Statistics",
+    "url": "https://data.worldbank.org/indicator/CM.MKT.LCAP.CD",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Country-level World Bank WDI series are used as transparent proxies where single-exchange annual series are not published. Exchange-level WFE figures are month-end snapshots and are labelled with their exact period. Country coverage is explicitly stated; exchange-specific index levels and returns are included only where the index provider or exchange published them.",
+  "metrics": [
+    {
+      "id": "nse_market_cap_usd",
+      "name": "NSE/Nifty 50 · India market cap",
+      "unit": "USD",
+      "category": "NSE",
+      "definition": "India country-level domestic market capitalisation of listed companies; World Bank proxy for the NSE universe.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — India",
+        "url": "https://api.worldbank.org/v2/country/IND/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2552463790000
+        },
+        {
+          "period": "2021",
+          "value": 3548018470000
+        },
+        {
+          "period": "2022",
+          "value": 3387366670000
+        },
+        {
+          "period": "2023",
+          "value": 4340130780000
+        },
+        {
+          "period": "2024",
+          "value": 5131397430000
+        },
+        {
+          "period": "2025",
+          "value": 10559581760000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 10559581760000,
+      "yoy_change_pct": 105.78374417590182
+    },
+    {
+      "id": "nse_listed_companies",
+      "name": "NSE/Nifty 50 · Listed companies",
+      "unit": "companies",
+      "category": "NSE",
+      "definition": "India country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — India",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1962
+        },
+        {
+          "period": "2021",
+          "value": 2053
+        },
+        {
+          "period": "2022",
+          "value": 2168
+        },
+        {
+          "period": "2023",
+          "value": 2370
+        },
+        {
+          "period": "2024",
+          "value": 2673
+        },
+        {
+          "period": "2025",
+          "value": 8510
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 8510,
+      "yoy_change_pct": 218.36887392442947
+    },
+    {
+      "id": "nse_value_traded_usd",
+      "name": "NSE/Nifty 50 · Value traded",
+      "unit": "USD",
+      "category": "NSE",
+      "definition": "India country-level annual value of shares traded; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — India",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1842421950000
+        },
+        {
+          "period": "2021",
+          "value": 2299665720000
+        },
+        {
+          "period": "2022",
+          "value": 1687282050000
+        },
+        {
+          "period": "2023",
+          "value": 1945003850000
+        },
+        {
+          "period": "2024",
+          "value": 3347429290000
+        },
+        {
+          "period": "2025",
+          "value": 2874364660000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2874364660000,
+      "yoy_change_pct": -14.132176933900222
+    },
+    {
+      "id": "nse_turnover_pct",
+      "name": "NSE/Nifty 50 · Turnover ratio",
+      "unit": "%",
+      "category": "NSE",
+      "definition": "Stocks traded, turnover ratio of domestic shares; World Bank India series.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRNR — India",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 72.182099
+        },
+        {
+          "period": "2021",
+          "value": 64.815495
+        },
+        {
+          "period": "2022",
+          "value": 49.8110247
+        },
+        {
+          "period": "2023",
+          "value": 44.814406
+        },
+        {
+          "period": "2024",
+          "value": 65.2342629
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 65.2342629,
+      "yoy_change_pct": 45.565385603906044
+    },
+    {
+      "id": "nifty_total_return_pct",
+      "name": "Nifty 50 · Total return",
+      "unit": "%",
+      "category": "NSE",
+      "definition": "Calendar-year total-return performance published by NSE; 2021 data is through 15 December 2021.",
+      "source": {
+        "organization": "NSE India",
+        "title": "25 Years Journey of Nifty 50",
+        "url": "https://nsearchives.nseindia.com/content/indices/25_Years_Journey_of_Nifty50_2022-01.pdf"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 16.1
+        },
+        {
+          "period": "2021*",
+          "value": 24.6
+        }
+      ],
+      "latest_period": "2021*",
+      "latest_value": 24.6,
+      "yoy_change_pct": 52.79503105590062
+    },
+    {
+      "id": "bse_market_cap_usd",
+      "name": "BSE/Sensex · India market cap",
+      "unit": "USD",
+      "category": "BSE",
+      "definition": "India country-level domestic market capitalisation of listed companies; World Bank proxy for the BSE universe.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — India",
+        "url": "https://api.worldbank.org/v2/country/IND/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2552463790000
+        },
+        {
+          "period": "2021",
+          "value": 3548018470000
+        },
+        {
+          "period": "2022",
+          "value": 3387366670000
+        },
+        {
+          "period": "2023",
+          "value": 4340130780000
+        },
+        {
+          "period": "2024",
+          "value": 5131397430000
+        },
+        {
+          "period": "2025",
+          "value": 10559581760000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 10559581760000,
+      "yoy_change_pct": 105.78374417590182
+    },
+    {
+      "id": "sensex_month_end_level",
+      "name": "Sensex · Month-end level (rounded)",
+      "unit": "index points",
+      "category": "BSE",
+      "definition": "Rounded month-end Sensex levels published in BSE's SENSEX@40 white paper; not exact year-end closes.",
+      "source": {
+        "organization": "BSE Limited",
+        "title": "SENSEX@40 White Paper",
+        "url": "https://www.bseindia.com/downloads1/SENSEX@40-White-Paper.pdf"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 40000
+        },
+        {
+          "period": "2022",
+          "value": 57000
+        },
+        {
+          "period": "2024",
+          "value": 72000
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 72000,
+      "yoy_change_pct": 26.31578947368421
+    },
+    {
+      "id": "nyse_market_cap_usd",
+      "name": "NYSE/DJIA · United States market cap",
+      "unit": "USD",
+      "category": "NYSE",
+      "definition": "United States country-level domestic market capitalisation of listed companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — United States",
+        "url": "https://api.worldbank.org/v2/country/USA/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 41569861770000
+        },
+        {
+          "period": "2021",
+          "value": 48548538120000
+        },
+        {
+          "period": "2022",
+          "value": 40297980320000
+        },
+        {
+          "period": "2023",
+          "value": 48979397700000
+        },
+        {
+          "period": "2024",
+          "value": 62185685320000
+        },
+        {
+          "period": "2025",
+          "value": 68937866210000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 68937866210000,
+      "yoy_change_pct": 10.85809516330663
+    },
+    {
+      "id": "nyse_listed_companies",
+      "name": "NYSE/DJIA · Listed companies",
+      "unit": "companies",
+      "category": "NYSE",
+      "definition": "United States country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — United States",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 4104
+        },
+        {
+          "period": "2021",
+          "value": 4774
+        },
+        {
+          "period": "2022",
+          "value": 4642
+        },
+        {
+          "period": "2023",
+          "value": 4317
+        },
+        {
+          "period": "2024",
+          "value": 4010
+        },
+        {
+          "period": "2025",
+          "value": 3908
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3908,
+      "yoy_change_pct": -2.543640897755611
+    },
+    {
+      "id": "nyse_value_traded_usd",
+      "name": "NYSE/DJIA · Value traded",
+      "unit": "USD",
+      "category": "NYSE",
+      "definition": "United States country-level annual value of shares traded; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — United States",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 41086461430000
+        },
+        {
+          "period": "2021",
+          "value": 45874145530000
+        },
+        {
+          "period": "2022",
+          "value": 44315891180000
+        },
+        {
+          "period": "2023",
+          "value": 37263213740000
+        },
+        {
+          "period": "2024",
+          "value": 42600207070000
+        },
+        {
+          "period": "2025",
+          "value": 55465240170000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 55465240170000,
+      "yoy_change_pct": 30.19946142247707
+    },
+    {
+      "id": "nyse_turnover_pct",
+      "name": "NYSE/DJIA · Turnover ratio",
+      "unit": "%",
+      "category": "NYSE",
+      "definition": "Stocks traded, turnover ratio of domestic shares; World Bank United States series.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRNR — United States",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 98.837137
+        },
+        {
+          "period": "2021",
+          "value": 94.491302
+        },
+        {
+          "period": "2022",
+          "value": 109.9705018
+        },
+        {
+          "period": "2023",
+          "value": 76.079363
+        },
+        {
+          "period": "2024",
+          "value": 68.5048446
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 68.5048446,
+      "yoy_change_pct": -9.956074947683254
+    },
+    {
+      "id": "djia_annual_return_pct",
+      "name": "Dow Jones Industrial Average · Price return",
+      "unit": "%",
+      "category": "DJIA",
+      "definition": "Annual price returns stated by S&P Dow Jones Indices.",
+      "source": {
+        "organization": "S&P Dow Jones Indices",
+        "title": "Market Attributes: U.S. Equities August 2025",
+        "url": "https://www.spglobal.com/spdji/en/documents/commentary/market-attributes-us-equities-202508.pdf"
+      },
+      "values": [
+        {
+          "period": "2022",
+          "value": -8.78
+        },
+        {
+          "period": "2023",
+          "value": 13.7
+        },
+        {
+          "period": "2024",
+          "value": 12.88
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 12.88,
+      "yoy_change_pct": -5.985401459854004
+    },
+    {
+      "id": "dax_market_cap_usd",
+      "name": "FWB/DAX · Germany market cap",
+      "unit": "USD",
+      "category": "FWB",
+      "definition": "Germany country-level domestic market capitalisation of listed companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — Germany",
+        "url": "https://api.worldbank.org/v2/country/DEU/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2284108840000
+        },
+        {
+          "period": "2021",
+          "value": 2503045830000
+        },
+        {
+          "period": "2022",
+          "value": 1889663940000
+        },
+        {
+          "period": "2023",
+          "value": 2178052520000
+        },
+        {
+          "period": "2024",
+          "value": 2044248710000
+        },
+        {
+          "period": "2025",
+          "value": 2898631590000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2898631590000,
+      "yoy_change_pct": 41.794468345292486
+    },
+    {
+      "id": "dax_listed_companies",
+      "name": "FWB/DAX · Listed companies",
+      "unit": "companies",
+      "category": "FWB",
+      "definition": "Germany country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — Germany",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 438
+        },
+        {
+          "period": "2021",
+          "value": 443
+        },
+        {
+          "period": "2022",
+          "value": 429
+        },
+        {
+          "period": "2023",
+          "value": 453
+        },
+        {
+          "period": "2024",
+          "value": 435
+        },
+        {
+          "period": "2025",
+          "value": 416
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 416,
+      "yoy_change_pct": -4.3678160919540225
+    },
+    {
+      "id": "dax_value_traded_usd",
+      "name": "FWB/DAX · Value traded",
+      "unit": "USD",
+      "category": "FWB",
+      "definition": "Germany country-level annual value of shares traded; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — Germany",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1835769070000
+        },
+        {
+          "period": "2021",
+          "value": 1526211440000
+        },
+        {
+          "period": "2022",
+          "value": 1292671760000
+        },
+        {
+          "period": "2023",
+          "value": 1041359820000
+        },
+        {
+          "period": "2024",
+          "value": 923998030000
+        },
+        {
+          "period": "2025",
+          "value": 1484874220000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 1484874220000,
+      "yoy_change_pct": 60.7010157803042
+    },
+    {
+      "id": "dax_turnover_pct",
+      "name": "FWB/DAX · Turnover ratio",
+      "unit": "%",
+      "category": "FWB",
+      "definition": "Stocks traded, turnover ratio of domestic shares; World Bank Germany series.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRNR — Germany",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 80.371348
+        },
+        {
+          "period": "2021",
+          "value": 60.974171
+        },
+        {
+          "period": "2022",
+          "value": 68.4074947
+        },
+        {
+          "period": "2023",
+          "value": 47.811511
+        },
+        {
+          "period": "2024",
+          "value": 45.1998832
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 45.1998832,
+      "yoy_change_pct": -5.4623410667778325
+    },
+    {
+      "id": "ftse_market_cap_usd",
+      "name": "LSE/FTSE 100 · United Kingdom market cap",
+      "unit": "USD",
+      "category": "LSE",
+      "definition": "United Kingdom country-level domestic market capitalisation. Nulls are World Bank API nulls, not estimates.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — United Kingdom",
+        "url": "https://api.worldbank.org/v2/country/GBR/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": null
+        },
+        {
+          "period": "2021",
+          "value": 3799459240000
+        },
+        {
+          "period": "2022",
+          "value": 3095983430000
+        },
+        {
+          "period": "2023",
+          "value": null
+        },
+        {
+          "period": "2024",
+          "value": null
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2022",
+      "latest_value": 3095983430000,
+      "yoy_change_pct": -18.51515611995353
+    },
+    {
+      "id": "ftse_listed_companies",
+      "name": "LSE/FTSE 100 · Listed companies",
+      "unit": "companies",
+      "category": "LSE",
+      "definition": "United Kingdom country-level listed domestic companies. Nulls are World Bank API nulls.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — United Kingdom",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": null
+        },
+        {
+          "period": "2021",
+          "value": 1646
+        },
+        {
+          "period": "2022",
+          "value": 1606
+        },
+        {
+          "period": "2023",
+          "value": null
+        },
+        {
+          "period": "2024",
+          "value": null
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2022",
+      "latest_value": 1606,
+      "yoy_change_pct": -2.4301336573511545
+    },
+    {
+      "id": "ftse_value_traded_usd",
+      "name": "LSE/FTSE 100 · Value traded",
+      "unit": "USD",
+      "category": "LSE",
+      "definition": "United Kingdom country-level annual value of shares traded. Nulls are World Bank API nulls.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — United Kingdom",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": null
+        },
+        {
+          "period": "2021",
+          "value": 854235490000
+        },
+        {
+          "period": "2022",
+          "value": 1124351910000
+        },
+        {
+          "period": "2023",
+          "value": 636817970000
+        },
+        {
+          "period": "2024",
+          "value": null
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2023",
+      "latest_value": 636817970000,
+      "yoy_change_pct": -43.36132981710326
+    },
+    {
+      "id": "nikkei_market_cap_usd",
+      "name": "TSE/Nikkei 225 · Japan market cap",
+      "unit": "USD",
+      "category": "TSE",
+      "definition": "Japan country-level domestic market capitalisation of listed companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — Japan",
+        "url": "https://api.worldbank.org/v2/country/JPN/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 6718219550000
+        },
+        {
+          "period": "2021",
+          "value": 6544303490000
+        },
+        {
+          "period": "2022",
+          "value": 5380475460000
+        },
+        {
+          "period": "2023",
+          "value": 6149200180000
+        },
+        {
+          "period": "2024",
+          "value": 6310681430000
+        },
+        {
+          "period": "2025",
+          "value": 7610543670000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 7610543670000,
+      "yoy_change_pct": 20.597811098824554
+    },
+    {
+      "id": "nikkei_listed_companies",
+      "name": "TSE/Nikkei 225 · Listed companies",
+      "unit": "companies",
+      "category": "TSE",
+      "definition": "Japan country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — Japan",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 3754
+        },
+        {
+          "period": "2021",
+          "value": 3818
+        },
+        {
+          "period": "2022",
+          "value": 3865
+        },
+        {
+          "period": "2023",
+          "value": 3929
+        },
+        {
+          "period": "2024",
+          "value": 3971
+        },
+        {
+          "period": "2025",
+          "value": 3942
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3942,
+      "yoy_change_pct": -0.7302946361118107
+    },
+    {
+      "id": "nikkei_value_traded_usd",
+      "name": "TSE/Nikkei 225 · Value traded",
+      "unit": "USD",
+      "category": "TSE",
+      "definition": "Japan country-level annual value of shares traded; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — Japan",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 6337219210000
+        },
+        {
+          "period": "2021",
+          "value": 6343178610000
+        },
+        {
+          "period": "2022",
+          "value": 5858127450000
+        },
+        {
+          "period": "2023",
+          "value": 6370514330000
+        },
+        {
+          "period": "2024",
+          "value": 7384575420000
+        },
+        {
+          "period": "2025",
+          "value": 8335066100000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 8335066100000,
+      "yoy_change_pct": 12.87129761618712
+    },
+    {
+      "id": "nikkei_turnover_pct",
+      "name": "TSE/Nikkei 225 · Turnover ratio",
+      "unit": "%",
+      "category": "TSE",
+      "definition": "Stocks traded, turnover ratio of domestic shares; World Bank Japan series.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRNR — Japan",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRNR?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 94.3288
+        },
+        {
+          "period": "2021",
+          "value": 96.9267
+        },
+        {
+          "period": "2022",
+          "value": 108.8775
+        },
+        {
+          "period": "2023",
+          "value": 103.5991
+        },
+        {
+          "period": "2024",
+          "value": 117.0171
+        },
+        {
+          "period": "2025",
+          "value": null
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 117.0171,
+      "yoy_change_pct": 12.951849967808593
+    },
+    {
+      "id": "sse_market_cap_usd",
+      "name": "Shanghai · China market cap",
+      "unit": "USD",
+      "category": "Shanghai",
+      "definition": "China country-level domestic market capitalisation; includes Shanghai and Shenzhen.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — China",
+        "url": "https://api.worldbank.org/v2/country/CHN/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 12276766270000
+        },
+        {
+          "period": "2021",
+          "value": 14437446150000
+        },
+        {
+          "period": "2022",
+          "value": 11469346090000
+        },
+        {
+          "period": "2023",
+          "value": 10935845590000
+        },
+        {
+          "period": "2024",
+          "value": 11755757950000
+        },
+        {
+          "period": "2025",
+          "value": 15508858500000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 15508858500000,
+      "yoy_change_pct": 31.9256364920307
+    },
+    {
+      "id": "sse_listed_companies",
+      "name": "Shanghai · Listed companies",
+      "unit": "companies",
+      "category": "Shanghai",
+      "definition": "China country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — China",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 12341
+        },
+        {
+          "period": "2021",
+          "value": 11629
+        },
+        {
+          "period": "2022",
+          "value": 11497
+        },
+        {
+          "period": "2023",
+          "value": 11348
+        },
+        {
+          "period": "2024",
+          "value": 11231
+        },
+        {
+          "period": "2025",
+          "value": 11149
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 11149,
+      "yoy_change_pct": -0.7301219837948536
+    },
+    {
+      "id": "sse_index_level",
+      "name": "SSE Composite Index · Month-end level",
+      "unit": "index points",
+      "category": "Shanghai",
+      "definition": "December 2023 month-end index level published in WFE Market Statistics.",
+      "source": {
+        "organization": "World Federation of Exchanges",
+        "title": "WFE Market Statistics — Broad stock index performance",
+        "url": "https://focus.world-exchanges.org/issue/february-2024/market-statistics"
+      },
+      "values": [
+        {
+          "period": "2023-12",
+          "value": 2974.94
+        }
+      ],
+      "latest_period": "2023-12",
+      "latest_value": 2974.94,
+      "yoy_change_pct": null
+    },
+    {
+      "id": "hkex_market_cap_usd",
+      "name": "HKEX/Hang Seng · Hong Kong market cap",
+      "unit": "USD",
+      "category": "HKEX",
+      "definition": "Hong Kong SAR country-level domestic market capitalisation; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LCAP.CD — Hong Kong SAR, China",
+        "url": "https://api.worldbank.org/v2/country/HKG/indicator/CM.MKT.LCAP.CD?format=json&date=2020:2025&per_page=100"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 6130420430000
+        },
+        {
+          "period": "2021",
+          "value": 5434177120000
+        },
+        {
+          "period": "2022",
+          "value": 4566809060000
+        },
+        {
+          "period": "2023",
+          "value": 3974783490000
+        },
+        {
+          "period": "2024",
+          "value": 4549720760000
+        },
+        {
+          "period": "2025",
+          "value": 6089226700000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 6089226700000,
+      "yoy_change_pct": 33.83737203247612
+    },
+    {
+      "id": "hkex_listed_companies",
+      "name": "HKEX/Hang Seng · Listed companies",
+      "unit": "companies",
+      "category": "HKEX",
+      "definition": "Hong Kong SAR country-level listed domestic companies; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.LDOM.NO — Hong Kong SAR, China",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.LDOM.NO?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2353
+        },
+        {
+          "period": "2021",
+          "value": 2388
+        },
+        {
+          "period": "2022",
+          "value": 2414
+        },
+        {
+          "period": "2023",
+          "value": 2428
+        },
+        {
+          "period": "2024",
+          "value": 2449
+        },
+        {
+          "period": "2025",
+          "value": 2508
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2508,
+      "yoy_change_pct": 2.4091465904450793
+    },
+    {
+      "id": "hkex_value_traded_usd",
+      "name": "HKEX/Hang Seng · Value traded",
+      "unit": "USD",
+      "category": "HKEX",
+      "definition": "Hong Kong SAR country-level annual value of shares traded; World Bank proxy.",
+      "source": {
+        "organization": "World Bank",
+        "title": "CM.MKT.TRAD.CD — Hong Kong SAR, China",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;DEU;GBR;JPN;CHN;HKG/indicator/CM.MKT.TRAD.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 3069358660000
+        },
+        {
+          "period": "2021",
+          "value": 4068106120000
+        },
+        {
+          "period": "2022",
+          "value": 2848838860000
+        },
+        {
+          "period": "2023",
+          "value": 2279385630000
+        },
+        {
+          "period": "2024",
+          "value": 2996539390000
+        },
+        {
+          "period": "2025",
+          "value": 5864497780000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 5864497780000,
+      "yoy_change_pct": 95.70901686027895
+    },
+    {
+      "id": "hsi_index_level",
+      "name": "Hang Seng Index · Month-end level",
+      "unit": "index points",
+      "category": "HKEX",
+      "definition": "December 2025 month-end Hang Seng Index level published by HKEX.",
+      "source": {
+        "organization": "Hong Kong Exchanges and Clearing",
+        "title": "HKEX Monthly Market Highlights",
+        "url": "https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en"
+      },
+      "values": [
+        {
+          "period": "2025-12",
+          "value": 25630.54
+        }
+      ],
+      "latest_period": "2025-12",
+      "latest_value": 25630.54,
+      "yoy_change_pct": null
+    },
+    {
+      "id": "hsi_annual_return_pct",
+      "name": "Hang Seng Index · 12-month change",
+      "unit": "%",
+      "category": "HKEX",
+      "definition": "HKEX-published 12-month change to December 2025.",
+      "source": {
+        "organization": "Hong Kong Exchanges and Clearing",
+        "title": "HKEX Monthly Market Highlights",
+        "url": "https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en"
+      },
+      "values": [
+        {
+          "period": "2025",
+          "value": 27.8
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 27.8,
+      "yoy_change_pct": null
+    },
+    {
+      "id": "wfe_domestic_market_cap",
+      "name": "Exchange-level month-end market cap",
+      "unit": "USD million",
+      "category": "WFE",
+      "definition": "Domestic market capitalisation reported by WFE at month-end, not an annual total. Exchange is encoded in the period label.",
+      "source": {
+        "organization": "World Federation of Exchanges",
+        "title": "WFE Market Statistics — Domestic market capitalisation",
+        "url": "https://focus.world-exchanges.org/issue/february-2024/market-statistics"
+      },
+      "values": [
+        {
+          "period": "NSE 2023-12",
+          "value": 4340130.78
+        },
+        {
+          "period": "NSE 2024-11",
+          "value": 5245474.11
+        },
+        {
+          "period": "NSE 2025-11",
+          "value": 5162895.97
+        },
+        {
+          "period": "BSE 2025-11",
+          "value": 5298940.67
+        },
+        {
+          "period": "NYSE 2023-12",
+          "value": 25564650.47
+        },
+        {
+          "period": "NYSE 2024-11",
+          "value": 31649898.66
+        },
+        {
+          "period": "NYSE 2025-11",
+          "value": 32081793.14
+        },
+        {
+          "period": "Deutsche Börse 2023-12",
+          "value": 2074323.43
+        },
+        {
+          "period": "Deutsche Börse 2024-11",
+          "value": 2003287.12
+        },
+        {
+          "period": "Deutsche Börse 2025-11",
+          "value": 2773182.26
+        },
+        {
+          "period": "Japan Exchange Group 2023-12",
+          "value": 6149200.18
+        },
+        {
+          "period": "Japan Exchange Group 2024-11",
+          "value": 6400158.03
+        },
+        {
+          "period": "Japan Exchange Group 2025-11",
+          "value": 7573002.42
+        },
+        {
+          "period": "Shanghai 2023-12",
+          "value": 6524756.76
+        },
+        {
+          "period": "Shanghai 2024-11",
+          "value": 7170382.22
+        },
+        {
+          "period": "Shanghai 2025-11",
+          "value": 8852501.96
+        },
+        {
+          "period": "HKEX 2023-12",
+          "value": 3974783.49
+        },
+        {
+          "period": "HKEX 2024-11",
+          "value": 4373121.89
+        },
+        {
+          "period": "HKEX 2025-11",
+          "value": 6165434.37
+        },
+        {
+          "period": "Euronext 2023-12",
+          "value": 6889030.99
+        },
+        {
+          "period": "Euronext 2024-11",
+          "value": 5687221.75
+        },
+        {
+          "period": "Euronext 2025-11",
+          "value": 7757530.16
+        }
+      ],
+      "latest_period": "Euronext 2025-11",
+      "latest_value": 7757530.16,
+      "yoy_change_pct": 36.40280792638339
+    },
+    {
+      "id": "wfe_listed_companies_dec2023",
+      "name": "Exchange-level listed companies (Dec 2023)",
+      "unit": "domestic companies",
+      "category": "WFE",
+      "definition": "Domestic listed companies reported by WFE; foreign listings are excluded.",
+      "source": {
+        "organization": "World Federation of Exchanges",
+        "title": "WFE Market Statistics — Number of listed companies",
+        "url": "https://focus.world-exchanges.org/issue/february-2024/market-statistics"
+      },
+      "values": [
+        {
+          "period": "NSE",
+          "value": 2370
+        },
+        {
+          "period": "NYSE",
+          "value": 1709
+        },
+        {
+          "period": "Deutsche Börse",
+          "value": 391
+        },
+        {
+          "period": "Japan Exchange Group",
+          "value": 3930
+        },
+        {
+          "period": "Shanghai",
+          "value": 2263
+        },
+        {
+          "period": "HKEX",
+          "value": 2428
+        },
+        {
+          "period": "Euronext",
+          "value": 1668
+        }
+      ],
+      "latest_period": "Euronext",
+      "latest_value": 1668,
+      "yoy_change_pct": -31.30148270181219
+    },
+    {
+      "id": "wfe_value_traded_dec2023",
+      "name": "Exchange-level value traded (Dec 2023)",
+      "unit": "USD million",
+      "category": "WFE",
+      "definition": "WFE equity value of share trading for December 2023; a single month, not a full year.",
+      "source": {
+        "organization": "World Federation of Exchanges",
+        "title": "WFE Market Statistics — Value of share trading",
+        "url": "https://focus.world-exchanges.org/issue/february-2024/market-statistics"
+      },
+      "values": [
+        {
+          "period": "NSE",
+          "value": 247548.46
+        },
+        {
+          "period": "NYSE",
+          "value": 2384644.0
+        },
+        {
+          "period": "Deutsche Börse",
+          "value": 85476.05
+        },
+        {
+          "period": "Japan Exchange Group",
+          "value": 570736.68
+        },
+        {
+          "period": "Shanghai",
+          "value": 971785.11
+        },
+        {
+          "period": "HKEX",
+          "value": 164734.17
+        },
+        {
+          "period": "Euronext",
+          "value": 182868.65
+        }
+      ],
+      "latest_period": "Euronext",
+      "latest_value": 182868.65,
+      "yoy_change_pct": 11.008329358748085
+    },
+    {
+      "id": "official_pe_ratio_status",
+      "name": "Year-end P/E ratio (official series status)",
+      "unit": "status",
+      "category": "P/E",
+      "definition": "No authenticated official year-end P/E series was published for these index/exchange pairs in the source review. Nulls are shown rather than estimates.",
+      "source": {
+        "organization": "Radar source review",
+        "title": "Official index-provider and exchange documentation review",
+        "url": "https://focus.world-exchanges.org/issue/february-2024/market-statistics"
+      },
+      "values": [
+        {
+          "period": "Nifty 50",
+          "value": null
+        },
+        {
+          "period": "BSE SENSEX",
+          "value": null
+        },
+        {
+          "period": "DJIA",
+          "value": null
+        },
+        {
+          "period": "DAX",
+          "value": null
+        },
+        {
+          "period": "FTSE 100",
+          "value": null
+        },
+        {
+          "period": "Nikkei 225",
+          "value": null
+        },
+        {
+          "period": "SSE Composite",
+          "value": null
+        },
+        {
+          "period": "Hang Seng",
+          "value": null
+        },
+        {
+          "period": "EURO STOXX 50",
+          "value": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "World Bank series are country-level, not single-exchange values; they are used as the best official comparable proxy and labelled as such in each metric definition.",
+    "World Bank WDI lastupdated for these series: 2026-11-11. India 2025 listed-company count 8,510 and market cap USD 10.56 tn are published values with a discontinuity versus 2024; they are reported unchanged with this flag.",
+    "WFE values are month-end snapshots in USD millions. LSE is not present in the retrieved WFE exchange tables; UK country-level WDI values are used with explicit nulls where the API returned null.",
+    "EURONEXT market-cap and company-count fields are covered only by WFE because it is a multi-country venue. No pan-European World Bank country proxy exists.",
+    "Delayed Yahoo Finance index quotes shown elsewhere on the markets dashboard are secondary context only and are not mixed into this snapshot."
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

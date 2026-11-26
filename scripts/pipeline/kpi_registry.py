@@ -1,7 +1,7 @@
 """
-FinRadar — KPI Registry
+Radar — KPI Registry
 =======================
-The single source of truth for every derived KPI FinRadar publishes.
+The single source of truth for every derived KPI Radar publishes.
 
 Each entry defines what the KPI means, where its data comes from, how it is
 calculated, and how a reader should judge whether a number is "good" or "bad".
@@ -11,8 +11,9 @@ metric — a ratio, a spread, a velocity, a percentile or a composite — so the
 site stays a media/research brand rather than a republisher.
 
 Field ID notes for data.gov.in (api.data.gov.in/resource/<id>?api-key=...)
-are listed where known. If the live sample key cannot return a field, the
-pipeline falls back to snapshot values and marks the KPI as "demo".
+are listed where known. When an official feed cannot return a field, the
+pipeline leaves the value null, marks the KPI as unavailable, and records the
+reason instead of substituting a generated figure.
 """
 
 # ---------------------------------------------------------------------------
@@ -288,7 +289,7 @@ KPI_REGISTRY = [
         "kg/ha",
         "closer_to_target",
         {"good": (120, 200), "moderate": (80, 120), "poor": (0, 80)},
-        "How much plant nutrient each hectare of farmland receives. Too low means soil mining and falling yields; too high (above ~200 kg/ha) means overuse, water pollution and rising input costs.",
+        "How much plant nutrient each hectare of farmland receives. Too low means soil mining and falling yields; too high means overuse, water pollution and rising input costs.",
         "Recommended: 120-200 kg/ha (varies by crop mix)",
     ),
     kpi(
@@ -370,7 +371,7 @@ KPI_REGISTRY = [
         "%",
         "higher_better",
         {"good": (15, 60), "moderate": (8, 15), "poor": (0, 8)},
-        "How much bank credit reaches the MSME sector relative to its economic weight. India's MSMEs contribute ~30% of GDP but receive a far smaller share of formal credit — a large, persistent gap worth tracking.",
+        "How much bank credit reaches the MSME sector relative to its economic weight. India's MSMEs contribute a large share of GDP but receive a far smaller share of formal credit — a large, persistent gap worth tracking.",
         "RBI MSME surveys",
     ),
 
@@ -387,7 +388,7 @@ KPI_REGISTRY = [
         "beds/1000",
         "higher_better",
         {"good": (3, 8), "moderate": (1.5, 3), "poor": (0, 1.5)},
-        "How many hospital beds exist for every 1,000 people. Below 2 is a capacity crisis — a pandemic or even a bad flu season overwhelms the system. WHO recommends ~5 per 1,000 for ageing populations.",
+        "How many hospital beds exist for every 1,000 people. Below 2 is a capacity crisis — a pandemic or even a bad flu season overwhelms the system. WHO guidance is higher for ageing populations.",
         "WHO / NHP India",
     ),
     kpi(
@@ -473,7 +474,7 @@ KPI_REGISTRY = [
         "veh/1000",
         "closer_to_target",
         {"good": (100, 300), "moderate": (50, 100), "poor": (0, 50)},
-        "Vehicle ownership intensity. Rising density signals mobility and prosperity, but beyond ~300 per 1,000 cities face severe congestion and pollution — the point where public transport investment becomes urgent.",
+        "Vehicle ownership intensity. Rising density signals mobility and prosperity, but at very high levels cities face severe congestion and pollution — the point where public transport investment becomes urgent.",
         "MoRTH / SIAM",
     ),
 
@@ -533,7 +534,7 @@ KPI_REGISTRY = [
         "tonnes/capita",
         "lower_better",
         {"good": (0, 2), "moderate": (2, 5), "poor": (5, 30)},
-        "Carbon footprint per person. India's ~2 t/capita is well below the world average (~4.7) — a key equity argument in climate negotiations and a growing focus for ESG investors.",
+        "Carbon footprint per person. India's per-capita emissions are below the world average — a key equity argument in climate negotiations and a growing focus for ESG investors.",
         "World Bank / Global Carbon Project",
     ),
 

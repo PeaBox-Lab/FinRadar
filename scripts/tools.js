@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FinRadar — shared calculator engine
+   Radar — shared calculator engine
    Powers every registry-generated calculator under /tools/.
    All calculations run locally in the browser; no inputs are transmitted.
    ========================================================================== */
@@ -157,7 +157,7 @@ const CALCULATORS = {
           ["Principal", money(row.principal), pct(safeDivide(row.principal, row.payment, 0) * 100)],
           ["Total EMI", money(row.payment), "100.00%"]
         ],
-        filename: "finradar-principal-split.csv"
+        filename: "radar-principal-split.csv"
       }
     };
   },
@@ -196,7 +196,7 @@ const CALCULATORS = {
         title: "Repayment schedule (" + v.view + ")",
         headers: headers,
         rows: rows,
-        filename: "finradar-amortization-" + v.view + ".csv"
+        filename: "radar-amortization-" + v.view + ".csv"
       }
     };
   },
@@ -225,7 +225,7 @@ const CALCULATORS = {
           ["Original loan", String(base.months), money(base.totalInterest), money0(0)],
           ["With prepayment", String(totalMonths), money(newInterest), money0(after.balance)]
         ],
-        filename: "finradar-prepayment-impact.csv"
+        filename: "radar-prepayment-impact.csv"
       }
     };
   },
@@ -259,7 +259,7 @@ const CALCULATORS = {
           ["Fees", money(a.fee), money(b.fee)],
           ["All-in cost", money(a.allIn), money(b.allIn)]
         ],
-        filename: "finradar-loan-comparison.csv"
+        filename: "radar-loan-comparison.csv"
       }
     };
   },
@@ -335,7 +335,7 @@ const CALCULATORS = {
           }
           return out;
         })(),
-        filename: "finradar-sip-projection.csv"
+        filename: "radar-sip-projection.csv"
       }
     };
   },
@@ -381,7 +381,7 @@ const CALCULATORS = {
           }
           return out;
         })(),
-        filename: "finradar-compound-growth.csv"
+        filename: "radar-compound-growth.csv"
       }
     };
   },
@@ -529,7 +529,7 @@ const CALCULATORS = {
           ["Savings goal", money(v.goal), pct(safeDivide(v.goal, v.income, 0) * 100)],
           ["Fixed vs needs", money(fixedGap), fixedGap > 0 ? "Above the 50% guide" : "Within the 50% guide"]
         ],
-        filename: "finradar-budget-plan.csv"
+        filename: "radar-budget-plan.csv"
       }
     };
   },
@@ -568,7 +568,7 @@ const CALCULATORS = {
           ["Gold and other", money(v.gold)], ["Home loan", money(v.homeLoan)],
           ["Other loans", money(v.otherLoan)], ["Credit-card dues", money(v.card)]
         ],
-        filename: "finradar-net-worth.csv"
+        filename: "radar-net-worth.csv"
       }
     };
   }
@@ -619,7 +619,7 @@ function downloadCalcCsv() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = lastCalcTable.filename || "finradar-calculator.csv";
+  a.download = lastCalcTable.filename || "radar-calculator.csv";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -677,7 +677,7 @@ function initRegistryCalculator() {
     try {
       renderCalcResult(fn(readValues()));
     } catch (err) {
-      console.error("FinRadar calculator error:", err);
+      console.error("Radar calculator error:", err);
       renderCalcResult(null);
     }
   }

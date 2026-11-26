@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T11:12:38Z",
+  "generated_at": "2026-11-26T12:01:36Z",
   "methodology": "Public official APIs first. Derived values are computed from the series listed in this file; Yahoo Finance market snapshots are secondary, delayed references.",
   "series": [
     {
@@ -3739,7 +3739,7 @@
     }
   ],
   "global": {
-    "generated_at": "2026-11-26T11:12:37Z",
+    "generated_at": "2026-11-26T12:01:36Z",
     "methodology": "Official-first curated feeds. ECB, BIS, IMF, WTO and World Bank values are published by those institutions. Yahoo Finance quotes are secondary, delayed market references clearly labelled as such. Derived KPIs are calculated here.",
     "sections": [
       {
@@ -19474,10 +19474,6 @@
               },
               {
                 "period": "2023",
-                "value": 268237.0
-              },
-              {
-                "period": "2023",
                 "value": 283872.0
               },
               {
@@ -19487,6 +19483,10 @@
               {
                 "period": "2023",
                 "value": 254196.0
+              },
+              {
+                "period": "2023",
+                "value": 268237.0
               },
               {
                 "period": "2024",
@@ -19538,14 +19538,6 @@
               },
               {
                 "period": "2025",
-                "value": 326057.0
-              },
-              {
-                "period": "2025",
-                "value": 295005.0
-              },
-              {
-                "period": "2025",
                 "value": 350222.0
               },
               {
@@ -19583,11 +19575,19 @@
               {
                 "period": "2025",
                 "value": 289718.0
+              },
+              {
+                "period": "2025",
+                "value": 326057.0
+              },
+              {
+                "period": "2025",
+                "value": 295005.0
               }
             ],
             "latest_period": "2025",
-            "latest_value": 289718.0,
-            "change_pct": 8.17
+            "latest_value": 295005.0,
+            "change_pct": -9.52
           },
           {
             "key": "wto-its_mtv_mm-156",
@@ -19619,15 +19619,15 @@
               },
               {
                 "period": "2023",
-                "value": 215767.0
-              },
-              {
-                "period": "2023",
                 "value": 223564.0
               },
               {
                 "period": "2023",
                 "value": 228549.0
+              },
+              {
+                "period": "2023",
+                "value": 215767.0
               },
               {
                 "period": "2023",
@@ -19699,6 +19699,10 @@
               },
               {
                 "period": "2025",
+                "value": 216917.0
+              },
+              {
+                "period": "2025",
                 "value": 186364.0
               },
               {
@@ -19708,10 +19712,6 @@
               {
                 "period": "2025",
                 "value": 211149.0
-              },
-              {
-                "period": "2025",
-                "value": 216917.0
               },
               {
                 "period": "2025",
@@ -19727,15 +19727,15 @@
               },
               {
                 "period": "2025",
-                "value": 223843.0
-              },
-              {
-                "period": "2025",
                 "value": 220133.0
               },
               {
                 "period": "2025",
                 "value": 245310.0
+              },
+              {
+                "period": "2025",
+                "value": 223843.0
               },
               {
                 "period": "2025",
@@ -19933,14 +19933,6 @@
               },
               {
                 "period": "2023",
-                "value": 61994.0
-              },
-              {
-                "period": "2023",
-                "value": 64350.0
-              },
-              {
-                "period": "2023",
                 "value": 64607.0
               },
               {
@@ -19953,15 +19945,23 @@
               },
               {
                 "period": "2023",
+                "value": 61994.0
+              },
+              {
+                "period": "2023",
+                "value": 64350.0
+              },
+              {
+                "period": "2023",
                 "value": 61793.0
               },
               {
                 "period": "2023",
-                "value": 62383.0
+                "value": 63332.0
               },
               {
                 "period": "2023",
-                "value": 63332.0
+                "value": 62383.0
               },
               {
                 "period": "2023",
@@ -19997,10 +19997,6 @@
               },
               {
                 "period": "2024",
-                "value": 66219.0
-              },
-              {
-                "period": "2024",
                 "value": 65085.0
               },
               {
@@ -20010,6 +20006,10 @@
               {
                 "period": "2024",
                 "value": 65549.0
+              },
+              {
+                "period": "2024",
+                "value": 66219.0
               },
               {
                 "period": "2024",
@@ -20029,11 +20029,11 @@
               },
               {
                 "period": "2025",
-                "value": 66145.0
+                "value": 59088.0
               },
               {
                 "period": "2025",
-                "value": 59088.0
+                "value": 66145.0
               },
               {
                 "period": "2025",
@@ -20086,14 +20086,6 @@
             "points": [
               {
                 "period": "2023",
-                "value": 57510.0
-              },
-              {
-                "period": "2023",
-                "value": 62278.0
-              },
-              {
-                "period": "2023",
                 "value": 60937.0
               },
               {
@@ -20106,15 +20098,7 @@
               },
               {
                 "period": "2023",
-                "value": 54470.0
-              },
-              {
-                "period": "2023",
-                "value": 55083.0
-              },
-              {
-                "period": "2023",
-                "value": 53483.0
+                "value": 53518.0
               },
               {
                 "period": "2023",
@@ -20122,19 +20106,31 @@
               },
               {
                 "period": "2023",
-                "value": 57168.0
+                "value": 57510.0
               },
               {
                 "period": "2023",
-                "value": 53518.0
+                "value": 54470.0
+              },
+              {
+                "period": "2023",
+                "value": 53483.0
+              },
+              {
+                "period": "2023",
+                "value": 62278.0
               },
               {
                 "period": "2023",
                 "value": 63877.0
               },
               {
-                "period": "2024",
-                "value": 68536.0
+                "period": "2023",
+                "value": 55083.0
+              },
+              {
+                "period": "2023",
+                "value": 57168.0
               },
               {
                 "period": "2024",
@@ -20179,6 +20175,10 @@
               {
                 "period": "2024",
                 "value": 59476.0
+              },
+              {
+                "period": "2024",
+                "value": 68536.0
               },
               {
                 "period": "2025",
@@ -20408,15 +20408,15 @@
             "points": [
               {
                 "period": "2023",
+                "value": 55370.0
+              },
+              {
+                "period": "2023",
+                "value": 59636.0
+              },
+              {
+                "period": "2023",
                 "value": 59037.0
-              },
-              {
-                "period": "2023",
-                "value": 51010.0
-              },
-              {
-                "period": "2023",
-                "value": 50973.0
               },
               {
                 "period": "2023",
@@ -20428,15 +20428,11 @@
               },
               {
                 "period": "2023",
-                "value": 54251.0
-              },
-              {
-                "period": "2023",
                 "value": 51940.0
               },
               {
                 "period": "2023",
-                "value": 53441.0
+                "value": 54251.0
               },
               {
                 "period": "2023",
@@ -20444,31 +20440,19 @@
               },
               {
                 "period": "2023",
-                "value": 55370.0
+                "value": 51010.0
               },
               {
                 "period": "2023",
-                "value": 59636.0
+                "value": 50973.0
               },
               {
                 "period": "2023",
                 "value": 51998.0
               },
               {
-                "period": "2024",
-                "value": 53839.0
-              },
-              {
-                "period": "2024",
-                "value": 53133.0
-              },
-              {
-                "period": "2024",
-                "value": 54821.0
-              },
-              {
-                "period": "2024",
-                "value": 52113.0
+                "period": "2023",
+                "value": 53441.0
               },
               {
                 "period": "2024",
@@ -20477,6 +20461,10 @@
               {
                 "period": "2024",
                 "value": 54475.0
+              },
+              {
+                "period": "2024",
+                "value": 52113.0
               },
               {
                 "period": "2024",
@@ -20496,47 +20484,31 @@
               },
               {
                 "period": "2024",
+                "value": 49090.0
+              },
+              {
+                "period": "2024",
+                "value": 53839.0
+              },
+              {
+                "period": "2024",
+                "value": 54821.0
+              },
+              {
+                "period": "2024",
                 "value": 54055.0
               },
               {
                 "period": "2024",
-                "value": 49090.0
-              },
-              {
-                "period": "2025",
-                "value": 51172.0
-              },
-              {
-                "period": "2025",
-                "value": 53233.0
-              },
-              {
-                "period": "2025",
-                "value": 50345.0
-              },
-              {
-                "period": "2025",
-                "value": 51285.0
-              },
-              {
-                "period": "2025",
-                "value": 57368.0
-              },
-              {
-                "period": "2025",
-                "value": 54210.0
-              },
-              {
-                "period": "2025",
-                "value": 48329.0
-              },
-              {
-                "period": "2025",
-                "value": 53341.0
+                "value": 53133.0
               },
               {
                 "period": "2025",
                 "value": 50826.0
+              },
+              {
+                "period": "2025",
+                "value": 57368.0
               },
               {
                 "period": "2025",
@@ -20549,11 +20521,39 @@
               {
                 "period": "2025",
                 "value": 53511.0
+              },
+              {
+                "period": "2025",
+                "value": 54210.0
+              },
+              {
+                "period": "2025",
+                "value": 51285.0
+              },
+              {
+                "period": "2025",
+                "value": 50345.0
+              },
+              {
+                "period": "2025",
+                "value": 48329.0
+              },
+              {
+                "period": "2025",
+                "value": 53341.0
+              },
+              {
+                "period": "2025",
+                "value": 51172.0
+              },
+              {
+                "period": "2025",
+                "value": 53233.0
               }
             ],
             "latest_period": "2025",
-            "latest_value": 53511.0,
-            "change_pct": -5.16
+            "latest_value": 53233.0,
+            "change_pct": 4.03
           },
           {
             "key": "wto-its_mtv_mm-250",
@@ -20617,6 +20617,14 @@
               },
               {
                 "period": "2024",
+                "value": 61956.0
+              },
+              {
+                "period": "2024",
+                "value": 65280.0
+              },
+              {
+                "period": "2024",
                 "value": 64689.0
               },
               {
@@ -20637,19 +20645,11 @@
               },
               {
                 "period": "2024",
-                "value": 61956.0
-              },
-              {
-                "period": "2024",
-                "value": 65280.0
+                "value": 62207.0
               },
               {
                 "period": "2024",
                 "value": 64117.0
-              },
-              {
-                "period": "2024",
-                "value": 62207.0
               },
               {
                 "period": "2024",
@@ -20665,35 +20665,11 @@
               },
               {
                 "period": "2025",
-                "value": 71717.0
-              },
-              {
-                "period": "2025",
-                "value": 70516.0
-              },
-              {
-                "period": "2025",
-                "value": 56271.0
-              },
-              {
-                "period": "2025",
                 "value": 66973.0
               },
               {
                 "period": "2025",
                 "value": 67843.0
-              },
-              {
-                "period": "2025",
-                "value": 59034.0
-              },
-              {
-                "period": "2025",
-                "value": 66746.0
-              },
-              {
-                "period": "2025",
-                "value": 69365.0
               },
               {
                 "period": "2025",
@@ -20710,11 +20686,35 @@
               {
                 "period": "2025",
                 "value": 59383.0
+              },
+              {
+                "period": "2025",
+                "value": 66746.0
+              },
+              {
+                "period": "2025",
+                "value": 59034.0
+              },
+              {
+                "period": "2025",
+                "value": 56271.0
+              },
+              {
+                "period": "2025",
+                "value": 69365.0
+              },
+              {
+                "period": "2025",
+                "value": 71717.0
+              },
+              {
+                "period": "2025",
+                "value": 70516.0
               }
             ],
             "latest_period": "2025",
-            "latest_value": 59383.0,
-            "change_pct": -15.36
+            "latest_value": 70516.0,
+            "change_pct": -1.67
           }
         ]
       },
@@ -42704,9 +42704,9 @@
               "exchange": "UK",
               "unit": "index pts",
               "currency": "GBP",
-              "value": 10569.8,
-              "change_pct": 1.12,
-              "as_of": "2026-11-26 10:57 UTC",
+              "value": 10583.54,
+              "change_pct": 1.25,
+              "as_of": "2026-11-26 11:46 UTC",
               "status": "live",
               "provider_name": "FTSE 100",
               "points": [
@@ -42728,7 +42728,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 10569.7998046875
+                  "value": 10583.5400390625
                 }
               ],
               "definition": "Delayed market reference quote for FTSE 100 (UK).",
@@ -42743,9 +42743,9 @@
               "exchange": "Germany",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 25145.25,
-              "change_pct": -1.25,
-              "as_of": "2026-11-26 10:57 UTC",
+              "value": 25155.47,
+              "change_pct": -1.21,
+              "as_of": "2026-11-26 11:46 UTC",
               "status": "live",
               "provider_name": "DAX                           P",
               "points": [
@@ -42767,7 +42767,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 25145.25
+                  "value": 25155.470703125
                 }
               ],
               "definition": "Delayed market reference quote for DAX (Germany).",
@@ -42782,9 +42782,9 @@
               "exchange": "France",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 8114.67,
-              "change_pct": 2.36,
-              "as_of": "2026-11-26 10:57 UTC",
+              "value": 8117.52,
+              "change_pct": 2.39,
+              "as_of": "2026-11-26 11:46 UTC",
               "status": "live",
               "provider_name": "CAC 40",
               "points": [
@@ -42806,7 +42806,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 8114.669921875
+                  "value": 8117.52001953125
                 }
               ],
               "definition": "Delayed market reference quote for CAC 40 (France).",
@@ -42979,7 +42979,7 @@
               "currency": "KRW",
               "value": 4711.21,
               "change_pct": -8.3,
-              "as_of": "2026-11-26 06:32 UTC",
+              "as_of": "2026-11-26 11:05 UTC",
               "status": "live",
               "provider_name": "KOSPI Composite Index",
               "points": [
@@ -43094,9 +43094,9 @@
               "exchange": "Switzerland",
               "unit": "index pts",
               "currency": "CHF",
-              "value": 14794.5,
-              "change_pct": 1.53,
-              "as_of": "2026-11-26 10:57 UTC",
+              "value": 14803.35,
+              "change_pct": 1.59,
+              "as_of": "2026-11-26 11:46 UTC",
               "status": "live",
               "provider_name": "SMI PR",
               "points": [
@@ -43118,7 +43118,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 14794.5
+                  "value": 14803.349609375
                 }
               ],
               "definition": "Delayed market reference quote for SMI (Switzerland).",
@@ -43133,9 +43133,9 @@
               "exchange": "Spain",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 18947.8,
-              "change_pct": 0.4,
-              "as_of": "2026-11-26 10:57 UTC",
+              "value": 18958.0,
+              "change_pct": 0.45,
+              "as_of": "2026-11-26 11:46 UTC",
               "status": "live",
               "provider_name": "IBEX 35",
               "points": [
@@ -43157,7 +43157,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 18947.80078125
+                  "value": 18958.0
                 }
               ],
               "definition": "Delayed market reference quote for IBEX 35 (Spain).",
@@ -43178,9 +43178,9 @@
               "exchange": "NYMEX",
               "unit": "USD/barrel",
               "currency": "USD",
-              "value": 84.46,
-              "change_pct": 0.57,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 84.48,
+              "change_pct": 0.6,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Crude Oil Jan 27",
               "points": [
@@ -43202,7 +43202,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 84.45999908447266
+                  "value": 84.4800033569336
                 }
               ],
               "definition": "Delayed market reference quote for WTI crude oil futures (NYMEX).",
@@ -43217,9 +43217,9 @@
               "exchange": "ICE",
               "unit": "USD/barrel",
               "currency": "USD",
-              "value": 90.95,
-              "change_pct": -1.75,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 90.94,
+              "change_pct": -1.76,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Brent Crude Oil Last Day Financ",
               "points": [
@@ -43241,7 +43241,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 90.94999694824219
+                  "value": 90.94000244140625
                 }
               ],
               "definition": "Delayed market reference quote for Brent crude oil futures (ICE).",
@@ -43256,9 +43256,9 @@
               "exchange": "COMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 3587.5,
-              "change_pct": 2.05,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 3595.2,
+              "change_pct": 2.27,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Gold Dec 26",
               "points": [
@@ -43280,7 +43280,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 3587.5
+                  "value": 3595.199951171875
                 }
               ],
               "definition": "Delayed market reference quote for Gold futures (COMEX).",
@@ -43295,9 +43295,9 @@
               "exchange": "COMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 41.64,
-              "change_pct": 1.47,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 41.805,
+              "change_pct": 1.88,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Silver Dec 26",
               "points": [
@@ -43319,7 +43319,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 41.63999938964844
+                  "value": 41.80500030517578
                 }
               ],
               "definition": "Delayed market reference quote for Silver futures (COMEX).",
@@ -43334,9 +43334,9 @@
               "exchange": "COMEX",
               "unit": "USD/lb",
               "currency": "USD",
-              "value": 5.45,
-              "change_pct": -0.49,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 5.4555,
+              "change_pct": -0.39,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Copper Mar 27",
               "points": [
@@ -43358,7 +43358,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 5.449999809265137
+                  "value": 5.45550012588501
                 }
               ],
               "definition": "Delayed market reference quote for Copper futures (COMEX).",
@@ -43373,9 +43373,9 @@
               "exchange": "NYMEX",
               "unit": "USD/mmbtu",
               "currency": "USD",
-              "value": 3.625,
-              "change_pct": 6.27,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 3.635,
+              "change_pct": 6.57,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Natural Gas Jan 27",
               "points": [
@@ -43397,7 +43397,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 3.625
+                  "value": 3.634999990463257
                 }
               ],
               "definition": "Delayed market reference quote for Natural gas futures (NYMEX).",
@@ -43587,9 +43587,9 @@
               "exchange": "NYMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 1280.5,
-              "change_pct": -0.69,
-              "as_of": "2026-11-26 11:01 UTC",
+              "value": 1284.5,
+              "change_pct": -0.38,
+              "as_of": "2026-11-26 11:50 UTC",
               "status": "live",
               "provider_name": "Platinum Jan 27",
               "points": [
@@ -43611,7 +43611,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 1280.5
+                  "value": 1284.5
                 }
               ],
               "definition": "Delayed market reference quote for Platinum futures (NYMEX).",
@@ -43626,9 +43626,9 @@
               "exchange": "NYMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 872.5,
-              "change_pct": -2.15,
-              "as_of": "2026-11-26 11:02 UTC",
+              "value": 875.5,
+              "change_pct": -1.82,
+              "as_of": "2026-11-26 11:51 UTC",
               "status": "live",
               "provider_name": "Palladium Dec 26",
               "points": [
@@ -43650,7 +43650,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 872.5
+                  "value": 875.5
                 }
               ],
               "definition": "Delayed market reference quote for Palladium futures (NYMEX).",
@@ -43671,9 +43671,9 @@
               "exchange": "FX",
               "unit": "USD per EUR",
               "currency": "USD",
-              "value": 1.0975,
-              "change_pct": 0.05,
-              "as_of": "2026-11-26 11:11 UTC",
+              "value": 1.0973,
+              "change_pct": 0.03,
+              "as_of": "2026-11-26 12:00 UTC",
               "status": "live",
               "provider_name": "EUR/USD",
               "points": [
@@ -43695,7 +43695,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 1.0974539518356323
+                  "value": 1.0973334312438965
                 }
               ],
               "definition": "Delayed market reference quote for EUR / USD (FX).",
@@ -43749,9 +43749,9 @@
               "exchange": "FX",
               "unit": "JPY per USD",
               "currency": "JPY",
-              "value": 159.272,
-              "change_pct": -0.27,
-              "as_of": "2026-11-26 11:12 UTC",
+              "value": 159.286,
+              "change_pct": -0.26,
+              "as_of": "2026-11-26 12:01 UTC",
               "status": "live",
               "provider_name": "USD/JPY",
               "points": [
@@ -43773,7 +43773,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 159.27200317382812
+                  "value": 159.28599548339844
                 }
               ],
               "definition": "Delayed market reference quote for USD / JPY (FX).",
@@ -43788,9 +43788,9 @@
               "exchange": "FX",
               "unit": "USD per GBP",
               "currency": "USD",
-              "value": 1.3106,
-              "change_pct": 0.15,
-              "as_of": "2026-11-26 11:11 UTC",
+              "value": 1.31,
+              "change_pct": 0.11,
+              "as_of": "2026-11-26 12:00 UTC",
               "status": "live",
               "provider_name": "GBP/USD",
               "points": [
@@ -43812,7 +43812,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 1.3106160163879395
+                  "value": 1.309963583946228
                 }
               ],
               "definition": "Delayed market reference quote for GBP / USD (FX).",
@@ -43827,9 +43827,9 @@
               "exchange": "FX",
               "unit": "CNY per USD",
               "currency": "CNY",
-              "value": 6.65,
-              "change_pct": -0.25,
-              "as_of": "2026-11-26 11:08 UTC",
+              "value": 6.6508,
+              "change_pct": -0.24,
+              "as_of": "2026-11-26 12:00 UTC",
               "status": "live",
               "provider_name": "USD/CNY",
               "points": [
@@ -43851,7 +43851,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 6.650000095367432
+                  "value": 6.6508002281188965
                 }
               ],
               "definition": "Delayed market reference quote for USD / CNY (FX).",
@@ -44193,7 +44193,7 @@
     }
   },
   "discovery": {
-    "scanned_at": "2026-11-26T11:12:38Z",
+    "scanned_at": "2026-11-26T12:01:36Z",
     "scope": "Curated scan: official portal metadata plus live series actually fetched in this run.",
     "key_mode": "public sample key (rate-limited)",
     "portals": [

@@ -1,7 +1,7 @@
 """
-FinRadar — API Catalog & Summary Statistics
+Radar — API Catalog & Summary Statistics
 ===========================================
-Every public API / data portal FinRadar draws from, tagged by category so the
+Every public API / data portal Radar draws from, tagged by category so the
 Sources page can group them properly.
 
 Each entry carries:

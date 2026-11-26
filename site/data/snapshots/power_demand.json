@@ -1,6 +1,9 @@
 {
-  "source": "SECL electricity demand growth — illustrative fallback.",
-  "last_fetched": "2026-11",
-  "current_month": "2026-11",
-  "growth_pct": -1.1
+  "source": "Central Electricity Authority, Ministry of Power, Government of India — Executive Summary on Power Sector, September 2026, published 2026-10-27.",
+  "source_url": "https://cea.nic.in/api/dashboardReports/download-pdf/en/6663e01d-5409-4373-b911-a427099e5050",
+  "last_fetched": "2026-11-26",
+  "current_month": "2026-09",
+  "growth_pct": 17.5,
+  "energy_requirement_mu": 269586,
+  "notes": "September 2026 energy requirement was 269,586 MU, 17.5% above 229,405 MU a year earlier (CEA, provisional). Energy supplied grew 17.4%. The Ministry of Power weekly bulletin for 13–19 November 2026 separately reported peak demand met growth of 14.0% and energy consumption growth of 11.5%; weekly and monthly measures are not directly comparable. Weekly source: https://www.powermin.gov.in/static/uploads/2026/11/8a8b26e90284bee38963aae65da1b6df.pdf"
 }

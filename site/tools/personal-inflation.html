@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Inflation Calculator — FinRadar</title>
+  <title>Personal Inflation Calculator — Radar</title>
   <meta name="description" content="Calculate your personal inflation rate based on your spending split across categories." />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Personal Inflation Calculator — Radar" />
+  <meta property="og:description" content="Calculate your personal inflation rate based on your spending split across categories." />
+  <meta property="og:url" content="https://radar.peabox.in/tools/personal-inflation.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personal Inflation Calculator — Radar" />
+  <meta name="twitter:description" content="Calculate your personal inflation rate based on your spending split across categories." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/european-theme.css" />
-  <link rel="canonical" href="https://finradar.example/tools/personal-inflation.html" />
+  <link rel="canonical" href="https://radar.peabox.in/tools/personal-inflation.html" />
 </head>
 <body data-base="../">
   <a class="skip-link" href="#site-main">Skip to content</a>
   <header class="site-header">
     <div class="nav-inner container">
-      <a class="brand" href="../index.html" aria-label="FinRadar home">
+      <a class="brand" href="../index.html" aria-label="Radar home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-        <span class="brand-name">FinRadar</span>
+        <span class="brand-name">Radar</span>
       </a>
       <span class="nav-status"><span class="status-dot"></span>Live data</span>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -27,16 +35,27 @@
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <div class="nav-primary">
-          <a href="../index.html" class="nav-link">Dashboard</a>
+          <a href="../index.html" class="nav-link">Overview</a>
+          <a href="../india.html" class="nav-link">India</a>
+          <a href="../global.html" class="nav-link">Global</a>
+          <a href="../markets.html" class="nav-link">Markets</a>
+          <a href="../insurance.html" class="nav-link">Insurance</a>
+          <a href="../mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="../data-lab.html" class="nav-link">Data Lab</a>
           <a href="../tools.html" class="nav-link">Tools</a>
           <a href="../search.html" class="nav-link">Search</a>
-          <a href="../categories.html" class="nav-link">Categories</a>
-          <a href="../sources.html" class="nav-link">Sources</a>
-          <a href="../data-lab.html" class="nav-link">Data Lab</a>
         </div>
         <div class="nav-drop">
           <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="../india.html" role="menuitem">📊 India macro</a>
+            <a href="../global.html" role="menuitem">🌐 Global macro</a>
+            <a href="../markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="../insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="../mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="../monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
             <div class="nav-drop-heading">Macro &amp; National Accounts</div>
 
 
@@ -144,52 +163,52 @@
           <thead><tr><th>Category</th><th>Weight %</th><th>Sub-index</th><th>Extra %</th><th>Adjusted</th></tr></thead>
           <tbody id="personal-inflation-rows">
           <tr>
-            <td>food</td>
-            <td class="num"><input type="number" id="w-0" min="0" max="100" value="15" aria-label="Weight % for food"></td>
-            <td class="num"><span class="muted" id="s-0">40</span></td>
-            <td class="num"><input type="number" id="e-0" step="0.25" min="0" value="0" aria-label="Extra % for food"></td>
+            <td>Food (01.1)</td>
+            <td class="num"><input type="number" id="w-0" min="0" max="100" value="15" aria-label="Weight % for Food (01.1)"></td>
+            <td class="num"><span class="muted" id="s-0">113.23</span></td>
+            <td class="num"><input type="number" id="e-0" step="0.25" min="0" value="0" aria-label="Extra % for Food (01.1)"></td>
             <td class="num"><strong class="adj" id="a-0"></strong></td>
           </tr>
           <tr>
-            <td>fuel & light</td>
-            <td class="num"><input type="number" id="w-1" min="0" max="100" value="15" aria-label="Weight % for fuel & light"></td>
-            <td class="num"><span class="muted" id="s-1">7</span></td>
-            <td class="num"><input type="number" id="e-1" step="0.25" min="0" value="0" aria-label="Extra % for fuel & light"></td>
+            <td>Electricity, gas and other fuels (04.5)</td>
+            <td class="num"><input type="number" id="w-1" min="0" max="100" value="15" aria-label="Weight % for Electricity, gas and other fuels (04.5)"></td>
+            <td class="num"><span class="muted" id="s-1">104.42</span></td>
+            <td class="num"><input type="number" id="e-1" step="0.25" min="0" value="0" aria-label="Extra % for Electricity, gas and other fuels (04.5)"></td>
             <td class="num"><strong class="adj" id="a-1"></strong></td>
           </tr>
           <tr>
-            <td>clothing</td>
-            <td class="num"><input type="number" id="w-2" min="0" max="100" value="14" aria-label="Weight % for clothing"></td>
-            <td class="num"><span class="muted" id="s-2">6</span></td>
-            <td class="num"><input type="number" id="e-2" step="0.25" min="0" value="0" aria-label="Extra % for clothing"></td>
+            <td>Clothing (03.1)</td>
+            <td class="num"><input type="number" id="w-2" min="0" max="100" value="14" aria-label="Weight % for Clothing (03.1)"></td>
+            <td class="num"><span class="muted" id="s-2">111.09</span></td>
+            <td class="num"><input type="number" id="e-2" step="0.25" min="0" value="0" aria-label="Extra % for Clothing (03.1)"></td>
             <td class="num"><strong class="adj" id="a-2"></strong></td>
           </tr>
           <tr>
-            <td>education</td>
-            <td class="num"><input type="number" id="w-3" min="0" max="100" value="14" aria-label="Weight % for education"></td>
-            <td class="num"><span class="muted" id="s-3">4</span></td>
-            <td class="num"><input type="number" id="e-3" step="0.25" min="0" value="0" aria-label="Extra % for education"></td>
+            <td>Education services (10)</td>
+            <td class="num"><input type="number" id="w-3" min="0" max="100" value="14" aria-label="Weight % for Education services (10)"></td>
+            <td class="num"><span class="muted" id="s-3">109.19</span></td>
+            <td class="num"><input type="number" id="e-3" step="0.25" min="0" value="0" aria-label="Extra % for Education services (10)"></td>
             <td class="num"><strong class="adj" id="a-3"></strong></td>
           </tr>
           <tr>
-            <td>healthcare</td>
-            <td class="num"><input type="number" id="w-4" min="0" max="100" value="14" aria-label="Weight % for healthcare"></td>
-            <td class="num"><span class="muted" id="s-4">4</span></td>
-            <td class="num"><input type="number" id="e-4" step="0.25" min="0" value="0" aria-label="Extra % for healthcare"></td>
+            <td>Health (06)</td>
+            <td class="num"><input type="number" id="w-4" min="0" max="100" value="14" aria-label="Weight % for Health (06)"></td>
+            <td class="num"><span class="muted" id="s-4">105.67</span></td>
+            <td class="num"><input type="number" id="e-4" step="0.25" min="0" value="0" aria-label="Extra % for Health (06)"></td>
             <td class="num"><strong class="adj" id="a-4"></strong></td>
           </tr>
           <tr>
-            <td>housing</td>
-            <td class="num"><input type="number" id="w-5" min="0" max="100" value="14" aria-label="Weight % for housing"></td>
-            <td class="num"><span class="muted" id="s-5">20</span></td>
-            <td class="num"><input type="number" id="e-5" step="0.25" min="0" value="0" aria-label="Extra % for housing"></td>
+            <td>Actual rental payments for housing (04.1)</td>
+            <td class="num"><input type="number" id="w-5" min="0" max="100" value="14" aria-label="Weight % for Actual rental payments for housing (04.1)"></td>
+            <td class="num"><span class="muted" id="s-5">104.35</span></td>
+            <td class="num"><input type="number" id="e-5" step="0.25" min="0" value="0" aria-label="Extra % for Actual rental payments for housing (04.1)"></td>
             <td class="num"><strong class="adj" id="a-5"></strong></td>
           </tr>
           <tr>
-            <td>other stuff</td>
-            <td class="num"><input type="number" id="w-6" min="0" max="100" value="14" aria-label="Weight % for other stuff"></td>
-            <td class="num"><span class="muted" id="s-6">19</span></td>
-            <td class="num"><input type="number" id="e-6" step="0.25" min="0" value="0" aria-label="Extra % for other stuff"></td>
+            <td>Personal care and miscellaneous (13)</td>
+            <td class="num"><input type="number" id="w-6" min="0" max="100" value="14" aria-label="Weight % for Personal care and miscellaneous (13)"></td>
+            <td class="num"><span class="muted" id="s-6">124.5</span></td>
+            <td class="num"><input type="number" id="e-6" step="0.25" min="0" value="0" aria-label="Extra % for Personal care and miscellaneous (13)"></td>
             <td class="num"><strong class="adj" id="a-6"></strong></td>
           </tr></tbody>
         </table>
@@ -211,13 +230,13 @@
       <div class="footer-brand-col">
 
 
-        <a class="brand" href="../index.html" aria-label="FinRadar home">
+        <a class="brand" href="../index.html" aria-label="Radar home">
           <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-          <span class="brand-name">FinRadar</span>
+          <span class="brand-name">Radar</span>
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 11:12 UTC</span></p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:15 UTC</span></p>
 
 
       </div>
@@ -229,7 +248,25 @@
         <h4 class="footer-heading">Explore</h4>
 
 
-        <a href="../index.html">Dashboard</a>
+        <a href="../index.html">Overview</a>
+
+
+        <a href="../india.html">India dashboard</a>
+
+
+        <a href="../global.html">Global macro</a>
+
+
+        <a href="../markets.html">Global markets</a>
+
+
+        <a href="../insurance.html">Insurance</a>
+
+
+        <a href="../mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="../monthly-snapshots.html">Monthly snapshots</a>
 
 
         <a href="../search.html">Search</a>
@@ -295,13 +332,13 @@
     <div class="container footer-bottom">
 
 
-      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <p>© 2026 Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
 
 
       <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
 
 
-      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
 
 
     </div>

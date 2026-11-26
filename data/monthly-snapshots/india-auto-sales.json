@@ -1,0 +1,120 @@
+{
+  "dataset_id": "india-auto-sales",
+  "title": "India domestic vehicle sales (SIAM)",
+  "category": "auto",
+  "page": "mobility-housing.html#india-auto-sales",
+  "last_updated": "2026-11-26",
+  "coverage": "FY2019-20 to FY2023-24 (April-March fiscal years)",
+  "source": {
+    "organization": "Society of Indian Automobile Manufacturers (SIAM)",
+    "title": "Overview of Indian Automobile Industry — domestic sales table",
+    "url": "https://www.siam.in/uploads/filemanager/ac24fbakLbl/Overview-on-Indian-Automobile-Industry-Performance.pdf",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Figures are transcribed exactly from SIAM's published domestic-sales table. Each fiscal year is labelled with SIAM's own period. No estimated, interpolated or derived sales figures are included.",
+  "metrics": [
+    {
+      "id": "passenger_vehicles_sold",
+      "name": "Passenger vehicles sold",
+      "unit": "vehicles",
+      "category": "Auto",
+      "definition": "Domestic passenger vehicle sales reported by SIAM member manufacturers for the fiscal year.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 2773519
+        },
+        {
+          "period": "FY2020-21",
+          "value": 2711457
+        },
+        {
+          "period": "FY2021-22",
+          "value": 3069523
+        },
+        {
+          "period": "FY2022-23",
+          "value": 3890114
+        },
+        {
+          "period": "FY2023-24",
+          "value": 4218746
+        }
+      ],
+      "latest_period": "FY2023-24",
+      "latest_value": 4218746,
+      "yoy_change_pct": 8.447875820605772
+    },
+    {
+      "id": "commercial_vehicles_sold",
+      "name": "Commercial vehicles sold",
+      "unit": "vehicles",
+      "category": "Auto",
+      "definition": "Domestic commercial vehicle sales reported by SIAM member manufacturers for the fiscal year.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 717593
+        },
+        {
+          "period": "FY2020-21",
+          "value": 568559
+        },
+        {
+          "period": "FY2021-22",
+          "value": 716566
+        },
+        {
+          "period": "FY2022-23",
+          "value": 962468
+        },
+        {
+          "period": "FY2023-24",
+          "value": 967878
+        }
+      ],
+      "latest_period": "FY2023-24",
+      "latest_value": 967878,
+      "yoy_change_pct": 0.5620966099652144
+    },
+    {
+      "id": "two_wheelers_sold",
+      "name": "Two-wheelers sold",
+      "unit": "vehicles",
+      "category": "Auto",
+      "definition": "Domestic two-wheeler sales reported by SIAM member manufacturers for the fiscal year.",
+      "values": [
+        {
+          "period": "FY2019-20",
+          "value": 17416432
+        },
+        {
+          "period": "FY2020-21",
+          "value": 15120783
+        },
+        {
+          "period": "FY2021-22",
+          "value": 13570008
+        },
+        {
+          "period": "FY2022-23",
+          "value": 15862771
+        },
+        {
+          "period": "FY2023-24",
+          "value": 17974365
+        }
+      ],
+      "latest_period": "FY2023-24",
+      "latest_value": 17974365,
+      "yoy_change_pct": 13.311633887925382
+    }
+  ],
+  "notes": [
+    "Source evidence: SIAM table — Passenger Vehicles 27,73,519 / 27,11,457 / 30,69,523 / 38,90,114 / 42,18,746; Commercial Vehicles 7,17,593 / 5,68,559 / 7,16,566 / 9,62,468 / 9,67,878; Two Wheelers 1,74,16,432 / 1,51,20,783 / 1,35,70,008 / 1,58,62,771 / 1,79,74,365.",
+    "SIAM's industry trends page is the monthly/annual update companion: https://www.siam.in/knowledge/industry-data/industry-trends",
+    "FY2024-25 is published separately in SIAM's Annual Report 2024-25 as 43,01,848 passenger vehicles; it is excluded here to keep one source per continuous series."
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

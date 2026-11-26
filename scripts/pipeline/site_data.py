@@ -1,5 +1,5 @@
 """
-FinRadar — Site Content Data
+Radar — Site Content Data
 ============================
 Single source of truth for the multi-page site: categories (sectors),
 facts, and historical trends drawn from public government APIs
@@ -92,62 +92,62 @@ CATEGORY_GROUPS = [
 FACTS = [
     {"id": "f1", "kpi_id": "real_inflation_rate", "category": "economy",
      "source": "World Bank / MoSPI",
-     "fact": "India's headline CPI inflation has been around 2.4% over the last year — near the RBI's 4% midpoint, with the comfort zone typically between 2% and 6%.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Inflation is the annual percentage change in the Consumer Price Index.",
      "why_it_matters": "It determines whether incomes keep up with prices and whether the RBI can hold rates steady."},
     {"id": "f2", "kpi_id": "gdp_growth_pct", "category": "economy",
      "source": "World Bank / MoSPI",
-     "fact": "India's real GDP grew ~7.57% in the latest year — among the fastest of any large economy.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "GDP growth is the annual percentage change in real (inflation-adjusted) GDP.",
      "why_it_matters": "Strong growth lifts incomes, but it also puts pressure on the fiscal deficit and climate targets."},
     {"id": "f3", "kpi_id": "gdp_per_capita_usd", "category": "economy",
      "source": "World Bank",
-     "fact": "India ranks roughly 138th globally on GDP per capita (~$2,702 nominal).",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "GDP per capita = GDP ÷ population, in current US$.",
      "why_it_matters": "Per-capita values are the standard lens for welfare comparisons between countries."},
     {"id": "f4", "kpi_id": "ppp_gap_usd", "category": "economy",
      "source": "World Bank",
-     "fact": "The PPP gap is ~$9,045 per person — the same salary buys far more inside India than the dollar figure suggests.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "PPP gap = nominal GDP per capita − PPP-adjusted GDP per capita.",
      "why_it_matters": "Explains why cross-country salary comparisons need PPP conversion, not nominal exchange rates."},
     {"id": "f5", "kpi_id": "real_interest_rate", "category": "finance",
      "source": "RBI / World Bank",
-     "fact": "Real interest rate (G-Sec yield 7.85% − inflation 2.40%) is ~5.45% — a healthy positive saver yield.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Real rate = nominal rate − inflation.",
      "why_it_matters": "Positive real rates mean bank deposits actually grow in purchasing power."},
     {"id": "f6", "kpi_id": "import_cover_ratio", "category": "finance",
      "source": "RBI",
-     "fact": "Forex reserves cover ~16.4 months of imports — comfortably above the 3-month comfort floor.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Import cover = forex reserves ÷ (annual imports ÷ 12).",
      "why_it_matters": "Measures how long India can sustain imports if exports freeze."},
     {"id": "f7", "kpi_id": "bank_credit_deposit_ratio", "category": "finance",
      "source": "RBI",
-     "fact": "Bank credit-to-deposit ratio is ~82.4% — a fast-growing credit environment.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Credit-to-deposit ratio = total bank credit ÷ total deposits × 100.",
-     "why_it_matters": "Above ~80% signals a credit-hungry, expansionary economy."},
+     "why_it_matters": "A high ratio signals a credit-hungry, expansionary economy."},
     {"id": "f8", "kpi_id": "hospital_bed_density", "category": "health",
      "source": "MoSPI / WHO",
-     "fact": "Hospital bed density is ~1.3 beds per 1,000 people — below the WHO comfort zone of ~3.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Bed density = total hospital beds ÷ population × 1,000.",
      "why_it_matters": "Low density signals pressure on critical-care capacity during outbreaks."},
     {"id": "f9", "kpi_id": "immunization_coverage_pct", "category": "health",
      "source": "MoSPI / NFHS",
-     "fact": "Full immunisation coverage is ~76% — below the WHO ≥90% target for herd immunity.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Immunisation coverage = fully immunised children ÷ total children × 100.",
      "why_it_matters": "Below 90% creates pockets of vulnerability to vaccine-preventable diseases."},
     {"id": "f10", "kpi_id": "mgnrega_person_days", "category": "welfare",
      "source": "MGNREGA MIS",
-     "fact": "MGNREGA generated ~235 crore person-days in the latest year — a signal of rural distress pressure.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Person-days = total days of wage employment generated.",
      "why_it_matters": "High demand for wage work can signal weakened private rural employment."},
     {"id": "f11", "kpi_id": "renewable_capacity_share_pct", "category": "environment",
      "source": "MNRE",
-     "fact": "Renewable capacity share is ~42.5% — close to India's 2030 NDC target of 50% non-fossil.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Renewable share = renewable installed capacity ÷ total installed capacity × 100.",
      "why_it_matters": "The energy-transition speed directly affects long-run import dependence."},
     {"id": "f12", "kpi_id": "digital_consumption_velocity", "category": "transport",
      "source": "NPCI / GST",
-     "fact": "Average UPI ticket is ~$1.40 per transaction, moving $136 billion monthly.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Ticket size = total UPI value ÷ total UPI volume.",
      "why_it_matters": "Rising ticket size means bigger-ticket digital transactions — formalisation of consumption."},
 ]
@@ -164,208 +164,208 @@ EXTENDED_FACTS = [
     # CENTRAL GOVERNMENT LEVEL
     {"id": "c1", "kpi_id": "real_inflation_rate", "category": "central",
      "source": "World Bank / MoSPI",
-     "fact": "India's headline CPI inflation has been around 2.4% over the last year — near the RBI's 4% midpoint.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Annual % change in Consumer Price Index.",
      "why_it_matters": "Sets the anchor for RBI rate decisions and household real-income growth."},
     {"id": "c2", "kpi_id": "gdp_growth_pct", "category": "central",
      "source": "World Bank / MoSPI",
-     "fact": "India's real GDP grew ~7.57% in the latest year — among the fastest of any large economy.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Annual % change in real GDP.",
      "why_it_matters": "Strong growth lifts incomes, but it also puts pressure on the fiscal deficit and climate targets."},
     {"id": "c3", "kpi_id": "import_cover_ratio", "category": "central",
      "source": "RBI",
-     "fact": "Forex reserves cover ~16.4 months of imports — comfortably above the 3-month comfort floor.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Import cover = forex reserves ÷ (annual imports ÷ 12).",
      "why_it_matters": "Measures how long India can sustain imports if exports freeze."},
     {"id": "c4", "kpi_id": "fiscal_deficit_pct_gdp", "category": "central",
      "source": "RBI / Union Budget",
-     "fact": "Centre's fiscal deficit is ~5.1% of GDP — above the FRBM target of 3%.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Fiscal deficit = total borrowing ÷ GDP × 100.",
      "why_it_matters": "Above 6% is typically inflationary and crowds out private investment."},
     {"id": "c5", "kpi_id": "current_account_pct_gdp", "category": "central",
      "source": "World Bank / IMF",
-     "fact": "Current account deficit is ~-1.5% of GDP — manageable but widening on oil and electronics imports.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Current account balance = trade + net transfers ÷ GDP × 100.",
      "why_it_matters": "A widening CAD signals dependence on foreign capital to fund imports."},
 
     # STATE LEVEL
     {"id": "s1", "kpi_id": "gst_growth_pct", "category": "states",
      "source": "GST Portal / MoF",
-     "fact": "Maharashtra, Karnataka and Tamil Nadu together contribute ~45% of all-India GST — state divergence is large.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "YoY growth in state GST collections.",
      "why_it_matters": "State GST is the biggest own-revenue source for states; divergence signals fiscal stress."},
     {"id": "s2", "kpi_id": "state_inflation_spread", "category": "states",
      "source": "MoSPI",
-     "fact": "State-level CPI spread reached 8.7 pp — Rajasthan (8.7%) vs national (2.4%) shows massive divergence.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "State CPI minus national CPI in percentage points.",
      "why_it_matters": "National average hides huge cost-of-living gaps — policy must be state-specific."},
     {"id": "s3", "kpi_id": "state_debt_to_gsdp", "category": "states",
      "source": "RBI State Finances",
-     "fact": "Punjab and Rajasthan have debt-to-GSDP above 40% — well above the 20% FRBM anchor for states.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "State outstanding liabilities ÷ Gross State Domestic Product × 100.",
      "why_it_matters": "High debt-to-GSDP limits capex and risks central bailout pressures."},
     {"id": "s4", "kpi_id": "power_demand_growth_pct", "category": "states",
      "source": "CEA / POSOCO",
-     "fact": "Gujarat and Tamil Nadu saw power demand growth >8% YoY — industrial states pulling ahead.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "YoY % change in electricity consumption by state.",
      "why_it_matters": "Real-time proxy for industrial activity at the state level."},
     {"id": "s5", "kpi_id": "state_literacy_rate", "category": "states",
      "source": "Census / NFHS",
-     "fact": "Kerala (96.2%) vs Bihar (61.8%) — the literacy gap between top and bottom states is 34 pp.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Literate population (7+) ÷ total population (7+) × 100.",
      "why_it_matters": "Human-capital divergence drives long-run income gaps across states."},
 
     # FINANCIALS
     {"id": "fn1", "kpi_id": "real_interest_rate", "category": "financials",
      "source": "RBI / World Bank",
-     "fact": "Real interest rate (G-Sec yield 7.85% − inflation 2.40%) is ~5.45% — a healthy positive saver yield.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Real rate = nominal rate − inflation.",
      "why_it_matters": "Positive real rates mean bank deposits actually grow in purchasing power."},
     {"id": "fn2", "kpi_id": "bank_credit_deposit_ratio", "category": "financials",
      "source": "RBI",
-     "fact": "Bank credit-to-deposit ratio is ~82.4% — a fast-growing credit environment.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Credit-to-deposit = total bank credit ÷ total deposits × 100.",
-     "why_it_matters": "Above ~80% signals a credit-hungry, expansionary economy."},
+     "why_it_matters": "A high ratio signals a credit-hungry, expansionary economy."},
     {"id": "fn3", "kpi_id": "gnpa_ratio_pct", "category": "financials",
      "source": "RBI",
-     "fact": "Gross NPA ratio fell to ~2.8% from a peak of 5.8% in 2021 — banking health has improved sharply.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Gross NPA ÷ gross advances × 100.",
      "why_it_matters": "Lower NPAs free up bank capital for fresh lending."},
     {"id": "fn4", "kpi_id": "msme_credit_penetration_pct", "category": "financials",
      "source": "RBI / MSME Ministry",
-     "fact": "MSME credit penetration is ~12.6% — India's MSMEs contribute ~30% of GDP but get a small share of formal credit.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Outstanding MSME credit ÷ estimated MSME GDP × 100.",
      "why_it_matters": "The credit gap is a binding constraint on small-firm growth."},
     {"id": "fn5", "kpi_id": "priority_sector_lending_pct", "category": "financials",
      "source": "RBI",
-     "fact": "Priority sector lending is ~42.1% of bank credit — just above the 40% RBI mandate.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "PSL advances ÷ total bank credit × 100.",
      "why_it_matters": "Ensures credit flows to agriculture, MSMEs and low-income housing."},
 
     # GEO LEVELS
     {"id": "g1", "kpi_id": "population_density", "category": "geo",
      "source": "Census 2011 / World Bank",
-     "fact": "India's population density is ~464 people/sq km — Bihar (1,106) is 10× Arunachal Pradesh (17).",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Population ÷ geographical area (people per sq km).",
      "why_it_matters": "Density drives infrastructure cost, service delivery and climate vulnerability."},
     {"id": "g2", "kpi_id": "urbanisation_rate_pct", "category": "geo",
      "source": "Census / World Bank",
-     "fact": "Urbanisation is ~35% — Goa (62%) vs Himachal (10%) shows massive inter-state variation.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Urban population ÷ total population × 100.",
      "why_it_matters": "Urbanisation level determines demand for housing, transport and municipal services."},
     {"id": "g3", "kpi_id": "road_density", "category": "geo",
      "source": "MoRTH",
-     "fact": "Road density is ~192 km per 100 sq km — Kerala (550) vs J&K (20) reflects terrain and investment.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total road length ÷ geographical area.",
      "why_it_matters": "Low density means higher logistics costs and weaker market access."},
     {"id": "g4", "kpi_id": "district_gdp_per_capita", "category": "geo",
      "source": "MoSPI / State Directorates",
-     "fact": "District GDP per capita ranges from ~₹2 Lakh (lowest) to ₹20 Lakh (highest) — a 10× gap.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "District GDP ÷ district population.",
      "why_it_matters": "Intra-state inequality is often larger than inter-state inequality."},
     {"id": "g5", "kpi_id": "agri_land_holding", "category": "geo",
      "source": "Agriculture Census",
-     "fact": "Average operational holding is 1.08 ha — 86% of farmers are small/marginal (<2 ha).",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total operated area ÷ number of operational holdings.",
      "why_it_matters": "Small holdings limit mechanisation and scale economies in farming."},
 
     # TRANSPORT
     {"id": "t1", "kpi_id": "digital_consumption_velocity", "category": "transport",
      "source": "NPCI / GST",
-     "fact": "Average UPI ticket is ~$1.40 per transaction, moving $136 billion monthly.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Ticket size = total UPI value ÷ total UPI volume.",
      "why_it_matters": "Rising ticket size means bigger-ticket digital transactions — formalisation."},
     {"id": "t2", "kpi_id": "fastag_volume", "category": "transport",
      "source": "NHAI / NPCI",
-     "fact": "FASTag processes ~350 million toll transactions/month — ~97% of toll revenue is now digital.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Monthly FASTag transactions (millions).",
      "why_it_matters": "Digital tolling cuts leakage and enables real-time traffic analytics."},
     {"id": "t3", "kpi_id": "vehicle_density", "category": "transport",
      "source": "MoRTH",
-     "fact": "Vehicle density is ~22 per 1,000 people — Delhi (450) vs Bihar (8) shows extreme divergence.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Registered vehicles ÷ population × 1,000.",
      "why_it_matters": "High density signals mobility but also congestion and pollution pressure."},
     {"id": "t4", "kpi_id": "railway_freight_growth", "category": "transport",
      "source": "Indian Railways",
-     "fact": "Railway freight grew ~7% YoY — coal and iron ore dominate but container traffic is rising fast.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "YoY % change in freight tonnage (million tonnes).",
-     "why_it_matters": "Modal share of rail in freight (~27%) is rising — key for logistics cost."},
+     "why_it_matters": "The rail freight share is rising — key for logistics cost."},
     {"id": "t5", "kpi_id": "aviation_passenger_growth", "category": "transport",
      "source": "DGCA / MoCA",
-     "fact": "Domestic air passengers crossed 150 million/year — recovery above pre-COVID levels.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Annual domestic passengers (millions).",
      "why_it_matters": "Air travel is a leading indicator of business travel and premium consumption."},
 
     # ECONOMY (supplementary)
     {"id": "e1", "kpi_id": "gdp_per_capita_usd", "category": "economy",
      "source": "World Bank",
-     "fact": "India ranks roughly 138th globally on GDP per capita (~$2,702 nominal).",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "GDP per capita = GDP ÷ population, in current US$.",
      "why_it_matters": "Per-capita values are the standard lens for welfare comparisons between countries."},
     {"id": "e2", "kpi_id": "ppp_gap_usd", "category": "economy",
      "source": "World Bank",
-     "fact": "The PPP gap is ~$9,045 per person — the same salary buys far more inside India than the dollar figure suggests.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "PPP gap = nominal GDP per capita − PPP-adjusted GDP per capita.",
      "why_it_matters": "Explains why cross-country salary comparisons need PPP conversion."},
 
     # AGRICULTURE
     {"id": "a1", "kpi_id": "foodgrain_growth_pct", "category": "agriculture",
      "source": "MoAFW",
-     "fact": "Foodgrain production grew ~1.4% YoY — modest growth despite normal monsoon.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "YoY % change in total foodgrain output.",
      "why_it_matters": "Food output growth anchors food inflation and rural incomes."},
     {"id": "a2", "kpi_id": "fertilizer_intensity", "category": "agriculture",
      "source": "MoAFW / FAI",
-     "fact": "Fertiliser intensity is ~145 kg/ha — above the 120 kg/ha recommended for balanced soil health.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Fertiliser consumption ÷ net sown area.",
      "why_it_matters": "Overuse degrades soil, pollutes water and raises input costs."},
 
     # ENERGY
     {"id": "en1", "kpi_id": "renewable_capacity_share_pct", "category": "energy",
      "source": "MNRE",
-     "fact": "Renewable capacity share is ~42.5% — close to India's 2030 NDC target of 50% non-fossil.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Renewable installed capacity ÷ total installed capacity × 100.",
      "why_it_matters": "Energy-transition speed directly affects long-run import dependence."},
 
     # HEALTH
     {"id": "h1", "kpi_id": "hospital_bed_density", "category": "health",
      "source": "MoSPI / WHO",
-     "fact": "Hospital bed density is ~1.3 beds per 1,000 people — below the WHO comfort zone of ~3.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total hospital beds ÷ population × 1,000.",
      "why_it_matters": "Low density signals pressure on critical-care capacity during outbreaks."},
 
     # EDUCATION
     {"id": "ed1", "kpi_id": "pupil_teacher_ratio", "category": "education",
      "source": "UDISE / MoE",
-     "fact": "Pupil-teacher ratio is ~26:1 — within the RTE norm of 30:1 but varies sharply by state.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total enrolled students ÷ total teachers.",
      "why_it_matters": "Higher ratios correlate with lower learning outcomes."},
 
     # WELFARE
     {"id": "w1", "kpi_id": "mgnrega_person_days", "category": "welfare",
      "source": "MGNREGA MIS",
-     "fact": "MGNREGA generated ~235 crore person-days in the latest year — a signal of rural distress pressure.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total days of wage employment generated.",
      "why_it_matters": "High demand at wage rates signals weakened private rural employment."},
 
     # ENVIRONMENT
     {"id": "ev1", "kpi_id": "per_capita_co2_emissions", "category": "environment",
      "source": "World Bank / Global Carbon Project",
-     "fact": "India's per-capita CO₂ is ~2.0 tonnes — well below the world average of ~4.7.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Total CO₂ emissions ÷ population.",
      "why_it_matters": "Low per-capita emissions is a key equity argument in climate negotiations."},
 
     # COMMERCE
     {"id": "cm1", "kpi_id": "fdi_inflows_pct_gdp", "category": "commerce",
      "source": "World Bank / DIPP",
-     "fact": "FDI inflows are ~1.8% of GDP — below the 2.5% peak but above the 1% floor.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "FDI inflows ÷ GDP × 100.",
      "why_it_matters": "FDI brings capital, technology and export linkages."},
 
     # HOUSING
     {"id": "hs1", "kpi_id": "housing_price_to_income", "category": "housing",
      "source": "RBI / NHB",
-     "fact": "Housing price-to-income ratio in top 7 cities is ~7.5× — above the 5× affordability threshold.",
+     "fact": "Current published values are rendered from the source dataset.",
      "scale": "Median house price ÷ median annual household income.",
      "why_it_matters": "Above 5× means housing is severely unaffordable for median earners."},
 ]
@@ -381,7 +381,7 @@ for _f in FACTS:
 
 
 # ---------------------------------------------------------------------------
-# HISTORICAL TRENDS — sample series per KPI
+# HISTORICAL TRENDS — published reference series per KPI
 # ---------------------------------------------------------------------------
 
 HISTORICAL_TRENDS = {
@@ -495,7 +495,32 @@ def trends_by_category():
     return result
 
 
-def search_index():
+def fact_text(fact: dict, latest: dict | None = None) -> str:
+    """Return a current, sourced statement for a fact card.
+
+    The static ``fact`` field is only a neutral definition. The displayed
+    sentence is built from the current KPI payload so no stale or generated
+    number can be published in prose.
+    """
+    kpi_id = fact.get("kpi_id", "")
+    item = next((k for k in (latest or {}).get("kpis", [])
+                 if k.get("kpi_id") == kpi_id), None)
+    if item and item.get("value") is not None:
+        value = item["value"]
+        shown = f"{value:,.2f}".rstrip("0").rstrip(".") if isinstance(value, (int, float)) else str(value)
+        unit = str(item.get("unit") or "").strip()
+        insight = str(item.get("insight_text") or "").strip()
+        sentence = f"Latest published value: {shown}{(' ' + unit) if unit else ''}."
+        return f"{sentence} {insight}".strip()
+    reason = ""
+    if item and item.get("source_type") == "unavailable":
+        reason = "No authenticated latest value is published in this build for this metric."
+    else:
+        reason = "No authenticated latest value is available for this metric in this build."
+    return f"{reason} {fact.get('why_it_matters', '')}".strip()
+
+
+def search_index(latest: dict | None = None):
     """Return all searchable content (facts) for the search page."""
     items = []
     for f in FACTS:
@@ -504,7 +529,7 @@ def search_index():
             "id": f["id"],
             "category": f["category"],
             "title": f["kpi_id"].replace("_", " ").title(),
-            "text": f["fact"],
+            "text": fact_text(f, latest),
             "source": f["source"],
         })
     return items

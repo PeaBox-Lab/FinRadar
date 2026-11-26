@@ -1,4 +1,4 @@
-"""FinRadar — Enrichment batch
+"""Radar — Enrichment batch
 ================================
 
 Publishes an expanded, sourced data layer on top of the core KPI pipeline:
@@ -45,7 +45,7 @@ CACHE_FILE = SNAP_DIR / "enrichment_cache.json"
 
 WB_BASE = "https://api.worldbank.org/v2"
 START_YEAR = 2000
-USER_AGENT = "FinRadar enrichment batch/1.0"
+USER_AGENT = "Radar enrichment batch/1.0"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 

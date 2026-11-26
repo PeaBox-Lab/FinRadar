@@ -1,5 +1,5 @@
 """
-FinRadar — Analytics Engine
+Radar — Analytics Engine
 ===========================
 Turns raw data points into *meaningful* insights: verdicts (strong /
 moderate / weak / on target), trend notes and plain-English explanations.

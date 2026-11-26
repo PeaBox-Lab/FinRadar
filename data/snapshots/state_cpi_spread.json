@@ -1,17 +1,16 @@
 {
-  "source": "MoSPI e-Sankhyiki state-level CPI (illustrative fallback; live state CPIs will replace this when available).",
-  "last_fetched": "2026-11",
-  "current_month": "2026-11",
-  "national_cpi_pct": 2.79,
-  "latest_spread_pct": 8.7,
-  "top_state": "Rajasthan",
-  "top_states": [
-    { "name": "Rajasthan", "cpi_pct": 8.7 },
-    { "name": "Madhya Pradesh", "cpi_pct": 7.2 },
-    { "name": "Chhattisgarh", "cpi_pct": 7.0 },
-    { "name": "Gujarat", "cpi_pct": 5.1 },
-    { "name": "Goa", "cpi_pct": 3.9 },
-    { "name": "Karnataka", "cpi_pct": 3.6 }
-  ],
-  "notes": "top_spread = highest state CPIs minus national average; illustrative values."
+  "source": "MoSPI e-Sankhyiki CPI metadata; state-level CPI series was not retrievable as authentic published monthly data for this build.",
+  "source_url": "https://esankhyiki.mospi.gov.in/macroindicators?product=cpi&tab=metadata",
+  "last_fetched": "2026-11-26",
+  "current_month": null,
+  "national_cpi_pct": null,
+  "latest_spread_pct": null,
+  "top_state": null,
+  "top_states": [],
+  "notes": "No authentic published state-by-state CPI table with matching periods was retrieved. The state-inflation-spread benchmark is therefore disabled; no illustrative state values are substituted. National CPI remains available from the live World Bank series and from the NSO monthly release.",
+  "unavailable": {
+    "national_cpi_pct": "No single matching official state-CPI release was retrieved for this build.",
+    "latest_spread_pct": "Requires authentic state CPI values with a common month and base.",
+    "top_states": "No authentic state CPI observations were retrievable."
+  }
 }

@@ -1,5 +1,5 @@
 """
-FinRadar — data.gov.in API Client
+Radar — data.gov.in API Client
 =================================
 
 Wrapper around the data.gov.in REST API (`https://api.data.gov.in/resource/<id>`).
@@ -8,8 +8,8 @@ Authentication
 --------------
 Use the `DATA_GOV_IN_TOKEN` environment variable (your personal API key from
 My Account on data.gov.in). If absent, the client falls back to the sample key
-provided by the portal, which returns at most 10 records — good enough for
-schema discovery and demos, not for production numbers.
+provided by the portal, which returns at most 10 records — sufficient for
+schema checks only, never for published figures.
 
 API shape (verified against api.data.gov.in):
 
@@ -91,7 +91,7 @@ def fetch_resource(
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": "FinRadar/1.0 data.gov.in client",
+                "User-Agent": "Radar/1.0 data.gov.in client",
                 "Accept": "application/json",
             },
         )

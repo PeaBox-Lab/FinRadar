@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FinRadar — Charts
+   Radar — Charts
    Lightweight SVG sparklines and a canvas trend chart. No dependencies.
    ========================================================================== */
 

@@ -1,7 +1,11 @@
 {
-  "source": "RBI Database on Indian Economy — 10Y G-Sec Yield (illustrative fallback; live values replace this when fetched from data.gov.in or RBI).",
-  "last_fetched": "2026-11-22",
-  "latest_10y_yield_pct": 7.85,
-  "prior_month_10y_yield_pct": 7.91,
-  "history": [["2026-10", 7.91], ["2026-09", 8.01], ["2026-08", 8.10]]
+  "source": "RBI Weekly Statistical Supplement — Ratios and Rates, 10-year G-Sec par yield (FBIL), week ended 2026-11-06, published 2026-11-13.",
+  "source_url": "https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28837",
+  "last_fetched": "2026-11-26",
+  "latest_10y_yield_pct": 7.21,
+  "prior_month_10y_yield_pct": null,
+  "history": [
+    ["2026-11-06", 7.21]
+  ],
+  "notes": "The 10-year G-Sec par yield was 7.21% per annum for the week ended 2026-11-06 (FBIL reference rate republished by RBI). A separate RBI Bulletin quote of 7.39% as on 2026-10-19 refers to the benchmark 10-year security text, not the same par-yield series, so it is not mixed into this series. No prior-month value on the identical series is available here."
 }

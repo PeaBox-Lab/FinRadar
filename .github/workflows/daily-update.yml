@@ -1,6 +1,6 @@
 name: Daily KPI Update
 
-# Runs the FinRadar data pipeline daily: fetches public data, computes KPIs
+# Runs the Radar data pipeline daily: fetches public data, computes KPIs
 # and benchmarks, regenerates the static site under `site/`, commits to main,
 # and deploys `site/` to the `gh-pages` branch for GitHub Pages.
 

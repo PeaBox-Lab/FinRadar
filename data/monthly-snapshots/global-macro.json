@@ -1,0 +1,881 @@
+{
+  "dataset_id": "global-macro",
+  "title": "Global GDP, GDP per capita and inflation (World Bank WDI)",
+  "category": "Global macro",
+  "page": "global.html#global-macro",
+  "last_updated": "2026-11-26",
+  "coverage": "Annual 2020-2025 for India, United States, China, Germany, United Kingdom, Japan and World",
+  "source": {
+    "organization": "World Bank",
+    "title": "World Development Indicators - NY.GDP.MKTP.CD, NY.GDP.PCAP.CD and FP.CPI.TOTL.ZG",
+    "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Figures are transcribed directly from the World Bank API for each country and year. Null API observations are omitted rather than filled. These annual series are a static companion to the live global feeds; they are not monthly observations.",
+  "metrics": [
+    {
+      "id": "gdp_current_usd_ind",
+      "name": "India - GDP (current US$)",
+      "unit": "USD",
+      "category": "India",
+      "definition": "World Bank NY.GDP.MKTP.CD for India. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2674851578587.27
+        },
+        {
+          "period": "2021",
+          "value": 3167270623260.47
+        },
+        {
+          "period": "2022",
+          "value": 3249938492013.47
+        },
+        {
+          "period": "2023",
+          "value": 3500906030644.76
+        },
+        {
+          "period": "2024",
+          "value": 3760813470500.86
+        },
+        {
+          "period": "2025",
+          "value": 3956067115771.63
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3956067115771.63,
+      "yoy_change_pct": 5.191792860834611
+    },
+    {
+      "id": "gdp_current_usd_usa",
+      "name": "United States - GDP (current US$)",
+      "unit": "USD",
+      "category": "United States",
+      "definition": "World Bank NY.GDP.MKTP.CD for United States. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 21375281000000
+        },
+        {
+          "period": "2021",
+          "value": 23725645000000
+        },
+        {
+          "period": "2022",
+          "value": 26054614000000
+        },
+        {
+          "period": "2023",
+          "value": 27811517000000
+        },
+        {
+          "period": "2024",
+          "value": 29298013000000
+        },
+        {
+          "period": "2025",
+          "value": 30769700000000
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 30769700000000,
+      "yoy_change_pct": 5.023163174922477
+    },
+    {
+      "id": "gdp_current_usd_chn",
+      "name": "China - GDP (current US$)",
+      "unit": "USD",
+      "category": "China",
+      "definition": "World Bank NY.GDP.MKTP.CD for China. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 14996414166715.1
+        },
+        {
+          "period": "2021",
+          "value": 18201698719564
+        },
+        {
+          "period": "2022",
+          "value": 18316765021690.2
+        },
+        {
+          "period": "2023",
+          "value": 18270356654533.2
+        },
+        {
+          "period": "2024",
+          "value": 18729668435848
+        },
+        {
+          "period": "2025",
+          "value": 19498039388042.6
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 19498039388042.6,
+      "yoy_change_pct": 4.102426878651859
+    },
+    {
+      "id": "gdp_current_usd_deu",
+      "name": "Germany - GDP (current US$)",
+      "unit": "USD",
+      "category": "Germany",
+      "definition": "World Bank NY.GDP.MKTP.CD for Germany. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 3941398957073.94
+        },
+        {
+          "period": "2021",
+          "value": 4355251953410.78
+        },
+        {
+          "period": "2022",
+          "value": 4201021706478.62
+        },
+        {
+          "period": "2023",
+          "value": 4562207532490.28
+        },
+        {
+          "period": "2024",
+          "value": 4685592577804.69
+        },
+        {
+          "period": "2025",
+          "value": 5050922925047.05
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 5050922925047.05,
+      "yoy_change_pct": 7.796886758206475
+    },
+    {
+      "id": "gdp_current_usd_gbr",
+      "name": "United Kingdom - GDP (current US$)",
+      "unit": "USD",
+      "category": "United Kingdom",
+      "definition": "World Bank NY.GDP.MKTP.CD for United Kingdom. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2724001478304.59
+        },
+        {
+          "period": "2021",
+          "value": 3194559188925.93
+        },
+        {
+          "period": "2022",
+          "value": 3181244350465.41
+        },
+        {
+          "period": "2023",
+          "value": 3420796653789.08
+        },
+        {
+          "period": "2024",
+          "value": 3695539513534.15
+        },
+        {
+          "period": "2025",
+          "value": 4002587541846.01
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 4002587541846.01,
+      "yoy_change_pct": 8.308611697625203
+    },
+    {
+      "id": "gdp_current_usd_jpn",
+      "name": "Japan - GDP (current US$)",
+      "unit": "USD",
+      "category": "Japan",
+      "definition": "World Bank NY.GDP.MKTP.CD for Japan. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 5189197543645.38
+        },
+        {
+          "period": "2021",
+          "value": 5225933520753.1
+        },
+        {
+          "period": "2022",
+          "value": 4447976207314.78
+        },
+        {
+          "period": "2023",
+          "value": 4384854269961.93
+        },
+        {
+          "period": "2024",
+          "value": 4190008188358.57
+        },
+        {
+          "period": "2025",
+          "value": 4435162999976.94
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 4435162999976.94,
+      "yoy_change_pct": 5.850938723688024
+    },
+    {
+      "id": "gdp_current_usd_wld",
+      "name": "World - GDP (current US$)",
+      "unit": "USD",
+      "category": "World",
+      "definition": "World Bank NY.GDP.MKTP.CD for World. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.MKTP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 86388502867289.2
+        },
+        {
+          "period": "2021",
+          "value": 98780038374127.1
+        },
+        {
+          "period": "2022",
+          "value": 102862471365575
+        },
+        {
+          "period": "2023",
+          "value": 107348614073350
+        },
+        {
+          "period": "2024",
+          "value": 111669432109121
+        },
+        {
+          "period": "2025",
+          "value": 118350166039396
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 118350166039396,
+      "yoy_change_pct": 5.982598643240818
+    },
+    {
+      "id": "gdp_per_capita_current_usd_ind",
+      "name": "India - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "India",
+      "definition": "World Bank NY.GDP.PCAP.CD for India. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1907.04251637669
+        },
+        {
+          "period": "2021",
+          "value": 2239.61384367482
+        },
+        {
+          "period": "2022",
+          "value": 2279.98145719369
+        },
+        {
+          "period": "2023",
+          "value": 2434.44826340989
+        },
+        {
+          "period": "2024",
+          "value": 2591.9916607122
+        },
+        {
+          "period": "2025",
+          "value": 2702.47987141553
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2702.47987141553,
+      "yoy_change_pct": 4.262676164358152
+    },
+    {
+      "id": "gdp_per_capita_current_usd_usa",
+      "name": "United States - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "United States",
+      "definition": "World Bank NY.GDP.PCAP.CD for United States. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 64465.2971415748
+        },
+        {
+          "period": "2021",
+          "value": 71441.2319805947
+        },
+        {
+          "period": "2022",
+          "value": 78008.6895811877
+        },
+        {
+          "period": "2023",
+          "value": 82586.7847707894
+        },
+        {
+          "period": "2024",
+          "value": 86169.6641581917
+        },
+        {
+          "period": "2025",
+          "value": 90026.5163005744
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 90026.5163005744,
+      "yoy_change_pct": 4.475881599471267
+    },
+    {
+      "id": "gdp_per_capita_current_usd_chn",
+      "name": "China - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "China",
+      "definition": "World Bank NY.GDP.PCAP.CD for China. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 10627.4637989619
+        },
+        {
+          "period": "2021",
+          "value": 12887.4357242941
+        },
+        {
+          "period": "2022",
+          "value": 12970.6056414327
+        },
+        {
+          "period": "2023",
+          "value": 12951.1782397043
+        },
+        {
+          "period": "2024",
+          "value": 13293.1162269366
+        },
+        {
+          "period": "2025",
+          "value": 13861.970224368
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 13861.970224368,
+      "yoy_change_pct": 4.279312598491387
+    },
+    {
+      "id": "gdp_per_capita_current_usd_deu",
+      "name": "Germany - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "Germany",
+      "definition": "World Bank NY.GDP.PCAP.CD for Germany. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 47394.8734504469
+        },
+        {
+          "period": "2021",
+          "value": 52349.2459994422
+        },
+        {
+          "period": "2022",
+          "value": 50506.5179638543
+        },
+        {
+          "period": "2023",
+          "value": 54776.7668235491
+        },
+        {
+          "period": "2024",
+          "value": 56103.7323182554
+        },
+        {
+          "period": "2025",
+          "value": 60496.4350820414
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 60496.4350820414,
+      "yoy_change_pct": 7.829608801902592
+    },
+    {
+      "id": "gdp_per_capita_current_usd_gbr",
+      "name": "United Kingdom - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "United Kingdom",
+      "definition": "World Bank NY.GDP.PCAP.CD for United Kingdom. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 40815.1255364787
+        },
+        {
+          "period": "2021",
+          "value": 47695.6491523474
+        },
+        {
+          "period": "2022",
+          "value": 47034.7795621476
+        },
+        {
+          "period": "2023",
+          "value": 49919.6896621586
+        },
+        {
+          "period": "2024",
+          "value": 53341.3131094262
+        },
+        {
+          "period": "2025",
+          "value": 57601.9621201954
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 57601.9621201954,
+      "yoy_change_pct": 7.9875217957772415
+    },
+    {
+      "id": "gdp_per_capita_current_usd_jpn",
+      "name": "Japan - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "Japan",
+      "definition": "World Bank NY.GDP.PCAP.CD for Japan. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 41098.9739004553
+        },
+        {
+          "period": "2021",
+          "value": 41580.739040705
+        },
+        {
+          "period": "2022",
+          "value": 35548.2645222433
+        },
+        {
+          "period": "2023",
+          "value": 35215.003535366
+        },
+        {
+          "period": "2024",
+          "value": 33797.1014287876
+        },
+        {
+          "period": "2025",
+          "value": 35951.0449549304
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 35951.0449549304,
+      "yoy_change_pct": 6.373160522896559
+    },
+    {
+      "id": "gdp_per_capita_current_usd_wld",
+      "name": "World - GDP per capita (current US$)",
+      "unit": "USD",
+      "category": "World",
+      "definition": "World Bank NY.GDP.PCAP.CD for World. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - GDP per capita (current US$)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/NY.GDP.PCAP.CD?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 10999.4917581781
+        },
+        {
+          "period": "2021",
+          "value": 12472.9074157191
+        },
+        {
+          "period": "2022",
+          "value": 12876.2377124072
+        },
+        {
+          "period": "2023",
+          "value": 13313.8575826001
+        },
+        {
+          "period": "2024",
+          "value": 13717.0909956338
+        },
+        {
+          "period": "2025",
+          "value": 14405.8484595528
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 14405.8484595528,
+      "yoy_change_pct": 5.0211627533726695
+    },
+    {
+      "id": "cpi_inflation_pct_ind",
+      "name": "India - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "India",
+      "definition": "World Bank FP.CPI.TOTL.ZG for India. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 6.62343677628529
+        },
+        {
+          "period": "2021",
+          "value": 5.13140747176363
+        },
+        {
+          "period": "2022",
+          "value": 6.69903414079857
+        },
+        {
+          "period": "2023",
+          "value": 5.64914318907925
+        },
+        {
+          "period": "2024",
+          "value": 4.9530355097366
+        },
+        {
+          "period": "2025",
+          "value": 2.39884954182294
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2.39884954182294,
+      "yoy_change_pct": -51.56809320047637
+    },
+    {
+      "id": "cpi_inflation_pct_usa",
+      "name": "United States - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "United States",
+      "definition": "World Bank FP.CPI.TOTL.ZG for United States. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1.23358439630629
+        },
+        {
+          "period": "2021",
+          "value": 4.69785886363742
+        },
+        {
+          "period": "2022",
+          "value": 8.00279982052121
+        },
+        {
+          "period": "2023",
+          "value": 4.11633838374487
+        },
+        {
+          "period": "2024",
+          "value": 2.94952520485207
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 2.94952520485207,
+      "yoy_change_pct": -28.345900412377738
+    },
+    {
+      "id": "cpi_inflation_pct_chn",
+      "name": "China - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "China",
+      "definition": "World Bank FP.CPI.TOTL.ZG for China. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 2.41942189457782
+        },
+        {
+          "period": "2021",
+          "value": 0.981015135544881
+        },
+        {
+          "period": "2022",
+          "value": 1.9735755573905
+        },
+        {
+          "period": "2023",
+          "value": 0.23483682889305
+        },
+        {
+          "period": "2024",
+          "value": 0.218128938439177
+        },
+        {
+          "period": "2025",
+          "value": 0.0595646916565402
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 0.0595646916565402,
+      "yoy_change_pct": -72.69289802501414
+    },
+    {
+      "id": "cpi_inflation_pct_deu",
+      "name": "Germany - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "Germany",
+      "definition": "World Bank FP.CPI.TOTL.ZG for Germany. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 0.144877925813981
+        },
+        {
+          "period": "2021",
+          "value": 3.06666666666673
+        },
+        {
+          "period": "2022",
+          "value": 6.87257438551096
+        },
+        {
+          "period": "2023",
+          "value": 5.94643667725823
+        },
+        {
+          "period": "2024",
+          "value": 2.2564981433876
+        },
+        {
+          "period": "2025",
+          "value": 2.17178770949721
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 2.17178770949721,
+      "yoy_change_pct": -3.754066190509573
+    },
+    {
+      "id": "cpi_inflation_pct_gbr",
+      "name": "United Kingdom - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "United Kingdom",
+      "definition": "World Bank FP.CPI.TOTL.ZG for United Kingdom. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 0.989486703772491
+        },
+        {
+          "period": "2021",
+          "value": 2.51837109614213
+        },
+        {
+          "period": "2022",
+          "value": 7.92204883147902
+        },
+        {
+          "period": "2023",
+          "value": 6.79396706793962
+        },
+        {
+          "period": "2024",
+          "value": 3.2715729463592
+        },
+        {
+          "period": "2025",
+          "value": 3.88306881625999
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3.88306881625999,
+      "yoy_change_pct": 18.691188609482147
+    },
+    {
+      "id": "cpi_inflation_pct_jpn",
+      "name": "Japan - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "Japan",
+      "definition": "World Bank FP.CPI.TOTL.ZG for Japan. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": -0.024995834027731
+        },
+        {
+          "period": "2021",
+          "value": -0.233352779398263
+        },
+        {
+          "period": "2022",
+          "value": 2.49770278172254
+        },
+        {
+          "period": "2023",
+          "value": 3.26813365933163
+        },
+        {
+          "period": "2024",
+          "value": 2.7385368163524
+        },
+        {
+          "period": "2025",
+          "value": 3.17253034260247
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3.17253034260247,
+      "yoy_change_pct": 15.847642568053125
+    },
+    {
+      "id": "cpi_inflation_pct_wld",
+      "name": "World - Inflation, consumer prices (annual %)",
+      "unit": "%",
+      "category": "World",
+      "definition": "World Bank FP.CPI.TOTL.ZG for World. Annual published observations, 2020-2025; API lastupdated 2026-11-11.",
+      "source": {
+        "organization": "World Bank",
+        "title": "World Development Indicators - Inflation, consumer prices (annual %)",
+        "url": "https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;GBR;JPN;WLD/indicator/FP.CPI.TOTL.ZG?format=json&date=2020:2025&per_page=200"
+      },
+      "values": [
+        {
+          "period": "2020",
+          "value": 1.91983527270792
+        },
+        {
+          "period": "2021",
+          "value": 3.4676759410803
+        },
+        {
+          "period": "2022",
+          "value": 8.00279982052121
+        },
+        {
+          "period": "2023",
+          "value": 5.73316283034957
+        },
+        {
+          "period": "2024",
+          "value": 3.01447576977999
+        },
+        {
+          "period": "2025",
+          "value": 3.04141321556539
+        }
+      ],
+      "latest_period": "2025",
+      "latest_value": 3.04141321556539,
+      "yoy_change_pct": 0.8936029957661903
+    }
+  ],
+  "notes": [
+    "GDP and GDP per capita are in current US dollars; they move with both real output and exchange rates. Use constant-price or PPP series for volume comparisons.",
+    "World Bank WDI annual data are revised; the source URL on each metric identifies the exact API query used for this snapshot. API metadata reported lastupdated 2026-11-11.",
+    "US CPI inflation for 2025 is null in the World Bank API and is omitted; no substitute value is used."
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

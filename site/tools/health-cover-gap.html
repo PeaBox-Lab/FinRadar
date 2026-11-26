@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health Cover Gap — FinRadar</title>
-  <meta name="description" content="Check whether your family's health insurance is adequate for the city you live in." />
+  <title>Health Cover Gap — Radar</title>
+  <meta name="description" content="Check whether your family&#x27;s health insurance is adequate for the city you live in." />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Health Cover Gap — Radar" />
+  <meta property="og:description" content="Check whether your family&#x27;s health insurance is adequate for the city you live in." />
+  <meta property="og:url" content="https://radar.peabox.in/tools/health-cover-gap.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Health Cover Gap — Radar" />
+  <meta name="twitter:description" content="Check whether your family&#x27;s health insurance is adequate for the city you live in." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/european-theme.css" />
-  <link rel="canonical" href="https://finradar.example/tools/health-cover-gap.html" />
+  <link rel="canonical" href="https://radar.peabox.in/tools/health-cover-gap.html" />
 </head>
 <body data-base="../">
   <a class="skip-link" href="#site-main">Skip to content</a>
   <header class="site-header">
     <div class="nav-inner container">
-      <a class="brand" href="../index.html" aria-label="FinRadar home">
+      <a class="brand" href="../index.html" aria-label="Radar home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-        <span class="brand-name">FinRadar</span>
+        <span class="brand-name">Radar</span>
       </a>
       <span class="nav-status"><span class="status-dot"></span>Live data</span>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -27,16 +35,27 @@
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <div class="nav-primary">
-          <a href="../index.html" class="nav-link">Dashboard</a>
+          <a href="../index.html" class="nav-link">Overview</a>
+          <a href="../india.html" class="nav-link">India</a>
+          <a href="../global.html" class="nav-link">Global</a>
+          <a href="../markets.html" class="nav-link">Markets</a>
+          <a href="../insurance.html" class="nav-link">Insurance</a>
+          <a href="../mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="../data-lab.html" class="nav-link">Data Lab</a>
           <a href="../tools.html" class="nav-link">Tools</a>
           <a href="../search.html" class="nav-link">Search</a>
-          <a href="../categories.html" class="nav-link">Categories</a>
-          <a href="../sources.html" class="nav-link">Sources</a>
-          <a href="../data-lab.html" class="nav-link">Data Lab</a>
         </div>
         <div class="nav-drop">
           <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="../india.html" role="menuitem">📊 India macro</a>
+            <a href="../global.html" role="menuitem">🌐 Global macro</a>
+            <a href="../markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="../insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="../mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="../monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
             <div class="nav-drop-heading">Macro &amp; National Accounts</div>
 
 
@@ -136,7 +155,7 @@
     <section class="calc-hero">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">Dashboard</a><span>/</span>
-        <a href="tools.html">Tools</a><span>/</span>
+        <a href="../tools.html">Tools</a><span>/</span>
         <span>Insurance</span>
       </nav>
       <span class="eyebrow dark">Insurance</span>
@@ -197,13 +216,13 @@
       <div class="footer-brand-col">
 
 
-        <a class="brand" href="../index.html" aria-label="FinRadar home">
+        <a class="brand" href="../index.html" aria-label="Radar home">
           <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-          <span class="brand-name">FinRadar</span>
+          <span class="brand-name">Radar</span>
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 11:12 UTC</span></p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:15 UTC</span></p>
 
 
       </div>
@@ -215,7 +234,25 @@
         <h4 class="footer-heading">Explore</h4>
 
 
-        <a href="../index.html">Dashboard</a>
+        <a href="../index.html">Overview</a>
+
+
+        <a href="../india.html">India dashboard</a>
+
+
+        <a href="../global.html">Global macro</a>
+
+
+        <a href="../markets.html">Global markets</a>
+
+
+        <a href="../insurance.html">Insurance</a>
+
+
+        <a href="../mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="../monthly-snapshots.html">Monthly snapshots</a>
 
 
         <a href="../search.html">Search</a>
@@ -281,13 +318,13 @@
     <div class="container footer-bottom">
 
 
-      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <p>© 2026 Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
 
 
       <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
 
 
-      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
 
 
     </div>

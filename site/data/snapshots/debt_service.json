@@ -1,6 +1,16 @@
 {
-  "source": "RBI DBIE debt service composition — share of revenue paid in interest (illustrative fallback; live values replace this when available).",
-  "last_fetched": "2026-11",
-  "share_of_revenue_pct": 11.3,
-  "debt_to_gdp_pct": 52.2
+  "source": "RBI Bulletin — Union Budget 2026-27: An Assessment, interest payments to revenue receipts ratio, published 2026-02-20; underlying figures from Budget at a Glance 2026-27.",
+  "source_url": "https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx?Id=23979",
+  "last_fetched": "2026-11-26",
+  "share_of_revenue_pct": 39.7,
+  "debt_to_gdp_pct": null,
+  "published_values": {
+    "period": "Budget Estimates 2026-27",
+    "interest_payments_inr_crore": 1403972,
+    "revenue_receipts_inr_crore": 3533150,
+    "prior_period": "Revised Estimates 2025-26",
+    "prior_ratio_pct": 38.1,
+    "budget_source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/bag1.pdf"
+  },
+  "notes": "39.7% of Union Government revenue receipts are budgeted for interest payments in 2026-27, up from 38.1% in the 2025-26 revised estimates. These are budget/revised estimates, not final actuals. This is a fiscal interest-burden ratio, not RBI's external debt-service ratio. No official latest-actual interest/revenue ratio was available, so no value is substituted."
 }

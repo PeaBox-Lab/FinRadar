@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobility & housing dashboard — Radar</title>
+  <meta name="description" content="Indian auto sales, housing sales and bank home-loan trends from SIAM, JLL and RBI publications." />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mobility &amp; housing dashboard — Radar" />
+  <meta property="og:description" content="Indian auto sales, housing sales and bank home-loan trends from SIAM, JLL and RBI publications." />
+  <meta property="og:url" content="https://radar.peabox.in/mobility-housing.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mobility &amp; housing dashboard — Radar" />
+  <meta name="twitter:description" content="Indian auto sales, housing sales and bank home-loan trends from SIAM, JLL and RBI publications." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://radar.peabox.in/mobility-housing.html" />
+</head>
+<body data-base="">
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Radar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+        <span class="brand-name">Radar</span>
+      </a>
+      <span class="nav-status"><span class="status-dot"></span>Live data</span>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="india.html" class="nav-link">India</a>
+          <a href="global.html" class="nav-link">Global</a>
+          <a href="markets.html" class="nav-link">Markets</a>
+          <a href="insurance.html" class="nav-link">Insurance</a>
+          <a href="mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="data-lab.html" class="nav-link">Data Lab</a>
+          <a href="tools.html" class="nav-link">Tools</a>
+          <a href="search.html" class="nav-link">Search</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="india.html" role="menuitem">📊 India macro</a>
+            <a href="global.html" role="menuitem">🌐 Global macro</a>
+            <a href="markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+
+
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+
+
+            <div class="nav-drop-heading">Sector Categories</div>
+
+
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+
+
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+
+
+            <div class="nav-drop-heading">Social Services</div>
+
+
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+
+
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+
+
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
+            <div class="nav-drop-heading">More</div>
+
+
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+
+    </div>
+
+
+  </header>
+
+
+  <main id="site-main" class="site-main container"><section class="category-index-hero">
+      <span class="eyebrow dark">Real economy</span>
+      <h1>Mobility &amp; housing dashboard</h1>
+      <p class="hero-sub">Indian auto sales, housing sales and bank home-loan trends from SIAM, JLL and RBI publications.</p>
+      <p class="muted">Official and industry-body figures are published as dated monthly snapshots with their original source links.</p>
+      <div class="hero-actions"><a href="search.html" class="btn btn-ghost">Search all data</a><a href="monthly-snapshots.html" class="btn btn-ghost">Snapshot catalogue</a></div>
+    </section><div class="section-head"><div><span class="eyebrow dark">Dashboard</span><h2>Key indicators</h2></div><p class="section-intro">Live API values and clearly disclosed non-live published figures.</p></div><div class="grid snapshot-grid"><article class="card live-kpi-card">
+      <div class="live-kpi-top"><span class="eyebrow dark">Housing</span><span class="snapshot-badge unavailable">Official series unavailable — no value published</span></div>
+      <h3>Housing Affordability Ratio (price-to-income)</h3>
+      <div class="snapshot-value">— <small>ratio</small></div>
+      <div class="snapshot-period">Latest change — · <span class="badge weak">no data available yet</span></div>
+      <p class="small muted">Measures how many years of median income are needed to buy a median home. Above 5× means housing is severely unaffordable for median earners.</p>
+      <a class="btn small" href="kpi/housing_affordability_ratio.html">Read the KPI</a>
+    </article><article class="card live-kpi-card">
+      <div class="live-kpi-top"><span class="eyebrow dark">Transport</span><span class="snapshot-badge unavailable">Official series unavailable — no value published</span></div>
+      <h3>Vehicle Density (per 1,000 people)</h3>
+      <div class="snapshot-value">— <small>veh/1000</small></div>
+      <div class="snapshot-period">Latest change — · <span class="badge weak">no data available yet</span></div>
+      <p class="small muted">Vehicle ownership intensity. Rising density signals mobility and prosperity, but at very high levels cities face severe congestion and pollution — the point where public transport investment becomes urgent.</p>
+      <a class="btn small" href="kpi/vehicle_density.html">Read the KPI</a>
+    </article><article class="card live-kpi-card">
+      <div class="live-kpi-top"><span class="eyebrow dark">Housing</span><span class="snapshot-badge unavailable">Official series unavailable — no value published</span></div>
+      <h3>Urban Housing Shortage</h3>
+      <div class="snapshot-value">— <small>%</small></div>
+      <div class="snapshot-period">Latest change — · <span class="badge weak">no data available yet</span></div>
+      <p class="small muted">India&#x27;s rapid urbanisation has outpaced housing supply. A shortage above 15% means significant affordability pressure and slum growth risk.</p>
+      <a class="btn small" href="kpi/urban_household_deficit_pct.html">Read the KPI</a>
+    </article></div><section id="india-auto-sales" class="snapshot-section">
+          <div class="section-head"><div><span class="eyebrow dark">Static snapshot</span><h2>India domestic vehicle sales (SIAM)</h2></div><p class="section-intro">Figures are transcribed exactly from SIAM's published domestic-sales table. Each fiscal year is labelled with SIAM's own period. No estimated, interpolated or derived sales figures are included.</p></div>
+          <div class="grid snapshot-grid"><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Auto</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Passenger vehicles sold</h3>
+      <div class="snapshot-value">4.2 mn vehicles</div>
+      <div class="snapshot-period">Latest: FY2023-24 <span class="metric-change up">+8.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2773519, 2711457, 3069523, 3890114, 4218746]'></div>
+      <p class="small muted">Domestic passenger vehicle sales reported by SIAM member manufacturers for the fiscal year.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.siam.in/uploads/filemanager/ac24fbakLbl/Overview-on-Indian-Automobile-Industry-Performance.pdf" target="_blank" rel="noopener">Society of Indian Automobile Manufacturers (SIAM)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Auto</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Commercial vehicles sold</h3>
+      <div class="snapshot-value">967,878 vehicles</div>
+      <div class="snapshot-period">Latest: FY2023-24 <span class="metric-change up">+0.6% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[717593, 568559, 716566, 962468, 967878]'></div>
+      <p class="small muted">Domestic commercial vehicle sales reported by SIAM member manufacturers for the fiscal year.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.siam.in/uploads/filemanager/ac24fbakLbl/Overview-on-Indian-Automobile-Industry-Performance.pdf" target="_blank" rel="noopener">Society of Indian Automobile Manufacturers (SIAM)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Auto</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Two-wheelers sold</h3>
+      <div class="snapshot-value">18.0 mn vehicles</div>
+      <div class="snapshot-period">Latest: FY2023-24 <span class="metric-change up">+13.3% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[17416432, 15120783, 13570008, 15862771, 17974365]'></div>
+      <p class="small muted">Domestic two-wheeler sales reported by SIAM member manufacturers for the fiscal year.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.siam.in/uploads/filemanager/ac24fbakLbl/Overview-on-Indian-Automobile-Industry-Performance.pdf" target="_blank" rel="noopener">Society of Indian Automobile Manufacturers (SIAM)</a></span></div>
+    </article></div>
+          <div class="snapshot-table-wrap">
+      <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      <table class="data-table snapshot-table">
+        <thead><tr><th>Metric</th><th>FY2019-20</th><th>FY2020-21</th><th>FY2021-22</th><th>FY2022-23</th><th>FY2023-24</th></tr></thead>
+        <tbody><tr><th scope="row">Passenger vehicles sold <span class="muted">(vehicles)</span></th><td class="num">2.8 mn</td><td class="num">2.7 mn</td><td class="num">3.1 mn</td><td class="num">3.9 mn</td><td class="num">4.2 mn</td></tr><tr><th scope="row">Commercial vehicles sold <span class="muted">(vehicles)</span></th><td class="num">717,593</td><td class="num">568,559</td><td class="num">716,566</td><td class="num">962,468</td><td class="num">967,878</td></tr><tr><th scope="row">Two-wheelers sold <span class="muted">(vehicles)</span></th><td class="num">17.4 mn</td><td class="num">15.1 mn</td><td class="num">13.6 mn</td><td class="num">15.9 mn</td><td class="num">18.0 mn</td></tr></tbody>
+      </table>
+      <p class="small muted">Source: <a href="https://www.siam.in/uploads/filemanager/ac24fbakLbl/Overview-on-Indian-Automobile-Industry-Performance.pdf" target="_blank" rel="noopener">Society of Indian Automobile Manufacturers (SIAM)</a> · Overview of Indian Automobile Industry — domestic sales table</p>
+    </div>
+          <p class="small muted">Source evidence: SIAM table — Passenger Vehicles 27,73,519 / 27,11,457 / 30,69,523 / 38,90,114 / 42,18,746; Commercial Vehicles 7,17,593 / 5,68,559 / 7,16,566 / 9,62,468 / 9,67,878; Two Wheelers 1,74,16,432 / 1,51,20,783 / 1,35,70,008 / 1,58,62,771 / 1,79,74,365. · SIAM&#x27;s industry trends page is the monthly/annual update companion: https://www.siam.in/knowledge/industry-data/industry-trends · FY2024-25 is published separately in SIAM&#x27;s Annual Report 2024-25 as 43,01,848 passenger vehicles; it is excluded here to keep one source per continuous series.</p>
+          <p class="small"><a href="monthly-snapshots.html#india-auto-sales">Open the full India domestic vehicle sales (SIAM) catalogue entry →</a></p>
+        </section><section id="india-housing-sales" class="snapshot-section">
+          <div class="section-head"><div><span class="eyebrow dark">Static snapshot</span><h2>India top-7-cities residential sales (JLL REIS)</h2></div><p class="section-intro">Annual residential unit sales across India's top seven cities, transcribed from JLL's published report. JLL counts apartments only and excludes row houses, villas and plotted developments.</p></div>
+          <div class="grid snapshot-grid"><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Housing</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Residential units sold, top 7 cities</h3>
+      <div class="snapshot-value">302,867 units</div>
+      <div class="snapshot-period">Latest: 2024 <span class="metric-change up">+11.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[215000, 271818, 302867]'></div>
+      <p class="small muted">JLL REIS apartment sales across NCR, MMR, Bengaluru, Pune, Hyderabad, Chennai and Kolkata.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.jll.com/en-in/newsroom/indias-luxury-homes-dominate-2024-sales-crossing-50-percent-mark" target="_blank" rel="noopener">JLL (Real Estate Intelligence Service)</a></span></div>
+    </article></div>
+          <div class="snapshot-table-wrap">
+      <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      <table class="data-table snapshot-table">
+        <thead><tr><th>Metric</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+        <tbody><tr><th scope="row">Residential units sold, top 7 cities <span class="muted">(units)</span></th><td class="num">215,000</td><td class="num">271,818</td><td class="num">302,867</td></tr></tbody>
+      </table>
+      <p class="small muted">Source: <a href="https://www.jll.com/en-in/newsroom/indias-luxury-homes-dominate-2024-sales-crossing-50-percent-mark" target="_blank" rel="noopener">JLL (Real Estate Intelligence Service)</a> · India&#x27;s luxury homes dominate 2024 sales, crossing 50% mark</p>
+    </div>
+          <p class="small muted">JLL evidence: &#x27;Residential sales during 2024 witnessed sustained growth reaching a record-high volume of 302,867-unit sales, which was around 11% growth Y-o-Y.&#x27; Its table reports 2024 = 302,867 and 2023 = 271,818. · The 2022 figure is JLL&#x27;s published &#x27;215,000 units&#x27; Q4-2022 top-seven-cities estimate, as reported by Times Now: https://www.timesnownews.com/business-economy/real-estate/residential-house-sales-in-top-7-cities-touch-decade-high-of-215000-units-despite-high-rates-jll-article-96788676 · ANAROCK publishes a broader top-7-cities series (2021: 236,500; 2022: 364,900; 2023: 476,000; 2024: approximately 459,000; 2025: approximately 395,600). It is not mixed with the JLL series because its coverage definition differs. Source: https://websitemedia.anarock.com/media/Milestone_Year_for_Indian_Residential_Real_Estate_2022_ANAROCK_ANNUAL_REPORT_417a9fb439.pdf</p>
+          <p class="small"><a href="monthly-snapshots.html#india-housing-sales">Open the full India top-7-cities residential sales (JLL REIS) catalogue entry →</a></p>
+        </section><section id="india-home-loans" class="snapshot-section">
+          <div class="section-head"><div><span class="eyebrow dark">Static snapshot</span><h2>RBI bank housing credit outstanding</h2></div><p class="section-intro">Figures are the published March outstanding amounts for bank credit to housing. Values since July 2023 include the impact of a non-bank merger; RBI's ex-merger figures are shown separately in the notes.</p></div>
+          <div class="grid snapshot-grid"><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Home loans</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Housing credit outstanding (including priority sector housing)</h3>
+      <div class="snapshot-value">3,010,477 INR crore</div>
+      <div class="snapshot-period">Latest: 2025-03 <span class="metric-change up">+10.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[1492302, 1738473, 1991164, 2718715, 3010477]'></div>
+      <p class="small muted">Gross bank credit outstanding to housing as on the last reporting Friday in March, published by RBI in INR crore.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23219" target="_blank" rel="noopener">Reserve Bank of India</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Home loans</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Priority-sector housing outstanding (memo)</h3>
+      <div class="snapshot-value">746,651 INR crore</div>
+      <div class="snapshot-period">Latest: 2025-03 <span class="metric-change down">-1.1% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[578081, 617927, 622889, 755222, 746651]'></div>
+      <p class="small muted">Memo item within RBI&#x27;s sectoral deployment table, distinct from the total housing line.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23219" target="_blank" rel="noopener">Reserve Bank of India</a></span></div>
+    </article></div>
+          <div class="snapshot-table-wrap">
+      <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      <table class="data-table snapshot-table">
+        <thead><tr><th>Metric</th><th>2021-03</th><th>2022-03</th><th>2023-03</th><th>2024-03</th><th>2025-03</th></tr></thead>
+        <tbody><tr><th scope="row">Housing credit outstanding (including priority sector housing) <span class="muted">(INR crore)</span></th><td class="num">1.5 mn</td><td class="num">1.7 mn</td><td class="num">2.0 mn</td><td class="num">2.7 mn</td><td class="num">3.0 mn</td></tr><tr><th scope="row">Priority-sector housing outstanding (memo) <span class="muted">(INR crore)</span></th><td class="num">578,081</td><td class="num">617,927</td><td class="num">622,889</td><td class="num">755,222</td><td class="num">746,651</td></tr></tbody>
+      </table>
+      <p class="small muted">Source: <a href="https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23219" target="_blank" rel="noopener">Reserve Bank of India</a> · Handbook of Statistics on Indian Economy — Table 45: Sectoral Deployment of Non-Food Gross Bank Credit</p>
+    </div>
+          <p class="small muted">RBI evidence: &#x27;4.2 Housing (Including Priority Sector Housing) 1492302 1738473 1991164 2718715 3010477&#x27; and &#x27;5.4 Housing 578081 617927 622889 755222 746651&#x27;. · Figures in parentheses in the RBI table exclude the merger impact: 23,31,935 / 26,89,068 for total housing and 6,60,572 / 6,65,107 for priority-sector housing for the last two periods. · RBI does not publish an annual bank home-loan disbursement series in this table. No disbursement value is substituted.</p>
+          <p class="small"><a href="monthly-snapshots.html#india-home-loans">Open the full RBI bank housing credit outstanding catalogue entry →</a></p>
+        </section><section class="cta-band"><div><h2>Need another cut of the data?</h2><p>Search every fact, KPI, trend and monthly snapshot published on Radar.</p></div><a href="search.html" class="btn btn-ghost">Search all data</a></section>  </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand-col">
+
+
+        <a class="brand" href="index.html" aria-label="Radar home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+          <span class="brand-name">Radar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:15 UTC</span></p>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Explore</h4>
+
+
+        <a href="index.html">Overview</a>
+
+
+        <a href="india.html">India dashboard</a>
+
+
+        <a href="global.html">Global macro</a>
+
+
+        <a href="markets.html">Global markets</a>
+
+
+        <a href="insurance.html">Insurance</a>
+
+
+        <a href="mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="monthly-snapshots.html">Monthly snapshots</a>
+
+
+        <a href="search.html">Search</a>
+
+
+        <a href="sources.html">Data Sources</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Key Sectors</h4>
+
+
+        <a href="category/central.html">Central Government</a>
+
+
+        <a href="category/states.html">State Level</a>
+
+
+        <a href="category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="category/geo.html">Geo Levels</a>
+
+
+        <a href="category/transport.html">Transport</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">More Sectors</h4>
+
+
+        <a href="category/economy.html">Economy</a>
+
+
+        <a href="category/agriculture.html">Agriculture</a>
+
+
+        <a href="category/health.html">Health</a>
+
+
+        <a href="category/education.html">Education</a>
+
+
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+
+      <p>© 2026 Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <script src="scripts/app.js"></script>
+
+
+  <script src="scripts/charts.js"></script>
+
+
+  <script src="scripts/tools.js"></script>
+
+
+</body>
+
+
+</html>

@@ -4,7 +4,7 @@
 """
 
 
-FinRadar — Static Page Generator
+Radar — Static Page Generator
 
 
 ================================
@@ -54,6 +54,7 @@ Pages generated:
 
 import json
 import html
+import html as html_lib
 
 
 import os
@@ -89,7 +90,7 @@ from site_data import (
     SECTORS, SECTOR_MAP, FACTS, FACTS_BY_CATEGORY,
 
 
-    HISTORICAL_TRENDS, get_trend, search_index, trends_by_category,
+    HISTORICAL_TRENDS, fact_text, get_trend, search_index, trends_by_category,
 
 
     CATEGORY_GROUPS,
@@ -102,6 +103,11 @@ from tools_registry import (
 
 
     TOOL_CATEGORIES, TOOLS, ALL_TOOLS, tools_by_category, catalog_summary,
+)
+
+from monthly_snapshots import (
+    BADGE_TEXT, SNAPSHOT_DIR, load_all, render_metric_card,
+    render_dataset_table, search_items as snapshot_search_items, snapshot_badge,
 
 
 )
@@ -122,6 +128,76 @@ EXTRA_FILE = ROOT / "data" / "extra_metrics.json"
 
 
 SNAP_DIR = ROOT / "data" / "snapshots"
+
+SITE_URL = "https://radar.peabox.in"
+
+DASHBOARD_PAGES = [
+    {
+        "id": "india",
+        "title": "India dashboard",
+        "eyebrow": "National accounts",
+        "description": "India's growth, prices, fiscal position, external balance and high-frequency activity in one view.",
+        "intro": "Live World Bank and government-derived KPIs, with original benchmarks. No randomised or placeholder values.",
+        "kpis": [
+            "gdp_growth_pct", "real_inflation_rate", "gdp_per_capita_usd",
+            "gdp_per_capita_ppp_usd", "current_account_pct_gdp",
+            "fdi_inflows_pct_gdp", "fiscal_deficit_pct_gdp", "gst_growth_pct",
+        ],
+        "snapshots": [],
+        "benchmarks": True,
+    },
+    {
+        "id": "global",
+        "title": "Global macro dashboard",
+        "eyebrow": "World economy",
+        "description": "GDP, GDP per capita, inflation, policy rates, debt and exchange rates across major economies.",
+        "intro": "Official World Bank, BIS, ECB, IMF-fallback and WTO series. Country coverage is curated for comparability.",
+        "kpis": [],
+        "snapshots": ["global-macro"],
+        "snapshot_filters": {
+            "global-macro": [
+                "gdp_current_usd_wld", "gdp_current_usd_ind", "gdp_current_usd_usa",
+                "gdp_per_capita_current_usd_wld", "gdp_per_capita_current_usd_ind",
+                "gdp_per_capita_current_usd_usa", "cpi_inflation_pct_wld",
+                "cpi_inflation_pct_ind", "cpi_inflation_pct_usa",
+            ],
+        },
+        "global_sections": [
+            "imf-ngdp_rpch", "imf-pcpipch", "imf-ggxwdg_ngdp", "imf-bca",
+            "policy-rates", "fx-rates", "wb-cm-mkt-lcap-gd-zs", "wto-its-mtv-ax",
+        ],
+    },
+    {
+        "id": "markets",
+        "title": "Global markets dashboard",
+        "eyebrow": "Exchanges & assets",
+        "description": "Exchange-level fundamentals and secondary market context for the world's major equity venues.",
+        "intro": "Official exchange statistics are labelled as monthly snapshots; delayed market quotes are context only, never official statistics.",
+        "kpis": [],
+        "snapshots": ["global-exchanges"],
+        "global_sections": ["wb-cm-mkt-lcap-gd-zs", "wb-cm-mkt-trnr"],
+        "market": True,
+    },
+    {
+        "id": "insurance",
+        "title": "Insurance dashboard",
+        "eyebrow": "IRDAI snapshots",
+        "description": "India's insurance penetration, density, premiums and policies from IRDAI annual reports.",
+        "intro": "Annual regulatory publications are transcribed monthly and clearly marked as non-live snapshots.",
+        "kpis": [],
+        "snapshots": ["irdai-insurance"],
+        "global_sections": ["wb-gfdd-di-09", "wb-gfdd-di-10"],
+    },
+    {
+        "id": "mobility-housing",
+        "title": "Mobility & housing dashboard",
+        "eyebrow": "Real economy",
+        "description": "Indian auto sales, housing sales and bank home-loan trends from SIAM, JLL and RBI publications.",
+        "intro": "Official and industry-body figures are published as dated monthly snapshots with their original source links.",
+        "kpis": ["housing_affordability_ratio", "vehicle_density", "urban_household_deficit_pct"],
+        "snapshots": ["india-auto-sales", "india-housing-sales", "india-home-loans"],
+    },
+]
 
 
 
@@ -210,6 +286,36 @@ def verdict_class(verdict):
     return "weak"
 
 
+def month_label(value) -> str:
+    """Format a YYYY-MM stamp as 'Month YYYY' for snapshot disclosures."""
+    raw = str(value or "")
+    try:
+        return datetime.strptime(raw[:7], "%Y-%m").strftime("%B %Y")
+    except ValueError:
+        return raw or "Unknown"
+
+
+def curated_badge(latest: dict) -> str:
+    """Mandatory disclosure for any non-live, curated published figure."""
+    return (f'<span class="snapshot-badge">{html_lib.escape(BADGE_TEXT)}'
+            f'<span class="snapshot-updated">Last Updated: {html_lib.escape(month_label(latest.get("last_updated_month", "")))}</span>'
+            '</span>')
+
+
+def kpi_disclosure(kpi_id: str, latest: dict) -> str:
+    """Source badge for a KPI detail/card driven by latest_kpis.json."""
+    item = next((k for k in latest.get("kpis", [])
+                 if k.get("kpi_id") == kpi_id or k.get("id") == kpi_id), None)
+    if not item:
+        return ""
+    source_type = item.get("source_type", "live_api" if item.get("source_live") else "curated_snapshot")
+    if source_type == "curated_snapshot":
+        return curated_badge(latest)
+    if source_type == "unavailable":
+        return '<span class="snapshot-badge unavailable">Official series unavailable — no value published</span>'
+    return '<span class="live-badge">Live API</span>'
+
+
 def section_head(title, eyebrow="", intro=""):
     """Consistent section heading with an optional kicker and description."""
     kicker = f'<span class="eyebrow dark">{eyebrow}</span>' if eyebrow else ""
@@ -217,14 +323,288 @@ def section_head(title, eyebrow="", intro=""):
     return f'<div class="section-head"><div>{kicker}<h2>{title}</h2></div>{description}</div>'
 
 
-def render_trend_embed(trend, kpi_id, heading=None):
+def build_dashboard_search_items() -> list[dict]:
+    """Make the split dashboard routes discoverable from site search."""
+    return [
+        {
+            "id": page["id"],
+            "title": page["title"],
+            "category": "Dashboard",
+            "text": f"{page['description']} {page['intro']}",
+            "source": "Radar dashboard",
+            "url": page["id"] + ".html",
+            "type": "dashboard",
+        }
+        for page in DASHBOARD_PAGES
+    ]
+
+
+def render_live_kpi_card(kpi_id: str, latest: dict) -> str:
+    """Render a live KPI highlight; disclose non-live curated values."""
+    item = next((k for k in latest.get("kpis", []) if k.get("kpi_id") == kpi_id), None)
+    if not item:
+        return ""
+    value = item.get("value")
+    disclosure = kpi_disclosure(kpi_id, latest)
+    trend = item.get("trend") or {}
+    change = trend.get("change") if isinstance(trend, dict) else None
+    change_text = f'{change:+.2f}' if isinstance(change, (int, float)) else "—"
+    return f"""<article class="card live-kpi-card">
+      <div class="live-kpi-top"><span class="eyebrow dark">{html_lib.escape(item.get('sector', 'KPI'))}</span>{disclosure}</div>
+      <h3>{html_lib.escape(item.get('name', kpi_id))}</h3>
+      <div class="snapshot-value">{humanize(value) if isinstance(value, (int, float)) else '—'} <small>{html_lib.escape(item.get('unit', ''))}</small></div>
+      <div class="snapshot-period">Latest change {change_text} · <span class="badge {verdict_class(item.get('verdict'))}">{html_lib.escape(item.get('verdict', 'unknown'))}</span></div>
+      <p class="small muted">{html_lib.escape(item.get('insight_text', ''))}</p>
+      <a class="btn small" href="kpi/{html_lib.escape(kpi_id)}.html">Read the KPI</a>
+    </article>"""
+
+
+def render_global_section(section: dict, limit: int = 12) -> str:
+    """Render one official global feed section as compact data cards."""
+    if not section:
+        return ""
+    rows = section.get("series") or section.get("items") or []
+    if not rows:
+        return ""
+    cards = []
+    for row in rows[:limit]:
+        points = row.get("points") or []
+        values = [p.get("value") for p in points if p.get("value") is not None]
+        spark = ""
+        if len(values) >= 2:
+            spark = (f'<div class="sparkline" data-points=\''
+                     f'{html_lib.escape(json.dumps(values), quote=True)}\'></div>')
+        latest_value = row.get("latest_value", row.get("value"))
+        latest_period = row.get("latest_period", row.get("as_of", ""))
+        change = row.get("change_pct")
+        change_text = f'{change:+.2f}%' if isinstance(change, (int, float)) else ""
+        source_url = row.get("source_url", "")
+        source_name = html_lib.escape(row.get("source", "Official feed"))
+        source_html = (f'<a href="{html_lib.escape(source_url, quote=True)}" target="_blank" rel="noopener">{source_name}</a>'
+                       if source_url else source_name)
+        cards.append(f"""<article class="card global-feed-card">
+          <h3>{html_lib.escape(row.get('label', row.get('name', 'Series')))}</h3>
+          <div class="snapshot-value">{humanize(latest_value) if isinstance(latest_value, (int, float)) else html_lib.escape(str(latest_value or '—'))} <small>{html_lib.escape(row.get('unit', ''))}</small></div>
+          <div class="snapshot-period">{html_lib.escape(str(latest_period))} {change_text}</div>
+          {spark}
+          <p class="small muted">{html_lib.escape(row.get('definition', ''))}</p>
+          <div class="snapshot-card-foot"><span>Source: {source_html}</span></div>
+        </article>""")
+    note = section.get("status_note") or section.get("definition") or ""
+    return (section_head(section.get("title", "Official series"), "Live feed", note)
+            + f'<div class="grid global-feed-grid">{"".join(cards)}</div>')
+
+
+def render_market_context(extra: dict, limit: int = 12) -> str:
+    """Render delayed market quotes with an explicit secondary-data warning."""
+    market = (extra.get("global") or {}).get("market") or {}
+    groups = market.get("groups") or []
+    rows = []
+    for group in groups:
+        rows.extend(group.get("items") or [])
+    if not rows:
+        return ""
+    cards = []
+    for row in rows[:limit]:
+        values = [p.get("value") for p in row.get("points", []) if p.get("value") is not None]
+        spark = ""
+        if len(values) >= 2:
+            spark = f'<div class="sparkline" data-points=\'{html_lib.escape(json.dumps(values), quote=True)}\'></div>'
+        change = row.get("change_pct")
+        change_text = f'{change:+.2f}%' if isinstance(change, (int, float)) else ""
+        cards.append(f"""<article class="card market-card">
+          <span class="eyebrow dark">{html_lib.escape(row.get('exchange', 'Market'))}</span>
+          <h3>{html_lib.escape(row.get('label', 'Index'))}</h3>
+          <div class="snapshot-value">{humanize(row.get('value'))} <small>{html_lib.escape(row.get('unit', 'index pts'))}</small></div>
+          <div class="snapshot-period">{html_lib.escape(str(row.get('as_of', '')))} {change_text}</div>
+          {spark}
+        </article>""")
+    return (section_head("Delayed market context", "Secondary data", market.get("status_note") or market.get("definition") or "Delayed quotes for context only; not official statistics.")
+            + f'<div class="grid global-feed-grid">{"".join(cards)}</div>')
+
+
+def render_snapshot_sections(snapshots: dict, dataset_ids: list[str], filters: dict | None = None) -> str:
+    """Render curated snapshot KPI cards and tables with the mandatory badge."""
+    blocks = []
+    filters = filters or {}
+    for dataset_id in dataset_ids:
+        snapshot = snapshots.get(dataset_id)
+        if not snapshot:
+            continue
+        wanted = filters.get(dataset_id)
+        metrics = snapshot.get("metrics", [])
+        if wanted:
+            metrics = [m for m in metrics if m.get("id") in set(wanted)]
+        cards = "".join(render_metric_card(snapshot, metric) for metric in metrics)
+        blocks.append(f"""<section id="{html_lib.escape(dataset_id)}" class="snapshot-section">
+          {section_head(snapshot.get('title', dataset_id), 'Static snapshot', snapshot.get('methodology', ''))}
+          <div class="grid snapshot-grid">{cards}</div>
+          {render_dataset_table(snapshot, metrics)}
+          <p class="small muted">{html_lib.escape(' · '.join(snapshot.get('notes', [])))}</p>
+          <p class="small"><a href="monthly-snapshots.html#{html_lib.escape(dataset_id)}">Open the full {html_lib.escape(snapshot.get('title', dataset_id))} catalogue entry →</a></p>
+        </section>""")
+    return "".join(blocks)
+
+
+def render_benchmark_section() -> str:
+    return """<section class="benchmarks" id="benchmarks">
+      <div class="section-head"><div><span class="eyebrow dark">Indexes</span><h2>Original benchmarks</h2></div><p class="section-intro">Four composites built entirely from published public data.</p></div>
+      <div class="grid benchmark-grid">
+        <article class="card benchmark-card"><span class="bench-index">01 / MACRO</span><h3>India High-Frequency Macro Cycle Index</h3><p>A 0–100 score blending GST, UPI, power demand, IIP, inflation, repo rate and GDP growth.</p><div class="bench-stat" id="bench-macro-cycle-value">—</div><span class="bench-tag">Composite score · 0–100</span></article>
+        <article class="card benchmark-card"><span class="bench-index">02 / CITIES</span><h3>City Salary-Parity Benchmark</h3><p>Purchasing-power adjusted salaries across six major Indian cities.</p><div class="bench-stat">₹ → ₹</div><span class="bench-tag">Cost-of-living adjusted</span></article>
+        <article class="card benchmark-card"><span class="bench-index">03 / STATES</span><h3>State-Wise Fiscal Health Scorecard</h3><p>Ranks all 28 states on GST growth, debt-to-GSDP and capex ratio.</p><div class="bench-stat">28</div><span class="bench-tag">States ranked quarterly</span></article>
+        <article class="card benchmark-card"><span class="bench-index">04 / GLOBAL</span><h3>Global Emerging Market Resilience</h3><p>India vs Vietnam, Indonesia, Brazil and Mexico on official macro indicators.</p><div class="bench-stat" id="bench-resilience-value">—</div><span class="bench-tag">Peer ranking</span></article>
+      </div>
+    </section>"""
+
+
+def render_dashboard_page(page: dict, latest: dict, extra: dict, snapshots: dict) -> str:
+    """Render one of the split, categorised dashboard routes."""
+    html = render_base_head(
+        page["title"],
+        page["description"],
+        "/" + page["id"] + ".html",
+        base="",
+    )
+    html += f"""<section class="category-index-hero">
+      <span class="eyebrow dark">{html_lib.escape(page['eyebrow'])}</span>
+      <h1>{html_lib.escape(page['title'])}</h1>
+      <p class="hero-sub">{html_lib.escape(page['description'])}</p>
+      <p class="muted">{html_lib.escape(page['intro'])}</p>
+      <div class="hero-actions"><a href="search.html" class="btn btn-ghost">Search all data</a><a href="monthly-snapshots.html" class="btn btn-ghost">Snapshot catalogue</a></div>
+    </section>"""
+
+    kpi_cards = "".join(render_live_kpi_card(kpi_id, latest) for kpi_id in page.get("kpis", []))
+    if kpi_cards:
+        html += section_head("Key indicators", "Dashboard", "Live API values and clearly disclosed non-live published figures.")
+        html += f'<div class="grid snapshot-grid">{kpi_cards}</div>'
+
+    if page.get("benchmarks"):
+        html += render_benchmark_section()
+
+    html += render_snapshot_sections(snapshots, page.get("snapshots", []), page.get("snapshot_filters"))
+
+    global_data = extra.get("global") or {}
+    section_map = {section.get("id"): section for section in global_data.get("sections", [])}
+    for section_id in page.get("global_sections", []):
+        section = section_map.get(section_id)
+        if section_id.startswith("commodities") and global_data.get("commodities"):
+            section = global_data["commodities"]
+        html += render_global_section(section)
+
+    if page.get("market"):
+        html += render_market_context(extra)
+
+    html += """<section class="cta-band"><div><h2>Need another cut of the data?</h2><p>Search every fact, KPI, trend and monthly snapshot published on Radar.</p></div><a href="search.html" class="btn btn-ghost">Search all data</a></section>"""
+    return html + render_footer("")
+
+
+def render_monthly_snapshots_index(snapshots: dict) -> str:
+    """Catalogue page for every curated monthly snapshot dataset."""
+    html = render_base_head(
+        "Monthly snapshots — Radar",
+        "Catalogue of curated non-live datasets with transparency badges and official source links.",
+        "/monthly-snapshots.html",
+        base="",
+    )
+    cards = []
+    for snapshot in snapshots.values():
+        source = snapshot.get("source", {})
+        source_link = ""
+        if source.get("url"):
+            source_link = (f'<a href="{html_lib.escape(source["url"], quote=True)}" target="_blank" rel="noopener">'
+                           f'{html_lib.escape(source.get("organization", "Source"))}</a>')
+        cards.append(f"""<article class="card snapshot-card" id="{html_lib.escape(snapshot['dataset_id'])}">
+          <span class="eyebrow dark">{html_lib.escape(snapshot.get('category', 'Snapshot'))}</span>
+          {snapshot_badge(snapshot)}
+          <h3>{html_lib.escape(snapshot.get('title', snapshot['dataset_id']))}</h3>
+          <p>{html_lib.escape(snapshot.get('methodology', ''))}</p>
+          <p class="small muted">Coverage: {html_lib.escape(snapshot.get('coverage', ''))} · {len(snapshot.get('metrics', []))} metrics · Source: {source_link}</p>
+          <a class="btn small" href="{html_lib.escape(snapshot.get('page', 'index.html'), quote=True)}">Open dashboard</a>
+        </article>""")
+    html += """<section class="category-index-hero"><span class="eyebrow dark">Transparency first</span><h1>Monthly snapshots</h1><p class="hero-sub">Curated datasets transcribed from official publications. Every figure on these pages carries a static-snapshot badge and a visible Last Updated month.</p></section>"""
+    html += f'<div class="grid snapshot-grid">{"".join(cards)}</div>'
+    html += """<section class="cta-band"><div><h2>How updates work</h2><p>Read each linked source, transcribe published figures, set last_updated, then run update_monthly_snapshots.py and regenerate the site. No simulated values are accepted.</p></div><a href="sources.html" class="btn btn-ghost">All sources</a></section>"""
+    return html + render_footer("")
+
+
+def render_sitemap(latest: dict, snapshots: dict) -> str:
+    """Generate a sitemap covering every public route emitted by main()."""
+    today = (latest.get("generated_at") or datetime.now(timezone.utc).isoformat())[:10]
+
+    def snap_date(value: str) -> str:
+        return value if len(value) == 10 else value + "-01"
+
+    routes: list[tuple[str, str, str, str]] = [
+        ("/", today, "daily", "1.0"),
+        ("/index.html", today, "daily", "0.9"),
+        ("/search.html", today, "weekly", "0.7"),
+        ("/sources.html", today, "weekly", "0.7"),
+        ("/data-lab.html", today, "daily", "0.8"),
+        ("/tools.html", today, "weekly", "0.8"),
+        ("/categories.html", today, "weekly", "0.8"),
+        ("/monthly-snapshots.html", snap_date(max((s.get("last_updated", "") for s in snapshots.values()), default=today)), "monthly", "0.8"),
+    ]
+    for page in DASHBOARD_PAGES:
+        snapshot_dates = [
+            snap_date(snapshots[d]["last_updated"])
+            for d in page.get("snapshots", []) if d in snapshots
+        ]
+        modified = max(snapshot_dates + [today])
+        changefreq = "monthly" if snapshot_dates else "daily"
+        routes.append(("/" + page["id"] + ".html", modified, changefreq, "0.9"))
+
+    for item in TOOLS:
+        routes.append(("/tools/" + item["id"] + ".html", today, "monthly", "0.6"))
+    routes.extend([
+        ("/tools/personal-inflation.html", today, "monthly", "0.6"),
+        ("/tools/salary-parity.html", today, "monthly", "0.6"),
+    ])
+    for sector in SECTORS:
+        routes.append(("/category/" + sector["id"] + ".html", today, "weekly", "0.7"))
+    for fact in FACTS:
+        routes.append(("/facts/" + fact["id"] + ".html", today, "weekly", "0.6"))
+    for kpi_id in HISTORICAL_TRENDS:
+        routes.append(("/trend/" + kpi_id + ".html", today, "weekly", "0.6"))
+    for kpi in KPI_REGISTRY:
+        routes.append(("/kpi/" + kpi["id"] + ".html", today, "weekly", "0.7"))
+
+    seen = set()
+    entries = []
+    for path, modified, frequency, priority in routes:
+        if path in seen:
+            continue
+        seen.add(path)
+        entries.append(f"""  <url>
+    <loc>{html_lib.escape(SITE_URL + path, quote=True)}</loc>
+    <lastmod>{html_lib.escape(modified, quote=True)}</lastmod>
+    <changefreq>{frequency}</changefreq>
+    <priority>{priority}</priority>
+  </url>""")
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(entries)
+            + '\n</urlset>\n')
+
+
+def render_robots() -> str:
+    return f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
+"""
+
+
+def render_trend_embed(trend, kpi_id, heading=None, latest=None):
     """Compact sparkline preview linking through to the full history page."""
     if not trend:
         return ""
     points = json.dumps([p["value"] for p in trend["points"]])
     label = heading or f'{trend["label"]} (history)'
+    badge = curated_badge(latest) if latest else ""
     return f'''<div class="trend-embed">
       <h3>{label}</h3>
+      {f'<div class="disclosure-row">{badge}</div>' if badge else ''}
       <div class="sparkline" data-points='{points}'></div>
       <a href="../trend/{kpi_id}.html" class="btn">Full history</a>
     </div>'''
@@ -241,29 +621,37 @@ def render_source_tags(api):
 
 def render_base_head(title, description, current_url="", base=""):
     b = base  # '' for root pages, '../' for subfolder pages
-    page_title = title if "FinRadar" in title else f"{title} — FinRadar"
+    page_title = title if "Radar" in title else f"{title} — Radar"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{page_title}</title>
-  <meta name="description" content="{description}" />
+  <meta name="description" content="{html_lib.escape(description, quote=True)}" />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{html_lib.escape(page_title, quote=True)}" />
+  <meta property="og:description" content="{html_lib.escape(description, quote=True)}" />
+  <meta property="og:url" content="{SITE_URL}{current_url}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{html_lib.escape(page_title, quote=True)}" />
+  <meta name="twitter:description" content="{html_lib.escape(description, quote=True)}" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{b}styles/main.css" />
   <link rel="stylesheet" href="{b}styles/european-theme.css" />
-  <link rel="canonical" href="https://finradar.example{current_url}" />
+  <link rel="canonical" href="{SITE_URL}{current_url}" />
 </head>
 <body data-base="{b}">
   <a class="skip-link" href="#site-main">Skip to content</a>
   <header class="site-header">
     <div class="nav-inner container">
-      <a class="brand" href="{b}index.html" aria-label="FinRadar home">
+      <a class="brand" href="{b}index.html" aria-label="Radar home">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-        <span class="brand-name">FinRadar</span>
+        <span class="brand-name">Radar</span>
       </a>
       <span class="nav-status"><span class="status-dot"></span>Live data</span>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -271,16 +659,27 @@ def render_base_head(title, description, current_url="", base=""):
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <div class="nav-primary">
-          <a href="{b}index.html" class="nav-link">Dashboard</a>
+          <a href="{b}index.html" class="nav-link">Overview</a>
+          <a href="{b}india.html" class="nav-link">India</a>
+          <a href="{b}global.html" class="nav-link">Global</a>
+          <a href="{b}markets.html" class="nav-link">Markets</a>
+          <a href="{b}insurance.html" class="nav-link">Insurance</a>
+          <a href="{b}mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="{b}data-lab.html" class="nav-link">Data Lab</a>
           <a href="{b}tools.html" class="nav-link">Tools</a>
           <a href="{b}search.html" class="nav-link">Search</a>
-          <a href="{b}categories.html" class="nav-link">Categories</a>
-          <a href="{b}sources.html" class="nav-link">Sources</a>
-          <a href="{b}data-lab.html" class="nav-link">Data Lab</a>
         </div>
         <div class="nav-drop">
           <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="{b}india.html" role="menuitem">📊 India macro</a>
+            <a href="{b}global.html" role="menuitem">🌐 Global macro</a>
+            <a href="{b}markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="{b}insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="{b}mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="{b}monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
             <div class="nav-drop-heading">Macro &amp; National Accounts</div>
 
 
@@ -406,9 +805,9 @@ def render_footer(base=""):
       <div class="footer-brand-col">
 
 
-        <a class="brand" href="{b}index.html" aria-label="FinRadar home">
+        <a class="brand" href="{b}index.html" aria-label="Radar home">
           <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
-          <span class="brand-name">FinRadar</span>
+          <span class="brand-name">Radar</span>
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
@@ -424,7 +823,25 @@ def render_footer(base=""):
         <h4 class="footer-heading">Explore</h4>
 
 
-        <a href="{b}index.html">Dashboard</a>
+        <a href="{b}index.html">Overview</a>
+
+
+        <a href="{b}india.html">India dashboard</a>
+
+
+        <a href="{b}global.html">Global macro</a>
+
+
+        <a href="{b}markets.html">Global markets</a>
+
+
+        <a href="{b}insurance.html">Insurance</a>
+
+
+        <a href="{b}mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="{b}monthly-snapshots.html">Monthly snapshots</a>
 
 
         <a href="{b}search.html">Search</a>
@@ -490,13 +907,13 @@ def render_footer(base=""):
     <div class="container footer-bottom">
 
 
-      <p>© {datetime.now(timezone.utc).year} FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+      <p>© {datetime.now(timezone.utc).year} Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
 
 
       <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
 
 
-      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
 
 
     </div>
@@ -592,7 +1009,7 @@ def render_category_page(sector_id, latest):
         <article class="fact-card">
 
 
-          <h3>{f['fact'][:80]}…</h3>
+          <h3>{html_lib.escape(fact_text(f, latest)[:120])}{'…' if len(fact_text(f, latest)) > 120 else ''}</h3>
 
 
           <p class="muted small">Source: {f['source']}</p>
@@ -637,7 +1054,7 @@ def render_category_page(sector_id, latest):
         <tr>
 
 
-          <td><strong>{kpi['name']}</strong></td>
+          <td><strong>{kpi['name']}</strong><div class="disclosure-row">{kpi_disclosure(kpi['id'], latest)}</div></td>
 
 
           <td class="num">{val_str}</td>
@@ -689,7 +1106,7 @@ def render_category_page(sector_id, latest):
 
 
               <p class="muted small">{trend['source']}</p>
-
+              <div class="disclosure-row">{curated_badge(latest)}</div>
 
               <div class="sparkline" data-points='{json.dumps([p["value"] for p in pts])}'></div>
 
@@ -797,7 +1214,7 @@ def render_fact_page(fact, latest):
         fact["kpi_id"].replace("_", " ").title(),
 
 
-        fact["fact"][:160],
+        fact_text(fact, latest)[:160],
 
 
         f"/facts/{fact['id']}.html",
@@ -816,7 +1233,7 @@ def render_fact_page(fact, latest):
       <a class="back-link" href="../category/{fact['category']}.html">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
       <span class="eyebrow dark">Fact file</span>
       <h1>{fact['kpi_id'].replace('_', ' ').title()}</h1>
-      <p class="fact-text">{fact['fact']}</p>
+      <p class="fact-text">{html_lib.escape(fact_text(fact, latest))}</p>
 
       <div class="fact-meta">
 
@@ -833,10 +1250,12 @@ def render_fact_page(fact, latest):
       </div>
 
 
+      <div class="disclosure-row">{kpi_disclosure(kpi_id, latest)}</div>
+
       {f'<p class="latest-value">Latest value: <strong>{humanize(val)}</strong></p>' if val is not None else ''}
 
 
-      {render_trend_embed(trend, kpi_id)}
+      {render_trend_embed(trend, kpi_id, latest=latest)}
 
 
       <a href="../category/{fact['category']}.html" class="btn">← Back to {SECTOR_MAP[fact['category']]['title']}</a>
@@ -943,6 +1362,7 @@ def render_trend_page(kpi_id, latest):
       <span class="eyebrow dark">Historical series</span>
       <h1>{trend['label']}</h1>
       <p class="muted"><strong>Source:</strong> {trend['source']}</p>
+      <div class="disclosure-row">{curated_badge(latest)}</div>
       {f'<p class="latest-value">Latest ({years[-1]}): <strong>{humanize(values[-1])} {trend["unit"]}</strong></p>' if values else ''}
 
       <div class="chart-wrap">
@@ -1144,6 +1564,7 @@ def render_kpi_page(kpi_id, latest):
       <div class="kpi-headline">
         <div class="kpi-value-large">{humanize(val) + ' ' + kpi_def['unit'] if val is not None else '—'}</div>
         <div class="verdict-badge {verdict_class(verdict_short)}">{verdict_short.upper()}</div>
+        <div class="disclosure-row">{kpi_disclosure(kpi_id, latest)}</div>
       </div>
 
 
@@ -1188,13 +1609,13 @@ def render_kpi_page(kpi_id, latest):
 
 
 
-      {render_trend_embed(trend, kpi_id, "Historical trend")}
+      {render_trend_embed(trend, kpi_id, "Historical trend", latest=latest)}
 
 
 
 
 
-      <a href="../category/{cat}.html" class="btn">← Back to {SECTOR_MAP[cat]['title'] if cat else 'Dashboard'}</a>
+      <a href="{back_href}" class="btn">← Back to {back_label}</a>
 
 
     </section>"""
@@ -1224,12 +1645,14 @@ def render_kpi_page(kpi_id, latest):
 
 
 
-def render_search_page(latest, extra=None):
+def render_search_page(latest, extra=None, snapshots=None):
 
 
-    items = search_index()
+    items = search_index(latest)
     if extra:
         items.extend(build_extra_search_items(extra))
+    items.extend(snapshot_search_items(snapshots or {}))
+    items.extend(build_dashboard_search_items())
     items.extend(build_tool_search_items())
 
 
@@ -1259,7 +1682,7 @@ def render_search_page(latest, extra=None):
 
     <section class="search-page">
       <span class="eyebrow dark">Find anything</span>
-      <h1>Search FinRadar</h1>
+      <h1>Search Radar</h1>
       <p class="hero-sub">Look up any fact, KPI or historical series across all 14 sectors.</p>
       <div class="search-input-wrap">
         <input type="text" id="search-input" placeholder="Type a metric, sector, year or keyword…" autocomplete="off" />
@@ -1467,7 +1890,7 @@ def render_sources_page():
 
     html = render_base_head(
         "Data Sources — Catalog",
-        f"Every API, dataset and portal FinRadar draws from — {summ['total_apis']} categorised sources with summary stats for each.",
+        f"Every API, dataset and portal Radar draws from — {summ['total_apis']} categorised sources with summary stats for each.",
         "/sources.html",
         base=""
     )
@@ -1475,7 +1898,7 @@ def render_sources_page():
     <section>
       <span class="eyebrow dark">Provenance</span>
       <h1>Data Sources Catalog</h1>
-      <p class="muted">FinRadar computes KPIs from {summ['total_apis']} public government APIs across {summ['total_categories']} categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
+      <p class="muted">Radar computes KPIs from {summ['total_apis']} public government APIs across {summ['total_categories']} categories. Every source is categorised under a proper tag group and summarised with the key statistics we use.</p>
 
       <div class="grid grid-4 source-summary-grid">
         <div class="card source-summary-card"><strong>{summ['total_apis']}</strong><span>APIs catalogued</span></div>
@@ -1513,7 +1936,7 @@ def render_sources_page():
 
 def esc(value):
     """Escape untrusted/API-sourced text before embedding it in HTML."""
-    return html.escape("" if value is None else str(value), quote=True)
+    return html_lib.escape("" if value is None else str(value), quote=True)
 
 
 def fmt_extra_value(value, unit=""):
@@ -2049,145 +2472,69 @@ def render_data_lab(extra):
     return hero + render_footer("")
 
 
-def render_index(latest):
+def render_index(latest, snapshots):
+    """Concise landing page that routes readers to the categorised dashboards."""
     html = render_base_head(
-        "FinRadar — India & Global Macro KPIs & Benchmarks",
-        "Live macroeconomic KPIs, benchmarks and interactive tools built from public government data.",
+        "Radar — India & Global Macro Dashboards",
+        "Live economic indicators, curated monthly snapshots and calculators built from published public data.",
         "/",
         base=""
     )
-    html += f"""
-    <section class="hero">
+    html += """<section class="hero hero-compact">
       <div class="hero-inner">
-        <span class="eyebrow">Public data, refreshed daily</span>
+        <span class="eyebrow">Public data, clearly labelled</span>
         <h1>Real economy numbers, <span>plain English.</span></h1>
-        <p class="hero-sub">FinRadar turns public government data into living KPIs — real interest rates, digital velocity, fiscal health — and publishes benchmarks and reports you can cite. Every number is a derived metric, not a raw table.</p>
+        <p class="hero-sub">Radar separates live API feeds from curated monthly snapshots. Every figure is published by an official or authoritative source, with its own date, badge and source link.</p>
         <div class="hero-actions">
-          <a href="#kpis" class="btn btn-primary">Explore live KPIs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-          <a href="tools.html" class="btn btn-ghost">Open calculators</a>
+          <a href="#dashboards" class="btn btn-primary">Choose a dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a href="search.html" class="btn btn-ghost">Search all data</a>
         </div>
-        <div class="hero-stats" id="hero-stats"></div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <span class="orbit orbit-1"></span><span class="orbit orbit-2"></span><span class="orbit orbit-3"></span>
-        <div class="signal-card">
-          <span class="signal-label">Macro cycle</span>
-          <strong id="hero-signal-value">—</strong>
-          <span class="signal-foot">Composite · 0–100</span>
-        </div>
+        <div class="signal-card"><span class="signal-label">Data layers</span><strong>2</strong><span class="signal-foot">Live + snapshot</span></div>
       </div>
     </section>
 
-    <section class="kpis" id="kpis">
-      {section_head("Live KPIs — what the numbers mean", "Dashboard", "Derived spreads, velocities and composite scores — never raw tables. Values refresh daily.")}
-      <div class="grid" id="kpi-grid"></div>
-    </section>
-
-    <section class="benchmarks">
-      {section_head("Original benchmarks we publish", "Indexes", "Four composites built entirely from public data, designed to make the economy legible.")}
-      <div class="grid benchmark-grid">
-        <article class="card benchmark-card">
-          <span class="bench-index">01 / MACRO</span>
-          <h3>India High-Frequency Macro Cycle Index</h3>
-          <p>A 0–100 score blending GST, UPI, power demand, IIP, inflation, repo rate and GDP growth into one number that classifies the economy.</p>
-          <div class="bench-stat" id="bench-macro-cycle-value">—</div>
-          <span class="bench-tag">Composite score · 0–100</span>
-        </article>
-        <article class="card benchmark-card">
-          <span class="bench-index">02 / CITIES</span>
-          <h3>City Salary-Parity Benchmark</h3>
-          <p>What salary in Jaipur gives the same purchasing power as ₹20 LPA in Mumbai? Try the calculator below.</p>
-          <div class="bench-stat">₹ → ₹</div>
-          <span class="bench-tag">Cost-of-living adjusted</span>
-        </article>
-        <article class="card benchmark-card">
-          <span class="bench-index">03 / STATES</span>
-          <h3>State-Wise Fiscal Health Scorecard</h3>
-          <p>Ranks all 28 states quarterly on GST growth, debt-to-GSDP and capex ratio.</p>
-          <div class="bench-stat">28</div>
-          <span class="bench-tag">States ranked quarterly</span>
-        </article>
-        <article class="card benchmark-card">
-          <span class="bench-index">04 / GLOBAL</span>
-          <h3>Global Emerging Market Resilience</h3>
-          <p>India vs Vietnam, Indonesia, Brazil and Mexico on GDP growth, current account, FDI and digital infrastructure.</p>
-          <div class="bench-stat" id="bench-resilience-value">—</div>
-          <span class="bench-tag">Peer ranking</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="tools">
-      {section_head("Interactive tools", "Calculators", "Put the data to work on your own numbers — no sign-up, no tracking.")}
-      <div class="tool-card">
-        <div class="tool-card-head">
-          <span class="tool-icon-wrap" aria-hidden="true">📊</span>
-          <div>
-            <h3>Your personal inflation rate</h3>
-            <p class="sub">Enter your spending split — food, fuel, education, healthcare, housing — and see how it compares with the headline.</p>
-          </div>
-        </div>
-        <div class="inflation-table-wrap">
-          <table class="data-table inflation-table">
-            <thead><tr><th>Category</th><th>Weight %</th><th>Sub-index</th><th>Extra %</th><th>Adjusted</th></tr></thead>
-            <tbody id="personal-inflation-rows"></tbody>
-          </table>
-        </div>
-        <div class="tool-actions">
-          <button id="personal-inflation-btn" class="btn btn-primary">Calculate</button>
-          <button id="personal-inflation-reset" class="btn btn-quiet small">Reset</button>
-        </div>
-        <div id="personal-inflation-result" class="tool-result"></div>
-      </div>
-      <div class="tool-card">
-        <div class="tool-card-head">
-          <span class="tool-icon-wrap" aria-hidden="true">💼</span>
-          <div>
-            <h3>Salary parity between two cities</h3>
-            <p class="sub">Enter a base salary and pick two cities. We tell you the equivalent purchasing-power salary.</p>
-          </div>
-        </div>
-        <div class="tool-form">
-          <label class="field"><span>Annual salary (₹)</span><input type="number" id="salary-parity-salary" value="200000" placeholder="INR" /></label>
-          <label class="field"><span>From city</span><select id="salary-parity-from"></select></label>
-          <label class="field"><span>To city</span><select id="salary-parity-to"></select></label>
-          <button id="salary-parity-btn" class="btn btn-primary">Calculate</button>
-        </div>
-        <div id="salary-parity-result" class="tool-result"></div>
-      </div>
-    </section>
-
-    <section>
-      {section_head("Explore by category", "Browse", "14 sectors, each with facts, KPIs and historical trends.")}
-      <div class="grid grid-3">
-    """
-    for s in SECTORS:
-        facts_in_cat = FACTS_BY_CATEGORY.get(s["id"], [])
-        kpis_in_cat = len(kpis_by_sector(s["title"]))
-        html += f"""
-        <article class="card category-card">
-          <span class="category-icon" aria-hidden="true">{s['icon']}</span>
-          <div class="card-header">
-            <h3>{s['title']}</h3>
-            <span class="kpi-count small">{kpis_in_cat} KPIs</span>
-          </div>
-          <p class="card-desc">{s['description']}</p>
-          <div class="card-footer">
-            <span class="muted small">{len(facts_in_cat)} facts</span>
-            <a href="category/{s['id']}.html" class="btn small">View <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-          </div>
+    <section class="dashboards" id="dashboards">"""
+    html += section_head("Explore by dashboard", "Categorised views", "The full data set is split into focused pages so each section stays readable and source-transparent.")
+    html += '<div class="grid dashboard-grid">'
+    for page in DASHBOARD_PAGES:
+        meta = []
+        if page.get("kpis"):
+            meta.append(f"{len(page['kpis'])} live KPIs")
+        if page.get("snapshots"):
+            meta.append(f"{len(page['snapshots'])} snapshot datasets")
+        if page.get("global_sections"):
+            meta.append(f"{len(page['global_sections'])} official series")
+        html += f"""<article class="card dashboard-card">
+          <span class="eyebrow dark">{html_lib.escape(page['eyebrow'])}</span>
+          <h3>{html_lib.escape(page['title'])}</h3>
+          <p class="card-desc">{html_lib.escape(page['description'])}</p>
+          <p class="small muted">{' · '.join(html_lib.escape(m) for m in meta)}</p>
+          <a href="{page['id']}.html" class="btn small">Open dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </article>"""
-
-    html += f"""
+    html += """<article class="card dashboard-card">
+          <span class="eyebrow dark">Transparency</span>
+          <h3>Monthly snapshots</h3>
+          <p class="card-desc">Every curated dataset, its last-updated month, its source publication and the shared static-snapshot badge.</p>
+          <a href="monthly-snapshots.html" class="btn small">Open catalogue →</a>
+        </article>
       </div>
-    </section>
+    </section>"""
 
-    <section class="cta-band">
-      <div>
-        <h2>Can't find the number you need?</h2>
-        <p>Search every fact, KPI and trend published on FinRadar.</p>
-      </div>
-      <a href="search.html" class="btn btn-ghost">Search all data <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    highlights = []
+    for dataset_id in ("india-auto-sales", "irdai-insurance", "global-macro"):
+        snapshot = snapshots.get(dataset_id)
+        if snapshot and snapshot.get("metrics"):
+            highlights.append(render_metric_card(snapshot, snapshot["metrics"][0]))
+    if highlights:
+        html += section_head("Latest published figures", "Snapshot examples", "These cards are not live. Each shows its published period and Last Updated month.")
+        html += f'<div class="grid snapshot-grid">{"".join(highlights)}</div>'
+
+    html += """<section class="cta-band">
+      <div><h2>Prefer the full sector view?</h2><p>Browse 14 sectors with facts, KPIs, historical trends and the tools built on them.</p></div>
+      <a href="categories.html" class="btn btn-ghost">Browse sectors</a>
     </section>"""
     html += render_footer("")
     return html
@@ -2216,10 +2563,10 @@ def render_categories_index():
     html = render_base_head(
 
 
-        "Categories — All FinRadar Data",
+        "Categories — All Radar Data",
 
 
-        "Browse all 14 categories of macro and sector data on FinRadar — government, economy, agriculture, energy, transport, geo, health, education, welfare, environment, commerce, housing.",
+        "Browse all 14 categories of macro and sector data on Radar — government, economy, agriculture, energy, transport, geo, health, education, welfare, environment, commerce, housing.",
 
 
         "/categories.html",
@@ -2373,7 +2720,7 @@ def build_tool_search_items():
             "title": item["title"],
             "category": category,
             "text": haystack,
-            "source": "FinRadar calculator",
+            "source": "Radar calculator",
             "url": "tools/" + item["href"],
             "type": "tool",
         })
@@ -2384,7 +2731,7 @@ def render_tools_index():
     """Render the categorized calculator hub."""
     summary = catalog_summary()
     html = render_base_head(
-        "Tools — FinRadar",
+        "Tools — Radar",
         "Interactive banking, insurance, loan, investment and personal-finance calculators with formulas and guides.",
         "/tools.html",
         base="",
@@ -2439,7 +2786,7 @@ def render_tools_index():
       <article class="card calc-guide-card">
         <span class="guide-step">01</span>
         <h3>Enter realistic inputs</h3>
-        <p>Defaults are illustrative Indian-market values. Replace them with your actual numbers, rates and tenure.</p>
+        <p>Default inputs are provided for convenience only. Replace them with your actual numbers, rates and tenure.</p>
       </article>
       <article class="card calc-guide-card">
         <span class="guide-step">02</span>
@@ -2469,7 +2816,7 @@ def render_tool_page(tool):
     related = [item for item in tools_by_category(tool["category"]) if item["id"] != tool["id"]][:4]
 
     html = render_base_head(
-        tool["title"] + " — FinRadar",
+        tool["title"] + " — Radar",
         tool["description"],
         "/tools/" + tool["id"] + ".html",
         base="../",
@@ -2479,7 +2826,7 @@ def render_tool_page(tool):
     <section class="calc-hero">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="../index.html">Dashboard</a><span>/</span>
-        <a href="tools.html">Tools</a><span>/</span>
+        <a href="../tools.html">Tools</a><span>/</span>
         <span>{esc(category['title'])}</span>
       </nav>
       <span class="eyebrow dark">{esc(tool['eyebrow'])}</span>
@@ -2545,7 +2892,7 @@ def render_personal_inflation_page():
     html = render_base_head(
 
 
-        "Personal Inflation Calculator — FinRadar",
+        "Personal Inflation Calculator — Radar",
 
 
         "Calculate your personal inflation rate based on your spending split across categories.",
@@ -2584,7 +2931,7 @@ def render_salary_parity_page():
     html = render_base_head(
 
 
-        "Salary Parity Calculator — FinRadar",
+        "Salary Parity Calculator — Radar",
 
 
         "Find the equivalent salary in another Indian city that maintains the same purchasing power.",
@@ -2707,6 +3054,7 @@ def main():
 
     latest = load_latest()
     extra = load_extra()
+    snapshots = load_all()
 
 
 
@@ -2783,6 +3131,12 @@ def main():
 
     shutil.copytree(SNAP_DIR, SITE_DIR / "data" / "snapshots", dirs_exist_ok=True)
 
+    if SNAPSHOT_DIR.exists():
+        shutil.copytree(SNAPSHOT_DIR, SITE_DIR / "data" / "monthly-snapshots", dirs_exist_ok=True)
+
+    if (ROOT / "CNAME").exists():
+        shutil.copy2(ROOT / "CNAME", SITE_DIR / "CNAME")
+
 
 
 
@@ -2793,7 +3147,18 @@ def main():
     print("Generating index.html…")
 
 
-    (SITE_DIR / "index.html").write_text(render_index(latest), encoding="utf-8")
+    (SITE_DIR / "index.html").write_text(render_index(latest, snapshots), encoding="utf-8")
+
+    print(f"Generating {len(DASHBOARD_PAGES)} categorised dashboards…")
+    for page in DASHBOARD_PAGES:
+        (SITE_DIR / (page["id"] + ".html")).write_text(
+            render_dashboard_page(page, latest, extra, snapshots), encoding="utf-8"
+        )
+
+    print("Generating monthly-snapshots.html…")
+    (SITE_DIR / "monthly-snapshots.html").write_text(
+        render_monthly_snapshots_index(snapshots), encoding="utf-8"
+    )
 
 
 
@@ -2802,7 +3167,7 @@ def main():
     print("Generating search.html…")
 
 
-    (SITE_DIR / "search.html").write_text(render_search_page(latest, extra), encoding="utf-8")
+    (SITE_DIR / "search.html").write_text(render_search_page(latest, extra, snapshots), encoding="utf-8")
 
 
 
@@ -2931,13 +3296,25 @@ def main():
 
 
 
+    print("Generating sitemap.xml, robots.txt and Cloudflare headers…")
+    (SITE_DIR / "sitemap.xml").write_text(render_sitemap(latest, snapshots), encoding="utf-8")
+    (SITE_DIR / "robots.txt").write_text(render_robots(), encoding="utf-8")
+    (SITE_DIR / "_headers").write_text(
+        "/sitemap.xml\n"
+        "  Content-Type: application/xml\n"
+        "  X-Content-Type-Options: nosniff\n",
+        encoding="utf-8",
+    )
+
     print(f"[OK] Site generated at {SITE_DIR}")
 
 
     tool_pages = len(ALL_TOOLS)
 
-    print(f"Pages: 1 index + 1 search + 1 sources + 1 data lab + 1 tools hub + {tool_pages} calculator pages + "
-          f"{len(SECTORS)} categories + {len(FACTS)} facts + {len(HISTORICAL_TRENDS)} trends + {len(KPI_REGISTRY)} KPIs")
+    print(f"Pages: 1 index + 1 search + 1 sources + 1 data lab + 1 tools hub + {len(DASHBOARD_PAGES)} dashboards + "
+          f"1 snapshot catalogue + {len(snapshots)} snapshot datasets + {tool_pages} calculator pages + "
+          f"{len(SECTORS)} categories + {len(FACTS)} facts + {len(HISTORICAL_TRENDS)} trends + "
+          f"{len(KPI_REGISTRY)} KPIs + sitemap.xml + robots.txt + _headers")
 
 
 

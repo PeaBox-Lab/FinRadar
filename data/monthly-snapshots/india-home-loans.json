@@ -1,0 +1,88 @@
+{
+  "dataset_id": "india-home-loans",
+  "title": "RBI bank housing credit outstanding",
+  "category": "loans",
+  "page": "mobility-housing.html#india-home-loans",
+  "last_updated": "2026-11-26",
+  "coverage": "March outstanding, 2021-2025",
+  "source": {
+    "organization": "Reserve Bank of India",
+    "title": "Handbook of Statistics on Indian Economy — Table 45: Sectoral Deployment of Non-Food Gross Bank Credit",
+    "url": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23219",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Figures are the published March outstanding amounts for bank credit to housing. Values since July 2023 include the impact of a non-bank merger; RBI's ex-merger figures are shown separately in the notes.",
+  "metrics": [
+    {
+      "id": "housing_credit_outstanding",
+      "name": "Housing credit outstanding (including priority sector housing)",
+      "unit": "INR crore",
+      "category": "Home loans",
+      "definition": "Gross bank credit outstanding to housing as on the last reporting Friday in March, published by RBI in INR crore.",
+      "values": [
+        {
+          "period": "2021-03",
+          "value": 1492302
+        },
+        {
+          "period": "2022-03",
+          "value": 1738473
+        },
+        {
+          "period": "2023-03",
+          "value": 1991164
+        },
+        {
+          "period": "2024-03",
+          "value": 2718715
+        },
+        {
+          "period": "2025-03",
+          "value": 3010477
+        }
+      ],
+      "latest_period": "2025-03",
+      "latest_value": 3010477,
+      "yoy_change_pct": 10.731614016180439
+    },
+    {
+      "id": "priority_sector_housing_outstanding",
+      "name": "Priority-sector housing outstanding (memo)",
+      "unit": "INR crore",
+      "category": "Home loans",
+      "definition": "Memo item within RBI's sectoral deployment table, distinct from the total housing line.",
+      "values": [
+        {
+          "period": "2021-03",
+          "value": 578081
+        },
+        {
+          "period": "2022-03",
+          "value": 617927
+        },
+        {
+          "period": "2023-03",
+          "value": 622889
+        },
+        {
+          "period": "2024-03",
+          "value": 755222
+        },
+        {
+          "period": "2025-03",
+          "value": 746651
+        }
+      ],
+      "latest_period": "2025-03",
+      "latest_value": 746651,
+      "yoy_change_pct": -1.1348980829477955
+    }
+  ],
+  "notes": [
+    "RBI evidence: '4.2 Housing (Including Priority Sector Housing) 1492302 1738473 1991164 2718715 3010477' and '5.4 Housing 578081 617927 622889 755222 746651'.",
+    "Figures in parentheses in the RBI table exclude the merger impact: 23,31,935 / 26,89,068 for total housing and 6,60,572 / 6,65,107 for priority-sector housing for the last two periods.",
+    "RBI does not publish an annual bank home-loan disbursement series in this table. No disbursement value is substituted."
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

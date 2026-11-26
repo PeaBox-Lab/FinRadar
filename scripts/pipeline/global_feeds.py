@@ -1,4 +1,4 @@
-"""FinRadar — curated global data feeds
+"""Radar — curated global data feeds
 ========================================
 
 Phase 1 of the global expansion. This module is called by ``enrichment.py``
@@ -41,7 +41,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from typing import Any, Callable
 
-USER_AGENT = "FinRadar global feeds/1.0"
+USER_AGENT = "Radar global feeds/1.0"
 
 WB_BASE = "https://api.worldbank.org/v2"
 ECB_BASE = "https://data-api.ecb.europa.eu/service/data"

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance dashboard — Radar</title>
+  <meta name="description" content="India&#x27;s insurance penetration, density, premiums and policies from IRDAI annual reports." />
+  <meta property="og:site_name" content="Radar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Insurance dashboard — Radar" />
+  <meta property="og:description" content="India&#x27;s insurance penetration, density, premiums and policies from IRDAI annual reports." />
+  <meta property="og:url" content="https://radar.peabox.in/insurance.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Insurance dashboard — Radar" />
+  <meta name="twitter:description" content="India&#x27;s insurance penetration, density, premiums and policies from IRDAI annual reports." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://radar.peabox.in/insurance.html" />
+</head>
+<body data-base="">
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="Radar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+        <span class="brand-name">Radar</span>
+      </a>
+      <span class="nav-status"><span class="status-dot"></span>Live data</span>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Overview</a>
+          <a href="india.html" class="nav-link">India</a>
+          <a href="global.html" class="nav-link">Global</a>
+          <a href="markets.html" class="nav-link">Markets</a>
+          <a href="insurance.html" class="nav-link">Insurance</a>
+          <a href="mobility-housing.html" class="nav-link">Mobility</a>
+          <a href="data-lab.html" class="nav-link">Data Lab</a>
+          <a href="tools.html" class="nav-link">Tools</a>
+          <a href="search.html" class="nav-link">Search</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Dashboards</div>
+            <a href="india.html" role="menuitem">📊 India macro</a>
+            <a href="global.html" role="menuitem">🌐 Global macro</a>
+            <a href="markets.html" role="menuitem">🏦 Global markets</a>
+            <a href="insurance.html" role="menuitem">🛡️ Insurance</a>
+            <a href="mobility-housing.html" role="menuitem">🚗 Mobility &amp; housing</a>
+            <a href="monthly-snapshots.html" role="menuitem">🗓️ Monthly snapshots</a>
+
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+
+
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+
+
+            <div class="nav-drop-heading">Sector Categories</div>
+
+
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+
+
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+
+
+            <div class="nav-drop-heading">Social Services</div>
+
+
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+
+
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+
+
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
+            <div class="nav-drop-heading">More</div>
+
+
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+
+    </div>
+
+
+  </header>
+
+
+  <main id="site-main" class="site-main container"><section class="category-index-hero">
+      <span class="eyebrow dark">IRDAI snapshots</span>
+      <h1>Insurance dashboard</h1>
+      <p class="hero-sub">India&#x27;s insurance penetration, density, premiums and policies from IRDAI annual reports.</p>
+      <p class="muted">Annual regulatory publications are transcribed monthly and clearly marked as non-live snapshots.</p>
+      <div class="hero-actions"><a href="search.html" class="btn btn-ghost">Search all data</a><a href="monthly-snapshots.html" class="btn btn-ghost">Snapshot catalogue</a></div>
+    </section><section id="irdai-insurance" class="snapshot-section">
+          <div class="section-head"><div><span class="eyebrow dark">Static snapshot</span><h2>IRDAI insurance sector KPIs</h2></div><p class="section-intro">Every figure is transcribed from an official IRDAI annual-report table or the report's Bird's Eye View. FY2019-20 comparatives come from IRDAI Annual Report 2020-21 because the scanned FY2019-20 report has no usable text layer. Penetration and density are Swiss Re figures reproduced by IRDAI and are labelled as such. Period labels follow IRDAI's own April-March fiscal-year convention, including tables that print calendar-style year headings.</p></div>
+          <div class="grid snapshot-grid"><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Life</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Life insurers - new individual policies</h3>
+      <div class="snapshot-value">270.2 lakh policies</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change down">-7.4% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[288.47, 281.27, 291.13, 284.7, 291.77, 270.22]'></div>
+      <p class="small muted">IRDAI &#x27;Number of new policies issued&#x27; / &#x27;New Individual Policies issued&#x27; for life insurers.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Non-life</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>General, health and specialised insurers - policies issued</h3>
+      <div class="snapshot-value">3,914 lakh policies</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+16.5% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2415.09, 2467.33, 2656.7, 3018.1, 3359.88, 3913.53]'></div>
+      <p class="small muted">IRDAI &#x27;Number of new policies issued&#x27; / &#x27;Policies Issued&#x27; for general, health and specialised insurers.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Life</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Life insurers - total premium</h3>
+      <div class="snapshot-value">885,772 INR crore</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+6.7% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[572910.19, 628731.04, 692614.14, 782503.97, 829929.46, 885771.73]'></div>
+      <p class="small muted">Total premium underwritten by life insurers, including new and renewal business within India, as published by IRDAI.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Non-life</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Non-life insurers - premium</h3>
+      <div class="snapshot-value">311,666 INR crore</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+6.1% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[202082.3, 202082.3, 224002.82, 260327.82, 293622.3, 311666]'></div>
+      <p class="small muted">IRDAI gross direct premium within and outside India for general, health and specialised insurers.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Non-life</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Non-life insurers - gross direct premium within India</h3>
+      <div class="snapshot-value">307,611 INR crore</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+6.2% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[188916.62, 198714.72, 220700.21, 256894.27, 289683.22, 307611]'></div>
+      <p class="small muted">IRDAI gross direct premium within India for general, health and specialised insurers; distinct from the within-and-outside-India total.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">IRDAI</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Penetration</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Total insurance penetration</h3>
+      <div class="snapshot-value">3.7 % of GDP</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+0.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[3.76, 4.2, 4.2, 4.0, 3.7, 3.7]'></div>
+      <p class="small muted">Swiss Re penetration estimate for total insurance (life plus non-life), reproduced in IRDAI annual reports.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Penetration</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Life insurance penetration</h3>
+      <div class="snapshot-value">2.7 % of GDP</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change down">-3.6% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[2.82, 3.2, 3.2, 3.0, 2.8, 2.7]'></div>
+      <p class="small muted">Swiss Re life-insurance penetration estimate reproduced in IRDAI annual reports, percent of GDP.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Penetration</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Non-life insurance penetration</h3>
+      <div class="snapshot-value">1 % of GDP</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+0.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[0.94, 1.0, 1.0, 1.0, 1.0, 1.0]'></div>
+      <p class="small muted">Swiss Re non-life penetration estimate reproduced in IRDAI annual reports, percent of GDP.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Density</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Total insurance density</h3>
+      <div class="snapshot-value">97.0 USD per capita</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+2.1% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[78, 78, 91, 92, 95, 97]'></div>
+      <p class="small muted">Swiss Re insurance-density estimate for total insurance, reproduced in IRDAI annual reports.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Density</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Life insurance density</h3>
+      <div class="snapshot-value">72.0 USD per capita</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+2.9% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[58, 59, 69, 70, 70, 72]'></div>
+      <p class="small muted">Swiss Re life-insurance density estimate reproduced in IRDAI annual reports, USD per capita.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article><article class="card snapshot-card">
+      <div class="snapshot-card-top">
+        <span class="eyebrow dark">Density</span>
+        <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      </div>
+      <h3>Non-life insurance density</h3>
+      <div class="snapshot-value">25.0 USD per capita</div>
+      <div class="snapshot-period">Latest: FY2024-25 <span class="metric-change up">+0.0% YoY</span></div>
+      <div class="sparkline snapshot-sparkline" data-points='[19, 19, 22, 22, 25, 25]'></div>
+      <p class="small muted">Swiss Re non-life density estimate reproduced in IRDAI annual reports, USD per capita.</p>
+      <div class="snapshot-card-foot"><span>Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a></span></div>
+    </article></div>
+          <div class="snapshot-table-wrap">
+      <span class="snapshot-badge">Static Snapshot • Updated Monthly (Not Live)<span class="snapshot-updated">Last Updated: November 2026</span></span>
+      <table class="data-table snapshot-table">
+        <thead><tr><th>Metric</th><th>FY2019-20</th><th>FY2020-21</th><th>FY2021-22</th><th>FY2022-23</th><th>FY2023-24</th><th>FY2024-25</th></tr></thead>
+        <tbody><tr><th scope="row">Life insurers - new individual policies <span class="muted">(lakh policies)</span></th><td class="num">288.5</td><td class="num">281.3</td><td class="num">291.1</td><td class="num">284.7</td><td class="num">291.8</td><td class="num">270.2</td></tr><tr><th scope="row">General, health and specialised insurers - policies issued <span class="muted">(lakh policies)</span></th><td class="num">2,415</td><td class="num">2,467</td><td class="num">2,657</td><td class="num">3,018</td><td class="num">3,360</td><td class="num">3,914</td></tr><tr><th scope="row">Life insurers - total premium <span class="muted">(INR crore)</span></th><td class="num">572,910</td><td class="num">628,731</td><td class="num">692,614</td><td class="num">782,504</td><td class="num">829,929</td><td class="num">885,772</td></tr><tr><th scope="row">Non-life insurers - premium <span class="muted">(INR crore)</span></th><td class="num">202,082</td><td class="num">202,082</td><td class="num">224,003</td><td class="num">260,328</td><td class="num">293,622</td><td class="num">311,666</td></tr><tr><th scope="row">Non-life insurers - gross direct premium within India <span class="muted">(INR crore)</span></th><td class="num">188,917</td><td class="num">198,715</td><td class="num">220,700</td><td class="num">256,894</td><td class="num">289,683</td><td class="num">307,611</td></tr><tr><th scope="row">Total insurance penetration <span class="muted">(% of GDP)</span></th><td class="num">3.76</td><td class="num">4.2</td><td class="num">4.2</td><td class="num">4</td><td class="num">3.7</td><td class="num">3.7</td></tr><tr><th scope="row">Life insurance penetration <span class="muted">(% of GDP)</span></th><td class="num">2.82</td><td class="num">3.2</td><td class="num">3.2</td><td class="num">3</td><td class="num">2.8</td><td class="num">2.7</td></tr><tr><th scope="row">Non-life insurance penetration <span class="muted">(% of GDP)</span></th><td class="num">0.94</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td></tr><tr><th scope="row">Total insurance density <span class="muted">(USD per capita)</span></th><td class="num">78.0</td><td class="num">78.0</td><td class="num">91.0</td><td class="num">92.0</td><td class="num">95.0</td><td class="num">97.0</td></tr><tr><th scope="row">Life insurance density <span class="muted">(USD per capita)</span></th><td class="num">58.0</td><td class="num">59.0</td><td class="num">69.0</td><td class="num">70.0</td><td class="num">70.0</td><td class="num">72.0</td></tr><tr><th scope="row">Non-life insurance density <span class="muted">(USD per capita)</span></th><td class="num">19.0</td><td class="num">19.0</td><td class="num">22.0</td><td class="num">22.0</td><td class="num">25.0</td><td class="num">25.0</td></tr></tbody>
+      </table>
+      <p class="small muted">Source: <a href="https://irdai.gov.in/web/guest/annual-reports" target="_blank" rel="noopener">Insurance Regulatory and Development Authority of India (IRDAI)</a> · IRDAI Annual Reports 2020-21, 2021-22, 2022-23, 2023-24 and 2024-25</p>
+    </div>
+          <p class="small muted">Evidence: IRDAI Annual Report 2020-21 Table I.7 and premium/policy tables supply FY2019-20 comparatives: life penetration 2.82 percent, non-life 0.94 percent, total 3.76 percent; life density USD 58, non-life USD 19, total USD 78; life premium INR 572910.19 crore; life policies 288.47 lakh; non-life policies 2415.09 lakh; within-India non-life premium INR 188916.62 crore. · Evidence: IRDAI Annual Report 2021-22 Tables I.7-I.10 and I.18 supply FY2020-21 and FY2021-22 premiums, policies, penetration and density. · Evidence: IRDAI Annual Report 2023-24 Tables I.7-I.9 and I.12 supply FY2022-23 and FY2023-24 series; the FY2023-24 non-life within-India premium uses Table I.12 row 1 (289683.22) and within-and-outside total uses row 2 (293622.30). · Evidence: IRDAI Annual Report 2024-25 Tables I.7-I.9 and I.12 supply FY2024-25 penetration 2.7 / 1.0 / 3.7 percent, density USD 72 / 25 / 97, life premium INR 885771.73 crore, non-life premiums INR 311666 crore (within and outside) and INR 307611 crore (within India), life policies 270.22 lakh and non-life policies 3913.53 lakh. · Period-label caveat: FY2023-24 and FY2024-25 penetration/density tables print India columns headed 2023 and 2024, but report notes and narrative sections assign those columns to April-March fiscal years. · Source discrepancy: the FY2024-25 report restates FY2023-24 non-life premiums slightly lower than the FY2023-24 report. This series keeps each figure from its first published annual report rather than blending restatements. · No FY2025-26 annual KPI value is shown: the IRDAI annual-reports listing had FY2024-25 as the latest published report when checked on 2026-11-26. · Report URLs: 2020-21 https://irdai.gov.in/documents/37343/366637/Annual+Report+2020-21.pdf/e187558c-00dd-078c-b679-90c6488f4dd0?version=1.1&amp;t=1640254592193&amp;download=true ; 2021-22 https://irdai.gov.in/documents/37343/366637/Annual+Report+2021-22.pdf/5ac27b18-2520-1186-8807-00e0342d9f2d?version=1.0&amp;t=1671780581841&amp;download=true ; 2022-23 https://irdai.gov.in/documents/37343/366637/%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+_+Annual+Report+2022-23.pdf/c3ecf83d-ddc1-3d13-da8c-c64364baf20f?version=1.0&amp;t=1703656400415&amp;download=true ; 2023-24 https://irdai.gov.in/documents/37343/366637/%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+2023-24+_+Annual+Report+2023-24.pdf/22950192-b116-35ed-a3a9-d2cfdb660206?version=1.0&amp;t=1734934358396&amp;download=true ; 2024-25 https://irdai.gov.in/documents/37343/366637/%E0%A4%86%E0%A4%88%E0%A4%86%E0%A4%B0%E0%A4%A1%E0%A5%80%E0%A4%8F%E0%A4%86%E0%A4%88+%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF%E0%A4%95+%E0%A4%B0%E0%A4%BF%E0%A4%AA%E0%A5%8B%E0%A4%B0%E0%A5%8D%E0%A4%9F+_+IRDAI+Annual+Report+2024-25.pdf/06f02832-66a3-6308-a16f-f46a6640fc93?version=2.0&amp;t=1767598639163&amp;download=true</p>
+          <p class="small"><a href="monthly-snapshots.html#irdai-insurance">Open the full IRDAI insurance sector KPIs catalogue entry →</a></p>
+        </section><div class="section-head"><div><span class="eyebrow dark">Live feed</span><h2>World Bank: Life insurance premium volume</h2></div><p class="section-intro">Direct life insurance premiums as a share of GDP.</p></div><div class="grid global-feed-grid"><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Australia</h3>
+          <div class="snapshot-value">1.07 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 -28.90%</div>
+          <div class="sparkline" data-points='[3.126363, 3.112117, 2.859924, 3.052824, 3.871626, 3.547307, 3.018454, 2.372698, 2.123799, 1.511192, 1.074456]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Brazil</h3>
+          <div class="snapshot-value">0.43 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +6.67%</div>
+          <div class="sparkline" data-points='[1.276846, 1.333882, 1.597672, 1.435167, 0.3657056, 0.3636869, 0.3446357, 0.3629831, 0.3818619, 0.4049793, 0.4319939]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Canada</h3>
+          <div class="snapshot-value">3.19 <small>% of GDP</small></div>
+          <div class="snapshot-period">2019 +1.51%</div>
+          <div class="sparkline" data-points='[3.109874, 2.899503, 2.882059, 2.869764, 3.039755, 3.187183, 3.203351, 3.156812, 3.14732, 3.194773]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — China</h3>
+          <div class="snapshot-value">2.36 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +11.19%</div>
+          <div class="sparkline" data-points='[2.370045, 1.797032, 1.652568, 1.580462, 1.686124, 1.912929, 2.328856, 2.621064, 2.284034, 2.122919, 2.360465]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — France</h3>
+          <div class="snapshot-value">5.29 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 -14.31%</div>
+          <div class="sparkline" data-points='[7.434512, 6.300134, 5.669275, 5.879559, 6.263669, 6.412602, 6.241529, 6.100451, 6.133808, 6.175517, 5.291917]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Germany</h3>
+          <div class="snapshot-value">3.10 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +3.36%</div>
+          <div class="sparkline" data-points='[3.523358, 3.222501, 3.269139, 3.230654, 3.19994, 3.061516, 2.895424, 2.780273, 2.767481, 2.994506, 3.095097]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — India</h3>
+          <div class="snapshot-value">2.73 <small>% of GDP</small></div>
+          <div class="snapshot-period">2018 -1.04%</div>
+          <div class="sparkline" data-points='[3.998432, 3.351623, 2.980192, 2.883997, 2.686241, 2.740279, 2.791537, 2.754374, 2.725773]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Indonesia</h3>
+          <div class="snapshot-value">1.11 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +2.02%</div>
+          <div class="sparkline" data-points='[1.019364, 1.098218, 1.190213, 1.073737, 1.017517, 1.102425, 1.21776, 1.205759, 1.136093, 1.091935, 1.113971]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Japan</h3>
+          <div class="snapshot-value">5.42 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 -3.22%</div>
+          <div class="sparkline" data-points='[6.001555, 6.469579, 6.676736, 6.318446, 6.771624, 6.720515, 5.928771, 5.706687, 6.097911, 5.596517, 5.416317]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — Mexico</h3>
+          <div class="snapshot-value">1.10 <small>% of GDP</small></div>
+          <div class="snapshot-period">2019 +7.31%</div>
+          <div class="sparkline" data-points='[0.8390315, 0.8471875, 0.8951133, 0.9692581, 0.9522173, 0.9633687, 1.028963, 0.9733121, 1.025165, 1.100099]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — South Africa</h3>
+          <div class="snapshot-value">10.77 <small>% of GDP</small></div>
+          <div class="snapshot-period">2019 +13.63%</div>
+          <div class="sparkline" data-points='[9.432697, 9.26368, 9.858619, 10.42977, 10.63751, 10.66391, 10.19582, 9.47526, 10.76651]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Life insurance premium volume — South Korea</h3>
+          <div class="snapshot-value">6.19 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +1.53%</div>
+          <div class="sparkline" data-points='[6.276027, 6.378109, 8.006922, 5.146305, 7.074876, 7.069494, 6.88262, 6.208726, 5.839404, 6.09314, 6.186125]'></div>
+          <p class="small muted">Direct life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.09" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article></div><div class="section-head"><div><span class="eyebrow dark">Live feed</span><h2>World Bank: Non-life insurance premium volume</h2></div><p class="section-intro">Direct non-life insurance premiums as a share of GDP.</p></div><div class="grid global-feed-grid"><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Australia</h3>
+          <div class="snapshot-value">2.24 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +3.67%</div>
+          <div class="sparkline" data-points='[2.070821, 2.056751, 2.171457, 2.252486, 2.215574, 2.208792, 2.200481, 2.141284, 2.120215, 2.162404, 2.241849]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Brazil</h3>
+          <div class="snapshot-value">1.00 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +2.30%</div>
+          <div class="sparkline" data-points='[0.9649078, 0.9566836, 0.9744096, 1.043792, 1.095807, 1.099979, 1.065762, 1.027634, 1.021945, 0.9738441, 0.9962905]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Canada</h3>
+          <div class="snapshot-value">3.32 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +20.28%</div>
+          <div class="sparkline" data-points='[2.306713, 2.395132, 2.506451, 2.563962, 2.550814, 2.659228, 2.714684, 2.673326, 2.640401, 2.757173, 3.316457]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — China</h3>
+          <div class="snapshot-value">1.17 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 -0.09%</div>
+          <div class="sparkline" data-points='[0.9536124, 0.9543297, 0.9887162, 1.042589, 1.115058, 1.154911, 1.173292, 1.190459, 1.180752, 1.17524, 1.17413]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — France</h3>
+          <div class="snapshot-value">2.45 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +8.58%</div>
+          <div class="sparkline" data-points='[2.212211, 2.256641, 2.250782, 2.229823, 2.240169, 2.215563, 2.220104, 2.224406, 2.232401, 2.255012, 2.448499]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Germany</h3>
+          <div class="snapshot-value">2.04 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +5.82%</div>
+          <div class="sparkline" data-points='[1.90333, 1.861032, 1.897709, 1.926014, 1.916664, 1.918491, 1.90909, 1.896983, 1.910315, 1.929401, 2.041736]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — India</h3>
+          <div class="snapshot-value">0.65 <small>% of GDP</small></div>
+          <div class="snapshot-period">2018 -2.43%</div>
+          <div class="sparkline" data-points='[0.4871389, 0.5253598, 0.5594148, 0.5529152, 0.5273954, 0.5357369, 0.6437659, 0.6694009, 0.6531616]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Indonesia</h3>
+          <div class="snapshot-value">0.50 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +15.30%</div>
+          <div class="sparkline" data-points='[0.3629017, 0.3681751, 0.3708521, 0.3977057, 0.430599, 0.4345591, 0.4149366, 0.4009024, 0.4096927, 0.4320604, 0.4981672]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Japan</h3>
+          <div class="snapshot-value">1.66 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 +3.70%</div>
+          <div class="sparkline" data-points='[1.413638, 1.482605, 1.516496, 1.593789, 1.612791, 1.602368, 1.572745, 1.542549, 1.568417, 1.602663, 1.661973]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — Mexico</h3>
+          <div class="snapshot-value">0.96 <small>% of GDP</small></div>
+          <div class="snapshot-period">2019 +7.26%</div>
+          <div class="sparkline" data-points='[0.7410423, 0.8152455, 0.8065149, 0.8735614, 0.8055826, 0.8591652, 0.8762634, 0.9403958, 0.891983, 0.9567651]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — South Africa</h3>
+          <div class="snapshot-value">2.91 <small>% of GDP</small></div>
+          <div class="snapshot-period">2019 +30.75%</div>
+          <div class="sparkline" data-points='[2.479095, 2.467515, 2.515118, 2.4905, 2.471435, 2.558198, 2.55723, 2.561777, 2.228462, 2.913824]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article><article class="card global-feed-card">
+          <h3>Non-life insurance premium volume — South Korea</h3>
+          <div class="snapshot-value">4.61 <small>% of GDP</small></div>
+          <div class="snapshot-period">2020 -4.23%</div>
+          <div class="sparkline" data-points='[3.799657, 4.250504, 4.595005, 3.465062, 4.746289, 4.67482, 4.701183, 4.664956, 4.652931, 4.817623, 4.614048]'></div>
+          <p class="small muted">Direct non-life insurance premiums as a share of GDP.</p>
+          <div class="snapshot-card-foot"><span>Source: <a href="https://data.worldbank.org/indicator/GFDD.DI.10" target="_blank" rel="noopener">World Bank Open Data</a></span></div>
+        </article></div><section class="cta-band"><div><h2>Need another cut of the data?</h2><p>Search every fact, KPI, trend and monthly snapshot published on Radar.</p></div><a href="search.html" class="btn btn-ghost">Search all data</a></section>  </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand-col">
+
+
+        <a class="brand" href="index.html" aria-label="Radar home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+          <span class="brand-name">Radar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 12:15 UTC</span></p>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Explore</h4>
+
+
+        <a href="index.html">Overview</a>
+
+
+        <a href="india.html">India dashboard</a>
+
+
+        <a href="global.html">Global macro</a>
+
+
+        <a href="markets.html">Global markets</a>
+
+
+        <a href="insurance.html">Insurance</a>
+
+
+        <a href="mobility-housing.html">Mobility &amp; housing</a>
+
+
+        <a href="monthly-snapshots.html">Monthly snapshots</a>
+
+
+        <a href="search.html">Search</a>
+
+
+        <a href="sources.html">Data Sources</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Key Sectors</h4>
+
+
+        <a href="category/central.html">Central Government</a>
+
+
+        <a href="category/states.html">State Level</a>
+
+
+        <a href="category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="category/geo.html">Geo Levels</a>
+
+
+        <a href="category/transport.html">Transport</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">More Sectors</h4>
+
+
+        <a href="category/economy.html">Economy</a>
+
+
+        <a href="category/agriculture.html">Agriculture</a>
+
+
+        <a href="category/health.html">Health</a>
+
+
+        <a href="category/education.html">Education</a>
+
+
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+
+      <p>© 2026 Radar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
+      <a href="https://github.com/PeaBox-Lab/Radar" class="footer-gh">GitHub</a>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <script src="scripts/app.js"></script>
+
+
+  <script src="scripts/charts.js"></script>
+
+
+  <script src="scripts/tools.js"></script>
+
+
+</body>
+
+
+</html>

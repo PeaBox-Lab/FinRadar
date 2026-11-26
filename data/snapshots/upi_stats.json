@@ -1,15 +1,29 @@
 {
-  "source": "NPCI UPI transaction volumes and values — illustrative fallback; live NPCI figures replace this when available.",
-  "last_fetched": "2026-11",
-  "current_month": "2026-11",
-  "total_value_usd": 135940.0,
-  "total_volume": 971500,
-  "avg_ticket_usd": 1.398,
+  "source": "NPCI — UPI Product Statistics, monthly table for October 2026 (accessed 2026-11-26).",
+  "source_url": "https://www.npci.org.in/product/upi/product-statistics",
+  "last_fetched": "2026-11-26",
+  "current_month": "2026-10",
+  "total_value_usd": 331018996485.01,
+  "total_volume": 25466700000,
+  "avg_ticket_usd": 12.998,
   "prior_year_same_month": {
-    "total_value_usd": 125940.0,
-    "total_volume": 882100,
-    "avg_ticket_usd": 1.427
+    "total_value_usd": null,
+    "total_volume": null,
+    "avg_ticket_usd": null,
+    "reason": "NPCI's retrieved October 2026 monthly table did not include a definitionally identical October 2025 comparison."
   },
-  "momentum_ratio_vs_prior_year": 1.08,
-  "notes": "Demo values for the FinRadar dashboard; ticket size and volume should be pulled from NPCI when a live feed is wired in."
+  "momentum_ratio_vs_prior_year": null,
+  "published_inr": {
+    "total_value_inr_crore": 3152929.46,
+    "volume_million_transactions": 25466.7,
+    "banks_live": 758,
+    "avg_ticket_inr": 1238.06
+  },
+  "conversion": {
+    "inr_per_usd": 95.2492,
+    "date": "2026-10-30",
+    "source": "RBI / FBIL reference rate published for the last business day of October 2026",
+    "source_url": "https://www.rbi.org.in/home.aspx/Scripts/commonman/English/Webservice/Scripts/CurrencyData.aspx"
+  },
+  "notes": "NPCI publishes UPI volume and INR value only. Average ticket size (₹1,238.06 ≈ US$12.998) is arithmetic: total value ÷ volume. USD totals use the official RBI/FBIL rate of ₹95.2492 per US$ on 2026-10-30. NPCI excludes same-account debit/credit transactions from August 2018 onward and may revise monthly figures."
 }

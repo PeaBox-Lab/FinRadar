@@ -1,0 +1,48 @@
+{
+  "dataset_id": "india-housing-sales",
+  "title": "India top-7-cities residential sales (JLL REIS)",
+  "category": "housing",
+  "page": "mobility-housing.html#india-housing-sales",
+  "last_updated": "2026-11-26",
+  "coverage": "Calendar years 2022-2024",
+  "source": {
+    "organization": "JLL (Real Estate Intelligence Service)",
+    "title": "India's luxury homes dominate 2024 sales, crossing 50% mark",
+    "url": "https://www.jll.com/en-in/newsroom/indias-luxury-homes-dominate-2024-sales-crossing-50-percent-mark",
+    "retrieved_at": "2026-11-26"
+  },
+  "methodology": "Annual residential unit sales across India's top seven cities, transcribed from JLL's published report. JLL counts apartments only and excludes row houses, villas and plotted developments.",
+  "metrics": [
+    {
+      "id": "top7_residential_units_sold",
+      "name": "Residential units sold, top 7 cities",
+      "unit": "units",
+      "category": "Housing",
+      "definition": "JLL REIS apartment sales across NCR, MMR, Bengaluru, Pune, Hyderabad, Chennai and Kolkata.",
+      "values": [
+        {
+          "period": "2022",
+          "value": 215000
+        },
+        {
+          "period": "2023",
+          "value": 271818
+        },
+        {
+          "period": "2024",
+          "value": 302867
+        }
+      ],
+      "latest_period": "2024",
+      "latest_value": 302867,
+      "yoy_change_pct": 11.422716670713493
+    }
+  ],
+  "notes": [
+    "JLL evidence: 'Residential sales during 2024 witnessed sustained growth reaching a record-high volume of 302,867-unit sales, which was around 11% growth Y-o-Y.' Its table reports 2024 = 302,867 and 2023 = 271,818.",
+    "The 2022 figure is JLL's published '215,000 units' Q4-2022 top-seven-cities estimate, as reported by Times Now: https://www.timesnownews.com/business-economy/real-estate/residential-house-sales-in-top-7-cities-touch-decade-high-of-215000-units-despite-high-rates-jll-article-96788676",
+    "ANAROCK publishes a broader top-7-cities series (2021: 236,500; 2022: 364,900; 2023: 476,000; 2024: approximately 459,000; 2025: approximately 395,600). It is not mixed with the JLL series because its coverage definition differs. Source: https://websitemedia.anarock.com/media/Milestone_Year_for_Indian_Residential_Real_Estate_2022_ANAROCK_ANNUAL_REPORT_417a9fb439.pdf"
+  ],
+  "schema_version": "1.0",
+  "badge": "Static Snapshot • Updated Monthly (Not Live)"
+}

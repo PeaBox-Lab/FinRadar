@@ -1,8 +1,19 @@
 {
-  "source": "RBI Database on Indian Economy — Forex reserves and imports (illustrative fallback; replaced by live data when available).",
-  "last_fetched": "2026-11-22",
-  "fx_reserves_usd": 61500000000.0,
-  "annual_imports_usd": 45020000000.0,
-  "short_term_debt_usd": 50950000000.0,
-  "notes": "Numbers are illustrative; the pipeline divides reserves by (imports/12) for the import cover and by short-term debt for the reserve adequacy ratio."
+  "source": "Reserve Bank of India — Weekly Statistical Supplement, foreign-exchange reserves as on 2026-11-13 (published 2026-11-20).",
+  "source_url": "https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28849",
+  "last_fetched": "2026-11-26",
+  "fx_reserves_usd": 705341650000.0,
+  "annual_imports_usd": 775713000000.0,
+  "short_term_debt_usd": 153509000000.0,
+  "components_usd": {
+    "foreign_currency_assets": 583452360000.0,
+    "gold": 98613410000.0,
+    "sdrs": 18517590000.0,
+    "imf_reserve_tranche_position": 4758430000.0
+  },
+  "notes": "Reserves are US$705,341.65 million as on 2026-11-13. Annual merchandise imports are FY2025-26 provisional US$775,713 million (RBI Bulletin, 2026-10-23). Short-term external debt is original maturity up to one year, end-June 2026 provisional US$153,509 million. Import cover (reserves ÷ imports × 12) and reserves ÷ short-term debt are derived from these published figures, not RBI-published ratios for 2026-11-13; RBI's own BoP-basis cover differs. Sources: https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28849 ; https://rbidocs.rbi.org.in/rdocs/Bulletin/PDFs/32T_231020264A97C8EE38CC422EBCE9D7E6883DEF1C.PDF ; https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63700",
+  "caveats": [
+    "Reserve valuation changes with gold prices, exchange rates and bond yields.",
+    "RBI reported 23.0% short-term/original-maturity debt to reserves at end-June 2026 on its own basis."
+  ]
 }

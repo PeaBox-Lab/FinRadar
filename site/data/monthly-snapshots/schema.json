@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Radar monthly snapshot schema",
+  "description": "Schema for curated, explicitly non-live datasets transcribed from official publications. Never use generated, simulated, random or indicative values in these files.",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "title",
+    "category",
+    "last_updated",
+    "coverage",
+    "source",
+    "methodology",
+    "metrics",
+    "notes"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable kebab-case identifier used in URLs and search."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable dataset title."
+    },
+    "category": {
+      "type": "string",
+      "description": "Dashboard category key, for example auto, housing, loans, insurance or exchanges."
+    },
+    "page": {
+      "type": "string",
+      "description": "Relative site page where the dataset is rendered, with an optional anchor."
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+      "description": "Month (and optional day) when the official source was last checked and transcribed, in YYYY-MM or YYYY-MM-DD."
+    },
+    "coverage": {
+      "type": "string",
+      "description": "Period coverage, for example FY2020-21 to FY2025-26."
+    },
+    "source": {
+      "type": "object",
+      "required": ["organization", "title", "url", "retrieved_at"],
+      "properties": {
+        "organization": { "type": "string" },
+        "title": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "retrieved_at": { "type": "string", "format": "date" }
+      }
+    },
+    "methodology": {
+      "type": "string",
+      "description": "How figures were selected and what they represent."
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "unit", "values"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "unit": { "type": "string" },
+          "category": { "type": "string" },
+          "definition": { "type": "string" },
+          "values": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["period", "value"],
+              "properties": {
+                "period": { "type": "string" },
+                "value": { "type": ["number", "null"] }
+              }
+            }
+          },
+          "latest_period": { "type": "string", "description": "Derived by update_monthly_snapshots.py." },
+          "latest_value": { "type": ["number", "null"], "description": "Derived by update_monthly_snapshots.py." },
+          "yoy_change_pct": { "type": ["number", "null"], "description": "Published or derived year-on-year change." }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "badge": {
+      "const": "Static Snapshot • Updated Monthly (Not Live)",
+      "description": "Shared disclosure stamped by the update script."
+    },
+    "schema_version": { "type": "string" }
+  }
+}

@@ -1,4 +1,4 @@
-"""FinRadar — Calculator registry.
+"""Radar — Calculator registry.
 
 Single source of truth for the generated calculator hub. Each registry entry
 becomes a dedicated page under ``site/tools/`` and is rendered by
@@ -65,9 +65,9 @@ LEGACY_TOOLS = [
         "description": "See how your own spending mix changes the inflation you feel.",
         "eyebrow": "Personal finance",
         "formula": "Weighted average of category sub-indices plus user shocks",
-        "guide": "Adjust weights to total roughly 100%, then add a shock for any category.",
+        "guide": "Adjust weights so they total 100%, then add a shock for any category.",
         "outcomes": ["Personal inflation rate", "Comparison with headline CPI"],
-        "notes": ["Sub-indices are illustrative until live MoSPI bucket data is wired in."],
+        "notes": ["Uses NSO (MoSPI) CPI group indices for October 2026, base 2024=100; starting weights are the published group weights."],
         "legacy": True,
         "href": "personal-inflation.html",
     },
@@ -81,7 +81,7 @@ LEGACY_TOOLS = [
         "formula": "Base salary × destination index ÷ source index",
         "guide": "Pick a current city and a target city, then enter your annual salary.",
         "outcomes": ["Equivalent salary", "Purchasing-power direction"],
-        "notes": ["City indices are illustrative until live MoSPI data is wired in."],
+        "notes": ["Uses Labour Bureau CPI-IW September 2026 city indices, base 2016=100, as a published proxy for industrial-worker households."],
         "legacy": True,
         "href": "salary-parity.html",
     },

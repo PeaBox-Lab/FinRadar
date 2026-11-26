@@ -1,13 +1,26 @@
 {
-  "source": "Illustrative MoSPI-style sub-indices for the personal inflation calculator; replaced by live MoSPI values when wired in.",
-  "last_updated": "2026-11-22",
+  "source": "NSO (MoSPI) Consumer Price Index press release for October 2026, COICOP-2018 groups, base 2024=100 (provisional).",
+  "source_url": "https://mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf",
+  "last_updated": "2026-11-26",
+  "month": "2026-10",
+  "base": "2024=100",
   "subindices": {
-    "food": 40,
-    "fuel & light": 7,
-    "clothing": 6,
-    "education": 4,
-    "healthcare": 4,
-    "housing": 20,
-    "other stuff": 19
-  }
+    "Food (01.1)": 113.23,
+    "Electricity, gas and other fuels (04.5)": 104.42,
+    "Clothing (03.1)": 111.09,
+    "Education services (10)": 109.19,
+    "Health (06)": 105.67,
+    "Actual rental payments for housing (04.1)": 104.35,
+    "Personal care and miscellaneous (13)": 124.50
+  },
+  "subindex_weights": {
+    "Food (01.1)": 34.78,
+    "Electricity, gas and other fuels (04.5)": 5.36,
+    "Clothing (03.1)": 5.53,
+    "Education services (10)": 3.33,
+    "Health (06)": 6.10,
+    "Actual rental payments for housing (04.1)": 10.88,
+    "Personal care and miscellaneous (13)": 5.04
+  },
+  "notes": "Combined all-India CPI group indices for October 2026. Published weights sum to the covered groups, not to 100; the calculator normalises by the total weight entered. Cross-check: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2335416&reg=48&lang=1"
 }
