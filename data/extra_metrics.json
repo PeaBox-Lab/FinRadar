@@ -1,0 +1,4024 @@
+{
+  "generated_at": "2026-11-26T09:06:00Z",
+  "methodology": "Public official APIs only. All derived values are computed from the series listed in this file.",
+  "series": [
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "GDP growth (annual %)",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual percentage change of real Gross Domestic Product at constant prices.",
+      "guide": "Use it as the headline speed of the economy. Compare with inflation to see whether growth is real or price-driven.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:IND:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 3.84099115686554
+        },
+        {
+          "year": 2001,
+          "value": 4.82396626397303
+        },
+        {
+          "year": 2002,
+          "value": 3.80397532120038
+        },
+        {
+          "year": 2003,
+          "value": 7.86038147545045
+        },
+        {
+          "year": 2004,
+          "value": 7.92293661307978
+        },
+        {
+          "year": 2005,
+          "value": 7.92343062131789
+        },
+        {
+          "year": 2006,
+          "value": 8.06073257305057
+        },
+        {
+          "year": 2007,
+          "value": 7.66081506510766
+        },
+        {
+          "year": 2008,
+          "value": 3.08669805950082
+        },
+        {
+          "year": 2009,
+          "value": 7.8618888330338
+        },
+        {
+          "year": 2010,
+          "value": 8.49758470165625
+        },
+        {
+          "year": 2011,
+          "value": 5.24131620024293
+        },
+        {
+          "year": 2012,
+          "value": 5.45638755164772
+        },
+        {
+          "year": 2013,
+          "value": 6.38610640091713
+        },
+        {
+          "year": 2014,
+          "value": 7.41022760516977
+        },
+        {
+          "year": 2015,
+          "value": 7.99625378567987
+        },
+        {
+          "year": 2016,
+          "value": 8.25630550176662
+        },
+        {
+          "year": 2017,
+          "value": 6.79538341902422
+        },
+        {
+          "year": 2018,
+          "value": 6.45385134495295
+        },
+        {
+          "year": 2019,
+          "value": 3.87143694070524
+        },
+        {
+          "year": 2020,
+          "value": -5.77772470687303
+        },
+        {
+          "year": 2021,
+          "value": 9.68959249191741
+        },
+        {
+          "year": 2022,
+          "value": 7.6093649776932
+        },
+        {
+          "year": 2023,
+          "value": 7.210224629335
+        },
+        {
+          "year": 2024,
+          "value": 7.09927893176518
+        },
+        {
+          "year": 2025,
+          "value": 7.56666179284244
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 7.56666179284244,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.PCAP.CD",
+      "label": "GDP per capita (current US$)",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "USD",
+      "frequency": "Annual",
+      "definition": "GDP divided by mid-year population, converted to current US dollars.",
+      "guide": "A rough measure of average material output per person. It is not a measure of household income or welfare.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+      "key": "wb:IND:NY.GDP.PCAP.CD",
+      "points": [
+        {
+          "year": 2000,
+          "value": 442.750218937263
+        },
+        {
+          "year": 2001,
+          "value": 450.357900514128
+        },
+        {
+          "year": 2002,
+          "value": 469.149928973927
+        },
+        {
+          "year": 2003,
+          "value": 544.143133545002
+        },
+        {
+          "year": 2004,
+          "value": 624.258826510066
+        },
+        {
+          "year": 2005,
+          "value": 710.488080408949
+        },
+        {
+          "year": 2006,
+          "value": 801.668353659022
+        },
+        {
+          "year": 2007,
+          "value": 1021.88707706826
+        },
+        {
+          "year": 2008,
+          "value": 992.519584923828
+        },
+        {
+          "year": 2009,
+          "value": 1094.94974598436
+        },
+        {
+          "year": 2010,
+          "value": 1347.51939071367
+        },
+        {
+          "year": 2011,
+          "value": 1445.46127486037
+        },
+        {
+          "year": 2012,
+          "value": 1429.32199520032
+        },
+        {
+          "year": 2013,
+          "value": 1432.84397512195
+        },
+        {
+          "year": 2014,
+          "value": 1553.88396075118
+        },
+        {
+          "year": 2015,
+          "value": 1583.99815907985
+        },
+        {
+          "year": 2016,
+          "value": 1707.50892912243
+        },
+        {
+          "year": 2017,
+          "value": 1950.10468280866
+        },
+        {
+          "year": 2018,
+          "value": 1966.25455171679
+        },
+        {
+          "year": 2019,
+          "value": 2041.42863698585
+        },
+        {
+          "year": 2020,
+          "value": 1907.04251637669
+        },
+        {
+          "year": 2021,
+          "value": 2239.61384367482
+        },
+        {
+          "year": 2022,
+          "value": 2279.98145719369
+        },
+        {
+          "year": 2023,
+          "value": 2434.44826340989
+        },
+        {
+          "year": 2024,
+          "value": 2591.9916607122
+        },
+        {
+          "year": 2025,
+          "value": 2702.47987141553
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 2702.47987141553,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.PCAP.KD.ZG",
+      "label": "GDP per capita growth (annual %)",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of real GDP divided by population growth.",
+      "guide": "Prefer this over headline GDP growth when assessing whether average living standards are improving.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG",
+      "key": "wb:IND:NY.GDP.PCAP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 1.90763005843495
+        },
+        {
+          "year": 2001,
+          "value": 2.88134658113091
+        },
+        {
+          "year": 2002,
+          "value": 1.94070548523048
+        },
+        {
+          "year": 2003,
+          "value": 6.00579964269848
+        },
+        {
+          "year": 2004,
+          "value": 6.09996522556324
+        },
+        {
+          "year": 2005,
+          "value": 6.17702892470105
+        },
+        {
+          "year": 2006,
+          "value": 6.38367720990838
+        },
+        {
+          "year": 2007,
+          "value": 6.05160013553237
+        },
+        {
+          "year": 2008,
+          "value": 1.61413451730577
+        },
+        {
+          "year": 2009,
+          "value": 6.31340985810947
+        },
+        {
+          "year": 2010,
+          "value": 6.93079780360446
+        },
+        {
+          "year": 2011,
+          "value": 3.76074153231241
+        },
+        {
+          "year": 2012,
+          "value": 4.01726735834531
+        },
+        {
+          "year": 2013,
+          "value": 4.97769997299568
+        },
+        {
+          "year": 2014,
+          "value": 6.06398074170735
+        },
+        {
+          "year": 2015,
+          "value": 6.71566734636781
+        },
+        {
+          "year": 2016,
+          "value": 6.97394690926852
+        },
+        {
+          "year": 2017,
+          "value": 5.5611850346496
+        },
+        {
+          "year": 2018,
+          "value": 5.29211971912275
+        },
+        {
+          "year": 2019,
+          "value": 2.79675759966057
+        },
+        {
+          "year": 2020,
+          "value": -6.69047102834244
+        },
+        {
+          "year": 2021,
+          "value": 8.79093447675136
+        },
+        {
+          "year": 2022,
+          "value": 6.76238601728318
+        },
+        {
+          "year": 2023,
+          "value": 6.26741791597422
+        },
+        {
+          "year": 2024,
+          "value": 6.14957446128288
+        },
+        {
+          "year": 2025,
+          "value": 6.6165688365585
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 6.6165688365585,
+      "status": "live"
+    },
+    {
+      "code": "FP.CPI.TOTL.ZG",
+      "label": "Consumer price inflation",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual percentage change in the Consumer Price Index.",
+      "guide": "The rate at which a representative basket of consumer goods becomes more expensive. Compare with your own spending mix using the inflation tool.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
+      "key": "wb:IND:FP.CPI.TOTL.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 4.0094359104519
+        },
+        {
+          "year": 2001,
+          "value": 3.77929312235637
+        },
+        {
+          "year": 2002,
+          "value": 4.29715203929561
+        },
+        {
+          "year": 2003,
+          "value": 3.80585899528852
+        },
+        {
+          "year": 2004,
+          "value": 3.76725173477517
+        },
+        {
+          "year": 2005,
+          "value": 4.24634362031923
+        },
+        {
+          "year": 2006,
+          "value": 5.79652337561633
+        },
+        {
+          "year": 2007,
+          "value": 6.37288135593231
+        },
+        {
+          "year": 2008,
+          "value": 8.34926704907574
+        },
+        {
+          "year": 2009,
+          "value": 10.8823529411764
+        },
+        {
+          "year": 2010,
+          "value": 11.9893899204244
+        },
+        {
+          "year": 2011,
+          "value": 8.9117933648336
+        },
+        {
+          "year": 2012,
+          "value": 9.47899691419792
+        },
+        {
+          "year": 2013,
+          "value": 10.0178784746104
+        },
+        {
+          "year": 2014,
+          "value": 6.66565671867899
+        },
+        {
+          "year": 2015,
+          "value": 4.90697344127249
+        },
+        {
+          "year": 2016,
+          "value": 4.94821634062134
+        },
+        {
+          "year": 2017,
+          "value": 3.32817337461304
+        },
+        {
+          "year": 2018,
+          "value": 3.93882646691642
+        },
+        {
+          "year": 2019,
+          "value": 3.72950573539123
+        },
+        {
+          "year": 2020,
+          "value": 6.62343677628529
+        },
+        {
+          "year": 2021,
+          "value": 5.13140747176363
+        },
+        {
+          "year": 2022,
+          "value": 6.69903414079857
+        },
+        {
+          "year": 2023,
+          "value": 5.64914318907925
+        },
+        {
+          "year": 2024,
+          "value": 4.9530355097366
+        },
+        {
+          "year": 2025,
+          "value": 2.39884954182294
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 2.39884954182294,
+      "status": "live"
+    },
+    {
+      "code": "SP.POP.TOTL",
+      "label": "Total population",
+      "country": "IND",
+      "sector": "central",
+      "category": "macro",
+      "unit": "people",
+      "frequency": "Annual",
+      "definition": "Mid-year estimate of the resident population.",
+      "guide": "Denominator for per-capita metrics. Census 2011 below is the official decadal benchmark; this series is an annual estimate.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+      "key": "wb:IND:SP.POP.TOTL",
+      "points": [
+        {
+          "year": 2000,
+          "value": 1057922733.0
+        },
+        {
+          "year": 2001,
+          "value": 1077898575.0
+        },
+        {
+          "year": 2002,
+          "value": 1097600380.0
+        },
+        {
+          "year": 2003,
+          "value": 1116803006.0
+        },
+        {
+          "year": 2004,
+          "value": 1135991513.0
+        },
+        {
+          "year": 2005,
+          "value": 1154676322.0
+        },
+        {
+          "year": 2006,
+          "value": 1172878890.0
+        },
+        {
+          "year": 2007,
+          "value": 1190676021.0
+        },
+        {
+          "year": 2008,
+          "value": 1207930964.0
+        },
+        {
+          "year": 2009,
+          "value": 1225524753.0
+        },
+        {
+          "year": 2010,
+          "value": 1243481564.0
+        },
+        {
+          "year": 2011,
+          "value": 1261224954.0
+        },
+        {
+          "year": 2012,
+          "value": 1278674502.0
+        },
+        {
+          "year": 2013,
+          "value": 1295829511.0
+        },
+        {
+          "year": 2014,
+          "value": 1312277191.0
+        },
+        {
+          "year": 2015,
+          "value": 1328024498.0
+        },
+        {
+          "year": 2016,
+          "value": 1343944296.0
+        },
+        {
+          "year": 2017,
+          "value": 1359657400.0
+        },
+        {
+          "year": 2018,
+          "value": 1374659064.0
+        },
+        {
+          "year": 2019,
+          "value": 1389030312.0
+        },
+        {
+          "year": 2020,
+          "value": 1402617695.0
+        },
+        {
+          "year": 2021,
+          "value": 1414203896.0
+        },
+        {
+          "year": 2022,
+          "value": 1425423212.0
+        },
+        {
+          "year": 2023,
+          "value": 1438069596.0
+        },
+        {
+          "year": 2024,
+          "value": 1450935791.0
+        },
+        {
+          "year": 2025,
+          "value": 1463865525.0
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 1463865525.0,
+      "status": "live"
+    },
+    {
+      "code": "SP.POP.GROW",
+      "label": "Population growth (annual %)",
+      "country": "IND",
+      "sector": "central",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual percentage change in population.",
+      "guide": "Subtract this from GDP growth to approximate per-capita growth.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SP.POP.GROW",
+      "key": "wb:IND:SP.POP.GROW",
+      "points": [
+        {
+          "year": 2000,
+          "value": 1.87939826197393
+        },
+        {
+          "year": 2001,
+          "value": 1.87060822112685
+        },
+        {
+          "year": 2002,
+          "value": 1.81129424097937
+        },
+        {
+          "year": 2003,
+          "value": 1.73438204419235
+        },
+        {
+          "year": 2004,
+          "value": 1.7035704679088
+        },
+        {
+          "year": 2005,
+          "value": 1.63142146860079
+        },
+        {
+          "year": 2006,
+          "value": 1.56412522526913
+        },
+        {
+          "year": 2007,
+          "value": 1.50599144392136
+        },
+        {
+          "year": 2008,
+          "value": 1.43877181746736
+        },
+        {
+          "year": 2009,
+          "value": 1.44601731955273
+        },
+        {
+          "year": 2010,
+          "value": 1.45460361883041
+        },
+        {
+          "year": 2011,
+          "value": 1.41682761544376
+        },
+        {
+          "year": 2012,
+          "value": 1.37405616603306
+        },
+        {
+          "year": 2013,
+          "value": 1.33270430507476
+        },
+        {
+          "year": 2014,
+          "value": 1.26129027125347
+        },
+        {
+          "year": 2015,
+          "value": 1.19285563384335
+        },
+        {
+          "year": 2016,
+          "value": 1.19162966402099
+        },
+        {
+          "year": 2017,
+          "value": 1.1623961434697
+        },
+        {
+          "year": 2018,
+          "value": 1.09729906702925
+        },
+        {
+          "year": 2019,
+          "value": 1.04001395098104
+        },
+        {
+          "year": 2020,
+          "value": 0.973438646910149
+        },
+        {
+          "year": 2021,
+          "value": 0.822648220128724
+        },
+        {
+          "year": 2022,
+          "value": 0.790200540609834
+        },
+        {
+          "year": 2023,
+          "value": 0.883289539766135
+        },
+        {
+          "year": 2024,
+          "value": 0.890706546985984
+        },
+        {
+          "year": 2025,
+          "value": 0.887183543977214
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 0.887183543977214,
+      "status": "live"
+    },
+    {
+      "code": "SP.URB.TOTL.IN.ZS",
+      "label": "Urban population (% of total)",
+      "country": "IND",
+      "sector": "housing",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the population living in urban areas as defined by national statistical offices.",
+      "guide": "A rising share usually signals structural change; pair it with productivity and housing data before drawing conclusions.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+      "key": "wb:IND:SP.URB.TOTL.IN.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 27.6470407512523
+        },
+        {
+          "year": 2001,
+          "value": 27.9028652096636
+        },
+        {
+          "year": 2002,
+          "value": 28.1756878910456
+        },
+        {
+          "year": 2003,
+          "value": 28.4660287698
+        },
+        {
+          "year": 2004,
+          "value": 28.7726067228528
+        },
+        {
+          "year": 2005,
+          "value": 29.0945497159107
+        },
+        {
+          "year": 2006,
+          "value": 29.4309857146804
+        },
+        {
+          "year": 2007,
+          "value": 29.7810426848684
+        },
+        {
+          "year": 2008,
+          "value": 30.1438485921815
+        },
+        {
+          "year": 2009,
+          "value": 30.5185314023263
+        },
+        {
+          "year": 2010,
+          "value": 30.9042190810094
+        },
+        {
+          "year": 2011,
+          "value": 31.2746502853309
+        },
+        {
+          "year": 2012,
+          "value": 31.5898935604399
+        },
+        {
+          "year": 2013,
+          "value": 31.9096789235237
+        },
+        {
+          "year": 2014,
+          "value": 32.2288233408821
+        },
+        {
+          "year": 2015,
+          "value": 32.5472990022299
+        },
+        {
+          "year": 2016,
+          "value": 32.8650780972823
+        },
+        {
+          "year": 2017,
+          "value": 33.1821328157539
+        },
+        {
+          "year": 2018,
+          "value": 33.4984353473598
+        },
+        {
+          "year": 2019,
+          "value": 33.8139578818147
+        },
+        {
+          "year": 2020,
+          "value": 34.1286726088333
+        },
+        {
+          "year": 2021,
+          "value": 34.4425517181304
+        },
+        {
+          "year": 2022,
+          "value": 34.7555673994206
+        },
+        {
+          "year": 2023,
+          "value": 35.0676918424186
+        },
+        {
+          "year": 2024,
+          "value": 35.3788972368389
+        },
+        {
+          "year": 2025,
+          "value": 35.689155772396
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 35.689155772396,
+      "status": "live"
+    },
+    {
+      "code": "SP.POP.1564.TO.ZS",
+      "label": "Working-age population (15\u201364, %)",
+      "country": "IND",
+      "sector": "welfare",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the population aged 15 to 64 years.",
+      "guide": "A demographic dividend exists only when this large cohort is employed and productive.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS",
+      "key": "wb:IND:SP.POP.1564.TO.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 60.0363292788794
+        },
+        {
+          "year": 2001,
+          "value": 60.3721236017034
+        },
+        {
+          "year": 2002,
+          "value": 60.7034726242062
+        },
+        {
+          "year": 2003,
+          "value": 61.0366264092953
+        },
+        {
+          "year": 2004,
+          "value": 61.3938727280818
+        },
+        {
+          "year": 2005,
+          "value": 61.7634053727483
+        },
+        {
+          "year": 2006,
+          "value": 62.1494488498081
+        },
+        {
+          "year": 2007,
+          "value": 62.5476673904344
+        },
+        {
+          "year": 2008,
+          "value": 62.9374830161807
+        },
+        {
+          "year": 2009,
+          "value": 63.3246171976748
+        },
+        {
+          "year": 2010,
+          "value": 63.7171853960836
+        },
+        {
+          "year": 2011,
+          "value": 64.1076284698584
+        },
+        {
+          "year": 2012,
+          "value": 64.4911322144707
+        },
+        {
+          "year": 2013,
+          "value": 64.8769968339134
+        },
+        {
+          "year": 2014,
+          "value": 65.2562148871274
+        },
+        {
+          "year": 2015,
+          "value": 65.6177857140772
+        },
+        {
+          "year": 2016,
+          "value": 65.9731160836743
+        },
+        {
+          "year": 2017,
+          "value": 66.3274225183491
+        },
+        {
+          "year": 2018,
+          "value": 66.6529850197096
+        },
+        {
+          "year": 2019,
+          "value": 66.944203338595
+        },
+        {
+          "year": 2020,
+          "value": 67.2377729174314
+        },
+        {
+          "year": 2021,
+          "value": 67.5490478920304
+        },
+        {
+          "year": 2022,
+          "value": 67.8132963616236
+        },
+        {
+          "year": 2023,
+          "value": 68.0210944742065
+        },
+        {
+          "year": 2024,
+          "value": 68.2295801537644
+        },
+        {
+          "year": 2025,
+          "value": 68.4281617563294
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 68.4281617563294,
+      "status": "live"
+    },
+    {
+      "code": "SP.DYN.LE00.IN",
+      "label": "Life expectancy at birth",
+      "country": "IND",
+      "sector": "health",
+      "category": "macro",
+      "unit": "years",
+      "frequency": "Annual",
+      "definition": "Number of years a newborn would live if prevailing mortality patterns remained constant.",
+      "guide": "A broad outcome measure for health, sanitation and nutrition. Moves slowly, so read multi-year trends.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
+      "key": "wb:IND:SP.DYN.LE00.IN",
+      "points": [
+        {
+          "year": 2000,
+          "value": 62.749
+        },
+        {
+          "year": 2001,
+          "value": 63.158
+        },
+        {
+          "year": 2002,
+          "value": 63.649
+        },
+        {
+          "year": 2003,
+          "value": 64.086
+        },
+        {
+          "year": 2004,
+          "value": 64.484
+        },
+        {
+          "year": 2005,
+          "value": 64.939
+        },
+        {
+          "year": 2006,
+          "value": 65.373
+        },
+        {
+          "year": 2007,
+          "value": 65.803
+        },
+        {
+          "year": 2008,
+          "value": 66.247
+        },
+        {
+          "year": 2009,
+          "value": 66.7
+        },
+        {
+          "year": 2010,
+          "value": 67.162
+        },
+        {
+          "year": 2011,
+          "value": 67.623
+        },
+        {
+          "year": 2012,
+          "value": 68.076
+        },
+        {
+          "year": 2013,
+          "value": 68.499
+        },
+        {
+          "year": 2014,
+          "value": 68.932
+        },
+        {
+          "year": 2015,
+          "value": 69.326
+        },
+        {
+          "year": 2016,
+          "value": 69.709
+        },
+        {
+          "year": 2017,
+          "value": 70.068
+        },
+        {
+          "year": 2018,
+          "value": 70.415
+        },
+        {
+          "year": 2019,
+          "value": 70.746
+        },
+        {
+          "year": 2020,
+          "value": 70.156
+        },
+        {
+          "year": 2021,
+          "value": 67.282
+        },
+        {
+          "year": 2022,
+          "value": 71.698
+        },
+        {
+          "year": 2023,
+          "value": 72.003
+        },
+        {
+          "year": 2024,
+          "value": 72.235
+        }
+      ],
+      "latest_year": 2024,
+      "latest_value": 72.235,
+      "status": "live"
+    },
+    {
+      "code": "SE.ADT.LITR.ZS",
+      "label": "Literacy rate (ages 15+)",
+      "country": "IND",
+      "sector": "education",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Percentage of people aged 15 and above who can read and write.",
+      "guide": "Compare with the Census 2011 literacy benchmark below to gauge long-run educational progress.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS",
+      "key": "wb:IND:SE.ADT.LITR.ZS",
+      "points": [
+        {
+          "year": 2001,
+          "value": 61.0099983215332
+        },
+        {
+          "year": 2006,
+          "value": 62.75
+        },
+        {
+          "year": 2010,
+          "value": 68.325817300837
+        },
+        {
+          "year": 2011,
+          "value": 69.3000030517578
+        },
+        {
+          "year": 2012,
+          "value": 69.8279300354369
+        },
+        {
+          "year": 2018,
+          "value": 73.6883524760717
+        },
+        {
+          "year": 2019,
+          "value": 74.8938629973395
+        },
+        {
+          "year": 2020,
+          "value": 75.5270629470344
+        },
+        {
+          "year": 2021,
+          "value": 76.0596617430205
+        },
+        {
+          "year": 2022,
+          "value": 76.3199996948242
+        },
+        {
+          "year": 2023,
+          "value": 81.6999969482422
+        },
+        {
+          "year": 2024,
+          "value": 78.1625330351403
+        }
+      ],
+      "latest_year": 2024,
+      "latest_value": 78.1625330351403,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDS.TOTL.ZS",
+      "label": "Gross domestic savings (% of GDP)",
+      "country": "IND",
+      "sector": "financials",
+      "category": "macro",
+      "unit": "% GDP",
+      "frequency": "Annual",
+      "definition": " GDP minus final consumption expenditure, as a share of GDP.",
+      "guide": "Higher savings give an economy more internally funded investment capacity.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDS.TOTL.ZS",
+      "key": "wb:IND:NY.GDS.TOTL.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 24.3131833903764
+        },
+        {
+          "year": 2001,
+          "value": 24.0916926834607
+        },
+        {
+          "year": 2002,
+          "value": 25.6562581746682
+        },
+        {
+          "year": 2003,
+          "value": 27.6200324775481
+        },
+        {
+          "year": 2004,
+          "value": 31.2437497123137
+        },
+        {
+          "year": 2005,
+          "value": 32.255129867281
+        },
+        {
+          "year": 2006,
+          "value": 34.0875841266633
+        },
+        {
+          "year": 2007,
+          "value": 34.3773731960541
+        },
+        {
+          "year": 2008,
+          "value": 32.7847028620241
+        },
+        {
+          "year": 2009,
+          "value": 32.5804441151796
+        },
+        {
+          "year": 2010,
+          "value": 34.2675343705701
+        },
+        {
+          "year": 2011,
+          "value": 32.708319830057
+        },
+        {
+          "year": 2012,
+          "value": 32.8551899788478
+        },
+        {
+          "year": 2013,
+          "value": 32.0590737671998
+        },
+        {
+          "year": 2014,
+          "value": 31.4314260905683
+        },
+        {
+          "year": 2015,
+          "value": 30.5644282130068
+        },
+        {
+          "year": 2016,
+          "value": 30.3961706924706
+        },
+        {
+          "year": 2017,
+          "value": 30.5076513689534
+        },
+        {
+          "year": 2018,
+          "value": 29.8884586617548
+        },
+        {
+          "year": 2019,
+          "value": 28.0860368485782
+        },
+        {
+          "year": 2020,
+          "value": 27.2894188790877
+        },
+        {
+          "year": 2021,
+          "value": 28.5732421263582
+        },
+        {
+          "year": 2022,
+          "value": 31.7941969900494
+        },
+        {
+          "year": 2023,
+          "value": 32.8913417357203
+        },
+        {
+          "year": 2024,
+          "value": 32.8269324325985
+        },
+        {
+          "year": 2025,
+          "value": 32.559492763302
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 32.559492763302,
+      "status": "live"
+    },
+    {
+      "code": "FS.AST.PRVT.GD.ZS",
+      "label": "Domestic credit to private sector (% of GDP)",
+      "country": "IND",
+      "sector": "financials",
+      "category": "macro",
+      "unit": "% GDP",
+      "frequency": "Annual",
+      "definition": "Financial resources provided to the private sector by banks and other financial corporations.",
+      "guide": "A proxy for financial depth. Very rapid growth can also signal credit stress, so read it alongside savings.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/FS.AST.PRVT.GD.ZS",
+      "key": "wb:IND:FS.AST.PRVT.GD.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 28.3395511575183
+        },
+        {
+          "year": 2001,
+          "value": 28.6194154254102
+        },
+        {
+          "year": 2002,
+          "value": 32.3064890735537
+        },
+        {
+          "year": 2003,
+          "value": 31.6262656186491
+        },
+        {
+          "year": 2004,
+          "value": 36.1918038545968
+        },
+        {
+          "year": 2005,
+          "value": 40.0679804780573
+        },
+        {
+          "year": 2006,
+          "value": 43.6277524334268
+        },
+        {
+          "year": 2007,
+          "value": 45.6277647457138
+        },
+        {
+          "year": 2008,
+          "value": 49.559366687116
+        },
+        {
+          "year": 2009,
+          "value": 48.1244479112046
+        },
+        {
+          "year": 2010,
+          "value": 50.5553749785224
+        },
+        {
+          "year": 2011,
+          "value": 51.2892331325447
+        },
+        {
+          "year": 2012,
+          "value": 51.8885076473464
+        },
+        {
+          "year": 2013,
+          "value": 52.385709516972
+        },
+        {
+          "year": 2014,
+          "value": 51.8821873589628
+        },
+        {
+          "year": 2015,
+          "value": 51.8675240772049
+        },
+        {
+          "year": 2016,
+          "value": 38.2036507912231
+        },
+        {
+          "year": 2017,
+          "value": 38.1707138624147
+        },
+        {
+          "year": 2018,
+          "value": 38.8975254010362
+        },
+        {
+          "year": 2019,
+          "value": 38.73794497616
+        },
+        {
+          "year": 2020,
+          "value": 40.7867848551821
+        },
+        {
+          "year": 2021,
+          "value": 36.8920885102897
+        },
+        {
+          "year": 2022,
+          "value": 38.1859763563586
+        },
+        {
+          "year": 2023,
+          "value": 40.8940758962905
+        },
+        {
+          "year": 2024,
+          "value": 41.6079694330612
+        },
+        {
+          "year": 2025,
+          "value": 44.0305399373406
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 44.0305399373406,
+      "status": "live"
+    },
+    {
+      "code": "FR.INR.RINR",
+      "label": "Real interest rate",
+      "country": "IND",
+      "sector": "financials",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Lending interest rate adjusted for inflation.",
+      "guide": "Positive rates reward savers; deeply negative rates erode deposits. It is a market-wide rate, not your FD rate.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/FR.INR.RINR",
+      "key": "wb:IND:FR.INR.RINR",
+      "points": [
+        {
+          "year": 2000,
+          "value": 8.34261083169541
+        },
+        {
+          "year": 2001,
+          "value": 8.59144929472996
+        },
+        {
+          "year": 2002,
+          "value": 7.90717718905634
+        },
+        {
+          "year": 2003,
+          "value": 7.30788115992965
+        },
+        {
+          "year": 2004,
+          "value": 4.91012830439652
+        },
+        {
+          "year": 2005,
+          "value": 4.85514517170548
+        },
+        {
+          "year": 2006,
+          "value": 2.57060670308207
+        },
+        {
+          "year": 2007,
+          "value": 5.68184406266903
+        },
+        {
+          "year": 2008,
+          "value": 3.77175624993679
+        },
+        {
+          "year": 2009,
+          "value": 4.80859210783414
+        },
+        {
+          "year": 2010,
+          "value": -1.98385922190105
+        },
+        {
+          "year": 2011,
+          "value": 1.31798086277381
+        },
+        {
+          "year": 2012,
+          "value": 2.47352048879141
+        },
+        {
+          "year": 2013,
+          "value": 3.8659928626783
+        },
+        {
+          "year": 2014,
+          "value": 6.6951760905166
+        },
+        {
+          "year": 2015,
+          "value": 7.55648841350514
+        },
+        {
+          "year": 2016,
+          "value": 6.23271141480041
+        },
+        {
+          "year": 2017,
+          "value": 5.3276088624176
+        },
+        {
+          "year": 2018,
+          "value": 5.36166638952418
+        },
+        {
+          "year": 2019,
+          "value": 6.8948754272989
+        },
+        {
+          "year": 2020,
+          "value": 4.13599957785852
+        },
+        {
+          "year": 2021,
+          "value": 0.316945144201484
+        },
+        {
+          "year": 2022,
+          "value": 5.55501946152238
+        }
+      ],
+      "latest_year": 2022,
+      "latest_value": 5.55501946152238,
+      "status": "live"
+    },
+    {
+      "code": "BX.KLT.DINV.WD.GD.ZS",
+      "label": "FDI inflows (% of GDP)",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "% GDP",
+      "frequency": "Annual",
+      "definition": "Net inflows of foreign direct investment as a share of GDP.",
+      "guide": "Reflects long-term foreign confidence, but a single large deal can distort one year.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS",
+      "key": "wb:IND:BX.KLT.DINV.WD.GD.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 0.765211694280817
+        },
+        {
+          "year": 2001,
+          "value": 1.05638020993358
+        },
+        {
+          "year": 2002,
+          "value": 1.01156946489919
+        },
+        {
+          "year": 2003,
+          "value": 0.605887857091792
+        },
+        {
+          "year": 2004,
+          "value": 0.765596855110284
+        },
+        {
+          "year": 2005,
+          "value": 0.886098378458823
+        },
+        {
+          "year": 2006,
+          "value": 2.13016842534495
+        },
+        {
+          "year": 2007,
+          "value": 2.07339404668754
+        },
+        {
+          "year": 2008,
+          "value": 3.6205232354017
+        },
+        {
+          "year": 2009,
+          "value": 2.65159033235479
+        },
+        {
+          "year": 2010,
+          "value": 1.6350340943491
+        },
+        {
+          "year": 2011,
+          "value": 2.0020634629993
+        },
+        {
+          "year": 2012,
+          "value": 1.31293453035323
+        },
+        {
+          "year": 2013,
+          "value": 1.5162764665975
+        },
+        {
+          "year": 2014,
+          "value": 1.69565958990806
+        },
+        {
+          "year": 2015,
+          "value": 2.09211521443253
+        },
+        {
+          "year": 2016,
+          "value": 1.9373641224439
+        },
+        {
+          "year": 2017,
+          "value": 1.50731583255894
+        },
+        {
+          "year": 2018,
+          "value": 1.55821483801456
+        },
+        {
+          "year": 2019,
+          "value": 1.78482633957161
+        },
+        {
+          "year": 2020,
+          "value": 2.40620322673636
+        },
+        {
+          "year": 2021,
+          "value": 1.41217101040888
+        },
+        {
+          "year": 2022,
+          "value": 1.53665241748393
+        },
+        {
+          "year": 2023,
+          "value": 0.802254995836756
+        },
+        {
+          "year": 2024,
+          "value": 0.721648483526777
+        },
+        {
+          "year": 2025,
+          "value": 1.03111732367627
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 1.03111732367627,
+      "status": "live"
+    },
+    {
+      "code": "BN.CAB.XOKA.GD.ZS",
+      "label": "Current account balance (% of GDP)",
+      "country": "IND",
+      "sector": "economy",
+      "category": "macro",
+      "unit": "% GDP",
+      "frequency": "Annual",
+      "definition": "Current account balance (goods, services, income and transfers) as a share of GDP.",
+      "guide": "Persistent deficits need stable external financing; persistent surpluses may signal weak domestic demand.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/BN.CAB.XOKA.GD.ZS",
+      "key": "wb:IND:BN.CAB.XOKA.GD.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": -0.982342580017137
+        },
+        {
+          "year": 2001,
+          "value": 0.290495460210206
+        },
+        {
+          "year": 2002,
+          "value": 1.37093793900847
+        },
+        {
+          "year": 2003,
+          "value": 1.44355773291234
+        },
+        {
+          "year": 2004,
+          "value": 0.110018010197154
+        },
+        {
+          "year": 2005,
+          "value": -1.25350400207393
+        },
+        {
+          "year": 2006,
+          "value": -0.988988302952292
+        },
+        {
+          "year": 2007,
+          "value": -0.663717648772608
+        },
+        {
+          "year": 2008,
+          "value": -2.58337749259837
+        },
+        {
+          "year": 2009,
+          "value": -1.95146209111801
+        },
+        {
+          "year": 2010,
+          "value": -3.25348368945179
+        },
+        {
+          "year": 2011,
+          "value": -3.42928468606061
+        },
+        {
+          "year": 2012,
+          "value": -5.00488971805303
+        },
+        {
+          "year": 2013,
+          "value": -2.64566711733892
+        },
+        {
+          "year": 2014,
+          "value": -1.33950896483452
+        },
+        {
+          "year": 2015,
+          "value": -1.06754907167964
+        },
+        {
+          "year": 2016,
+          "value": -0.527880606037518
+        },
+        {
+          "year": 2017,
+          "value": -1.43948820320988
+        },
+        {
+          "year": 2018,
+          "value": -2.42697545810527
+        },
+        {
+          "year": 2019,
+          "value": -1.04961203910072
+        },
+        {
+          "year": 2020,
+          "value": 1.22362111042791
+        },
+        {
+          "year": 2021,
+          "value": -1.05524166809383
+        },
+        {
+          "year": 2022,
+          "value": -2.43238270956779
+        },
+        {
+          "year": 2023,
+          "value": -0.912777939495826
+        },
+        {
+          "year": 2024,
+          "value": -0.851289719084461
+        },
+        {
+          "year": 2025,
+          "value": -0.511308076227287
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": -0.511308076227287,
+      "status": "live"
+    },
+    {
+      "code": "FI.RES.TOTL.MO",
+      "label": "Foreign exchange reserves (months of imports)",
+      "country": "IND",
+      "sector": "financials",
+      "category": "macro",
+      "unit": "months",
+      "frequency": "Annual",
+      "definition": "International reserves expressed as the number of months of goods and services imports they could cover.",
+      "guide": "A standard resilience buffer. Compare with short-term external debt before judging adequacy.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/FI.RES.TOTL.MO",
+      "key": "wb:IND:FI.RES.TOTL.MO",
+      "points": [
+        {
+          "year": 2000,
+          "value": 6.1214797944893
+        },
+        {
+          "year": 2001,
+          "value": 7.45295243694094
+        },
+        {
+          "year": 2002,
+          "value": 10.3730834871592
+        },
+        {
+          "year": 2003,
+          "value": 12.2832820147208
+        },
+        {
+          "year": 2004,
+          "value": 11.3051095119993
+        },
+        {
+          "year": 2005,
+          "value": 8.51847317184615
+        },
+        {
+          "year": 2006,
+          "value": 8.91992866511893
+        },
+        {
+          "year": 2007,
+          "value": 11.1391919314526
+        },
+        {
+          "year": 2008,
+          "value": 7.71425265694142
+        },
+        {
+          "year": 2009,
+          "value": 9.7737111431445
+        },
+        {
+          "year": 2010,
+          "value": 7.76063411026838
+        },
+        {
+          "year": 2011,
+          "value": 6.18879010347658
+        },
+        {
+          "year": 2012,
+          "value": 5.90371509588661
+        },
+        {
+          "year": 2013,
+          "value": 6.02774649537523
+        },
+        {
+          "year": 2014,
+          "value": 6.59913308020169
+        },
+        {
+          "year": 2015,
+          "value": 8.00309182929654
+        },
+        {
+          "year": 2016,
+          "value": 8.43013905768233
+        },
+        {
+          "year": 2017,
+          "value": 8.16271866943628
+        },
+        {
+          "year": 2018,
+          "value": 6.90105548512363
+        },
+        {
+          "year": 2019,
+          "value": 8.27365940048396
+        },
+        {
+          "year": 2020,
+          "value": 12.9323281065785
+        },
+        {
+          "year": 2021,
+          "value": 9.84238574452327
+        },
+        {
+          "year": 2022,
+          "value": 7.00951210544359
+        },
+        {
+          "year": 2023,
+          "value": 7.97237314389747
+        },
+        {
+          "year": 2024,
+          "value": 7.52136088188696
+        },
+        {
+          "year": 2025,
+          "value": 7.85087469673437
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 7.85087469673437,
+      "status": "live"
+    },
+    {
+      "code": "EN.ATM.PM25.MC.M3",
+      "label": "Fine particulate matter (PM2.5)",
+      "country": "IND",
+      "sector": "environment",
+      "category": "macro",
+      "unit": "\u00b5g/m\u00b3",
+      "frequency": "Annual",
+      "definition": "Annual mean concentration of fine particulate matter with a diameter of 2.5 micrometres or less.",
+      "guide": "Lower is better. Compare the trend with GDP growth to see whether expansion is improving or worsening air quality.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3",
+      "key": "wb:IND:EN.ATM.PM25.MC.M3",
+      "points": [
+        {
+          "year": 2000,
+          "value": 50.7630256086335
+        },
+        {
+          "year": 2001,
+          "value": 50.4537854823933
+        },
+        {
+          "year": 2002,
+          "value": 51.2544544512511
+        },
+        {
+          "year": 2003,
+          "value": 52.5149836233186
+        },
+        {
+          "year": 2004,
+          "value": 50.8446162251344
+        },
+        {
+          "year": 2005,
+          "value": 51.3369278641143
+        },
+        {
+          "year": 2006,
+          "value": 49.2546056005498
+        },
+        {
+          "year": 2007,
+          "value": 49.4513350486064
+        },
+        {
+          "year": 2008,
+          "value": 51.2664820637014
+        },
+        {
+          "year": 2009,
+          "value": 52.2626731220367
+        },
+        {
+          "year": 2010,
+          "value": 51.7188200456979
+        },
+        {
+          "year": 2011,
+          "value": 55.0258281992835
+        },
+        {
+          "year": 2012,
+          "value": 53.0196291324327
+        },
+        {
+          "year": 2013,
+          "value": 52.2693789873114
+        },
+        {
+          "year": 2014,
+          "value": 51.6872206933655
+        },
+        {
+          "year": 2015,
+          "value": 51.4355933740253
+        },
+        {
+          "year": 2016,
+          "value": 54.4218755239322
+        },
+        {
+          "year": 2017,
+          "value": 55.1724251484484
+        },
+        {
+          "year": 2018,
+          "value": 56.6795240921875
+        },
+        {
+          "year": 2019,
+          "value": 53.5981486621548
+        },
+        {
+          "year": 2020,
+          "value": 52.1933674059995
+        },
+        {
+          "year": 2021,
+          "value": 55.6234726382873
+        },
+        {
+          "year": 2022,
+          "value": 50.6577446303517
+        },
+        {
+          "year": 2023,
+          "value": 54.0522242217331
+        }
+      ],
+      "latest_year": 2023,
+      "latest_value": 54.0522242217331,
+      "status": "live"
+    },
+    {
+      "code": "EG.ELC.ACCS.ZS",
+      "label": "Access to electricity (% of population)",
+      "country": "IND",
+      "sector": "energy",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the population with access to an electricity supply.",
+      "guide": "Near-universal access shifts the policy focus from connection to reliability and affordability.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS",
+      "key": "wb:IND:EG.ELC.ACCS.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 60.3
+        },
+        {
+          "year": 2001,
+          "value": 62.0
+        },
+        {
+          "year": 2002,
+          "value": 62.3
+        },
+        {
+          "year": 2003,
+          "value": 65.4
+        },
+        {
+          "year": 2004,
+          "value": 64.4
+        },
+        {
+          "year": 2005,
+          "value": 68.8
+        },
+        {
+          "year": 2006,
+          "value": 67.9
+        },
+        {
+          "year": 2007,
+          "value": 72.3
+        },
+        {
+          "year": 2008,
+          "value": 74.1
+        },
+        {
+          "year": 2009,
+          "value": 75.0
+        },
+        {
+          "year": 2010,
+          "value": 76.3
+        },
+        {
+          "year": 2011,
+          "value": 79.5
+        },
+        {
+          "year": 2012,
+          "value": 79.9
+        },
+        {
+          "year": 2013,
+          "value": 83.1
+        },
+        {
+          "year": 2014,
+          "value": 85.1
+        },
+        {
+          "year": 2015,
+          "value": 88.0
+        },
+        {
+          "year": 2016,
+          "value": 89.6
+        },
+        {
+          "year": 2017,
+          "value": 91.8
+        },
+        {
+          "year": 2018,
+          "value": 95.7
+        },
+        {
+          "year": 2019,
+          "value": 95.9
+        },
+        {
+          "year": 2020,
+          "value": 96.5
+        },
+        {
+          "year": 2021,
+          "value": 99.6
+        },
+        {
+          "year": 2022,
+          "value": 99.2
+        },
+        {
+          "year": 2023,
+          "value": 99.5
+        },
+        {
+          "year": 2024,
+          "value": 99.9
+        }
+      ],
+      "latest_year": 2024,
+      "latest_value": 99.9,
+      "status": "live"
+    },
+    {
+      "code": "IT.NET.USER.ZS",
+      "label": "Internet users (% of population)",
+      "country": "IND",
+      "sector": "commerce",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the population using the internet (the past 12 months).",
+      "guide": "A foundation for digital commerce; combine with payment data for digital velocity.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "key": "wb:IND:IT.NET.USER.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 0.527532449930946
+        },
+        {
+          "year": 2001,
+          "value": 0.660146377009928
+        },
+        {
+          "year": 2002,
+          "value": 1.53787558175083
+        },
+        {
+          "year": 2003,
+          "value": 1.68648997063625
+        },
+        {
+          "year": 2004,
+          "value": 1.97613649190559
+        },
+        {
+          "year": 2005,
+          "value": 2.388099909
+        },
+        {
+          "year": 2006,
+          "value": 2.80549986534254
+        },
+        {
+          "year": 2007,
+          "value": 3.95
+        },
+        {
+          "year": 2008,
+          "value": 4.38
+        },
+        {
+          "year": 2009,
+          "value": 5.12
+        },
+        {
+          "year": 2010,
+          "value": 7.5
+        },
+        {
+          "year": 2011,
+          "value": 10.07
+        },
+        {
+          "year": 2012,
+          "value": 11.10000038
+        },
+        {
+          "year": 2013,
+          "value": 12.30000019
+        },
+        {
+          "year": 2014,
+          "value": 13.5
+        },
+        {
+          "year": 2015,
+          "value": 14.89999962
+        },
+        {
+          "year": 2016,
+          "value": 16.5
+        },
+        {
+          "year": 2017,
+          "value": 18.20000076
+        },
+        {
+          "year": 2018,
+          "value": 20.0813000379384
+        },
+        {
+          "year": 2019,
+          "value": 29.52350044
+        },
+        {
+          "year": 2020,
+          "value": 43.40544313
+        },
+        {
+          "year": 2021,
+          "value": 49.2580986
+        },
+        {
+          "year": 2022,
+          "value": 55.9
+        },
+        {
+          "year": 2023,
+          "value": 60.25230026
+        },
+        {
+          "year": 2024,
+          "value": 64.9434967
+        },
+        {
+          "year": 2025,
+          "value": 70.0
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 70.0,
+      "status": "live"
+    },
+    {
+      "code": "PA.NUS.FCRF",
+      "label": "Official exchange rate (INR per US$)",
+      "country": "IND",
+      "sector": "financials",
+      "category": "macro",
+      "unit": "INR/USD",
+      "frequency": "Annual",
+      "definition": "Official exchange rate used to convert national currency to US dollars.",
+      "guide": "Rapid depreciation raises imported inflation and the rupee cost of foreign debt.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/PA.NUS.FCRF",
+      "key": "wb:IND:PA.NUS.FCRF",
+      "points": [
+        {
+          "year": 2000,
+          "value": 44.941605
+        },
+        {
+          "year": 2001,
+          "value": 47.1864141666666
+        },
+        {
+          "year": 2002,
+          "value": 48.6103191666666
+        },
+        {
+          "year": 2003,
+          "value": 46.5832841666666
+        },
+        {
+          "year": 2004,
+          "value": 45.3164666666666
+        },
+        {
+          "year": 2005,
+          "value": 44.099975
+        },
+        {
+          "year": 2006,
+          "value": 45.3070083333333
+        },
+        {
+          "year": 2007,
+          "value": 41.3485333333333
+        },
+        {
+          "year": 2008,
+          "value": 43.5051833333333
+        },
+        {
+          "year": 2009,
+          "value": 48.4052666666666
+        },
+        {
+          "year": 2010,
+          "value": 45.7258121212121
+        },
+        {
+          "year": 2011,
+          "value": 46.6704666666666
+        },
+        {
+          "year": 2012,
+          "value": 53.4372333333333
+        },
+        {
+          "year": 2013,
+          "value": 58.5978454166666
+        },
+        {
+          "year": 2014,
+          "value": 61.0295144607843
+        },
+        {
+          "year": 2015,
+          "value": 64.1519444632786
+        },
+        {
+          "year": 2016,
+          "value": 67.1953128073893
+        },
+        {
+          "year": 2017,
+          "value": 65.1215686450659
+        },
+        {
+          "year": 2018,
+          "value": 68.3894670935421
+        },
+        {
+          "year": 2019,
+          "value": 70.420340535955
+        },
+        {
+          "year": 2020,
+          "value": 74.0995668836052
+        },
+        {
+          "year": 2021,
+          "value": 73.9180128154351
+        },
+        {
+          "year": 2022,
+          "value": 78.6044905829915
+        },
+        {
+          "year": 2023,
+          "value": 82.5992764460784
+        },
+        {
+          "year": 2024,
+          "value": 83.669281580941
+        },
+        {
+          "year": 2025,
+          "value": 87.1584483507393
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 87.1584483507393,
+      "status": "live"
+    },
+    {
+      "code": "SL.UEM.TOTL.ZS",
+      "label": "Unemployment (% of labour force)",
+      "country": "IND",
+      "sector": "welfare",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the labour force without work but available and seeking employment.",
+      "guide": "India's estimate is modelled by ILO; use it for direction rather than exact levels.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS",
+      "key": "wb:IND:SL.UEM.TOTL.ZS",
+      "points": [
+        {
+          "year": 2000,
+          "value": 7.589
+        },
+        {
+          "year": 2001,
+          "value": 7.611
+        },
+        {
+          "year": 2002,
+          "value": 7.681
+        },
+        {
+          "year": 2003,
+          "value": 7.633
+        },
+        {
+          "year": 2004,
+          "value": 7.598
+        },
+        {
+          "year": 2005,
+          "value": 7.551
+        },
+        {
+          "year": 2006,
+          "value": 7.553
+        },
+        {
+          "year": 2007,
+          "value": 7.562
+        },
+        {
+          "year": 2008,
+          "value": 7.629
+        },
+        {
+          "year": 2009,
+          "value": 7.636
+        },
+        {
+          "year": 2010,
+          "value": 7.631
+        },
+        {
+          "year": 2011,
+          "value": 7.609
+        },
+        {
+          "year": 2012,
+          "value": 7.645
+        },
+        {
+          "year": 2013,
+          "value": 7.678
+        },
+        {
+          "year": 2014,
+          "value": 7.656
+        },
+        {
+          "year": 2015,
+          "value": 7.629
+        },
+        {
+          "year": 2016,
+          "value": 7.611
+        },
+        {
+          "year": 2017,
+          "value": 7.626
+        },
+        {
+          "year": 2018,
+          "value": 7.652
+        },
+        {
+          "year": 2019,
+          "value": 6.51
+        },
+        {
+          "year": 2020,
+          "value": 7.859
+        },
+        {
+          "year": 2021,
+          "value": 6.38
+        },
+        {
+          "year": 2022,
+          "value": 4.822
+        },
+        {
+          "year": 2023,
+          "value": 4.172
+        },
+        {
+          "year": 2024,
+          "value": 4.173
+        },
+        {
+          "year": 2025,
+          "value": 4.219
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 4.219,
+      "status": "live"
+    },
+    {
+      "code": "SI.POV.DDAY",
+      "label": "Extreme poverty (% below $2.15/day)",
+      "country": "IND",
+      "sector": "welfare",
+      "category": "macro",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Share of the population living below the World Bank's extreme poverty line (2017 PPP).",
+      "guide": "Useful for long-run comparison, not for measuring relative deprivation within India.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/SI.POV.DDAY",
+      "key": "wb:IND:SI.POV.DDAY",
+      "points": [
+        {
+          "year": 2004,
+          "value": 46.4
+        },
+        {
+          "year": 2009,
+          "value": 34.6
+        },
+        {
+          "year": 2011,
+          "value": 27.1
+        },
+        {
+          "year": 2022,
+          "value": 5.3
+        },
+        {
+          "year": 2023,
+          "value": 2.6
+        }
+      ],
+      "latest_year": 2023,
+      "latest_value": 2.6,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "World GDP growth (annual %)",
+      "country": "WLD",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of global real GDP.",
+      "guide": "An external demand benchmark: if India grows faster than the world, it is gaining share.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:WLD:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 4.56720186018067
+        },
+        {
+          "year": 2001,
+          "value": 2.02994447591409
+        },
+        {
+          "year": 2002,
+          "value": 2.31891535273219
+        },
+        {
+          "year": 2003,
+          "value": 3.07416318395298
+        },
+        {
+          "year": 2004,
+          "value": 4.49537859755034
+        },
+        {
+          "year": 2005,
+          "value": 4.0591513939052
+        },
+        {
+          "year": 2006,
+          "value": 4.48913510541212
+        },
+        {
+          "year": 2007,
+          "value": 4.43123376835284
+        },
+        {
+          "year": 2008,
+          "value": 2.09160448064915
+        },
+        {
+          "year": 2009,
+          "value": -1.33303814192512
+        },
+        {
+          "year": 2010,
+          "value": 4.52085213873801
+        },
+        {
+          "year": 2011,
+          "value": 3.31431839310659
+        },
+        {
+          "year": 2012,
+          "value": 2.74743359443481
+        },
+        {
+          "year": 2013,
+          "value": 2.88974765617328
+        },
+        {
+          "year": 2014,
+          "value": 3.16849193058364
+        },
+        {
+          "year": 2015,
+          "value": 3.12721325699906
+        },
+        {
+          "year": 2016,
+          "value": 2.78974074234588
+        },
+        {
+          "year": 2017,
+          "value": 3.44658623167963
+        },
+        {
+          "year": 2018,
+          "value": 3.28663086462807
+        },
+        {
+          "year": 2019,
+          "value": 2.680308747553
+        },
+        {
+          "year": 2020,
+          "value": -2.8862118545708
+        },
+        {
+          "year": 2021,
+          "value": 6.48508887596732
+        },
+        {
+          "year": 2022,
+          "value": 3.44001097265658
+        },
+        {
+          "year": 2023,
+          "value": 2.85938493335971
+        },
+        {
+          "year": 2024,
+          "value": 2.90001340156711
+        },
+        {
+          "year": 2025,
+          "value": 2.92127318539153
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 2.92127318539153,
+      "status": "live"
+    },
+    {
+      "code": "FP.CPI.TOTL.ZG",
+      "label": "World inflation (annual %)",
+      "country": "WLD",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual change in the global consumer price aggregate.",
+      "guide": "Helps separate domestic inflation from imported, global price pressure.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
+      "key": "wb:WLD:FP.CPI.TOTL.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 3.43351657103988
+        },
+        {
+          "year": 2001,
+          "value": 3.83657262052543
+        },
+        {
+          "year": 2002,
+          "value": 2.90799688587762
+        },
+        {
+          "year": 2003,
+          "value": 3.02504526252236
+        },
+        {
+          "year": 2004,
+          "value": 3.51799903099595
+        },
+        {
+          "year": 2005,
+          "value": 4.10725070715931
+        },
+        {
+          "year": 2006,
+          "value": 4.26717463390264
+        },
+        {
+          "year": 2007,
+          "value": 4.81023704342911
+        },
+        {
+          "year": 2008,
+          "value": 8.94995335353387
+        },
+        {
+          "year": 2009,
+          "value": 2.86044855902674
+        },
+        {
+          "year": 2010,
+          "value": 3.32634463368642
+        },
+        {
+          "year": 2011,
+          "value": 4.80063594169405
+        },
+        {
+          "year": 2012,
+          "value": 3.72532666110646
+        },
+        {
+          "year": 2013,
+          "value": 2.61343402233815
+        },
+        {
+          "year": 2014,
+          "value": 2.39371597209796
+        },
+        {
+          "year": 2015,
+          "value": 1.43702380935654
+        },
+        {
+          "year": 2016,
+          "value": 1.59691227583204
+        },
+        {
+          "year": 2017,
+          "value": 2.25427651934812
+        },
+        {
+          "year": 2018,
+          "value": 2.4508342253648
+        },
+        {
+          "year": 2019,
+          "value": 2.21677593359908
+        },
+        {
+          "year": 2020,
+          "value": 1.91983527270792
+        },
+        {
+          "year": 2021,
+          "value": 3.4676759410803
+        },
+        {
+          "year": 2022,
+          "value": 8.00279982052121
+        },
+        {
+          "year": 2023,
+          "value": 5.73316283034957
+        },
+        {
+          "year": 2024,
+          "value": 3.01447576977999
+        },
+        {
+          "year": 2025,
+          "value": 3.04141321556539
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 3.04141321556539,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "Vietnam GDP growth (annual %)",
+      "country": "VNM",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of real GDP in Vietnam.",
+      "guide": "Peer benchmark for India's relative growth performance.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:VNM:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 6.78731640463151
+        },
+        {
+          "year": 2001,
+          "value": 6.19289331233377
+        },
+        {
+          "year": 2002,
+          "value": 6.32082099160833
+        },
+        {
+          "year": 2003,
+          "value": 6.89906349055258
+        },
+        {
+          "year": 2004,
+          "value": 7.53641060890386
+        },
+        {
+          "year": 2005,
+          "value": 7.54724772895918
+        },
+        {
+          "year": 2006,
+          "value": 6.97795481056711
+        },
+        {
+          "year": 2007,
+          "value": 7.12950448605439
+        },
+        {
+          "year": 2008,
+          "value": 5.66177120891362
+        },
+        {
+          "year": 2009,
+          "value": 5.39789754014181
+        },
+        {
+          "year": 2010,
+          "value": 6.42324482239482
+        },
+        {
+          "year": 2011,
+          "value": 6.41316889681683
+        },
+        {
+          "year": 2012,
+          "value": 5.5045447041189
+        },
+        {
+          "year": 2013,
+          "value": 5.55351081026072
+        },
+        {
+          "year": 2014,
+          "value": 6.42224312118567
+        },
+        {
+          "year": 2015,
+          "value": 6.98715430598611
+        },
+        {
+          "year": 2016,
+          "value": 6.69000892660424
+        },
+        {
+          "year": 2017,
+          "value": 6.94019037359206
+        },
+        {
+          "year": 2018,
+          "value": 7.46500685572751
+        },
+        {
+          "year": 2019,
+          "value": 7.35926270105006
+        },
+        {
+          "year": 2020,
+          "value": 2.86541320912272
+        },
+        {
+          "year": 2021,
+          "value": 2.55372852648131
+        },
+        {
+          "year": 2022,
+          "value": 8.53750041218142
+        },
+        {
+          "year": 2023,
+          "value": 4.97865959483225
+        },
+        {
+          "year": 2024,
+          "value": 7.03955197123018
+        },
+        {
+          "year": 2025,
+          "value": 8.01882998978245
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 8.01882998978245,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "Indonesia GDP growth (annual %)",
+      "country": "IDN",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of real GDP in Indonesia.",
+      "guide": "Peer benchmark for India's relative growth performance.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:IDN:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 4.9200677470169
+        },
+        {
+          "year": 2001,
+          "value": 3.64346644721492
+        },
+        {
+          "year": 2002,
+          "value": 4.49947539085764
+        },
+        {
+          "year": 2003,
+          "value": 4.78036912167654
+        },
+        {
+          "year": 2004,
+          "value": 5.03087394501685
+        },
+        {
+          "year": 2005,
+          "value": 5.69257130383384
+        },
+        {
+          "year": 2006,
+          "value": 5.50095178520348
+        },
+        {
+          "year": 2007,
+          "value": 6.34502222667214
+        },
+        {
+          "year": 2008,
+          "value": 6.01370360009123
+        },
+        {
+          "year": 2009,
+          "value": 4.62887118256153
+        },
+        {
+          "year": 2010,
+          "value": 6.22385418062366
+        },
+        {
+          "year": 2011,
+          "value": 6.16978420771008
+        },
+        {
+          "year": 2012,
+          "value": 6.03005065305615
+        },
+        {
+          "year": 2013,
+          "value": 5.5572636889101
+        },
+        {
+          "year": 2014,
+          "value": 5.006668425755
+        },
+        {
+          "year": 2015,
+          "value": 4.87632230022123
+        },
+        {
+          "year": 2016,
+          "value": 5.03306918280177
+        },
+        {
+          "year": 2017,
+          "value": 5.06978590134916
+        },
+        {
+          "year": 2018,
+          "value": 5.17429153955024
+        },
+        {
+          "year": 2019,
+          "value": 5.01928768046282
+        },
+        {
+          "year": 2020,
+          "value": -2.06551182934165
+        },
+        {
+          "year": 2021,
+          "value": 3.70288562827751
+        },
+        {
+          "year": 2022,
+          "value": 5.30719722664799
+        },
+        {
+          "year": 2023,
+          "value": 5.04883117855516
+        },
+        {
+          "year": 2024,
+          "value": 5.03257477088519
+        },
+        {
+          "year": 2025,
+          "value": 5.10808904438025
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 5.10808904438025,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "Brazil GDP growth (annual %)",
+      "country": "BRA",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of real GDP in Brazil.",
+      "guide": "Peer benchmark for India's relative growth performance.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:BRA:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 4.38794944745618
+        },
+        {
+          "year": 2001,
+          "value": 1.38989640095637
+        },
+        {
+          "year": 2002,
+          "value": 3.05346185909312
+        },
+        {
+          "year": 2003,
+          "value": 1.14082899824888
+        },
+        {
+          "year": 2004,
+          "value": 5.75996463670954
+        },
+        {
+          "year": 2005,
+          "value": 3.20213206130431
+        },
+        {
+          "year": 2006,
+          "value": 3.96198871122617
+        },
+        {
+          "year": 2007,
+          "value": 6.06987060678338
+        },
+        {
+          "year": 2008,
+          "value": 5.09419544658736
+        },
+        {
+          "year": 2009,
+          "value": -0.125812002161169
+        },
+        {
+          "year": 2010,
+          "value": 7.52822581815364
+        },
+        {
+          "year": 2011,
+          "value": 3.97442307944702
+        },
+        {
+          "year": 2012,
+          "value": 1.92117598576537
+        },
+        {
+          "year": 2013,
+          "value": 3.00482266944432
+        },
+        {
+          "year": 2014,
+          "value": 0.503955740242247
+        },
+        {
+          "year": 2015,
+          "value": -3.54576339269425
+        },
+        {
+          "year": 2016,
+          "value": -3.27591690782192
+        },
+        {
+          "year": 2017,
+          "value": 1.32286905404399
+        },
+        {
+          "year": 2018,
+          "value": 1.783666761634
+        },
+        {
+          "year": 2019,
+          "value": 1.22077782360842
+        },
+        {
+          "year": 2020,
+          "value": -3.2767587964736
+        },
+        {
+          "year": 2021,
+          "value": 4.76260437908608
+        },
+        {
+          "year": 2022,
+          "value": 3.01669435393015
+        },
+        {
+          "year": 2023,
+          "value": 3.24165532906981
+        },
+        {
+          "year": 2024,
+          "value": 3.41931516501906
+        },
+        {
+          "year": 2025,
+          "value": 2.2857464902475
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 2.2857464902475,
+      "status": "live"
+    },
+    {
+      "code": "NY.GDP.MKTP.KD.ZG",
+      "label": "Mexico GDP growth (annual %)",
+      "country": "MEX",
+      "sector": "economy",
+      "category": "global",
+      "unit": "%",
+      "frequency": "Annual",
+      "definition": "Annual growth of real GDP in Mexico.",
+      "guide": "Peer benchmark for India's relative growth performance.",
+      "source": "World Bank Open Data",
+      "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
+      "key": "wb:MEX:NY.GDP.MKTP.KD.ZG",
+      "points": [
+        {
+          "year": 2000,
+          "value": 5.02928399378261
+        },
+        {
+          "year": 2001,
+          "value": -0.450845253215945
+        },
+        {
+          "year": 2002,
+          "value": -0.236588001922641
+        },
+        {
+          "year": 2003,
+          "value": 1.18554486709559
+        },
+        {
+          "year": 2004,
+          "value": 3.56544102622887
+        },
+        {
+          "year": 2005,
+          "value": 2.11324711473297
+        },
+        {
+          "year": 2006,
+          "value": 4.80501351664901
+        },
+        {
+          "year": 2007,
+          "value": 2.0778639395329
+        },
+        {
+          "year": 2008,
+          "value": 0.943331872912935
+        },
+        {
+          "year": 2009,
+          "value": -6.29525056697287
+        },
+        {
+          "year": 2010,
+          "value": 4.9713345832195
+        },
+        {
+          "year": 2011,
+          "value": 3.44404505297089
+        },
+        {
+          "year": 2012,
+          "value": 3.55321076010608
+        },
+        {
+          "year": 2013,
+          "value": 0.852101550164704
+        },
+        {
+          "year": 2014,
+          "value": 2.50376350783593
+        },
+        {
+          "year": 2015,
+          "value": 2.70232343024026
+        },
+        {
+          "year": 2016,
+          "value": 1.7724932254128
+        },
+        {
+          "year": 2017,
+          "value": 1.87172854648381
+        },
+        {
+          "year": 2018,
+          "value": 1.97208211101069
+        },
+        {
+          "year": 2019,
+          "value": -0.392690513290532
+        },
+        {
+          "year": 2020,
+          "value": -8.35403459379062
+        },
+        {
+          "year": 2021,
+          "value": 6.04848347173572
+        },
+        {
+          "year": 2022,
+          "value": 3.70975708309098
+        },
+        {
+          "year": 2023,
+          "value": 3.1067964131456
+        },
+        {
+          "year": 2024,
+          "value": 1.35057631384696
+        },
+        {
+          "year": 2025,
+          "value": 0.561683456144578
+        }
+      ],
+      "latest_year": 2025,
+      "latest_value": 0.561683456144578,
+      "status": "live"
+    }
+  ],
+  "census": {
+    "facts": [
+      {
+        "name": "Population (2011 Census)",
+        "value": 1210854977,
+        "unit": "people",
+        "definition": "Final population totals of the 2011 decennial Census of India.",
+        "guide": "The last completed enumeration. Use the annual World Bank population series for in-between estimates."
+      },
+      {
+        "name": "Decennial population growth (2001\u20132011)",
+        "value": 17.7,
+        "unit": "%",
+        "definition": "Percentage increase in population between the 2001 and 2011 Censuses.",
+        "guide": "Decadal growth is slowing; compare it with GDP growth for per-capita gains."
+      },
+      {
+        "name": "Literacy rate (2011)",
+        "value": 73.0,
+        "unit": "%",
+        "definition": "Percentage of the population aged seven and above who were literate in 2011.",
+        "guide": "Census definition differs from the World Bank's age-15+ literacy rate; do not mix them in one chart."
+      },
+      {
+        "name": "Urban population (2011)",
+        "value": 31.16,
+        "unit": "%",
+        "definition": "Share of the population living in urban areas in the 2011 Census.",
+        "guide": "Baseline for measuring urbanisation since 2011."
+      },
+      {
+        "name": "Sex ratio (2011)",
+        "value": 943,
+        "unit": "females per 1,000 males",
+        "definition": "Number of females per 1,000 males recorded in the 2011 Census.",
+        "guide": "A social outcome indicator; compare with the 0\u20136 child sex ratio (919) to see recent change."
+      },
+      {
+        "name": "Population density (2011)",
+        "value": 382,
+        "unit": "people per km\u00b2",
+        "definition": "Average number of people per square kilometre in 2011.",
+        "guide": "Highly uneven across states; use state tables for local analysis."
+      },
+      {
+        "name": "Child sex ratio, age 0\u20136 (2011)",
+        "value": 919,
+        "unit": "females per 1,000 males",
+        "definition": "Females per 1,000 males in the 0\u20136 age group in the 2011 Census.",
+        "guide": "A sensitive indicator of recent demographic behaviour."
+      }
+    ],
+    "source": {
+      "name": "Census of India \u2014 Office of the Registrar General & Census Commissioner",
+      "url": "https://censusindia.gov.in/census.website/data/census-tables",
+      "frequency": "Decadal (last enumeration 2011; next scheduled 2027)"
+    }
+  },
+  "data_gov_resources": [
+    {
+      "id": "9ef84268-d588-465a-a308-a864a43d0070",
+      "name": "Daily commodity prices in major mandis",
+      "provider": "Ministry of Agriculture & Farmers Welfare, Government of India",
+      "category": "agriculture",
+      "definition": "Daily minimum, maximum and modal prices of agricultural commodities across reporting markets.",
+      "guide": "Use the modal price for a representative transaction price; the spread between min and max shows market fragmentation.",
+      "url": "https://data.gov.in/resource/daily-price-various-commodities-various-markets-mandi",
+      "fields": [
+        "State",
+        "District",
+        "Market",
+        "Commodity",
+        "Variety",
+        "Min Price",
+        "Max Price",
+        "Modal Price",
+        "Arrival Date"
+      ],
+      "status": "live",
+      "stats": {
+        "records_in_page": 5,
+        "total_records": 13205,
+        "sample_modal_price_min": 2300.0,
+        "sample_modal_price_max": 5200.0,
+        "sample_period": "26/11/2026",
+        "fields_available": [
+          "State",
+          "District",
+          "Market",
+          "Commodity",
+          "Variety",
+          "Grade",
+          "Arrival_Date",
+          "Min_x0020_Price",
+          "Max_x0020_Price"
+        ]
+      }
+    }
+  ],
+  "kpis": [
+    {
+      "id": "per_capita_growth_spread",
+      "name": "Per-capita growth spread",
+      "sector": "economy",
+      "value": 6.68,
+      "unit": "pp",
+      "formula": "Real GDP growth \u2212 population growth",
+      "definition": "How much of headline growth remains after accounting for a growing population.",
+      "guide": "A wider spread means average output per person is rising faster. It is an approximation of GDP-per-capita growth.",
+      "sources": [
+        "World Bank NY.GDP.MKTP.KD.ZG",
+        "World Bank SP.POP.GROW"
+      ],
+      "latest_year": 2025,
+      "status": "Favourable",
+      "frequency": "Annual"
+    },
+    {
+      "id": "demographic_dividend_index",
+      "name": "Demographic dividend index",
+      "sector": "welfare",
+      "value": 53.49,
+      "unit": "index",
+      "formula": "Working-age share (%) \u00d7 literacy rate (%) \u00f7 100",
+      "definition": "Potential productive capacity from the size and education of the working-age population.",
+      "guide": "This is potential, not realised, capacity. Read it with employment and job-quality data before calling it a dividend.",
+      "sources": [
+        "World Bank SP.POP.1564.TO.ZS",
+        "World Bank SE.ADT.LITR.ZS"
+      ],
+      "latest_year": 2025,
+      "status": "Watch",
+      "frequency": "Annual"
+    },
+    {
+      "id": "urbanisation_productivity_ratio",
+      "name": "Urbanisation productivity ratio",
+      "sector": "housing",
+      "value": 21.33,
+      "unit": "\u00d7",
+      "formula": "GDP per capita growth (%) \u00f7 change in urban share (pp)",
+      "definition": "Output growth generated for each percentage-point shift of population into towns and cities.",
+      "guide": "A high ratio can mean productive cities \u2014 or that urbanisation is simply too slow. Always inspect both inputs.",
+      "sources": [
+        "World Bank NY.GDP.PCAP.KD.ZG",
+        "World Bank SP.URB.TOTL.IN.ZS"
+      ],
+      "latest_year": 2025,
+      "status": "Interpret with care",
+      "frequency": "Annual"
+    },
+    {
+      "id": "credit_savings_gap",
+      "name": "Credit\u2013savings gap",
+      "sector": "financials",
+      "value": 11.47,
+      "unit": "pp of GDP",
+      "formula": "Domestic credit to private sector (% GDP) \u2212 gross domestic savings (% GDP)",
+      "definition": "How far private credit extends beyond the nation's own savings, indicating reliance on other funding sources.",
+      "guide": "A widening gap can support investment but may signal leverage. Compare across a full cycle, not a single year.",
+      "sources": [
+        "World Bank FS.AST.PRVT.GD.ZS",
+        "World Bank NY.GDS.TOTL.ZS"
+      ],
+      "latest_year": 2025,
+      "status": "Interpret with care",
+      "frequency": "Annual"
+    },
+    {
+      "id": "credit_per_person",
+      "name": "Private credit per person",
+      "sector": "financials",
+      "value": 1189.92,
+      "unit": "USD",
+      "formula": "Domestic credit (% GDP) \u00d7 GDP per capita (current US$) \u00f7 100",
+      "definition": "Approximate financial depth available per resident.",
+      "guide": "Use it to compare financial access across countries; it does not show how credit is distributed.",
+      "sources": [
+        "World Bank FS.AST.PRVT.GD.ZS",
+        "World Bank NY.GDP.PCAP.CD"
+      ],
+      "latest_year": 2025,
+      "status": "Context",
+      "frequency": "Annual"
+    },
+    {
+      "id": "external_resilience_score",
+      "name": "External resilience score",
+      "sector": "economy",
+      "value": 48.05,
+      "unit": "0\u2013100",
+      "formula": "Average z-score of FDI (% GDP), current account (% GDP) and reserve cover (months), scaled to 0\u2013100",
+      "definition": "Composite of the three external buffers that help an economy absorb a sudden stop in capital flows.",
+      "guide": "A score above 50 means the three buffers are above their own long-run averages; it is a relative, not absolute, measure.",
+      "sources": [
+        "World Bank BX.KLT.DINV.WD.GD.ZS",
+        "BN.CAB.XOKA.GD.ZS",
+        "FI.RES.TOTL.MO"
+      ],
+      "latest_year": 2025,
+      "status": "Watch",
+      "frequency": "Annual"
+    },
+    {
+      "id": "peer_growth_spread",
+      "name": "Peer growth spread",
+      "sector": "economy",
+      "value": 3.57,
+      "unit": "pp",
+      "formula": "India GDP growth \u2212 average GDP growth of Vietnam, Indonesia, Brazil and Mexico",
+      "definition": "How much faster or slower India is growing than a basket of large emerging economies.",
+      "guide": "A positive spread suggests India is gaining relative ground; check the exchange rate and FDI before extrapolating.",
+      "sources": [
+        "World Bank India + 4 peer GDP series"
+      ],
+      "latest_year": 2025,
+      "status": "Favourable",
+      "frequency": "Annual"
+    },
+    {
+      "id": "global_inflation_gap",
+      "name": "Global inflation gap",
+      "sector": "economy",
+      "value": -0.64,
+      "unit": "pp",
+      "formula": "India CPI inflation \u2212 world inflation",
+      "definition": "The part of domestic inflation that is above the global price trend.",
+      "guide": "A positive gap points to domestic cost or demand pressure; a negative gap suggests imported disinflation.",
+      "sources": [
+        "World Bank FP.CPI.TOTL.ZG (IND and WLD)"
+      ],
+      "latest_year": 2025,
+      "status": "Interpret with care",
+      "frequency": "Annual"
+    },
+    {
+      "id": "pollution_intensity_of_growth",
+      "name": "Pollution intensity of growth",
+      "sector": "environment",
+      "value": 0.89,
+      "unit": "\u00d7",
+      "formula": "Growth in PM2.5 (%) \u00f7 real GDP growth (%)",
+      "definition": "Change in air pollution associated with each unit of economic growth.",
+      "guide": "Below zero means air quality improved while the economy grew \u2014 a sign of decoupling. Values above one mean growth remains pollution-heavy.",
+      "sources": [
+        "World Bank EN.ATM.PM25.MC.M3",
+        "NY.GDP.MKTP.KD.ZG"
+      ],
+      "latest_year": 2025,
+      "status": "Under pressure",
+      "frequency": "Annual"
+    },
+    {
+      "id": "digital_growth_elasticity",
+      "name": "Digital growth elasticity",
+      "sector": "commerce",
+      "value": 1.31,
+      "unit": "\u00d7",
+      "formula": "GDP per capita growth (%) \u00f7 change in internet users (% of population, pp)",
+      "definition": "Output growth associated with each percentage-point increase in internet adoption.",
+      "guide": "A high value can mean digital adoption is translating into output, or that adoption has stalled while the economy grew.",
+      "sources": [
+        "World Bank IT.NET.USER.ZS",
+        "NY.GDP.PCAP.KD.ZG"
+      ],
+      "latest_year": 2025,
+      "status": "Interpret with care",
+      "frequency": "Annual"
+    },
+    {
+      "id": "fx_real_rate_gap",
+      "name": "FX\u2013real-rate gap",
+      "sector": "financials",
+      "value": -1.38,
+      "unit": "pp",
+      "formula": "Annual change in INR/USD exchange rate \u2212 real interest rate",
+      "definition": "Currency depreciation not offset by the real return offered to savers.",
+      "guide": "A positive gap flag means rupee weakness outpaces the real reward for holding rupee assets.",
+      "sources": [
+        "World Bank PA.NUS.FCRF",
+        "FR.INR.RINR"
+      ],
+      "latest_year": 2025,
+      "status": "Favourable",
+      "frequency": "Annual"
+    },
+    {
+      "id": "growth_tailwind_ratio",
+      "name": "Growth tailwind ratio",
+      "sector": "economy",
+      "value": 2.59,
+      "unit": "\u00d7",
+      "formula": "India GDP growth \u00f7 world GDP growth",
+      "definition": "How many times the global growth rate India is expanding.",
+      "guide": "Ratios above one indicate India is outpacing the world cycle; moderate ratios can reflect a global boom lifting all economies.",
+      "sources": [
+        "World Bank NY.GDP.MKTP.KD.ZG (IND and WLD)"
+      ],
+      "latest_year": 2025,
+      "status": "Favourable",
+      "frequency": "Annual"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__ind-fp.cpi.totl.zg",
+      "label": "Growth versus inflation",
+      "factor": "macro",
+      "a": "GDP growth (annual %)",
+      "b": "Consumer price inflation",
+      "coefficient": -0.023,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves against the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__ind-fs.ast.prvt.gd.zs",
+      "label": "Growth versus financial depth",
+      "factor": "macro/finance",
+      "a": "GDP growth (annual %)",
+      "b": "Domestic credit to private sector (% of GDP)",
+      "coefficient": 0.113,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__ind-sp.urb.totl.in.zs",
+      "label": "Growth versus urbanisation",
+      "factor": "macro/demographic",
+      "a": "GDP growth (annual %)",
+      "b": "Urban population (% of total)",
+      "coefficient": 0.005,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__ind-it.net.user.zs",
+      "label": "Growth versus internet adoption",
+      "factor": "macro/digital",
+      "a": "GDP growth (annual %)",
+      "b": "Internet users (% of population)",
+      "coefficient": -0.028,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves against the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.pcap.cd__ind-se.adt.litr.zs",
+      "label": "Income versus literacy",
+      "factor": "income/education",
+      "a": "GDP per capita (current US$)",
+      "b": "Literacy rate (ages 15+)",
+      "coefficient": 0.977,
+      "observations": 12,
+      "period": "2001\u20132024",
+      "interpretation": "A strong moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.pcap.cd__ind-en.atm.pm25.mc.m3",
+      "label": "Income versus air quality",
+      "factor": "income/environment",
+      "a": "GDP per capita (current US$)",
+      "b": "Fine particulate matter (PM2.5)",
+      "coefficient": 0.625,
+      "observations": 24,
+      "period": "2000\u20132023",
+      "interpretation": "A moderate moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-bx.klt.dinv.wd.gd.zs__ind-bn.cab.xoka.gd.zs",
+      "label": "FDI versus current account",
+      "factor": "external",
+      "a": "FDI inflows (% of GDP)",
+      "b": "Current account balance (% of GDP)",
+      "coefficient": -0.294,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves against the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-fr.inr.rinr__ind-bx.klt.dinv.wd.gd.zs",
+      "label": "Real rates versus FDI",
+      "factor": "finance/external",
+      "a": "Real interest rate",
+      "b": "FDI inflows (% of GDP)",
+      "coefficient": -0.267,
+      "observations": 23,
+      "period": "2000\u20132022",
+      "interpretation": "A weak moves against the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-fp.cpi.totl.zg__wld-fp.cpi.totl.zg",
+      "label": "Indian versus world inflation",
+      "factor": "global",
+      "a": "Consumer price inflation",
+      "b": "World inflation (annual %)",
+      "coefficient": 0.232,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__wld-ny.gdp.mktp.kd.zg",
+      "label": "Indian versus world growth",
+      "factor": "global",
+      "a": "GDP growth (annual %)",
+      "b": "World GDP growth (annual %)",
+      "coefficient": 0.682,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A moderate moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__vnm-ny.gdp.mktp.kd.zg",
+      "label": "India versus Vietnam GDP growth",
+      "factor": "global peer",
+      "a": "GDP growth (annual %)",
+      "b": "Vietnam GDP growth (annual %)",
+      "coefficient": 0.402,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A moderate moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__idn-ny.gdp.mktp.kd.zg",
+      "label": "India versus Indonesia GDP growth",
+      "factor": "global peer",
+      "a": "GDP growth (annual %)",
+      "b": "Indonesia GDP growth (annual %)",
+      "coefficient": 0.727,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A strong moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__bra-ny.gdp.mktp.kd.zg",
+      "label": "India versus Brazil GDP growth",
+      "factor": "global peer",
+      "a": "GDP growth (annual %)",
+      "b": "Brazil GDP growth (annual %)",
+      "coefficient": 0.303,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A weak moves with the other factor over the overlapping period. Correlation is not causation."
+    },
+    {
+      "id": "ind-ny.gdp.mktp.kd.zg__mex-ny.gdp.mktp.kd.zg",
+      "label": "India versus Mexico GDP growth",
+      "factor": "global peer",
+      "a": "GDP growth (annual %)",
+      "b": "Mexico GDP growth (annual %)",
+      "coefficient": 0.631,
+      "observations": 26,
+      "period": "2000\u20132025",
+      "interpretation": "A moderate moves with the other factor over the overlapping period. Correlation is not causation."
+    }
+  ],
+  "discovery": {
+    "scanned_at": "2026-11-26T09:06:00Z",
+    "scope": "Curated scan: official portal metadata plus live series actually fetched in this run.",
+    "key_mode": "public sample key (rate-limited)",
+    "portals": [
+      {
+        "id": "world_bank",
+        "name": "World Bank Open Data",
+        "provider": "World Bank",
+        "category": "macro",
+        "category_label": "Macro & National Accounts",
+        "access": "Open \u00b7 no key required",
+        "url": "https://api.worldbank.org/v2",
+        "docs_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+        "summary": "The backbone for cross-country macro comparisons and India's headline GDP, inflation, PPP and external-sector series."
+      },
+      {
+        "id": "datagovin",
+        "name": "data.gov.in (OGD Platform)",
+        "provider": "Ministry of Electronics & IT",
+        "category": "macro",
+        "category_label": "Macro & National Accounts",
+        "access": "API key (free registration); sample key for development",
+        "url": "https://api.data.gov.in",
+        "docs_url": "https://data.gov.in/apis",
+        "summary": "India's national open-data platform. The widest catalogue of state- and district-level government datasets."
+      },
+      {
+        "id": "apisetu",
+        "name": "API Setu",
+        "provider": "MeitY / NIC",
+        "category": "macro",
+        "category_label": "Macro & National Accounts",
+        "access": "Partner registration (scoped keys)",
+        "url": "https://apisetu.gov.in",
+        "docs_url": "https://directory.apisetu.gov.in",
+        "summary": "The government's API gateway. Useful for identity, document and transactional lookups rather than time-series statistics."
+      },
+      {
+        "id": "rbi_dbie",
+        "name": "RBI Database on Indian Economy (DBIE)",
+        "provider": "Reserve Bank of India",
+        "category": "money",
+        "category_label": "Money, Prices & Markets",
+        "access": "Open portal; bulk downloads",
+        "url": "https://dbie.rbi.org.in",
+        "docs_url": "https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home",
+        "summary": "The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs."
+      },
+      {
+        "id": "npci",
+        "name": "NPCI Statistics",
+        "provider": "National Payments Corporation of India",
+        "category": "money",
+        "category_label": "Money, Prices & Markets",
+        "access": "Open monthly statistics",
+        "url": "https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics",
+        "docs_url": "https://www.npci.org.in",
+        "summary": "The definitive read on India's digital-payment velocity, ticket sizes and tolling volumes."
+      },
+      {
+        "id": "gst_portal",
+        "name": "GST Portal \u2014 Collections",
+        "provider": "GST Council / CBIC",
+        "category": "fiscal",
+        "category_label": "Fiscal & Government Finance",
+        "access": "Open monthly press releases",
+        "url": "https://www.gst.gov.in",
+        "docs_url": "https://cbic-gst.gov.in",
+        "summary": "A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states."
+      },
+      {
+        "id": "mospi",
+        "name": "MoSPI \u2014 National Statistics",
+        "provider": "Ministry of Statistics & Programme Implementation",
+        "category": "money",
+        "category_label": "Money, Prices & Markets",
+        "access": "Open downloads",
+        "url": "https://mospi.gov.in",
+        "docs_url": "https://mospi.gov.in/web/mospi/download-tables-data",
+        "summary": "The official source for India's inflation, industrial production, national accounts and employment statistics."
+      },
+      {
+        "id": "cea",
+        "name": "CEA / POSOCO Power Data",
+        "provider": "Central Electricity Authority",
+        "category": "energy",
+        "category_label": "Energy & Power",
+        "access": "Open daily / monthly reports",
+        "url": "https://cea.nic.in",
+        "docs_url": "https://cea.nic.in/dashboard/?lang=1",
+        "summary": "Near-real-time electricity demand and generation \u2014 one of the best proxies for industrial activity."
+      },
+      {
+        "id": "mnre",
+        "name": "MNRE Renewable Capacity",
+        "provider": "Ministry of New & Renewable Energy",
+        "category": "energy",
+        "category_label": "Energy & Power",
+        "access": "Open monthly progress reports",
+        "url": "https://mnre.gov.in",
+        "docs_url": "https://mnre.gov.in/physical-progress",
+        "summary": "Tracks India's energy transition against the 50% non-fossil capacity target for 2030."
+      },
+      {
+        "id": "morth",
+        "name": "MoRTH / NHAI Transport Data",
+        "provider": "Ministry of Road Transport & Highways",
+        "category": "transport",
+        "category_label": "Transport & Logistics",
+        "access": "Open annual reports",
+        "url": "https://morth.nic.in",
+        "docs_url": "https://morth.nic.in/road-transport-year-book",
+        "summary": "The source for road density, vehicle ownership and digital tolling across states."
+      },
+      {
+        "id": "railways",
+        "name": "Indian Railways Statistics",
+        "provider": "Ministry of Railways",
+        "category": "transport",
+        "category_label": "Transport & Logistics",
+        "access": "Open annual statistical statements",
+        "url": "https://indianrailways.gov.in",
+        "docs_url": "https://indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&id=0,1,304",
+        "summary": "Freight and passenger trends for the world's fourth-largest rail network."
+      },
+      {
+        "id": "dgca",
+        "name": "DGCA Civil Aviation Statistics",
+        "provider": "Directorate General of Civil Aviation",
+        "category": "transport",
+        "category_label": "Transport & Logistics",
+        "access": "Open monthly traffic reports",
+        "url": "https://www.dgca.gov.in",
+        "docs_url": "https://www.dgca.gov.in/digigov-apps/pas",
+        "summary": "Domestic aviation traffic \u2014 a leading indicator of business travel and premium consumption."
+      },
+      {
+        "id": "mohfw",
+        "name": "MoHFW / NFHS Health Data",
+        "provider": "Ministry of Health & Family Welfare",
+        "category": "social",
+        "category_label": "Health, Education & Welfare",
+        "access": "Open reports / microdata on request",
+        "url": "https://mohfw.gov.in",
+        "docs_url": "https://rchiips.org/nfhs",
+        "summary": "The census of Indian health capacity, immunisation and household health spending."
+      },
+      {
+        "id": "udise",
+        "name": "UDISE+ School Education",
+        "provider": "Ministry of Education",
+        "category": "social",
+        "category_label": "Health, Education & Welfare",
+        "access": "Open reports / dashboards",
+        "url": "https://udiseplus.gov.in",
+        "docs_url": "https://udiseplus.gov.in/#/page/publications",
+        "summary": "School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs."
+      },
+      {
+        "id": "mgnrega",
+        "name": "MGNREGA MIS",
+        "provider": "Ministry of Rural Development",
+        "category": "social",
+        "category_label": "Health, Education & Welfare",
+        "access": "Open MIS reports",
+        "url": "https://nrega.nic.in",
+        "docs_url": "https://nrega.nic.in/netnrega/mgnrega_new/Nrega_home.aspx",
+        "summary": "Rural wage demand under the employment guarantee \u2014 a real-time distress signal."
+      },
+      {
+        "id": "census",
+        "name": "Census of India",
+        "provider": "Office of the Registrar General",
+        "category": "geo",
+        "category_label": "Geo, Environment & Climate",
+        "access": "Open tables",
+        "url": "https://censusindia.gov.in",
+        "docs_url": "https://censusindia.gov.in/census.website/data/census-tables",
+        "summary": "The demographic base layer for population density, urbanisation and literacy KPIs."
+      },
+      {
+        "id": "moefcc",
+        "name": "MoEF&CC Environment Data",
+        "provider": "Ministry of Environment, Forest & Climate Change",
+        "category": "geo",
+        "category_label": "Geo, Environment & Climate",
+        "access": "Open reports",
+        "url": "https://moef.gov.in",
+        "docs_url": "https://fsi.nic.in/forest-report",
+        "summary": "Land, forest and wetlands statistics behind the environment and geo KPIs."
+      },
+      {
+        "id": "nhb",
+        "name": "NHB / RBI Housing Data",
+        "provider": "National Housing Bank / RBI",
+        "category": "housing",
+        "category_label": "Housing & Urban",
+        "access": "Open reports",
+        "url": "https://nhb.org.in",
+        "docs_url": "https://rbi.org.in/Scripts/Statistics.aspx",
+        "summary": "House-price and affordability series for the housing KPIs."
+      },
+      {
+        "id": "imf",
+        "name": "IMF DataMapper / WEO",
+        "provider": "International Monetary Fund",
+        "category": "macro",
+        "category_label": "Macro & National Accounts",
+        "access": "Open",
+        "url": "https://data.imf.org",
+        "docs_url": "https://www.imf.org/en/Publications/WEO",
+        "summary": "Cross-country fiscal and debt comparables, plus forward-looking macro forecasts."
+      },
+      {
+        "id": "fred",
+        "name": "FRED (St. Louis Fed)",
+        "provider": "Federal Reserve Bank of St. Louis",
+        "category": "money",
+        "category_label": "Money, Prices & Markets",
+        "access": "Open API key (free)",
+        "url": "https://fred.stlouisfed.org",
+        "docs_url": "https://fred.stlouisfed.org/docs/api/fred",
+        "summary": "Global rates and commodity benchmarks used for context alongside Indian data."
+      }
+    ],
+    "portal_summary": {
+      "total_apis": 20,
+      "total_categories": 10,
+      "total_series": 60,
+      "open_apis": 18
+    },
+    "data_gov_resources": [
+      {
+        "id": "9ef84268-d588-465a-a308-a864a43d0070",
+        "name": "Daily commodity prices in major mandis",
+        "provider": "Ministry of Agriculture & Farmers Welfare, Government of India",
+        "category": "agriculture",
+        "definition": "Daily minimum, maximum and modal prices of agricultural commodities across reporting markets.",
+        "guide": "Use the modal price for a representative transaction price; the spread between min and max shows market fragmentation.",
+        "url": "https://data.gov.in/resource/daily-price-various-commodities-various-markets-mandi",
+        "fields": [
+          "State",
+          "District",
+          "Market",
+          "Commodity",
+          "Variety",
+          "Min Price",
+          "Max Price",
+          "Modal Price",
+          "Arrival Date"
+        ],
+        "status": "live",
+        "stats": {
+          "records_in_page": 5,
+          "total_records": 13205,
+          "sample_modal_price_min": 2300.0,
+          "sample_modal_price_max": 5200.0,
+          "sample_period": "26/11/2026",
+          "fields_available": [
+            "State",
+            "District",
+            "Market",
+            "Commodity",
+            "Variety",
+            "Grade",
+            "Arrival_Date",
+            "Min_x0020_Price",
+            "Max_x0020_Price"
+          ]
+        }
+      }
+    ],
+    "api_setu": {
+      "name": "API Setu (MeitY)",
+      "url": "https://directory.apisetu.gov.in",
+      "access": "Consumer registration and API key required for data endpoints",
+      "status": "Metadata only \u2014 curated batch does not call gated data endpoints",
+      "token": "not configured"
+    },
+    "series_count": 28,
+    "note": "Full enumeration of data.gov.in's 230,000+ datasets requires a personal API key and a paginated catalog crawl; this catalog lists the official sources and the curated resources published below."
+  }
+}

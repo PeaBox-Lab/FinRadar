@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T11:38:51Z",
+  "generated_at": "2026-11-26T09:58:10Z",
   "sources": {
     "world_bank": "api.worldbank.org/v2",
     "data_gov_in": "api.data.gov.in (sample key by default; DATA_GOV_IN_TOKEN to enable live feeds)",
@@ -8,7 +8,7 @@
   "india": {
     "real_inflation_rate": 2.39884954182294,
     "gdp_per_capita_usd": 2702.47987141553,
-    "gdp_per_capita_ppp_usd": null,
+    "gdp_per_capita_ppp_usd": 11747.9160436011,
     "gdp_growth_pct": 7.56666179284244,
     "current_account": null,
     "fdi_inflows": null,
@@ -182,10 +182,10 @@
       "kpi_id": "gdp_per_capita_ppp_usd",
       "name": "GDP per Capita, PPP",
       "sector": "Economy",
-      "value": null,
+      "value": 11747.9160436011,
       "unit": "int$",
       "direction": "higher_better",
-      "verdict": "no data available yet",
+      "verdict": "moderate",
       "good_range": [
         20000,
         500000
@@ -207,17 +207,17 @@
       "benchmark": "World Bank",
       "frequency": "monthly",
       "trend": null,
-      "verdict_text": "No data available yet.",
+      "verdict_text": "Moderate. What the same output buys inside the country. The gap vs nominal tells you how much cheaper daily life is — which is why a ₹20 LPA salary in Jaipur buys more than in Mumbai.",
       "source_live": true
     },
     {
       "kpi_id": "ppp_gap_usd",
       "name": "PPP Gap (Nominal − PPP)",
       "sector": "Economy",
-      "value": null,
+      "value": -9045.436172185571,
       "unit": "USD",
       "direction": "lower_better",
-      "verdict": "no data available yet",
+      "verdict": "strong",
       "good_range": [
         -40000,
         0
@@ -240,7 +240,7 @@
       "benchmark": "World Bank",
       "frequency": "monthly",
       "trend": null,
-      "verdict_text": "No data available yet.",
+      "verdict_text": "Strong. A large negative gap means local prices are far cheaper than the exchange rate implies — money goes further inside the country. The bigger the gap, the more a remote or migrant salary is worth relative to its dollar figure.",
       "source_live": true
     },
     {
