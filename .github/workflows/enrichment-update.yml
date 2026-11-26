@@ -1,0 +1,54 @@
+name: Nightly Data Lab Enrichment
+
+# Separate from the core KPI job so a slow official API cannot block the
+# nightly dashboard build. This job refreshes the curated World Bank series,
+# Census benchmarks, data.gov.in sample feeds, derived KPIs and relationships,
+# then regenerates the static site.
+
+on:
+  schedule:
+    - cron: "15 3 * * *" # Daily at 03:15 UTC, after the core KPI update
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run the Data Lab enrichment batch
+        run: python3 scripts/pipeline/enrichment.py
+        env:
+          DATA_GOV_IN_TOKEN: ${{ secrets.DATA_GOV_IN_TOKEN }}
+          APISETU_TOKEN: ${{ secrets.APISETU_TOKEN }}
+
+      - name: Regenerate static site
+        run: python3 scripts/pipeline/page_generator.py
+
+      - name: Commit and push data + site to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/extra_metrics.json data/snapshots/enrichment_cache.json site/
+          git commit -m "chore: daily data lab update $(date -u +%F)" || echo "No changes; skipping commit"
+          git push origin HEAD:main
+          echo "Done."
+
+      - name: Deploy site/ to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          keep_files: true
+          commit_message: "deploy: refresh data lab on gh-pages"
+          user_name: "github-actions[bot]"
+          user_email: "41898282+github-actions[bot]@users.noreply.github.com"

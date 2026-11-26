@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FD Maturity Calculator — FinRadar</title>
+  <meta name="description" content="Calculate fixed-deposit maturity value, interest earned and post-tax returns." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/european-theme.css" />
+  <link rel="canonical" href="https://finradar.example/tools/fd-maturity.html" />
+</head>
+<body data-base="../">
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="../index.html" aria-label="FinRadar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+        <span class="brand-name">FinRadar</span>
+      </a>
+      <span class="nav-status"><span class="status-dot"></span>Live data</span>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="../index.html" class="nav-link">Dashboard</a>
+          <a href="../tools.html" class="nav-link">Tools</a>
+          <a href="../search.html" class="nav-link">Search</a>
+          <a href="../categories.html" class="nav-link">Categories</a>
+          <a href="../sources.html" class="nav-link">Sources</a>
+          <a href="../data-lab.html" class="nav-link">Data Lab</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
+            <a href="../category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
+            <a href="../category/economy.html" role="menuitem">💰 Economy</a>
+
+
+            <a href="../category/financials.html" role="menuitem">🏦 Financials</a>
+
+
+            <div class="nav-drop-heading">Sector Categories</div>
+
+
+            <a href="../category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
+            <a href="../category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
+            <a href="../category/transport.html" role="menuitem">🚗 Transport</a>
+
+
+            <a href="../category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
+            <a href="../category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
+            <a href="../category/states.html" role="menuitem">🗺️ State Level</a>
+
+
+            <div class="nav-drop-heading">Social Services</div>
+
+
+            <a href="../category/health.html" role="menuitem">🏥 Health</a>
+
+
+            <a href="../category/education.html" role="menuitem">📚 Education</a>
+
+
+            <a href="../category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
+            <a href="../category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
+            <a href="../category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
+            <div class="nav-drop-heading">More</div>
+
+
+            <a href="../categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="../tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="../tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="../tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="../tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="../tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+
+    </div>
+
+
+  </header>
+
+
+  <main id="site-main" class="site-main container">
+    <section class="calc-hero">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Dashboard</a><span>/</span>
+        <a href="tools.html">Tools</a><span>/</span>
+        <span>Deposits &amp; Returns</span>
+      </nav>
+      <span class="eyebrow dark">Deposits &amp; Returns</span>
+      <h1><span class="calc-hero-icon" aria-hidden="true">🏦</span> FD Maturity Calculator</h1>
+      <p class="hero-sub">Calculate fixed-deposit maturity value, interest earned and post-tax returns.</p>
+    </section>
+
+    <section class="calc-layout">
+      <article class="card calc-card">
+        <div class="calc-card-head">
+          <div><h2>Calculate</h2><p class="muted">Change any input and press calculate.</p></div>
+          <span class="badge">Inputs: 5</span>
+        </div>
+        <form id="calc-form" class="calc-form"></form>
+        <div class="calc-actions">
+          <button type="button" id="calc-run" class="btn btn-primary">Calculate</button>
+          <button type="button" id="calc-reset" class="btn btn-quiet">Reset defaults</button>
+        </div>
+        <div id="calc-result" class="calc-results" aria-live="polite"></div>
+      </article>
+
+      <aside class="calc-sidebar">
+        <article class="card calc-info-card">
+          <span class="calc-info-label">Formula</span>
+          <p>A = P × (1 + r/m)^(m × years); post-tax interest = interest × (1 − tax rate)</p>
+        </article>
+        <article class="card calc-info-card">
+          <span class="calc-info-label">User guide</span>
+          <p>Use the same compounding frequency as your bank. Tax rate should reflect your marginal slab.</p>
+          <ul class="guide-list">
+            <li>Maturity value</li><li>Interest earned</li><li>Effective yield</li><li>Post-tax maturity</li>
+          </ul>
+        </article>
+        <article class="card calc-info-card note-card">
+          <span class="calc-info-label">Notes</span>
+          <p>Illustrative only. Confirm numbers with your lender, insurer or adviser before acting.</p>
+        </article>
+      </aside>
+    </section>
+
+    <section class="related-tools">
+      <div class="section-head"><div><span class="eyebrow dark">Keep exploring</span><h2>Related calculators</h2></div></div>
+      <div class="grid grid-4">
+        <a class="card related-tool" href="rd-maturity.html"><span aria-hidden="true">🪙</span><strong>RD Maturity Calculator</strong><small>Open calculator →</small></a><a class="card related-tool" href="sip-returns.html"><span aria-hidden="true">📊</span><strong>SIP Return Calculator</strong><small>Open calculator →</small></a><a class="card related-tool" href="cagr.html"><span aria-hidden="true">📈</span><strong>CAGR Calculator</strong><small>Open calculator →</small></a><a class="card related-tool" href="compound-interest.html"><span aria-hidden="true">🧮</span><strong>Compound Interest Calculator</strong><small>Open calculator →</small></a>
+      </div>
+    </section>
+
+    <script type="application/json" id="calc-config">{"id": "fd-maturity", "category": "investments", "title": "FD Maturity Calculator", "icon": "🏦", "description": "Calculate fixed-deposit maturity value, interest earned and post-tax returns.", "eyebrow": "Deposits & Returns", "formula": "A = P × (1 + r/m)^(m × years); post-tax interest = interest × (1 − tax rate)", "guide": "Use the same compounding frequency as your bank. Tax rate should reflect your marginal slab.", "fields": [{"key": "principal", "label": "Deposit amount", "default": 500000, "unit": "₹", "kind": "number", "min": 1, "max": null, "step": 10000, "options": [], "help": ""}, {"key": "rate", "label": "Annual interest rate", "default": 7.1, "unit": "% p.a.", "kind": "number", "min": 0, "max": 25, "step": 0.05, "options": [], "help": ""}, {"key": "years", "label": "Tenure", "default": 5, "unit": "years", "kind": "number", "min": 0.5, "max": 30, "step": 0.5, "options": [], "help": ""}, {"key": "comp", "label": "Compounding", "default": "4", "unit": "", "kind": "select", "min": null, "max": null, "step": "any", "options": [["1", "Yearly"], ["4", "Quarterly"], ["12", "Monthly"]], "help": ""}, {"key": "tax", "label": "Tax rate", "default": 10, "unit": "%", "kind": "number", "min": 0, "max": 40, "step": 1, "options": [], "help": ""}], "outcomes": ["Maturity value", "Interest earned", "Effective yield", "Post-tax maturity"], "notes": ["Illustrative only. Confirm numbers with your lender, insurer or adviser before acting."], "legacy": false, "href": "fd-maturity.html"}</script>
+      </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand-col">
+
+
+        <a class="brand" href="../index.html" aria-label="FinRadar home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+          <span class="brand-name">FinRadar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 09:17 UTC</span></p>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Explore</h4>
+
+
+        <a href="../index.html">Dashboard</a>
+
+
+        <a href="../search.html">Search</a>
+
+
+        <a href="../sources.html">Data Sources</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Key Sectors</h4>
+
+
+        <a href="../category/central.html">Central Government</a>
+
+
+        <a href="../category/states.html">State Level</a>
+
+
+        <a href="../category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="../category/geo.html">Geo Levels</a>
+
+
+        <a href="../category/transport.html">Transport</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">More Sectors</h4>
+
+
+        <a href="../category/economy.html">Economy</a>
+
+
+        <a href="../category/agriculture.html">Agriculture</a>
+
+
+        <a href="../category/health.html">Health</a>
+
+
+        <a href="../category/education.html">Education</a>
+
+
+        <a href="../category/welfare.html">Welfare &amp; Employment</a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+
+      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
+      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <script src="../scripts/app.js"></script>
+
+
+  <script src="../scripts/charts.js"></script>
+
+
+  <script src="../scripts/tools.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Lab — Expanded Official Data & Derived KPIs — FinRadar</title>
+  <meta name="description" content="Curated World Bank, Census of India and data.gov.in data with definitions, guides, derived KPIs and correlations." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/european-theme.css" />
+  <link rel="canonical" href="https://finradar.example/data-lab.html" />
+</head>
+<body data-base="">
+  <a class="skip-link" href="#site-main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner container">
+      <a class="brand" href="index.html" aria-label="FinRadar home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+        <span class="brand-name">FinRadar</span>
+      </a>
+      <span class="nav-status"><span class="status-dot"></span>Live data</span>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <div class="nav-primary">
+          <a href="index.html" class="nav-link">Dashboard</a>
+          <a href="tools.html" class="nav-link">Tools</a>
+          <a href="search.html" class="nav-link">Search</a>
+          <a href="categories.html" class="nav-link">Categories</a>
+          <a href="sources.html" class="nav-link">Sources</a>
+          <a href="data-lab.html" class="nav-link">Data Lab</a>
+        </div>
+        <div class="nav-drop">
+          <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-drop-menu" role="menu">
+            <div class="nav-drop-heading">Macro &amp; National Accounts</div>
+
+
+            <a href="category/central.html" role="menuitem">🏛️ Central Government</a>
+
+
+            <a href="category/economy.html" role="menuitem">💰 Economy</a>
+
+
+            <a href="category/financials.html" role="menuitem">🏦 Financials</a>
+
+
+            <div class="nav-drop-heading">Sector Categories</div>
+
+
+            <a href="category/agriculture.html" role="menuitem">🌾 Agriculture</a>
+
+
+            <a href="category/energy.html" role="menuitem">⚡ Energy &amp; Power</a>
+
+
+            <a href="category/transport.html" role="menuitem">🚗 Transport</a>
+
+
+            <a href="category/commerce.html" role="menuitem">🛒 Trade &amp; Commerce</a>
+
+
+            <div class="nav-drop-heading">Geographic &amp; Sub-national</div>
+
+
+            <a href="category/geo.html" role="menuitem">📍 Geo Levels</a>
+
+
+            <a href="category/states.html" role="menuitem">🗺️ State Level</a>
+
+
+            <div class="nav-drop-heading">Social Services</div>
+
+
+            <a href="category/health.html" role="menuitem">🏥 Health</a>
+
+
+            <a href="category/education.html" role="menuitem">📚 Education</a>
+
+
+            <a href="category/welfare.html" role="menuitem">🤝 Welfare &amp; Employment</a>
+
+
+            <div class="nav-drop-heading">Environment &amp; Urban</div>
+
+
+            <a href="category/environment.html" role="menuitem">🌍 Environment &amp; Climate</a>
+
+
+            <a href="category/housing.html" role="menuitem">🏠 Housing &amp; Urban</a>
+
+
+            <div class="nav-drop-heading">More</div>
+
+
+            <a href="categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </nav>
+
+
+    </div>
+
+
+  </header>
+
+
+  <main id="site-main" class="site-main container">
+    <section class="lab-hero">
+      <span class="eyebrow dark">Data Lab · updated 2026-11-26T09:06:00Z</span>
+      <h1>Expanded official data, explained</h1>
+      <p class="hero-sub">Raw series are published with their source, unit, definition and a plain-English user guide. Derived KPIs show exactly how they are calculated, and relationships show how Indian metrics move with macro and global factors.</p>
+      <div class="grid grid-4 source-summary-grid">
+        <div class="card source-summary-card"><strong>28</strong><span>Curated series</span></div>
+        <div class="card source-summary-card"><strong>28</strong><span>Live this run</span></div>
+        <div class="card source-summary-card"><strong>12</strong><span>Derived KPIs</span></div>
+        <div class="card source-summary-card"><strong>14</strong><span>Relationships</span></div>
+      </div>
+    </section>
+    <section id="series">
+      <div class="section-head"><div><span class="eyebrow dark">Raw data</span><h2>Published data series</h2></div><p class="section-intro">Every series below is fetched from an official public API. Open Definition or User guide for context before using a number.</p></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Series</th><th>Latest</th><th>History</th><th>Status</th><th>Definition</th><th>Guide</th></tr></thead>
+          <tbody>
+        <tr id="series-wb-IND-NY.GDP.MKTP.KD.ZG">
+          <td><strong>GDP growth (annual %)</strong><br><small class="muted">IND · macro</small></td>
+          <td>7.57 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[3.84099115686554, 4.82396626397303, 3.80397532120038, 7.86038147545045, 7.92293661307978, 7.92343062131789, 8.06073257305057, 7.66081506510766, 3.08669805950082, 7.8618888330338, 8.49758470165625, 5.24131620024293, 5.45638755164772, 6.38610640091713, 7.41022760516977, 7.99625378567987, 8.25630550176662, 6.79538341902422, 6.45385134495295, 3.87143694070524, -5.77772470687303, 9.68959249191741, 7.6093649776932, 7.210224629335, 7.09927893176518, 7.56666179284244]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual percentage change of real Gross Domestic Product at constant prices.</p></details></td>
+          <td><details><summary>User guide</summary><p>Use it as the headline speed of the economy. Compare with inflation to see whether growth is real or price-driven.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-NY.GDP.PCAP.CD">
+          <td><strong>GDP per capita (current US$)</strong><br><small class="muted">IND · macro</small></td>
+          <td>2,702 USD<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[442.750218937263, 450.357900514128, 469.149928973927, 544.143133545002, 624.258826510066, 710.488080408949, 801.668353659022, 1021.88707706826, 992.519584923828, 1094.94974598436, 1347.51939071367, 1445.46127486037, 1429.32199520032, 1432.84397512195, 1553.88396075118, 1583.99815907985, 1707.50892912243, 1950.10468280866, 1966.25455171679, 2041.42863698585, 1907.04251637669, 2239.61384367482, 2279.98145719369, 2434.44826340989, 2591.9916607122, 2702.47987141553]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>GDP divided by mid-year population, converted to current US dollars.</p></details></td>
+          <td><details><summary>User guide</summary><p>A rough measure of average material output per person. It is not a measure of household income or welfare.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-NY.GDP.PCAP.KD.ZG">
+          <td><strong>GDP per capita growth (annual %)</strong><br><small class="muted">IND · macro</small></td>
+          <td>6.62 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[1.90763005843495, 2.88134658113091, 1.94070548523048, 6.00579964269848, 6.09996522556324, 6.17702892470105, 6.38367720990838, 6.05160013553237, 1.61413451730577, 6.31340985810947, 6.93079780360446, 3.76074153231241, 4.01726735834531, 4.97769997299568, 6.06398074170735, 6.71566734636781, 6.97394690926852, 5.5611850346496, 5.29211971912275, 2.79675759966057, -6.69047102834244, 8.79093447675136, 6.76238601728318, 6.26741791597422, 6.14957446128288, 6.6165688365585]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of real GDP divided by population growth.</p></details></td>
+          <td><details><summary>User guide</summary><p>Prefer this over headline GDP growth when assessing whether average living standards are improving.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-FP.CPI.TOTL.ZG">
+          <td><strong>Consumer price inflation</strong><br><small class="muted">IND · macro</small></td>
+          <td>2.40 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[4.0094359104519, 3.77929312235637, 4.29715203929561, 3.80585899528852, 3.76725173477517, 4.24634362031923, 5.79652337561633, 6.37288135593231, 8.34926704907574, 10.8823529411764, 11.9893899204244, 8.9117933648336, 9.47899691419792, 10.0178784746104, 6.66565671867899, 4.90697344127249, 4.94821634062134, 3.32817337461304, 3.93882646691642, 3.72950573539123, 6.62343677628529, 5.13140747176363, 6.69903414079857, 5.64914318907925, 4.9530355097366, 2.39884954182294]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual percentage change in the Consumer Price Index.</p></details></td>
+          <td><details><summary>User guide</summary><p>The rate at which a representative basket of consumer goods becomes more expensive. Compare with your own spending mix using the inflation tool.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SP.POP.TOTL">
+          <td><strong>Total population</strong><br><small class="muted">IND · macro</small></td>
+          <td>1,463,865,525 people<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[1057922733.0, 1077898575.0, 1097600380.0, 1116803006.0, 1135991513.0, 1154676322.0, 1172878890.0, 1190676021.0, 1207930964.0, 1225524753.0, 1243481564.0, 1261224954.0, 1278674502.0, 1295829511.0, 1312277191.0, 1328024498.0, 1343944296.0, 1359657400.0, 1374659064.0, 1389030312.0, 1402617695.0, 1414203896.0, 1425423212.0, 1438069596.0, 1450935791.0, 1463865525.0]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Mid-year estimate of the resident population.</p></details></td>
+          <td><details><summary>User guide</summary><p>Denominator for per-capita metrics. Census 2011 below is the official decadal benchmark; this series is an annual estimate.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SP.POP.TOTL" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SP.POP.GROW">
+          <td><strong>Population growth (annual %)</strong><br><small class="muted">IND · macro</small></td>
+          <td>0.89 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[1.87939826197393, 1.87060822112685, 1.81129424097937, 1.73438204419235, 1.7035704679088, 1.63142146860079, 1.56412522526913, 1.50599144392136, 1.43877181746736, 1.44601731955273, 1.45460361883041, 1.41682761544376, 1.37405616603306, 1.33270430507476, 1.26129027125347, 1.19285563384335, 1.19162966402099, 1.1623961434697, 1.09729906702925, 1.04001395098104, 0.973438646910149, 0.822648220128724, 0.790200540609834, 0.883289539766135, 0.890706546985984, 0.887183543977214]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual percentage change in population.</p></details></td>
+          <td><details><summary>User guide</summary><p>Subtract this from GDP growth to approximate per-capita growth.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SP.POP.GROW" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SP.URB.TOTL.IN.ZS">
+          <td><strong>Urban population (% of total)</strong><br><small class="muted">IND · macro</small></td>
+          <td>35.7 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[27.6470407512523, 27.9028652096636, 28.1756878910456, 28.4660287698, 28.7726067228528, 29.0945497159107, 29.4309857146804, 29.7810426848684, 30.1438485921815, 30.5185314023263, 30.9042190810094, 31.2746502853309, 31.5898935604399, 31.9096789235237, 32.2288233408821, 32.5472990022299, 32.8650780972823, 33.1821328157539, 33.4984353473598, 33.8139578818147, 34.1286726088333, 34.4425517181304, 34.7555673994206, 35.0676918424186, 35.3788972368389, 35.689155772396]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the population living in urban areas as defined by national statistical offices.</p></details></td>
+          <td><details><summary>User guide</summary><p>A rising share usually signals structural change; pair it with productivity and housing data before drawing conclusions.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SP.POP.1564.TO.ZS">
+          <td><strong>Working-age population (15–64, %)</strong><br><small class="muted">IND · macro</small></td>
+          <td>68.4 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[60.0363292788794, 60.3721236017034, 60.7034726242062, 61.0366264092953, 61.3938727280818, 61.7634053727483, 62.1494488498081, 62.5476673904344, 62.9374830161807, 63.3246171976748, 63.7171853960836, 64.1076284698584, 64.4911322144707, 64.8769968339134, 65.2562148871274, 65.6177857140772, 65.9731160836743, 66.3274225183491, 66.6529850197096, 66.944203338595, 67.2377729174314, 67.5490478920304, 67.8132963616236, 68.0210944742065, 68.2295801537644, 68.4281617563294]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the population aged 15 to 64 years.</p></details></td>
+          <td><details><summary>User guide</summary><p>A demographic dividend exists only when this large cohort is employed and productive.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SP.DYN.LE00.IN">
+          <td><strong>Life expectancy at birth</strong><br><small class="muted">IND · macro</small></td>
+          <td>72.2 years<br><small class="muted">2024</small></td>
+          <td><div class="sparkline" data-points='[62.749, 63.158, 63.649, 64.086, 64.484, 64.939, 65.373, 65.803, 66.247, 66.7, 67.162, 67.623, 68.076, 68.499, 68.932, 69.326, 69.709, 70.068, 70.415, 70.746, 70.156, 67.282, 71.698, 72.003, 72.235]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Number of years a newborn would live if prevailing mortality patterns remained constant.</p></details></td>
+          <td><details><summary>User guide</summary><p>A broad outcome measure for health, sanitation and nutrition. Moves slowly, so read multi-year trends.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SE.ADT.LITR.ZS">
+          <td><strong>Literacy rate (ages 15+)</strong><br><small class="muted">IND · macro</small></td>
+          <td>78.2 %<br><small class="muted">2024</small></td>
+          <td><div class="sparkline" data-points='[61.0099983215332, 62.75, 68.325817300837, 69.3000030517578, 69.8279300354369, 73.6883524760717, 74.8938629973395, 75.5270629470344, 76.0596617430205, 76.3199996948242, 81.6999969482422, 78.1625330351403]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Percentage of people aged 15 and above who can read and write.</p></details></td>
+          <td><details><summary>User guide</summary><p>Compare with the Census 2011 literacy benchmark below to gauge long-run educational progress.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SE.ADT.LITR.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-NY.GDS.TOTL.ZS">
+          <td><strong>Gross domestic savings (% of GDP)</strong><br><small class="muted">IND · macro</small></td>
+          <td>32.6 % GDP<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[24.3131833903764, 24.0916926834607, 25.6562581746682, 27.6200324775481, 31.2437497123137, 32.255129867281, 34.0875841266633, 34.3773731960541, 32.7847028620241, 32.5804441151796, 34.2675343705701, 32.708319830057, 32.8551899788478, 32.0590737671998, 31.4314260905683, 30.5644282130068, 30.3961706924706, 30.5076513689534, 29.8884586617548, 28.0860368485782, 27.2894188790877, 28.5732421263582, 31.7941969900494, 32.8913417357203, 32.8269324325985, 32.559492763302]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p> GDP minus final consumption expenditure, as a share of GDP.</p></details></td>
+          <td><details><summary>User guide</summary><p>Higher savings give an economy more internally funded investment capacity.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDS.TOTL.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-FS.AST.PRVT.GD.ZS">
+          <td><strong>Domestic credit to private sector (% of GDP)</strong><br><small class="muted">IND · macro</small></td>
+          <td>44.0 % GDP<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[28.3395511575183, 28.6194154254102, 32.3064890735537, 31.6262656186491, 36.1918038545968, 40.0679804780573, 43.6277524334268, 45.6277647457138, 49.559366687116, 48.1244479112046, 50.5553749785224, 51.2892331325447, 51.8885076473464, 52.385709516972, 51.8821873589628, 51.8675240772049, 38.2036507912231, 38.1707138624147, 38.8975254010362, 38.73794497616, 40.7867848551821, 36.8920885102897, 38.1859763563586, 40.8940758962905, 41.6079694330612, 44.0305399373406]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Financial resources provided to the private sector by banks and other financial corporations.</p></details></td>
+          <td><details><summary>User guide</summary><p>A proxy for financial depth. Very rapid growth can also signal credit stress, so read it alongside savings.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/FS.AST.PRVT.GD.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-FR.INR.RINR">
+          <td><strong>Real interest rate</strong><br><small class="muted">IND · macro</small></td>
+          <td>5.56 %<br><small class="muted">2022</small></td>
+          <td><div class="sparkline" data-points='[8.34261083169541, 8.59144929472996, 7.90717718905634, 7.30788115992965, 4.91012830439652, 4.85514517170548, 2.57060670308207, 5.68184406266903, 3.77175624993679, 4.80859210783414, -1.98385922190105, 1.31798086277381, 2.47352048879141, 3.8659928626783, 6.6951760905166, 7.55648841350514, 6.23271141480041, 5.3276088624176, 5.36166638952418, 6.8948754272989, 4.13599957785852, 0.316945144201484, 5.55501946152238]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Lending interest rate adjusted for inflation.</p></details></td>
+          <td><details><summary>User guide</summary><p>Positive rates reward savers; deeply negative rates erode deposits. It is a market-wide rate, not your FD rate.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/FR.INR.RINR" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-BX.KLT.DINV.WD.GD.ZS">
+          <td><strong>FDI inflows (% of GDP)</strong><br><small class="muted">IND · macro</small></td>
+          <td>1.03 % GDP<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[0.765211694280817, 1.05638020993358, 1.01156946489919, 0.605887857091792, 0.765596855110284, 0.886098378458823, 2.13016842534495, 2.07339404668754, 3.6205232354017, 2.65159033235479, 1.6350340943491, 2.0020634629993, 1.31293453035323, 1.5162764665975, 1.69565958990806, 2.09211521443253, 1.9373641224439, 1.50731583255894, 1.55821483801456, 1.78482633957161, 2.40620322673636, 1.41217101040888, 1.53665241748393, 0.802254995836756, 0.721648483526777, 1.03111732367627]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Net inflows of foreign direct investment as a share of GDP.</p></details></td>
+          <td><details><summary>User guide</summary><p>Reflects long-term foreign confidence, but a single large deal can distort one year.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/BX.KLT.DINV.WD.GD.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-BN.CAB.XOKA.GD.ZS">
+          <td><strong>Current account balance (% of GDP)</strong><br><small class="muted">IND · macro</small></td>
+          <td>-0.51 % GDP<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[-0.982342580017137, 0.290495460210206, 1.37093793900847, 1.44355773291234, 0.110018010197154, -1.25350400207393, -0.988988302952292, -0.663717648772608, -2.58337749259837, -1.95146209111801, -3.25348368945179, -3.42928468606061, -5.00488971805303, -2.64566711733892, -1.33950896483452, -1.06754907167964, -0.527880606037518, -1.43948820320988, -2.42697545810527, -1.04961203910072, 1.22362111042791, -1.05524166809383, -2.43238270956779, -0.912777939495826, -0.851289719084461, -0.511308076227287]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Current account balance (goods, services, income and transfers) as a share of GDP.</p></details></td>
+          <td><details><summary>User guide</summary><p>Persistent deficits need stable external financing; persistent surpluses may signal weak domestic demand.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/BN.CAB.XOKA.GD.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-FI.RES.TOTL.MO">
+          <td><strong>Foreign exchange reserves (months of imports)</strong><br><small class="muted">IND · macro</small></td>
+          <td>7.85 months<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[6.1214797944893, 7.45295243694094, 10.3730834871592, 12.2832820147208, 11.3051095119993, 8.51847317184615, 8.91992866511893, 11.1391919314526, 7.71425265694142, 9.7737111431445, 7.76063411026838, 6.18879010347658, 5.90371509588661, 6.02774649537523, 6.59913308020169, 8.00309182929654, 8.43013905768233, 8.16271866943628, 6.90105548512363, 8.27365940048396, 12.9323281065785, 9.84238574452327, 7.00951210544359, 7.97237314389747, 7.52136088188696, 7.85087469673437]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>International reserves expressed as the number of months of goods and services imports they could cover.</p></details></td>
+          <td><details><summary>User guide</summary><p>A standard resilience buffer. Compare with short-term external debt before judging adequacy.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/FI.RES.TOTL.MO" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-EN.ATM.PM25.MC.M3">
+          <td><strong>Fine particulate matter (PM2.5)</strong><br><small class="muted">IND · macro</small></td>
+          <td>54.1 µg/m³<br><small class="muted">2023</small></td>
+          <td><div class="sparkline" data-points='[50.7630256086335, 50.4537854823933, 51.2544544512511, 52.5149836233186, 50.8446162251344, 51.3369278641143, 49.2546056005498, 49.4513350486064, 51.2664820637014, 52.2626731220367, 51.7188200456979, 55.0258281992835, 53.0196291324327, 52.2693789873114, 51.6872206933655, 51.4355933740253, 54.4218755239322, 55.1724251484484, 56.6795240921875, 53.5981486621548, 52.1933674059995, 55.6234726382873, 50.6577446303517, 54.0522242217331]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual mean concentration of fine particulate matter with a diameter of 2.5 micrometres or less.</p></details></td>
+          <td><details><summary>User guide</summary><p>Lower is better. Compare the trend with GDP growth to see whether expansion is improving or worsening air quality.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-EG.ELC.ACCS.ZS">
+          <td><strong>Access to electricity (% of population)</strong><br><small class="muted">IND · macro</small></td>
+          <td>99.9 %<br><small class="muted">2024</small></td>
+          <td><div class="sparkline" data-points='[60.3, 62.0, 62.3, 65.4, 64.4, 68.8, 67.9, 72.3, 74.1, 75.0, 76.3, 79.5, 79.9, 83.1, 85.1, 88.0, 89.6, 91.8, 95.7, 95.9, 96.5, 99.6, 99.2, 99.5, 99.9]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the population with access to an electricity supply.</p></details></td>
+          <td><details><summary>User guide</summary><p>Near-universal access shifts the policy focus from connection to reliability and affordability.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-IT.NET.USER.ZS">
+          <td><strong>Internet users (% of population)</strong><br><small class="muted">IND · macro</small></td>
+          <td>70.0 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[0.527532449930946, 0.660146377009928, 1.53787558175083, 1.68648997063625, 1.97613649190559, 2.388099909, 2.80549986534254, 3.95, 4.38, 5.12, 7.5, 10.07, 11.10000038, 12.30000019, 13.5, 14.89999962, 16.5, 18.20000076, 20.0813000379384, 29.52350044, 43.40544313, 49.2580986, 55.9, 60.25230026, 64.9434967, 70.0]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the population using the internet (the past 12 months).</p></details></td>
+          <td><details><summary>User guide</summary><p>A foundation for digital commerce; combine with payment data for digital velocity.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-PA.NUS.FCRF">
+          <td><strong>Official exchange rate (INR per US$)</strong><br><small class="muted">IND · macro</small></td>
+          <td>87.2 INR/USD<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[44.941605, 47.1864141666666, 48.6103191666666, 46.5832841666666, 45.3164666666666, 44.099975, 45.3070083333333, 41.3485333333333, 43.5051833333333, 48.4052666666666, 45.7258121212121, 46.6704666666666, 53.4372333333333, 58.5978454166666, 61.0295144607843, 64.1519444632786, 67.1953128073893, 65.1215686450659, 68.3894670935421, 70.420340535955, 74.0995668836052, 73.9180128154351, 78.6044905829915, 82.5992764460784, 83.669281580941, 87.1584483507393]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Official exchange rate used to convert national currency to US dollars.</p></details></td>
+          <td><details><summary>User guide</summary><p>Rapid depreciation raises imported inflation and the rupee cost of foreign debt.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/PA.NUS.FCRF" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SL.UEM.TOTL.ZS">
+          <td><strong>Unemployment (% of labour force)</strong><br><small class="muted">IND · macro</small></td>
+          <td>4.22 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[7.589, 7.611, 7.681, 7.633, 7.598, 7.551, 7.553, 7.562, 7.629, 7.636, 7.631, 7.609, 7.645, 7.678, 7.656, 7.629, 7.611, 7.626, 7.652, 6.51, 7.859, 6.38, 4.822, 4.172, 4.173, 4.219]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the labour force without work but available and seeking employment.</p></details></td>
+          <td><details><summary>User guide</summary><p>India&#x27;s estimate is modelled by ILO; use it for direction rather than exact levels.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IND-SI.POV.DDAY">
+          <td><strong>Extreme poverty (% below $2.15/day)</strong><br><small class="muted">IND · macro</small></td>
+          <td>2.60 %<br><small class="muted">2023</small></td>
+          <td><div class="sparkline" data-points='[46.4, 34.6, 27.1, 5.3, 2.6]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Share of the population living below the World Bank&#x27;s extreme poverty line (2017 PPP).</p></details></td>
+          <td><details><summary>User guide</summary><p>Useful for long-run comparison, not for measuring relative deprivation within India.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/SI.POV.DDAY" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-WLD-NY.GDP.MKTP.KD.ZG">
+          <td><strong>World GDP growth (annual %)</strong><br><small class="muted">WLD · global</small></td>
+          <td>2.92 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[4.56720186018067, 2.02994447591409, 2.31891535273219, 3.07416318395298, 4.49537859755034, 4.0591513939052, 4.48913510541212, 4.43123376835284, 2.09160448064915, -1.33303814192512, 4.52085213873801, 3.31431839310659, 2.74743359443481, 2.88974765617328, 3.16849193058364, 3.12721325699906, 2.78974074234588, 3.44658623167963, 3.28663086462807, 2.680308747553, -2.8862118545708, 6.48508887596732, 3.44001097265658, 2.85938493335971, 2.90001340156711, 2.92127318539153]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of global real GDP.</p></details></td>
+          <td><details><summary>User guide</summary><p>An external demand benchmark: if India grows faster than the world, it is gaining share.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-WLD-FP.CPI.TOTL.ZG">
+          <td><strong>World inflation (annual %)</strong><br><small class="muted">WLD · global</small></td>
+          <td>3.04 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[3.43351657103988, 3.83657262052543, 2.90799688587762, 3.02504526252236, 3.51799903099595, 4.10725070715931, 4.26717463390264, 4.81023704342911, 8.94995335353387, 2.86044855902674, 3.32634463368642, 4.80063594169405, 3.72532666110646, 2.61343402233815, 2.39371597209796, 1.43702380935654, 1.59691227583204, 2.25427651934812, 2.4508342253648, 2.21677593359908, 1.91983527270792, 3.4676759410803, 8.00279982052121, 5.73316283034957, 3.01447576977999, 3.04141321556539]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual change in the global consumer price aggregate.</p></details></td>
+          <td><details><summary>User guide</summary><p>Helps separate domestic inflation from imported, global price pressure.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-VNM-NY.GDP.MKTP.KD.ZG">
+          <td><strong>Vietnam GDP growth (annual %)</strong><br><small class="muted">VNM · global</small></td>
+          <td>8.02 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[6.78731640463151, 6.19289331233377, 6.32082099160833, 6.89906349055258, 7.53641060890386, 7.54724772895918, 6.97795481056711, 7.12950448605439, 5.66177120891362, 5.39789754014181, 6.42324482239482, 6.41316889681683, 5.5045447041189, 5.55351081026072, 6.42224312118567, 6.98715430598611, 6.69000892660424, 6.94019037359206, 7.46500685572751, 7.35926270105006, 2.86541320912272, 2.55372852648131, 8.53750041218142, 4.97865959483225, 7.03955197123018, 8.01882998978245]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of real GDP in Vietnam.</p></details></td>
+          <td><details><summary>User guide</summary><p>Peer benchmark for India&#x27;s relative growth performance.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-IDN-NY.GDP.MKTP.KD.ZG">
+          <td><strong>Indonesia GDP growth (annual %)</strong><br><small class="muted">IDN · global</small></td>
+          <td>5.11 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[4.9200677470169, 3.64346644721492, 4.49947539085764, 4.78036912167654, 5.03087394501685, 5.69257130383384, 5.50095178520348, 6.34502222667214, 6.01370360009123, 4.62887118256153, 6.22385418062366, 6.16978420771008, 6.03005065305615, 5.5572636889101, 5.006668425755, 4.87632230022123, 5.03306918280177, 5.06978590134916, 5.17429153955024, 5.01928768046282, -2.06551182934165, 3.70288562827751, 5.30719722664799, 5.04883117855516, 5.03257477088519, 5.10808904438025]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of real GDP in Indonesia.</p></details></td>
+          <td><details><summary>User guide</summary><p>Peer benchmark for India&#x27;s relative growth performance.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-BRA-NY.GDP.MKTP.KD.ZG">
+          <td><strong>Brazil GDP growth (annual %)</strong><br><small class="muted">BRA · global</small></td>
+          <td>2.29 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[4.38794944745618, 1.38989640095637, 3.05346185909312, 1.14082899824888, 5.75996463670954, 3.20213206130431, 3.96198871122617, 6.06987060678338, 5.09419544658736, -0.125812002161169, 7.52822581815364, 3.97442307944702, 1.92117598576537, 3.00482266944432, 0.503955740242247, -3.54576339269425, -3.27591690782192, 1.32286905404399, 1.783666761634, 1.22077782360842, -3.2767587964736, 4.76260437908608, 3.01669435393015, 3.24165532906981, 3.41931516501906, 2.2857464902475]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of real GDP in Brazil.</p></details></td>
+          <td><details><summary>User guide</summary><p>Peer benchmark for India&#x27;s relative growth performance.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>
+        <tr id="series-wb-MEX-NY.GDP.MKTP.KD.ZG">
+          <td><strong>Mexico GDP growth (annual %)</strong><br><small class="muted">MEX · global</small></td>
+          <td>0.56 %<br><small class="muted">2025</small></td>
+          <td><div class="sparkline" data-points='[5.02928399378261, -0.450845253215945, -0.236588001922641, 1.18554486709559, 3.56544102622887, 2.11324711473297, 4.80501351664901, 2.0778639395329, 0.943331872912935, -6.29525056697287, 4.9713345832195, 3.44404505297089, 3.55321076010608, 0.852101550164704, 2.50376350783593, 2.70232343024026, 1.7724932254128, 1.87172854648381, 1.97208211101069, -0.392690513290532, -8.35403459379062, 6.04848347173572, 3.70975708309098, 3.1067964131456, 1.35057631384696, 0.561683456144578]'></div></td>
+          <td><span class="badge good">live</span><br><small class="muted">Annual</small></td>
+          <td><details><summary>Definition</summary><p>Annual growth of real GDP in Mexico.</p></details></td>
+          <td><details><summary>User guide</summary><p>Peer benchmark for India&#x27;s relative growth performance.</p></details><small class="muted"><a href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section id="derived">
+      <div class="section-head"><div><span class="eyebrow dark">Computed metrics</span><h2>Innovative derived KPIs</h2></div><p class="section-intro">These are not published by any single authority. Each card shows the exact inputs and formula so you can reproduce or challenge the number.</p></div>
+      <div class="grid grid-2">
+        <article class="card data-kpi-card" id="kpi-per_capita_growth_spread">
+          <div class="card-header"><h3>Per-capita growth spread</h3><span class="badge">Favourable</span></div>
+          <div class="data-kpi-value">6.68 pp</div>
+          <p><strong>Formula:</strong> Real GDP growth − population growth</p>
+          <p><strong>Definition:</strong> How much of headline growth remains after accounting for a growing population.</p>
+          <p><strong>User guide:</strong> A wider spread means average output per person is rising faster. It is an approximation of GDP-per-capita growth.</p>
+          <p class="muted small">Sources: World Bank NY.GDP.MKTP.KD.ZG, World Bank SP.POP.GROW · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-demographic_dividend_index">
+          <div class="card-header"><h3>Demographic dividend index</h3><span class="badge">Watch</span></div>
+          <div class="data-kpi-value">53.5 index</div>
+          <p><strong>Formula:</strong> Working-age share (%) × literacy rate (%) ÷ 100</p>
+          <p><strong>Definition:</strong> Potential productive capacity from the size and education of the working-age population.</p>
+          <p><strong>User guide:</strong> This is potential, not realised, capacity. Read it with employment and job-quality data before calling it a dividend.</p>
+          <p class="muted small">Sources: World Bank SP.POP.1564.TO.ZS, World Bank SE.ADT.LITR.ZS · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-urbanisation_productivity_ratio">
+          <div class="card-header"><h3>Urbanisation productivity ratio</h3><span class="badge">Interpret with care</span></div>
+          <div class="data-kpi-value">21.3 ×</div>
+          <p><strong>Formula:</strong> GDP per capita growth (%) ÷ change in urban share (pp)</p>
+          <p><strong>Definition:</strong> Output growth generated for each percentage-point shift of population into towns and cities.</p>
+          <p><strong>User guide:</strong> A high ratio can mean productive cities — or that urbanisation is simply too slow. Always inspect both inputs.</p>
+          <p class="muted small">Sources: World Bank NY.GDP.PCAP.KD.ZG, World Bank SP.URB.TOTL.IN.ZS · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-credit_savings_gap">
+          <div class="card-header"><h3>Credit–savings gap</h3><span class="badge">Interpret with care</span></div>
+          <div class="data-kpi-value">11.5 pp of GDP</div>
+          <p><strong>Formula:</strong> Domestic credit to private sector (% GDP) − gross domestic savings (% GDP)</p>
+          <p><strong>Definition:</strong> How far private credit extends beyond the nation&#x27;s own savings, indicating reliance on other funding sources.</p>
+          <p><strong>User guide:</strong> A widening gap can support investment but may signal leverage. Compare across a full cycle, not a single year.</p>
+          <p class="muted small">Sources: World Bank FS.AST.PRVT.GD.ZS, World Bank NY.GDS.TOTL.ZS · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-credit_per_person">
+          <div class="card-header"><h3>Private credit per person</h3><span class="badge">Context</span></div>
+          <div class="data-kpi-value">1,190 USD</div>
+          <p><strong>Formula:</strong> Domestic credit (% GDP) × GDP per capita (current US$) ÷ 100</p>
+          <p><strong>Definition:</strong> Approximate financial depth available per resident.</p>
+          <p><strong>User guide:</strong> Use it to compare financial access across countries; it does not show how credit is distributed.</p>
+          <p class="muted small">Sources: World Bank FS.AST.PRVT.GD.ZS, World Bank NY.GDP.PCAP.CD · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-external_resilience_score">
+          <div class="card-header"><h3>External resilience score</h3><span class="badge">Watch</span></div>
+          <div class="data-kpi-value">48.0 0–100</div>
+          <p><strong>Formula:</strong> Average z-score of FDI (% GDP), current account (% GDP) and reserve cover (months), scaled to 0–100</p>
+          <p><strong>Definition:</strong> Composite of the three external buffers that help an economy absorb a sudden stop in capital flows.</p>
+          <p><strong>User guide:</strong> A score above 50 means the three buffers are above their own long-run averages; it is a relative, not absolute, measure.</p>
+          <p class="muted small">Sources: World Bank BX.KLT.DINV.WD.GD.ZS, BN.CAB.XOKA.GD.ZS, FI.RES.TOTL.MO · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-peer_growth_spread">
+          <div class="card-header"><h3>Peer growth spread</h3><span class="badge">Favourable</span></div>
+          <div class="data-kpi-value">3.57 pp</div>
+          <p><strong>Formula:</strong> India GDP growth − average GDP growth of Vietnam, Indonesia, Brazil and Mexico</p>
+          <p><strong>Definition:</strong> How much faster or slower India is growing than a basket of large emerging economies.</p>
+          <p><strong>User guide:</strong> A positive spread suggests India is gaining relative ground; check the exchange rate and FDI before extrapolating.</p>
+          <p class="muted small">Sources: World Bank India + 4 peer GDP series · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-global_inflation_gap">
+          <div class="card-header"><h3>Global inflation gap</h3><span class="badge">Interpret with care</span></div>
+          <div class="data-kpi-value">-0.64 pp</div>
+          <p><strong>Formula:</strong> India CPI inflation − world inflation</p>
+          <p><strong>Definition:</strong> The part of domestic inflation that is above the global price trend.</p>
+          <p><strong>User guide:</strong> A positive gap points to domestic cost or demand pressure; a negative gap suggests imported disinflation.</p>
+          <p class="muted small">Sources: World Bank FP.CPI.TOTL.ZG (IND and WLD) · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-pollution_intensity_of_growth">
+          <div class="card-header"><h3>Pollution intensity of growth</h3><span class="badge">Under pressure</span></div>
+          <div class="data-kpi-value">0.89 ×</div>
+          <p><strong>Formula:</strong> Growth in PM2.5 (%) ÷ real GDP growth (%)</p>
+          <p><strong>Definition:</strong> Change in air pollution associated with each unit of economic growth.</p>
+          <p><strong>User guide:</strong> Below zero means air quality improved while the economy grew — a sign of decoupling. Values above one mean growth remains pollution-heavy.</p>
+          <p class="muted small">Sources: World Bank EN.ATM.PM25.MC.M3, NY.GDP.MKTP.KD.ZG · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-digital_growth_elasticity">
+          <div class="card-header"><h3>Digital growth elasticity</h3><span class="badge">Interpret with care</span></div>
+          <div class="data-kpi-value">1.31 ×</div>
+          <p><strong>Formula:</strong> GDP per capita growth (%) ÷ change in internet users (% of population, pp)</p>
+          <p><strong>Definition:</strong> Output growth associated with each percentage-point increase in internet adoption.</p>
+          <p><strong>User guide:</strong> A high value can mean digital adoption is translating into output, or that adoption has stalled while the economy grew.</p>
+          <p class="muted small">Sources: World Bank IT.NET.USER.ZS, NY.GDP.PCAP.KD.ZG · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-fx_real_rate_gap">
+          <div class="card-header"><h3>FX–real-rate gap</h3><span class="badge">Favourable</span></div>
+          <div class="data-kpi-value">-1.38 pp</div>
+          <p><strong>Formula:</strong> Annual change in INR/USD exchange rate − real interest rate</p>
+          <p><strong>Definition:</strong> Currency depreciation not offset by the real return offered to savers.</p>
+          <p><strong>User guide:</strong> A positive gap flag means rupee weakness outpaces the real reward for holding rupee assets.</p>
+          <p class="muted small">Sources: World Bank PA.NUS.FCRF, FR.INR.RINR · Latest year: 2025 · Annual</p>
+        </article>
+        <article class="card data-kpi-card" id="kpi-growth_tailwind_ratio">
+          <div class="card-header"><h3>Growth tailwind ratio</h3><span class="badge">Favourable</span></div>
+          <div class="data-kpi-value">2.59 ×</div>
+          <p><strong>Formula:</strong> India GDP growth ÷ world GDP growth</p>
+          <p><strong>Definition:</strong> How many times the global growth rate India is expanding.</p>
+          <p><strong>User guide:</strong> Ratios above one indicate India is outpacing the world cycle; moderate ratios can reflect a global boom lifting all economies.</p>
+          <p class="muted small">Sources: World Bank NY.GDP.MKTP.KD.ZG (IND and WLD) · Latest year: 2025 · Annual</p>
+        </article></div>
+    </section>
+    <section id="relationships">
+      <div class="section-head"><div><span class="eyebrow dark">Correlation lens</span><h2>Macro and global relationships</h2></div><p class="section-intro">Pearson coefficients on overlapping annual observations. These show co-movement, not causation. Use them as prompts for deeper analysis.</p></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Relationship</th><th>Factors</th><th>Coefficient</th><th>Reading</th></tr></thead>
+          <tbody>
+        <tr>
+          <td><strong>Growth versus inflation</strong><br><small class="muted">macro</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Consumer price inflation</td>
+          <td><div class="relation-cell"><span class="relation-bar negative" style="width:2%"></span><strong>-0.023</strong></div></td>
+          <td><small>A weak moves against the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Growth versus financial depth</strong><br><small class="muted">macro/finance</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Domestic credit to private sector (% of GDP)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:11%"></span><strong>+0.113</strong></div></td>
+          <td><small>A weak moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Growth versus urbanisation</strong><br><small class="muted">macro/demographic</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Urban population (% of total)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:0%"></span><strong>+0.005</strong></div></td>
+          <td><small>A weak moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Growth versus internet adoption</strong><br><small class="muted">macro/digital</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Internet users (% of population)</td>
+          <td><div class="relation-cell"><span class="relation-bar negative" style="width:2%"></span><strong>-0.028</strong></div></td>
+          <td><small>A weak moves against the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Income versus literacy</strong><br><small class="muted">income/education</small></td>
+          <td>GDP per capita (current US$)<br><small class="muted">vs</small><br>Literacy rate (ages 15+)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:97%"></span><strong>+0.977</strong></div></td>
+          <td><small>A strong moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2001–2024 · 12 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Income versus air quality</strong><br><small class="muted">income/environment</small></td>
+          <td>GDP per capita (current US$)<br><small class="muted">vs</small><br>Fine particulate matter (PM2.5)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:62%"></span><strong>+0.625</strong></div></td>
+          <td><small>A moderate moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2023 · 24 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>FDI versus current account</strong><br><small class="muted">external</small></td>
+          <td>FDI inflows (% of GDP)<br><small class="muted">vs</small><br>Current account balance (% of GDP)</td>
+          <td><div class="relation-cell"><span class="relation-bar negative" style="width:29%"></span><strong>-0.294</strong></div></td>
+          <td><small>A weak moves against the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Real rates versus FDI</strong><br><small class="muted">finance/external</small></td>
+          <td>Real interest rate<br><small class="muted">vs</small><br>FDI inflows (% of GDP)</td>
+          <td><div class="relation-cell"><span class="relation-bar negative" style="width:26%"></span><strong>-0.267</strong></div></td>
+          <td><small>A weak moves against the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2022 · 23 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Indian versus world inflation</strong><br><small class="muted">global</small></td>
+          <td>Consumer price inflation<br><small class="muted">vs</small><br>World inflation (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:23%"></span><strong>+0.232</strong></div></td>
+          <td><small>A weak moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>Indian versus world growth</strong><br><small class="muted">global</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>World GDP growth (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:68%"></span><strong>+0.682</strong></div></td>
+          <td><small>A moderate moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>India versus Vietnam GDP growth</strong><br><small class="muted">global peer</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Vietnam GDP growth (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:40%"></span><strong>+0.402</strong></div></td>
+          <td><small>A moderate moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>India versus Indonesia GDP growth</strong><br><small class="muted">global peer</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Indonesia GDP growth (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:72%"></span><strong>+0.727</strong></div></td>
+          <td><small>A strong moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>India versus Brazil GDP growth</strong><br><small class="muted">global peer</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Brazil GDP growth (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:30%"></span><strong>+0.303</strong></div></td>
+          <td><small>A weak moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr>
+        <tr>
+          <td><strong>India versus Mexico GDP growth</strong><br><small class="muted">global peer</small></td>
+          <td>GDP growth (annual %)<br><small class="muted">vs</small><br>Mexico GDP growth (annual %)</td>
+          <td><div class="relation-cell"><span class="relation-bar positive" style="width:63%"></span><strong>+0.631</strong></div></td>
+          <td><small>A moderate moves with the other factor over the overlapping period. Correlation is not causation.<br><span class="muted">2000–2025 · 26 observations</span></small></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section id="census">
+      <div class="section-head"><div><span class="eyebrow dark">Decadal data</span><h2>Census of India benchmarks</h2></div><p class="section-intro">Official 2011 enumeration figures. They are a benchmark, not a daily feed; annual estimates come from the World Bank population series above.</p></div>
+      <div class="grid grid-3">
+        <article class="card census-card">
+          <h3>Population (2011 Census)</h3>
+          <div class="data-kpi-value">1,210,854,977 people</div>
+          <p><strong>Definition:</strong> Final population totals of the 2011 decennial Census of India.</p>
+          <p><strong>User guide:</strong> The last completed enumeration. Use the annual World Bank population series for in-between estimates.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Decennial population growth (2001–2011)</h3>
+          <div class="data-kpi-value">17.7 %</div>
+          <p><strong>Definition:</strong> Percentage increase in population between the 2001 and 2011 Censuses.</p>
+          <p><strong>User guide:</strong> Decadal growth is slowing; compare it with GDP growth for per-capita gains.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Literacy rate (2011)</h3>
+          <div class="data-kpi-value">73.0 %</div>
+          <p><strong>Definition:</strong> Percentage of the population aged seven and above who were literate in 2011.</p>
+          <p><strong>User guide:</strong> Census definition differs from the World Bank&#x27;s age-15+ literacy rate; do not mix them in one chart.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Urban population (2011)</h3>
+          <div class="data-kpi-value">31.2 %</div>
+          <p><strong>Definition:</strong> Share of the population living in urban areas in the 2011 Census.</p>
+          <p><strong>User guide:</strong> Baseline for measuring urbanisation since 2011.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Sex ratio (2011)</h3>
+          <div class="data-kpi-value">943.0 females per 1,000 males</div>
+          <p><strong>Definition:</strong> Number of females per 1,000 males recorded in the 2011 Census.</p>
+          <p><strong>User guide:</strong> A social outcome indicator; compare with the 0–6 child sex ratio (919) to see recent change.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Population density (2011)</h3>
+          <div class="data-kpi-value">382.0 people per km²</div>
+          <p><strong>Definition:</strong> Average number of people per square kilometre in 2011.</p>
+          <p><strong>User guide:</strong> Highly uneven across states; use state tables for local analysis.</p>
+        </article>
+        <article class="card census-card">
+          <h3>Child sex ratio, age 0–6 (2011)</h3>
+          <div class="data-kpi-value">919.0 females per 1,000 males</div>
+          <p><strong>Definition:</strong> Females per 1,000 males in the 0–6 age group in the 2011 Census.</p>
+          <p><strong>User guide:</strong> A sensitive indicator of recent demographic behaviour.</p>
+        </article></div>
+      <p class="muted small"><a href="https://censusindia.gov.in/census.website/data/census-tables" target="_blank" rel="noopener">Census of India — Office of the Registrar General &amp; Census Commissioner ↗</a> · Decadal (last enumeration 2011; next scheduled 2027)</p>
+    </section>
+    <section id="datagov">
+      <div class="section-head"><div><span class="eyebrow dark">Live official feed</span><h2>Curated data.gov.in resources</h2></div><p class="section-intro">A small, high-value subset of data.gov.in is fetched every night. Set DATA_GOV_IN_TOKEN to use a personal key instead of the rate-limited public sample key.</p></div>
+      <div class="grid grid-2">
+        <article class="card source-card">
+          <div class="card-header"><h3><a href="https://data.gov.in/resource/daily-price-various-commodities-various-markets-mandi" target="_blank" rel="noopener">Daily commodity prices in major mandis</a></h3><span class="badge">live</span></div>
+          <p>Daily minimum, maximum and modal prices of agricultural commodities across reporting markets.</p>
+          <p><strong>User guide:</strong> Use the modal price for a representative transaction price; the spread between min and max shows market fragmentation.</p>
+          <div class="source-stats">
+            <div class="source-stat"><strong>13205</strong><span>Records</span></div>
+            <div class="source-stat"><strong>26/11/2026</strong><span>Sample date</span></div>
+            <div class="source-stat"><strong>2,300 – 5,200</strong><span>Sample modal price</span></div>
+          </div>
+          <p class="muted small">Provider: Ministry of Agriculture &amp; Farmers Welfare, Government of India · Fields: State, District, Market, Commodity, Variety, Grade, Arrival_Date, Min_x0020_Price, Max_x0020_Price</p>
+          
+        </article></div>
+    </section>
+    <section id="discovery">
+      <div class="section-head"><div><span class="eyebrow dark">Source scan</span><h2>Discovery catalog</h2></div><p class="section-intro">Official portal metadata is catalogued here; the series actually fetched are published above. This is a curated scan, not an exhaustive crawl of every dataset.</p></div>
+      <ul class="source-list">
+        <li><a href="https://api.worldbank.org/v2" target="_blank" rel="noopener">World Bank Open Data</a> — <span class="badge">Macro &amp; National Accounts</span> The backbone for cross-country macro comparisons and India&#x27;s headline GDP, inflation, PPP and external-sector series. <small class="muted">Open · no key required</small></li>
+        <li><a href="https://api.data.gov.in" target="_blank" rel="noopener">data.gov.in (OGD Platform)</a> — <span class="badge">Macro &amp; National Accounts</span> India&#x27;s national open-data platform. The widest catalogue of state- and district-level government datasets. <small class="muted">API key (free registration); sample key for development</small></li>
+        <li><a href="https://apisetu.gov.in" target="_blank" rel="noopener">API Setu</a> — <span class="badge">Macro &amp; National Accounts</span> The government&#x27;s API gateway. Useful for identity, document and transactional lookups rather than time-series statistics. <small class="muted">Partner registration (scoped keys)</small></li>
+        <li><a href="https://dbie.rbi.org.in" target="_blank" rel="noopener">RBI Database on Indian Economy (DBIE)</a> — <span class="badge">Money, Prices &amp; Markets</span> The primary source for Indian monetary, banking and external-sector series. Used for real interest rates, reserve adequacy and bank health KPIs. <small class="muted">Open portal; bulk downloads</small></li>
+        <li><a href="https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics" target="_blank" rel="noopener">NPCI Statistics</a> — <span class="badge">Money, Prices &amp; Markets</span> The definitive read on India&#x27;s digital-payment velocity, ticket sizes and tolling volumes. <small class="muted">Open monthly statistics</small></li>
+        <li><a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST Portal — Collections</a> — <span class="badge">Fiscal &amp; Government Finance</span> A high-frequency proxy for consumption and formalisation, and the largest own-revenue source for states. <small class="muted">Open monthly press releases</small></li>
+        <li><a href="https://mospi.gov.in" target="_blank" rel="noopener">MoSPI — National Statistics</a> — <span class="badge">Money, Prices &amp; Markets</span> The official source for India&#x27;s inflation, industrial production, national accounts and employment statistics. <small class="muted">Open downloads</small></li>
+        <li><a href="https://cea.nic.in" target="_blank" rel="noopener">CEA / POSOCO Power Data</a> — <span class="badge">Energy &amp; Power</span> Near-real-time electricity demand and generation — one of the best proxies for industrial activity. <small class="muted">Open daily / monthly reports</small></li>
+        <li><a href="https://mnre.gov.in" target="_blank" rel="noopener">MNRE Renewable Capacity</a> — <span class="badge">Energy &amp; Power</span> Tracks India&#x27;s energy transition against the 50% non-fossil capacity target for 2030. <small class="muted">Open monthly progress reports</small></li>
+        <li><a href="https://morth.nic.in" target="_blank" rel="noopener">MoRTH / NHAI Transport Data</a> — <span class="badge">Transport &amp; Logistics</span> The source for road density, vehicle ownership and digital tolling across states. <small class="muted">Open annual reports</small></li>
+        <li><a href="https://indianrailways.gov.in" target="_blank" rel="noopener">Indian Railways Statistics</a> — <span class="badge">Transport &amp; Logistics</span> Freight and passenger trends for the world&#x27;s fourth-largest rail network. <small class="muted">Open annual statistical statements</small></li>
+        <li><a href="https://www.dgca.gov.in" target="_blank" rel="noopener">DGCA Civil Aviation Statistics</a> — <span class="badge">Transport &amp; Logistics</span> Domestic aviation traffic — a leading indicator of business travel and premium consumption. <small class="muted">Open monthly traffic reports</small></li>
+        <li><a href="https://mohfw.gov.in" target="_blank" rel="noopener">MoHFW / NFHS Health Data</a> — <span class="badge">Health, Education &amp; Welfare</span> The census of Indian health capacity, immunisation and household health spending. <small class="muted">Open reports / microdata on request</small></li>
+        <li><a href="https://udiseplus.gov.in" target="_blank" rel="noopener">UDISE+ School Education</a> — <span class="badge">Health, Education &amp; Welfare</span> School-level enrolment and teacher data used for the pupil-teacher ratio and education KPIs. <small class="muted">Open reports / dashboards</small></li>
+        <li><a href="https://nrega.nic.in" target="_blank" rel="noopener">MGNREGA MIS</a> — <span class="badge">Health, Education &amp; Welfare</span> Rural wage demand under the employment guarantee — a real-time distress signal. <small class="muted">Open MIS reports</small></li>
+        <li><a href="https://censusindia.gov.in" target="_blank" rel="noopener">Census of India</a> — <span class="badge">Geo, Environment &amp; Climate</span> The demographic base layer for population density, urbanisation and literacy KPIs. <small class="muted">Open tables</small></li>
+        <li><a href="https://moef.gov.in" target="_blank" rel="noopener">MoEF&amp;CC Environment Data</a> — <span class="badge">Geo, Environment &amp; Climate</span> Land, forest and wetlands statistics behind the environment and geo KPIs. <small class="muted">Open reports</small></li>
+        <li><a href="https://nhb.org.in" target="_blank" rel="noopener">NHB / RBI Housing Data</a> — <span class="badge">Housing &amp; Urban</span> House-price and affordability series for the housing KPIs. <small class="muted">Open reports</small></li>
+        <li><a href="https://data.imf.org" target="_blank" rel="noopener">IMF DataMapper / WEO</a> — <span class="badge">Macro &amp; National Accounts</span> Cross-country fiscal and debt comparables, plus forward-looking macro forecasts. <small class="muted">Open</small></li>
+        <li><a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">FRED (St. Louis Fed)</a> — <span class="badge">Money, Prices &amp; Markets</span> Global rates and commodity benchmarks used for context alongside Indian data. <small class="muted">Open API key (free)</small></li></ul>
+      <div class="callout">
+        <h3>API Setu (MeitY)</h3>
+        <p>Metadata only — curated batch does not call gated data endpoints · <a href="https://directory.apisetu.gov.in" target="_blank" rel="noopener">Directory ↗</a></p>
+        <p class="muted small">Consumer registration and API key required for data endpoints · APISETU_TOKEN: not configured</p>
+      </div>
+      <p class="muted small">Full enumeration of data.gov.in&#x27;s 230,000+ datasets requires a personal API key and a paginated catalog crawl; this catalog lists the official sources and the curated resources published below.</p>
+    </section>
+    <section id="guide">
+      <span class="eyebrow dark">User guide</span>
+      <h2>How to use this data responsibly</h2>
+      <ol class="guide-list">
+        <li><strong>Read the unit and frequency.</strong> Annual World Bank figures are not monthly snapshots; Census figures are decadal.</li>
+        <li><strong>Use the definition before comparing.</strong> Similar labels can use different age ranges or methodologies.</li>
+        <li><strong>Check the formula on derived KPIs.</strong> They combine published inputs; they are interpretations, not official statistics.</li>
+        <li><strong>Treat correlations as clues.</strong> A coefficient shows co-movement over the stated period, not cause and effect.</li>
+        <li><strong>Refresh cadence.</strong> The separate enrichment workflow runs every night at 03:15 UTC and regenerates this page.</li>
+        <li><strong>Access boundary.</strong> Public-key sources are limited; a personal data.gov.in key and APIsetu consumer credentials unlock larger volumes.</li>
+      </ol>
+    </section>  </main>
+
+
+  <footer class="site-footer">
+
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand-col">
+
+
+        <a class="brand" href="index.html" aria-label="FinRadar home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path d="M6.2 6.2a8.2 8.2 0 0 0 0 11.6M17.8 6.2a8.2 8.2 0 0 1 0 11.6"/><path d="M3.3 3.3a12.3 12.3 0 0 0 0 17.4M20.7 3.3a12.3 12.3 0 0 1 0 17.4"/></svg></span>
+          <span class="brand-name">FinRadar</span>
+        </a>
+        <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
+
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 09:17 UTC</span></p>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Explore</h4>
+
+
+        <a href="index.html">Dashboard</a>
+
+
+        <a href="search.html">Search</a>
+
+
+        <a href="sources.html">Data Sources</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">Key Sectors</h4>
+
+
+        <a href="category/central.html">Central Government</a>
+
+
+        <a href="category/states.html">State Level</a>
+
+
+        <a href="category/financials.html">Finance &amp; Banking</a>
+
+
+        <a href="category/geo.html">Geo Levels</a>
+
+
+        <a href="category/transport.html">Transport</a>
+
+
+      </div>
+
+
+      <div class="footer-col">
+
+
+        <h4 class="footer-heading">More Sectors</h4>
+
+
+        <a href="category/economy.html">Economy</a>
+
+
+        <a href="category/agriculture.html">Agriculture</a>
+
+
+        <a href="category/health.html">Health</a>
+
+
+        <a href="category/education.html">Education</a>
+
+
+        <a href="category/welfare.html">Welfare &amp; Employment</a>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+
+      <p>© 2026 FinRadar. Built on public data from World Bank, RBI, MoSPI, NPCI, and data.gov.in.</p>
+
+
+      <p class="muted small">Developed by <a href="https://peabox.in" target="_blank">Peabox Labs (India)</a></p>
+
+
+      <a href="https://github.com/rajeshceg3/FinRadar" class="footer-gh">GitHub</a>
+
+
+    </div>
+
+
+  </footer>
+
+
+  <script src="scripts/app.js"></script>
+
+
+  <script src="scripts/charts.js"></script>
+
+
+  <script src="scripts/tools.js"></script>
+
+
+</body>
+
+
+</html>

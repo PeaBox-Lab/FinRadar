@@ -2,10 +2,11 @@
 
 **India & Global Macro KPIs, Benchmarks & Reports — live from public government data.**
 
-FinRadar turns public government data into derived macroeconomic KPIs, benchmarks, and plain-English decision tools. Every published number is a computed metric (ratios, velocities, composites) — never raw tables republished as-is.
+FinRadar turns public government data into derived macroeconomic KPIs, benchmarks, plain-English decision tools, and a curated Data Lab of raw official series with definitions and user guides. Derived numbers always show their formulas.
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-brightgreen)](https://finradar.peabox.in/)
 [![Daily Pipeline](https://img.shields.io/badge/Pipeline-Daily%2002%3A30%20UTC-blue)](.github/workflows/daily-update.yml)
+[![Data Lab](https://img.shields.io/badge/Data%20Lab-Daily%2003%3A15%20UTC-teal)](.github/workflows/enrichment-update.yml)
 [![Static Site](https://img.shields.io/badge/Type-Static%20HTML%2FCSS%2FJS-green)](site/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -13,9 +14,9 @@ FinRadar turns public government data into derived macroeconomic KPIs, benchmark
 
 ## 📖 Overview
 
-FinRadar is a fully static, data-driven website that publishes derived macroeconomic KPIs across 12 sectors (Central Government, States, Financials, Geo, Transport, Economy, Agriculture, Energy, Health, Education, Welfare, Environment, Commerce, Housing).
+FinRadar is a fully static, data-driven website that publishes macroeconomic KPIs and an expanded data catalog across 14 sectors (Central Government, States, Financials, Geo, Transport, Economy, Agriculture, Energy, Health, Education, Welfare, Environment, Commerce, Housing).
 
-A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, regenerates the complete 97-page static site, and deploys it via GitHub Pages.
+Two nightly GitHub Actions fetch live public data, compute KPIs, refresh the Data Lab, regenerate the complete 132-page static site, and deploy it via GitHub Pages.
 
 **Live site:** https://finradar.peabox.in/
 
@@ -26,16 +27,17 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 | Feature | Description |
 |---------|-------------|
 | **45 Live KPIs** | Derived metrics across 14 sectors with verdict badges (Good / Moderate / Weak) |
+| **Data Lab** | 28 curated official series, 12 innovative derived KPIs, 14 macro/global correlations, Census benchmarks and a source-discovery catalog |
 | **Benchmarks** | India High-Frequency Macro Cycle Index (0–100), State-Wise Fiscal Health Scorecard, Global Emerging Market Resilience |
-| **Interactive Tools** | Personal inflation calculator, city salary-parity tool |
+| **Interactive Tools** | 23 calculators across loans, deposits/returns, insurance and personal finance — including EMI, amortization schedules, interest/principal split, SIP, FD/RD, CAGR, term cover and retirement planning |
 | **Category Pages** | 14 sector pages with facts, KPIs, and historical trends |
 | **Categories Index** | Top-level landing page grouping all categories into 6 logical groups |
-| **Search Index** | Full-text lookup across all facts and KPIs |
-| **Sources Catalog** | 17 public APIs across 11 categories with summary statistics |
+| **Search Index** | Full-text lookup across facts, KPIs, raw series, derived metrics and relationships |
+| **Sources Catalog** | 20 public APIs across 10 categories with summary statistics |
 | **Historical Trends** | 8 trend series with sparkline SVG and canvas chart rendering |
 | **Modern Dashboard UI** | Light paper canvas, deep-navy dark hero/footer, teal + indigo accents, responsive cards and charts |
 | **Mobile Responsive** | Hamburger nav, scrollable sector dropdown, touch-friendly cards |
-| **SEO Ready** | Sitemap with 97 URLs, canonical links, meta descriptions |
+| **SEO Ready** | Canonical links, meta descriptions and structured page headings |
 | **File:// Compatible** | All links use relative paths — works on GitHub Pages and local filesystem |
 
 ---
@@ -55,8 +57,9 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 
 | Source | Type | Used For |
 |--------|------|----------|
-| World Bank (api.worldbank.org/v2) | Live API | GDP growth, GDP per capita (nominal & PPP), inflation, current account, FDI, peer comparisons |
-| data.gov.in | Live API (token-gated) | India-specific figures (GST, UPI, state data) |
+| World Bank (api.worldbank.org/v2) | Live API | Core KPI history plus 28 curated India, world and peer series for GDP, demographics, finance, digital adoption and environment |
+| data.gov.in | Live API (sample key / personal token) | Curated mandi price feed; token unlocks higher record limits. A discovery catalog documents the broader portal |
+| Census of India | Decadal benchmark | 2011 population, literacy, urbanisation and sex-ratio benchmarks with definitions |
 | RBI DBIE | Live / Snapshot | Interest rates, credit-deposit ratio, GNPAs, forex reserves |
 | NPCI | Snapshot | UPI transaction volume, FASTag toll data |
 | GST Portal | Snapshot | GST collections growth |
@@ -64,7 +67,7 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 | Census / MoSPI | Snapshot | Population density, urbanisation, literacy |
 | IMF / FRED | Live / Snapshot | Global macro benchmarks |
 
-> **Note:** `DATA_GOV_IN_TOKEN` is optional. If not set, the pipeline falls back to committed demo snapshots in `data/snapshots/`.
+> **Note:** `DATA_GOV_IN_TOKEN` is optional. Without it, the enrichment batch uses data.gov.in's rate-limited public sample key and keeps the last known good response in `data/snapshots/enrichment_cache.json`. `APISETU_TOKEN` is read to report credential readiness in the discovery catalog; APIsetu remains metadata-only because its data endpoints require consumer registration.
 
 ---
 
@@ -74,21 +77,27 @@ A daily GitHub Action at **02:30 UTC** fetches live public data, computes KPIs, 
 FinRadar/
 ├── .github/
 │   └── workflows/
-│       └── daily-update.yml      # CI: daily 02:30 UTC pipeline + deploy
+│       ├── daily-update.yml      # CI: daily 02:30 UTC core KPI pipeline + deploy
+│       └── enrichment-update.yml # CI: daily 03:15 UTC Data Lab enrichment + deploy
 ├── data/
 │   ├── latest_kpis.json          # Computed KPIs + benchmarks (pipeline output)
-│   └── snapshots/                # Demo fallbacks for India-specific figures
+│   ├── extra_metrics.json        # Curated series, derived KPIs, census, relationships, catalog
+│   └── snapshots/                # Demo fallbacks and last-known-good enrichment cache
 ├── docs/
 │   └── product-guide.md          # Detailed product & site knowledge document
 ├── scripts/
-│   ├── app.js                    # Client-side rendering (KPI grid, tools, peers, benchmarks)
+│   ├── app.js                    # Client-side rendering (KPI grid, peers, benchmarks, legacy tools)
 │   ├── charts.js                 # Sparkline SVG + canvas trend charts
+│   ├── tools.js                  # Shared calculator engine for all registry tools
 │   └── pipeline/
-│       ├── fetch_kpis.py         # Daily data pipeline
-│       ├── kpi_registry.py       # KPI definitions: formulas, units, verdicts, insights
+│       ├── fetch_kpis.py         # Daily core KPI pipeline
+│       ├── enrichment.py         # Daily Data Lab batch (curated feeds + derived KPIs)
+│       ├── datagovin_client.py   # data.gov.in request client with token fallback
+│       ├── kpi_registry.py       # Core KPI definitions: formulas, units, verdicts, insights
 │       ├── analytics.py          # Plain-English insights per KPI
 │       ├── site_data.py          # Sectors, facts, trends, category groups
-│       ├── page_generator.py     # Static site generator (97 pages)
+│       ├── page_generator.py     # Static site generator (132 pages)
+│       ├── tools_registry.py     # 21 calculator definitions, fields, formulas and guides
 │       └── api_catalog.py        # API catalog with summary stats
 ├── styles/
 │   ├── main.css                  # UI foundation: tokens, layout, nav, cards, tables, footer
@@ -98,12 +107,14 @@ FinRadar/
 │   ├── categories.html           # Category index page
 │   ├── search.html               # Search across facts & KPIs
 │   ├── sources.html              # API catalog page
+│   ├── data-lab.html             # Expanded official data, definitions, guides and relationships
+│   ├── tools.html                # Categorized calculator hub
+│   ├── tools/                    # 23 dedicated calculator pages (21 registry + 2 legacy)
 │   ├── category/                 # 14 sector pages
 │   ├── facts/                    # 36 fact detail pages
 │   ├── trend/                    # 8 historical trend pages
 │   ├── kpi/                      # 45 KPI deep-dive pages
-│   ├── styles/, scripts/, data/  # Copied static assets
-│   └── sitemap.xml               # SEO sitemap (97 URLs)
+│   └── styles/, scripts/, data/  # Copied static assets and JSON feeds
 ├── README.md                     # This file
 └── LICENSE                       # MIT License
 ```
@@ -125,6 +136,9 @@ FinRadar/
 # Clone the repo
 git clone https://github.com/PeaBox-Lab/FinRadar.git
 cd FinRadar
+
+# Refresh the expanded Data Lab feed (optional — output is already committed)
+python scripts/pipeline/enrichment.py
 
 # Regenerate the static site (optional — site/ is already committed)
 python scripts/pipeline/page_generator.py
@@ -149,18 +163,14 @@ Requires internet access for World Bank API. Falls back to `data/snapshots/` if 
 
 ## 🔄 Daily Automation
 
-A GitHub Action runs every day at **02:30 UTC**:
+Two GitHub Actions run every day:
 
-1. Checks out `main`
-2. Runs `fetch_kpis.py` — fetches live data, computes 45 KPIs
-3. Runs `page_generator.py` — regenerates all 97 pages under `site/`
-4. Commits `data/latest_kpis.json` and `site/` to `main`
-5. Deploys `site/` contents to the `gh-pages` branch
-6. GitHub Pages serves `gh-pages` automatically
+| Time (UTC) | Workflow | Work |
+|------------|----------|------|
+| 02:30 | `daily-update.yml` | Runs `fetch_kpis.py`, computes the 45 core KPIs, regenerates the site, commits `data/latest_kpis.json` and `site/`, and deploys to `gh-pages` |
+| 03:15 | `enrichment-update.yml` | Runs `enrichment.py`, refreshes the 28 curated series, 12 derived KPIs, 14 relationships, Census benchmarks and discovery catalog, regenerates the site, commits `data/extra_metrics.json`, the last-known-good cache and `site/`, then deploys to `gh-pages` |
 
-**You only push to `main`.** The Action handles everything else.
-
-**Manual trigger:** Available via the Actions tab → `workflow_dispatch`.
+Both workflows support manual triggers from the Actions tab (`workflow_dispatch`). The separation means a slow official API cannot delay the core dashboard update.
 
 ---
 

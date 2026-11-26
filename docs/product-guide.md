@@ -6,12 +6,12 @@ A comprehensive user guide and technical reference for the FinRadar static site:
 
 ## 1. Project Overview
 
-**FinRadar** is a static, data-driven website that publishes derived macroeconomic KPIs, benchmarks, and reports built from public government data (World Bank, data.gov.in, RBI, NPCI, GST portal, MNRE, Census, IMF, FRED, etc.).
+**FinRadar** is a static, data-driven website that publishes derived macroeconomic KPIs, benchmarks, reports, and a Data Lab of curated official series built from public government data (World Bank, data.gov.in, RBI, NPCI, GST portal, MNRE, Census of India, IMF, FRED, etc.).
 
 - **No server-side code** — fully static HTML/CSS/JS.
-- **Daily automated updates** via GitHub Action at 02:30 UTC.
+- **Two daily automated updates** — core KPIs at 02:30 UTC, expanded Data Lab at 03:15 UTC.
 - **Deployment** via GitHub Pages from the `gh-pages` branch.
-- **File:// compatible** — all CSS/JS/nav links use relative paths so the site can be opened directly from the filesystem.
+- **Relative paths** — all CSS/JS/nav links work on GitHub Pages and subfolder pages; dynamic KPI data requires HTTP rather than `file://`.
 
 ---
 
@@ -21,10 +21,12 @@ A comprehensive user guide and technical reference for the FinRadar static site:
 FinRadar/
 ├── .github/
 │   └── workflows/
-│       └── daily-update.yml      # CI: fetch KPIs, regenerate site, deploy to gh-pages
+│       ├── daily-update.yml      # CI: core KPIs, regenerate site, deploy to gh-pages
+│       └── enrichment-update.yml # CI: Data Lab enrichment, regenerate site, deploy
 ├── data/
-│   ├── latest_kpis.json          # Pipeline output: 45 KPIs + India + peers
-│   └── snapshots/                # Demo fallbacks for India-specific figures
+│   ├── latest_kpis.json          # Core pipeline output: 45 KPIs + India + peers
+│   ├── extra_metrics.json        # Data Lab output: series, census, KPIs, relationships, catalog
+│   └── snapshots/                # Demo fallbacks + enrichment last-known-good cache
 │       ├── city_indices.json
 │       ├── debt_service.json
 │       ├── gst_growth.json
@@ -38,22 +40,29 @@ FinRadar/
 ├── docs/
 │   └── product-guide.md          # This document
 ├── scripts/
-│   ├── app.js                    # Client-side rendering: KPI grid, benchmarks, tools, peers, reports
+│   ├── app.js                    # Client-side rendering: KPI grid, benchmarks, peers, legacy tools
 │   ├── charts.js                 # Sparkline SVG + canvas trend chart renderer
+│   ├── tools.js                  # Shared engine for all registry calculators
 │   └── pipeline/
-│       ├── fetch_kpis.py         # Daily pipeline: fetches data, computes KPIs, writes latest_kpis.json
-│       ├── kpi_registry.py       # All KPI definitions: formulas, units, verdict ranges, insights
+│       ├── fetch_kpis.py         # Core daily pipeline: writes latest_kpis.json
+│       ├── enrichment.py         # Data Lab batch: curated series, census, derived KPIs, correlations
+│       ├── datagovin_client.py   # data.gov.in client with token fallback
+│       ├── kpi_registry.py       # Core KPI definitions: formulas, units, verdict ranges, insights
 │       ├── analytics.py          # Plain-English insights per KPI
 │       ├── site_data.py          # Source of truth: SECTORS, CATEGORY_GROUPS, FACTS, HISTORICAL_TRENDS
-│       ├── page_generator.py     # Generates complete static site under site/ (97 pages)
-│       └── api_catalog.py        # API catalog: 17 APIs across 11 categories with summary stats
+│       ├── page_generator.py     # Generates complete static site under site/ (132 pages)
+│       ├── tools_registry.py     # 21 calculator definitions, formulas, fields and guides
+│       └── api_catalog.py        # API catalog: 20 APIs across 10 categories with summary stats
 ├── styles/
 │   ├── main.css                  # UI foundation: tokens, layout, nav, cards, tables, footer
 │   └── european-theme.css        # FinRadar theme layer: hero, KPIs, tools, detail pages
 ├── site/                         # BUILD OUTPUT (committed to main; deployed to gh-pages)
 │   ├── index.html                # Dashboard / landing page
-│   ├── search.html               # Full-text search across facts & KPIs
+│   ├── search.html               # Full-text search across facts, KPIs and Data Lab content
 │   ├── sources.html              # Categorized API catalog with summary stats
+│   ├── data-lab.html             # Expanded official data with definitions, guides and correlations
+│   ├── tools.html                # Categorized calculator hub (4 groups, 23 calculators)
+│   ├── tools/*.html              # 21 registry calculator pages + 2 live-data legacy tools
 │   ├── categories.html           # Top-level category index page (all 14 categories)
 │   ├── category/*.html           # 14 sector pages (facts, KPIs, trends)
 │   ├── facts/*.html              # 36 fact detail pages
@@ -61,8 +70,7 @@ FinRadar/
 │   ├── kpi/*.html                # 45 KPI deep-dive pages
 │   ├── styles/                   # Copied CSS
 │   ├── scripts/                  # Copied client JS
-│   ├── data/                     # latest_kpis.json + snapshots
-│   └── sitemap.xml               # SEO sitemap with 97 URLs
+│   └── data/                     # latest_kpis.json, extra_metrics.json + snapshots
 └── README.md                     # Brief project README
 ```
 
@@ -106,7 +114,20 @@ Pages generated:
 Static assets copied into `site/`:
 - `styles/main.css`, `styles/european-theme.css`
 - `scripts/app.js`, `scripts/charts.js`
-- `data/latest_kpis.json`, `data/snapshots/`
+- `data/latest_kpis.json`, `data/extra_metrics.json`, `data/snapshots/`
+
+### 3.2.1 `scripts/pipeline/enrichment.py`
+
+The separate Data Lab batch publishes the expanded data layer without touching the core KPI output:
+
+1. **Curated World Bank series** — 28 keyless series for India, the world and four emerging-market peers, covering GDP, demographics, savings/credit, external balances, digital adoption, environment and exchange rates. Each has a definition and user guide.
+2. **Official Census of India benchmarks** — 2011 population, literacy, urbanisation, sex ratio and density, with a note that these are decadal figures rather than daily observations.
+3. **Curated data.gov.in resource** — a daily mandi price feed fetched with `DATA_GOV_IN_TOKEN` when present, otherwise the rate-limited public sample key. Responses are cached in `data/snapshots/enrichment_cache.json`.
+4. **Innovative derived KPIs** — 12 reproducible metrics such as per-capita growth spread, demographic dividend index, credit–savings gap, external resilience score, peer growth spread, global inflation gap and growth tailwind ratio.
+5. **Relationships** — Pearson coefficients between Indian metrics and macro/demographic/global factors, with observation windows and a causation caveat.
+6. **Discovery catalog** — official portal metadata, access mode and APIsetu's credential boundary, published under `data-lab.html#discovery`.
+
+It writes `data/extra_metrics.json`. The generator consumes that file to build `site/data-lab.html` and enrich the search index. If the batch has never run, the page degrades to an instruction rather than breaking the build.
 
 ### 3.3 `scripts/pipeline/kpi_registry.py`
 
@@ -138,7 +159,7 @@ Single source of truth for site content:
 
 ### 3.5 `scripts/pipeline/api_catalog.py`
 
-Catalogs 17 public APIs/data portals across 11 categories with summary statistics:
+Catalogs 20 public APIs/data portals across 10 categories with summary statistics:
 - Indicators used
 - Coverage era
 - Update frequency
@@ -244,29 +265,52 @@ Runs on pages that need dynamic data (primarily `index.html`):
 - `renderFooter(data)` — updates last-refresh timestamp
 - `initNav()` — mobile nav toggle + dropdown menu handlers
 
-**Note:** The KPI grid and hero stats will appear empty when viewing `index.html` via `file://` because browsers block `fetch()` for local files. They work correctly on GitHub Pages (HTTPS).
+`scripts/tools.js` is a second, independent client script loaded on every page. It activates only when a page contains `#calc-config`, parses the embedded registry JSON, renders the form and runs the matching function in `CALCULATORS`. Results are calculated entirely in the browser; inputs are never sent to a server. Schedule tools also expose a CSV download.
+
+**Note:** The KPI grid and hero stats will appear empty when viewing `index.html` via `file://` because browsers block `fetch()` for local files. They work correctly on GitHub Pages (HTTPS). The calculators do not need `fetch()` and work even from `file://`.
+
+### 6.1 Calculator registry (`scripts/pipeline/tools_registry.py`)
+
+The tools hub is registry-driven. Each entry defines its category, title, description, formula, user guide, inputs, outputs and notes. The generator creates one dedicated page per registry tool and embeds the definition as JSON; `tools.js` supplies the calculation function keyed by tool id.
+
+**Loans & EMI (6):** EMI, affordability, interest/principal split, amortization schedule, prepayment impact, loan comparison.
+**Deposits & Returns (6):** FD maturity, RD maturity, SIP returns, CAGR, compound interest, simple interest.
+**Insurance (4):** life cover need, term premium estimator, health cover gap, emergency fund.
+**Personal Finance (5):** retirement corpus, goal savings, 50/30/20 budget, inflation adjuster, net worth.
+
+The two original live-data tools (personal inflation and salary parity) remain bespoke but are listed in the hub and global search.
 
 ---
 
-## 7. GitHub Actions — Daily Update
+## 7. GitHub Actions — Daily Updates
 
-File: `.github/workflows/daily-update.yml`
+Two workflows run on separate schedules so a slow official API cannot block the core dashboard.
 
-**Schedule:** Daily at 02:30 UTC (`cron: "30 2 * * *"`)
+### 7.1 Core KPI update
 
-**Steps:**
+File: `.github/workflows/daily-update.yml` · **Schedule:** 02:30 UTC (`cron: "30 2 * * *"`)
 
-1. `actions/checkout@v4` — check out `main`
-2. `actions/setup-python@v5` — set up Python 3.x
-3. Run `fetch_kpis.py` — fetches live data, computes KPIs, writes `data/latest_kpis.json`
-   - Env: `DATA_GOV_IN_TOKEN` (secret; optional — demo snapshots used if missing)
-4. Run `page_generator.py` — regenerates all 97 pages under `site/`
-5. Commit `data/latest_kpis.json` and `site/` to `main`
-6. `peaceiris/actions-gh-pages@v4` — deploy `site/` contents to `gh-pages` branch
+1. Check out `main`, set up Python 3.x
+2. Run `fetch_kpis.py` — writes `data/latest_kpis.json`
+   - Env: `DATA_GOV_IN_TOKEN` (secret; optional — snapshots used if missing)
+3. Run `page_generator.py` — regenerates all 132 pages under `site/`
+4. Commit `data/latest_kpis.json` and `site/` to `main`
+5. `peaceiris/actions-gh-pages@v4` — deploy `site/` to the `gh-pages` branch
 
-**Permissions:** `contents: write` (required to commit and push)
+### 7.2 Data Lab enrichment
 
-**Manual trigger:** Available via `workflow_dispatch` in the Actions tab.
+File: `.github/workflows/enrichment-update.yml` · **Schedule:** 03:15 UTC (`cron: "15 3 * * *"`)
+
+1. Check out `main`, set up Python 3.x
+2. Run `enrichment.py` — writes `data/extra_metrics.json` and refreshes the last-known-good cache
+   - Env: `DATA_GOV_IN_TOKEN`, `APISETU_TOKEN` (secrets; optional — APIsetu token only reports credential readiness; gated data endpoints are not called)
+3. Run `page_generator.py` — regenerates the site with the refreshed Data Lab
+4. Commit `data/extra_metrics.json`, `data/snapshots/enrichment_cache.json` and `site/` to `main`
+5. Deploy `site/` to the `gh-pages` branch
+
+**Permissions:** `contents: write` for both workflows.
+
+**Manual trigger:** Both workflows support `workflow_dispatch` in the Actions tab.
 
 ---
 
@@ -371,10 +415,12 @@ Requires internet access for World Bank API. Uses demo snapshots if `DATA_GOV_IN
 | `scripts/charts.js` | Sparkline + trend charts |
 | `styles/main.css` | Base theme |
 | `styles/european-theme.css` | European palette + nav/footer |
-| `.github/workflows/daily-update.yml` | CI: pipeline + deploy |
+| `.github/workflows/daily-update.yml` | CI: core KPI pipeline + deploy |
+| `.github/workflows/enrichment-update.yml` | CI: Data Lab enrichment + deploy |
+| `scripts/pipeline/enrichment.py` | Daily Data Lab batch |
 | `site/index.html` | Dashboard landing page |
 | `site/categories.html` | Category index page |
-| `site/sitemap.xml` | SEO sitemap |
+| `site/data-lab.html` | Expanded official data, definitions, guides, derived KPIs and relationships |
 
 ---
 

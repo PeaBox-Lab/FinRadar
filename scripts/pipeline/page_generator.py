@@ -53,6 +53,7 @@ Pages generated:
 
 
 import json
+import html
 
 
 import os
@@ -97,6 +98,15 @@ from site_data import (
 )
 
 
+from tools_registry import (
+
+
+    TOOL_CATEGORIES, TOOLS, ALL_TOOLS, tools_by_category, catalog_summary,
+
+
+)
+
+
 
 
 
@@ -107,6 +117,8 @@ SITE_DIR = ROOT / "site"
 
 
 DATA_FILE = ROOT / "data" / "latest_kpis.json"
+
+EXTRA_FILE = ROOT / "data" / "extra_metrics.json"
 
 
 SNAP_DIR = ROOT / "data" / "snapshots"
@@ -134,6 +146,16 @@ def load_latest():
 
 
 
+
+
+def load_extra():
+    """Load the optional enrichment batch output without breaking older builds."""
+    if EXTRA_FILE.exists():
+        try:
+            return json.loads(EXTRA_FILE.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+    return {}
 
 
 def humanize(n, decimals=2):
@@ -254,6 +276,7 @@ def render_base_head(title, description, current_url="", base=""):
           <a href="{b}search.html" class="nav-link">Search</a>
           <a href="{b}categories.html" class="nav-link">Categories</a>
           <a href="{b}sources.html" class="nav-link">Sources</a>
+          <a href="{b}data-lab.html" class="nav-link">Data Lab</a>
         </div>
         <div class="nav-drop">
           <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -319,6 +342,23 @@ def render_base_head(title, description, current_url="", base=""):
 
 
             <a href="{b}categories.html" role="menuitem">📂 View All Categories</a>
+
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="{b}tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="{b}tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="{b}tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="{b}tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="{b}tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
 
 
           </div>
@@ -469,6 +509,9 @@ def render_footer(base=""):
 
 
   <script src="{b}scripts/charts.js"></script>
+
+
+  <script src="{b}scripts/tools.js"></script>
 
 
 </body>
@@ -1181,10 +1224,13 @@ def render_kpi_page(kpi_id, latest):
 
 
 
-def render_search_page(latest):
+def render_search_page(latest, extra=None):
 
 
     items = search_index()
+    if extra:
+        items.extend(build_extra_search_items(extra))
+    items.extend(build_tool_search_items())
 
 
 
@@ -1196,7 +1242,7 @@ def render_search_page(latest):
         "Search — Find any data fact or KPI",
 
 
-        "Search across 35+ KPIs, historical trends and plain-English facts from Indian government data.",
+        "Search across KPIs, expanded official data series, derived metrics, relationships and plain-English facts.",
 
 
         "/search.html",
@@ -1242,7 +1288,7 @@ def render_search_page(latest):
       results.innerHTML = resultsArr.map(r => `
 
 
-        <a href="${r.type==='fact' ? 'facts/'+r.id+'.html' : 'kpi/'+r.id+'.html'}" class="search-result">
+        <a href="${r.url || (r.type==='fact' ? 'facts/'+r.id+'.html' : 'kpi/'+r.id+'.html')}" class="search-result">
 
 
           <strong>${r.title}</strong>
@@ -1328,6 +1374,10 @@ def render_search_page(latest):
 
 def _source_card(api, cat_map):
 
+    stats = api.get("stats", {})
+    series_used = stats.get("series_used", stats.get("indicators_used", 0))
+    frequency = api.get("frequency") or stats.get("frequency", "N/A")
+    access = (api.get("access", "") or "").split("·")[0].strip()
 
     return f"""
 
@@ -1353,16 +1403,16 @@ def _source_card(api, cat_map):
         <div class="source-stats">
 
 
-          <div class="source-stat"><strong>{api['stats'].get('indicators_used', 0)}</strong><span>Series used</span></div>
+          <div class="source-stat"><strong>{series_used}</strong><span>Series used</span></div>
 
 
-          <div class="source-stat"><strong>{api['stats'].get('history', 'N/A')}</strong><span>Coverage / era</span></div>
+          <div class="source-stat"><strong>{stats.get('history', 'N/A')}</strong><span>Coverage / era</span></div>
 
 
-          <div class="source-stat"><strong>{api['stats'].get('frequency', 'N/A')}</strong><span>Frequency</span></div>
+          <div class="source-stat"><strong>{frequency}</strong><span>Frequency</span></div>
 
 
-          <div class="source-stat"><strong>{api['access'].split('·')[0].strip()}</strong><span>Access</span></div>
+          <div class="source-stat"><strong>{access}</strong><span>Access</span></div>
 
 
         </div>
@@ -1459,6 +1509,282 @@ def render_sources_page():
 
 
 
+
+
+def esc(value):
+    """Escape untrusted/API-sourced text before embedding it in HTML."""
+    return html.escape("" if value is None else str(value), quote=True)
+
+
+def fmt_extra_value(value, unit=""):
+    """Compact, human-readable formatting for enrichment values."""
+    if value is None or not isinstance(value, (int, float)):
+        return "—"
+    if abs(value) >= 1000:
+        text = f"{value:,.0f}"
+    elif abs(value) >= 10:
+        text = f"{value:,.1f}"
+    else:
+        text = f"{value:,.2f}"
+    return esc(text + (" " + unit if unit else ""))
+
+
+def fmt_coefficient(value):
+    if not isinstance(value, (int, float)):
+        return "—"
+    return f"{value:+.3f}"
+
+
+def build_extra_search_items(extra):
+    """Make enrichment content searchable from the existing search page."""
+    items = []
+
+    def add(url, title, category, source, text, kind):
+        items.append({
+            "id": url,
+            "type": kind,
+            "url": url,
+            "title": title,
+            "category": category,
+            "source": source,
+            "text": text,
+        })
+
+    for series in extra.get("series", []):
+        key = str(series.get("key", "")).replace(":", "-")
+        add(
+            "data-lab.html#series-" + key,
+            series.get("label", "Series"),
+            series.get("sector", "Data Lab"),
+            series.get("source", "World Bank"),
+            (series.get("definition", "") + " " + series.get("guide", "")).strip(),
+            "series",
+        )
+
+    for kpi in extra.get("kpis", []):
+        add(
+            "data-lab.html#kpi-" + str(kpi.get("id", "")),
+            kpi.get("name", "Derived KPI"),
+            kpi.get("sector", "Data Lab"),
+            ", ".join(kpi.get("sources", [])),
+            (kpi.get("definition", "") + " " + kpi.get("guide", "")).strip(),
+            "kpi",
+        )
+
+    for fact in extra.get("census", {}).get("facts", []):
+        add(
+            "data-lab.html#census",
+            fact.get("name", "Census fact"),
+            "Census",
+            extra.get("census", {}).get("source", {}).get("name", "Census of India"),
+            (fact.get("definition", "") + " " + fact.get("guide", "")).strip(),
+            "census",
+        )
+
+    for rel in extra.get("relationships", []):
+        add(
+            "data-lab.html#relationships",
+            rel.get("label", "Relationship"),
+            rel.get("factor", "Relationships"),
+            "World Bank",
+            (rel.get("interpretation", "") + " Coefficients are correlations, not causation.").strip(),
+            "relationship",
+        )
+
+    return items
+
+
+def render_data_lab(extra):
+    """Publish the curated raw series, derived KPIs, relationships and catalog."""
+    title = "Data Lab — Expanded Official Data & Derived KPIs"
+    description = "Curated World Bank, Census of India and data.gov.in data with definitions, guides, derived KPIs and correlations."
+    hero = render_base_head(title, description, "/data-lab.html", base="")
+
+    if not extra:
+        hero += """
+    <section>
+      <span class="eyebrow dark">Data Lab</span>
+      <h1>Expanded data is not published yet</h1>
+      <p class="muted">Run <code>python scripts/pipeline/enrichment.py</code> to generate <code>data/extra_metrics.json</code>, then regenerate the site.</p>
+    </section>"""
+        return hero + render_footer("")
+
+    generated = esc(extra.get("generated_at"))
+    series = extra.get("series", [])
+    derived = extra.get("kpis", [])
+    relationships = extra.get("relationships", [])
+    census = extra.get("census", {})
+    datagov = extra.get("data_gov_resources", [])
+    discovery = extra.get("discovery", {})
+    live_count = sum(1 for item in series if item.get("status") == "live")
+
+    hero += f"""
+    <section class="lab-hero">
+      <span class="eyebrow dark">Data Lab · updated {generated}</span>
+      <h1>Expanded official data, explained</h1>
+      <p class="hero-sub">Raw series are published with their source, unit, definition and a plain-English user guide. Derived KPIs show exactly how they are calculated, and relationships show how Indian metrics move with macro and global factors.</p>
+      <div class="grid grid-4 source-summary-grid">
+        <div class="card source-summary-card"><strong>{len(series)}</strong><span>Curated series</span></div>
+        <div class="card source-summary-card"><strong>{live_count}</strong><span>Live this run</span></div>
+        <div class="card source-summary-card"><strong>{len(derived)}</strong><span>Derived KPIs</span></div>
+        <div class="card source-summary-card"><strong>{len(relationships)}</strong><span>Relationships</span></div>
+      </div>
+    </section>"""
+
+    series_rows = []
+    for item in series:
+        key = str(item.get("key", "")).replace(":", "-")
+        anchor = "series-" + key
+        points = json.dumps([p.get("value") for p in item.get("points", []) if p.get("value") is not None])
+        spark = f'<div class="sparkline" data-points=\'{points}\'></div>' if points else ""
+        status = item.get("status", "unavailable")
+        status_class = "good" if status == "live" else "moderate" if status == "cached" else "weak"
+        series_rows.append(f"""
+        <tr id="{esc(anchor)}">
+          <td><strong>{esc(item.get('label'))}</strong><br><small class="muted">{esc(item.get('country'))} · {esc(item.get('category'))}</small></td>
+          <td>{fmt_extra_value(item.get('latest_value'), item.get('unit'))}<br><small class="muted">{esc(item.get('latest_year'))}</small></td>
+          <td>{spark}</td>
+          <td><span class="badge {status_class}">{esc(status)}</span><br><small class="muted">{esc(item.get('frequency'))}</small></td>
+          <td><details><summary>Definition</summary><p>{esc(item.get('definition'))}</p></details></td>
+          <td><details><summary>User guide</summary><p>{esc(item.get('guide'))}</p></details><small class="muted"><a href="{esc(item.get('source_url'))}" target="_blank" rel="noopener">Source ↗</a></small></td>
+        </tr>""")
+    series_table = "".join(series_rows)
+
+    hero += f"""
+    <section id="series">
+      {section_head('Published data series', 'Raw data', 'Every series below is fetched from an official public API. Open Definition or User guide for context before using a number.')}
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Series</th><th>Latest</th><th>History</th><th>Status</th><th>Definition</th><th>Guide</th></tr></thead>
+          <tbody>{series_table}</tbody>
+        </table>
+      </div>
+    </section>"""
+
+    derived_cards = []
+    for item in derived:
+        anchor = "kpi-" + str(item.get("id", ""))
+        sources = ", ".join(item.get("sources", []))
+        derived_cards.append(f"""
+        <article class="card data-kpi-card" id="{esc(anchor)}">
+          <div class="card-header"><h3>{esc(item.get('name'))}</h3><span class="badge">{esc(item.get('status'))}</span></div>
+          <div class="data-kpi-value">{fmt_extra_value(item.get('value'), item.get('unit'))}</div>
+          <p><strong>Formula:</strong> {esc(item.get('formula'))}</p>
+          <p><strong>Definition:</strong> {esc(item.get('definition'))}</p>
+          <p><strong>User guide:</strong> {esc(item.get('guide'))}</p>
+          <p class="muted small">Sources: {esc(sources)} · Latest year: {esc(item.get('latest_year'))} · {esc(item.get('frequency'))}</p>
+        </article>""")
+    derived_html = "".join(derived_cards)
+
+    hero += f"""
+    <section id="derived">
+      {section_head('Innovative derived KPIs', 'Computed metrics', 'These are not published by any single authority. Each card shows the exact inputs and formula so you can reproduce or challenge the number.')}
+      <div class="grid grid-2">{derived_html}</div>
+    </section>"""
+
+    rel_rows = []
+    for item in relationships:
+        coef = item.get("coefficient")
+        width = int(abs(coef) * 100) if isinstance(coef, (int, float)) else 0
+        direction = "positive" if isinstance(coef, (int, float)) and coef >= 0 else "negative"
+        rel_rows.append(f"""
+        <tr>
+          <td><strong>{esc(item.get('label'))}</strong><br><small class="muted">{esc(item.get('factor'))}</small></td>
+          <td>{esc(item.get('a'))}<br><small class="muted">vs</small><br>{esc(item.get('b'))}</td>
+          <td><div class="relation-cell"><span class="relation-bar {direction}" style="width:{width}%"></span><strong>{fmt_coefficient(coef)}</strong></div></td>
+          <td><small>{esc(item.get('interpretation'))}<br><span class="muted">{esc(item.get('period'))} · {esc(item.get('observations'))} observations</span></small></td>
+        </tr>""")
+    rel_table = "".join(rel_rows)
+
+    hero += f"""
+    <section id="relationships">
+      {section_head('Macro and global relationships', 'Correlation lens', 'Pearson coefficients on overlapping annual observations. These show co-movement, not causation. Use them as prompts for deeper analysis.')}
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Relationship</th><th>Factors</th><th>Coefficient</th><th>Reading</th></tr></thead>
+          <tbody>{rel_table}</tbody>
+        </table>
+      </div>
+    </section>"""
+
+    census_cards = []
+    for fact in census.get("facts", []):
+        census_cards.append(f"""
+        <article class="card census-card">
+          <h3>{esc(fact.get('name'))}</h3>
+          <div class="data-kpi-value">{fmt_extra_value(fact.get('value'), fact.get('unit'))}</div>
+          <p><strong>Definition:</strong> {esc(fact.get('definition'))}</p>
+          <p><strong>User guide:</strong> {esc(fact.get('guide'))}</p>
+        </article>""")
+    census_html = "".join(census_cards)
+    census_source = census.get("source", {})
+    census_url = esc(census_source.get("url"))
+
+    hero += f"""
+    <section id="census">
+      {section_head('Census of India benchmarks', 'Decadal data', 'Official 2011 enumeration figures. They are a benchmark, not a daily feed; annual estimates come from the World Bank population series above.')}
+      <div class="grid grid-3">{census_html}</div>
+      <p class="muted small"><a href="{census_url}" target="_blank" rel="noopener">{esc(census_source.get('name'))} ↗</a> · {esc(census_source.get('frequency'))}</p>
+    </section>"""
+
+    dg_cards = []
+    for resource in datagov:
+        stats = resource.get("stats", {})
+        dg_cards.append(f"""
+        <article class="card source-card">
+          <div class="card-header"><h3><a href="{esc(resource.get('url'))}" target="_blank" rel="noopener">{esc(resource.get('name'))}</a></h3><span class="badge">{esc(resource.get('status'))}</span></div>
+          <p>{esc(resource.get('definition'))}</p>
+          <p><strong>User guide:</strong> {esc(resource.get('guide'))}</p>
+          <div class="source-stats">
+            <div class="source-stat"><strong>{esc(stats.get('total_records'))}</strong><span>Records</span></div>
+            <div class="source-stat"><strong>{esc(stats.get('sample_period'))}</strong><span>Sample date</span></div>
+            <div class="source-stat"><strong>{fmt_extra_value(stats.get('sample_modal_price_min'))} – {fmt_extra_value(stats.get('sample_modal_price_max'))}</strong><span>Sample modal price</span></div>
+          </div>
+          <p class="muted small">Provider: {esc(resource.get('provider'))} · Fields: {esc(', '.join(stats.get('fields_available', [])))}</p>
+          {('<p class="muted small">' + esc(resource.get('note')) + '</p>') if resource.get('note') else ''}
+        </article>""")
+    dg_html = "".join(dg_cards) if dg_cards else '<p class="muted">No curated data.gov.in resource was reachable in this run.</p>'
+
+    hero += f"""
+    <section id="datagov">
+      {section_head('Curated data.gov.in resources', 'Live official feed', 'A small, high-value subset of data.gov.in is fetched every night. Set DATA_GOV_IN_TOKEN to use a personal key instead of the rate-limited public sample key.')}
+      <div class="grid grid-2">{dg_html}</div>
+    </section>"""
+
+    portal_items = []
+    for portal in discovery.get("portals", []):
+        portal_items.append(f"""
+        <li><a href="{esc(portal.get('url'))}" target="_blank" rel="noopener">{esc(portal.get('name'))}</a> — <span class="badge">{esc(portal.get('category_label'))}</span> {esc(portal.get('summary'))} <small class="muted">{esc(portal.get('access'))}</small></li>""")
+    portals_html = "".join(portal_items)
+    apisetu = discovery.get("api_setu", {})
+
+    hero += f"""
+    <section id="discovery">
+      {section_head('Discovery catalog', 'Source scan', 'Official portal metadata is catalogued here; the series actually fetched are published above. This is a curated scan, not an exhaustive crawl of every dataset.')}
+      <ul class="source-list">{portals_html}</ul>
+      <div class="callout">
+        <h3>{esc(apisetu.get('name'))}</h3>
+        <p>{esc(apisetu.get('status'))} · <a href="{esc(apisetu.get('url'))}" target="_blank" rel="noopener">Directory ↗</a></p>
+        <p class="muted small">{esc(apisetu.get('access'))} · APISETU_TOKEN: {esc(apisetu.get('token'))}</p>
+      </div>
+      <p class="muted small">{esc(discovery.get('note'))}</p>
+    </section>"""
+
+    hero += """
+    <section id="guide">
+      <span class="eyebrow dark">User guide</span>
+      <h2>How to use this data responsibly</h2>
+      <ol class="guide-list">
+        <li><strong>Read the unit and frequency.</strong> Annual World Bank figures are not monthly snapshots; Census figures are decadal.</li>
+        <li><strong>Use the definition before comparing.</strong> Similar labels can use different age ranges or methodologies.</li>
+        <li><strong>Check the formula on derived KPIs.</strong> They combine published inputs; they are interpretations, not official statistics.</li>
+        <li><strong>Treat correlations as clues.</strong> A coefficient shows co-movement over the stated period, not cause and effect.</li>
+        <li><strong>Refresh cadence.</strong> The separate enrichment workflow runs every night at 03:15 UTC and regenerates this page.</li>
+        <li><strong>Access boundary.</strong> Public-key sources are limited; a personal data.gov.in key and APIsetu consumer credentials unlock larger volumes.</li>
+      </ol>
+    </section>"""
+
+    return hero + render_footer("")
 
 
 def render_index(latest):
@@ -1768,225 +2094,181 @@ def render_categories_index():
 
 
 
+def build_tool_search_items():
+    """Make every calculator discoverable from the global search page."""
+    cat_map = {category["id"]: category["title"] for category in TOOL_CATEGORIES}
+    items = []
+    for item in ALL_TOOLS:
+        category = cat_map.get(item["category"], item["category"])
+        haystack = " ".join([
+            item.get("description", ""),
+            item.get("formula", ""),
+            item.get("guide", ""),
+            " ".join(item.get("outcomes", [])),
+        ])
+        items.append({
+            "id": item["id"],
+            "title": item["title"],
+            "category": category,
+            "text": haystack,
+            "source": "FinRadar calculator",
+            "url": "tools/" + item["href"],
+            "type": "tool",
+        })
+    return items
+
+
 def render_tools_index():
-
-
-    """Render the tools index page listing all available calculators."""
-
-
+    """Render the categorized calculator hub."""
+    summary = catalog_summary()
     html = render_base_head(
-
-
         "Tools — FinRadar",
-
-
-        "Interactive calculators and utilities for macroeconomic analysis — personal inflation, salary parity, and more.",
-
-
+        "Interactive banking, insurance, loan, investment and personal-finance calculators with formulas and guides.",
         "/tools.html",
-
-
-        base=""
-
-
+        base="",
     )
 
-
     html += """
-
-
-    <section class="tool-index-hero">
-      <span class="eyebrow dark">Utilities</span>
-      <h1>Interactive Tools</h1>
-
-      <p class="hero-sub">Use our calculators and utilities to explore macroeconomic data in practical ways. Each tool gets its own dedicated page for a focused experience.</p>
-
-
+    <section class="tools-hero">
+      <span class="eyebrow dark">Calculator hub</span>
+      <h1>Money decisions, <span>made legible.</span></h1>
+      <p class="hero-sub">From EMIs and amortization schedules to term cover, SIPs and retirement planning — every calculator shows its inputs, formula and interpretation. No sign-up, no data leaving your browser.</p>
+      <div class="hero-actions">
+        <a href="#loans" class="btn btn-primary">Start with loans</a>
+        <a href="#guide" class="btn btn-ghost">How to use these tools</a>
+      </div>
+      <div class="tools-hero-stats">
+        <div><strong>{total}</strong><span>Calculators</span></div>
+        <div><strong>{categories}</strong><span>Practical categories</span></div>
+        <div><strong>100%</strong><span>Runs in your browser</span></div>
+      </div>
     </section>
+    """.format(total=summary["total_tools"], categories=summary["categories"])
 
+    for category in TOOL_CATEGORIES:
+        items = tools_by_category(category["id"])
+        html += section_head(
+            category["title"],
+            "Calculator suite",
+            category["description"],
+        )
+        html += '<div class="grid grid-3 tools-grid" id="' + category["id"] + '">'
+        for item in items:
+            href = "tools/" + item["href"]
+            outputs = " · ".join(item["outcomes"][:3])
+            html += f'''
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">{item['icon']}</span>
+        <span class="badge">{esc(item['eyebrow'])}</span>
+        <h3>{esc(item['title'])}</h3>
+        <p>{esc(item['description'])}</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> {esc(outputs)}</p>
+        <div class="card-footer"><a href="{href}" class="tool-link">Open calculator →</a></div>
+      </article>'''
+        html += "</div>"
 
+    html += section_head(
+        "How to use the calculator hub",
+        "User guide",
+        "Pick a tool, adjust the inputs and read the result alongside the formula and notes.",
+    )
+    html += """
+    <div class="grid grid-3 calc-guide-grid" id="guide">
+      <article class="card calc-guide-card">
+        <span class="guide-step">01</span>
+        <h3>Enter realistic inputs</h3>
+        <p>Defaults are illustrative Indian-market values. Replace them with your actual numbers, rates and tenure.</p>
+      </article>
+      <article class="card calc-guide-card">
+        <span class="guide-step">02</span>
+        <h3>Read the formula</h3>
+        <p>Every page states the exact calculation. This makes it easy to audit a result or compare two offers.</p>
+      </article>
+      <article class="card calc-guide-card">
+        <span class="guide-step">03</span>
+        <h3>Stress-test the answer</h3>
+        <p>Change the rate, inflation or return by a few points. The range matters more than one exact figure.</p>
+      </article>
+    </div>
+    <div class="callout">
+      <strong>Important:</strong> These calculators are decision aids, not financial advice. Lender tariffs, insurer underwriting and tax rules can change the final number.
+    </div>
     """
 
-
-
-
-
-    tools = [
-
-
-        {
-
-
-            "id": "personal-inflation",
-
-
-            "title": "Personal Inflation Rate",
-
-
-            "icon": "📊",
-
-
-            "description": "Enter your spending split across categories and see how your personal inflation compares to the official headline rate.",
-
-
-            "href": "personal-inflation.html",
-
-
-            "category": "Personal Finance"
-
-
-        },
-
-
-        {
-
-
-            "id": "salary-parity",
-
-
-            "title": "Salary Parity",
-
-
-            "icon": "💼",
-
-
-            "description": "Find the equivalent salary in another Indian city that maintains the same purchasing power.",
-
-
-            "href": "salary-parity.html",
-
-
-            "category": "Personal Finance"
-
-
-        },
-
-
-        {
-
-
-            "id": "investment-growth",
-
-
-            "title": "Investment Growth",
-
-
-            "icon": "𓂀",
-
-
-            "description": "Calculate the future value of your investments with compound interest.",
-
-
-            "href": "#",
-
-
-            "category": "Finance"
-
-
-        },
-
-
-        {
-
-
-            "id": "emi-calculator",
-
-
-            "title": "EMI Calculator",
-
-
-            "icon": "💰",
-
-
-            "description": "Estimate your Equated Monthly Installment for home, car, or personal loans.",
-
-
-            "href": "#",
-
-
-            "category": "Finance"
-
-
-        },
-
-
-        {
-
-
-            "id": "cagr-calculator",
-
-
-            "title": "CAGR Calculator",
-
-
-            "icon": "𓂀",
-
-
-            "description": "Compute the Compound Annual Growth Rate for your investments.",
-
-
-            "href": "#",
-
-
-            "category": "Finance"
-
-
-        },
-
-
-        {
-
-
-            "id": "inflation-adjuster",
-
-
-            "title": "Inflation Adjuster",
-
-
-            "icon": "📈",
-
-
-            "description": "Calculate the inflation-adjusted value of money across years.",
-
-
-            "href": "#",
-
-
-            "category": "Personal Finance"
-
-
-        },
-
-
-    ]
-
-
-
-
-
-    html += '<div class="grid grid-3">'
-    for tool in tools:
-        action = (f'<a href="{tool["href"]}" class="tool-link">Open tool →</a>'
-                  if tool["href"] != "#" else '<span class="badge muted">Coming soon</span>')
-        html += f"""
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">{tool['icon']}</span>
-      <span class="badge">{tool['category']}</span>
-      <h3>{tool['title']}</h3>
-      <p>{tool['description']}</p>
-      <div class="card-footer">{action}</div>
-    </article>"""
-    html += "</div>"
-
     html += render_footer("")
-
     return html
 
 
+def render_tool_page(tool):
+    """Render a dedicated page for one registry-driven calculator."""
+    config_json = json.dumps(tool, ensure_ascii=False).replace("</", "<\\/")
+    cat_map = {category["id"]: category for category in TOOL_CATEGORIES}
+    category = cat_map.get(tool["category"], TOOL_CATEGORIES[0])
+    related = [item for item in tools_by_category(tool["category"]) if item["id"] != tool["id"]][:4]
 
+    html = render_base_head(
+        tool["title"] + " — FinRadar",
+        tool["description"],
+        "/tools/" + tool["id"] + ".html",
+        base="../",
+    )
 
+    html += f'''
+    <section class="calc-hero">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Dashboard</a><span>/</span>
+        <a href="tools.html">Tools</a><span>/</span>
+        <span>{esc(category['title'])}</span>
+      </nav>
+      <span class="eyebrow dark">{esc(tool['eyebrow'])}</span>
+      <h1><span class="calc-hero-icon" aria-hidden="true">{tool['icon']}</span> {esc(tool['title'])}</h1>
+      <p class="hero-sub">{esc(tool['description'])}</p>
+    </section>
 
+    <section class="calc-layout">
+      <article class="card calc-card">
+        <div class="calc-card-head">
+          <div><h2>Calculate</h2><p class="muted">Change any input and press calculate.</p></div>
+          <span class="badge">Inputs: {len(tool['fields'])}</span>
+        </div>
+        <form id="calc-form" class="calc-form"></form>
+        <div class="calc-actions">
+          <button type="button" id="calc-run" class="btn btn-primary">Calculate</button>
+          <button type="button" id="calc-reset" class="btn btn-quiet">Reset defaults</button>
+        </div>
+        <div id="calc-result" class="calc-results" aria-live="polite"></div>
+      </article>
 
+      <aside class="calc-sidebar">
+        <article class="card calc-info-card">
+          <span class="calc-info-label">Formula</span>
+          <p>{esc(tool['formula'])}</p>
+        </article>
+        <article class="card calc-info-card">
+          <span class="calc-info-label">User guide</span>
+          <p>{esc(tool['guide'])}</p>
+          <ul class="guide-list">
+            {''.join('<li>' + esc(outcome) + '</li>' for outcome in tool['outcomes'])}
+          </ul>
+        </article>
+        <article class="card calc-info-card note-card">
+          <span class="calc-info-label">Notes</span>
+          {''.join('<p>' + esc(note) + '</p>' for note in tool['notes'])}
+        </article>
+      </aside>
+    </section>
+
+    <section class="related-tools">
+      <div class="section-head"><div><span class="eyebrow dark">Keep exploring</span><h2>Related calculators</h2></div></div>
+      <div class="grid grid-4">
+        {''.join('<a class="card related-tool" href="' + item['href'] + '"><span aria-hidden="true">' + item['icon'] + '</span><strong>' + esc(item['title']) + '</strong><small>Open calculator →</small></a>' for item in related)}
+      </div>
+    </section>
+
+    <script type="application/json" id="calc-config">{config_json}</script>
+    '''
+    html += render_footer("../")
+    return html
 
 
 def render_personal_inflation_page():
@@ -2162,6 +2444,7 @@ def main():
 
 
     latest = load_latest()
+    extra = load_extra()
 
 
 
@@ -2221,10 +2504,16 @@ def main():
     shutil.copy2(ROOT / "scripts" / "charts.js", SITE_DIR / "scripts" / "charts.js")
 
 
+    shutil.copy2(ROOT / "scripts" / "tools.js", SITE_DIR / "scripts" / "tools.js")
+
+
     # Copy latest_kpis.json for the JS to consume
 
 
     shutil.copy2(DATA_FILE, SITE_DIR / "data" / "latest_kpis.json")
+
+    if EXTRA_FILE.exists():
+        shutil.copy2(EXTRA_FILE, SITE_DIR / "data" / "extra_metrics.json")
 
 
     # Copy snapshots for fallback
@@ -2251,7 +2540,7 @@ def main():
     print("Generating search.html…")
 
 
-    (SITE_DIR / "search.html").write_text(render_search_page(latest), encoding="utf-8")
+    (SITE_DIR / "search.html").write_text(render_search_page(latest, extra), encoding="utf-8")
 
 
 
@@ -2261,6 +2550,10 @@ def main():
 
 
     (SITE_DIR / "sources.html").write_text(render_sources_page(), encoding="utf-8")
+
+    print("Generating data-lab.html…")
+
+    (SITE_DIR / "data-lab.html").write_text(render_data_lab(extra), encoding="utf-8")
 
 
 
@@ -2290,6 +2583,14 @@ def main():
     (SITE_DIR / "tools" / "salary-parity.html").write_text(render_salary_parity_page(), encoding="utf-8")
 
 
+
+
+
+    print(f"Generating {len(TOOLS)} registry calculators…")
+
+    for item in TOOLS:
+
+        (SITE_DIR / "tools" / (item["id"] + ".html")).write_text(render_tool_page(item), encoding="utf-8")
 
 
 
@@ -2371,7 +2672,10 @@ def main():
     print(f"[OK] Site generated at {SITE_DIR}")
 
 
-    print(f"Pages: 1 index + 1 search + 1 sources + {len(SECTORS)} categories + {len(FACTS)} facts + {len(HISTORICAL_TRENDS)} trends + {len(KPI_REGISTRY)} KPIs")
+    tool_pages = len(ALL_TOOLS)
+
+    print(f"Pages: 1 index + 1 search + 1 sources + 1 data lab + 1 tools hub + {tool_pages} calculator pages + "
+          f"{len(SECTORS)} categories + {len(FACTS)} facts + {len(HISTORICAL_TRENDS)} trends + {len(KPI_REGISTRY)} KPIs")
 
 
 

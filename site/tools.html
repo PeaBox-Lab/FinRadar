@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tools — FinRadar</title>
-  <meta name="description" content="Interactive calculators and utilities for macroeconomic analysis — personal inflation, salary parity, and more." />
+  <meta name="description" content="Interactive banking, insurance, loan, investment and personal-finance calculators with formulas and guides." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c70'/%3E%3Ccircle cx='16' cy='16' r='3' fill='white'/%3E%3Cpath d='M9 9a10 10 0 0 0 0 14M23 9a10 10 0 0 1 0 14' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +32,7 @@
           <a href="search.html" class="nav-link">Search</a>
           <a href="categories.html" class="nav-link">Categories</a>
           <a href="sources.html" class="nav-link">Sources</a>
+          <a href="data-lab.html" class="nav-link">Data Lab</a>
         </div>
         <div class="nav-drop">
           <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">Browse sectors <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
@@ -98,6 +99,23 @@
 
             <a href="categories.html" role="menuitem">📂 View All Categories</a>
 
+            <div class="nav-drop-heading">Calculators</div>
+
+
+            <a href="tools.html" role="menuitem">🧮 All Tools</a>
+
+
+            <a href="tools/emi-calculator.html" role="menuitem">💰 EMI &amp; Loans</a>
+
+
+            <a href="tools/sip-returns.html" role="menuitem">📈 SIP &amp; Returns</a>
+
+
+            <a href="tools/life-cover.html" role="menuitem">🛡️ Insurance</a>
+
+
+            <a href="tools/retirement-corpus.html" role="menuitem">🌴 Retirement</a>
+
 
           </div>
 
@@ -115,61 +133,226 @@
 
 
   <main id="site-main" class="site-main container">
-
-
-    <section class="tool-index-hero">
-      <span class="eyebrow dark">Utilities</span>
-      <h1>Interactive Tools</h1>
-
-      <p class="hero-sub">Use our calculators and utilities to explore macroeconomic data in practical ways. Each tool gets its own dedicated page for a focused experience.</p>
-
-
+    <section class="tools-hero">
+      <span class="eyebrow dark">Calculator hub</span>
+      <h1>Money decisions, <span>made legible.</span></h1>
+      <p class="hero-sub">From EMIs and amortization schedules to term cover, SIPs and retirement planning — every calculator shows its inputs, formula and interpretation. No sign-up, no data leaving your browser.</p>
+      <div class="hero-actions">
+        <a href="#loans" class="btn btn-primary">Start with loans</a>
+        <a href="#guide" class="btn btn-ghost">How to use these tools</a>
+      </div>
+      <div class="tools-hero-stats">
+        <div><strong>23</strong><span>Calculators</span></div>
+        <div><strong>4</strong><span>Practical categories</span></div>
+        <div><strong>100%</strong><span>Runs in your browser</span></div>
+      </div>
     </section>
-
-
-    <div class="grid grid-3">
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">📊</span>
-      <span class="badge">Personal Finance</span>
-      <h3>Personal Inflation Rate</h3>
-      <p>Enter your spending split across categories and see how your personal inflation compares to the official headline rate.</p>
-      <div class="card-footer"><a href="personal-inflation.html" class="tool-link">Open tool →</a></div>
-    </article>
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">💼</span>
-      <span class="badge">Personal Finance</span>
-      <h3>Salary Parity</h3>
-      <p>Find the equivalent salary in another Indian city that maintains the same purchasing power.</p>
-      <div class="card-footer"><a href="salary-parity.html" class="tool-link">Open tool →</a></div>
-    </article>
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">𓂀</span>
-      <span class="badge">Finance</span>
-      <h3>Investment Growth</h3>
-      <p>Calculate the future value of your investments with compound interest.</p>
-      <div class="card-footer"><span class="badge muted">Coming soon</span></div>
-    </article>
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">💰</span>
-      <span class="badge">Finance</span>
-      <h3>EMI Calculator</h3>
-      <p>Estimate your Equated Monthly Installment for home, car, or personal loans.</p>
-      <div class="card-footer"><span class="badge muted">Coming soon</span></div>
-    </article>
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">𓂀</span>
-      <span class="badge">Finance</span>
-      <h3>CAGR Calculator</h3>
-      <p>Compute the Compound Annual Growth Rate for your investments.</p>
-      <div class="card-footer"><span class="badge muted">Coming soon</span></div>
-    </article>
-    <article class="card tool-card index">
-      <span class="tool-icon-wrap" aria-hidden="true">📈</span>
-      <span class="badge">Personal Finance</span>
-      <h3>Inflation Adjuster</h3>
-      <p>Calculate the inflation-adjusted value of money across years.</p>
-      <div class="card-footer"><span class="badge muted">Coming soon</span></div>
-    </article></div>  </main>
+    <div class="section-head"><div><span class="eyebrow dark">Calculator suite</span><h2>Loans & EMI</h2></div><p class="section-intro">EMI, affordability, splits, schedules, prepayment and loan comparison.</p></div><div class="grid grid-3 tools-grid" id="loans">
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">💰</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>EMI Calculator</h3>
+        <p>Estimate the monthly instalment, total interest and total outgo for a home, car or personal loan.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Monthly EMI · Total interest · Total payable</p>
+        <div class="card-footer"><a href="tools/emi-calculator.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🏠</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>Loan Affordability</h3>
+        <p>Work out the largest sensible loan your monthly income can support after existing obligations.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Affordable EMI · Maximum loan · Safe borrowing range</p>
+        <div class="card-footer"><a href="tools/loan-affordability.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🧾</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>Interest vs Principal Split</h3>
+        <p>See how much of a chosen instalment goes to interest and how much actually reduces your loan.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> EMI · Interest component · Principal component</p>
+        <div class="card-footer"><a href="tools/interest-principal-split.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">📅</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>EMI Schedule / Amortization</h3>
+        <p>Generate a full repayment schedule showing opening balance, interest, principal and closing balance.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Full schedule · Cumulative interest · Cumulative principal</p>
+        <div class="card-footer"><a href="tools/amortization-schedule.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">⚡</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>Loan Prepayment Impact</h3>
+        <p>Estimate how a one-time prepayment shortens your tenure and reduces lifetime interest.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Interest saved · Tenure reduction · New payoff month</p>
+        <div class="card-footer"><a href="tools/prepayment-impact.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">⚖️</span>
+        <span class="badge">Loans &amp; EMI</span>
+        <h3>Loan Comparison</h3>
+        <p>Compare two loan offers on EMI, total interest and all-in cost including fees.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> EMI for each offer · Total interest · All-in cost</p>
+        <div class="card-footer"><a href="tools/loan-comparison.html" class="tool-link">Open calculator →</a></div>
+      </article></div><div class="section-head"><div><span class="eyebrow dark">Calculator suite</span><h2>Deposits & Returns</h2></div><p class="section-intro">FD, RD, SIP, CAGR, compound and simple interest calculators.</p></div><div class="grid grid-3 tools-grid" id="investments">
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🏦</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>FD Maturity Calculator</h3>
+        <p>Calculate fixed-deposit maturity value, interest earned and post-tax returns.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Maturity value · Interest earned · Effective yield</p>
+        <div class="card-footer"><a href="tools/fd-maturity.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🪙</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>RD Maturity Calculator</h3>
+        <p>Estimate the maturity value of a recurring deposit with monthly contributions.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Amount invested · Maturity value · Interest earned</p>
+        <div class="card-footer"><a href="tools/rd-maturity.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">📊</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>SIP Return Calculator</h3>
+        <p>Model monthly mutual-fund investments with annual step-ups and realistic compounding.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Maturity value · Amount invested · Wealth gained</p>
+        <div class="card-footer"><a href="tools/sip-returns.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">📈</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>CAGR Calculator</h3>
+        <p>Compute the compound annual growth rate and inflation-adjusted return of an investment.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> CAGR · Absolute return · Growth multiple</p>
+        <div class="card-footer"><a href="tools/cagr.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🧮</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>Compound Interest Calculator</h3>
+        <p>See how compounding and periodic contributions build a corpus over time.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Future value · Total invested · Interest earned</p>
+        <div class="card-footer"><a href="tools/compound-interest.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🧾</span>
+        <span class="badge">Deposits &amp; Returns</span>
+        <h3>Simple Interest Calculator</h3>
+        <p>Calculate simple interest, maturity amount and post-tax interest for short-term deposits.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Interest · Maturity amount · Post-tax interest</p>
+        <div class="card-footer"><a href="tools/simple-interest.html" class="tool-link">Open calculator →</a></div>
+      </article></div><div class="section-head"><div><span class="eyebrow dark">Calculator suite</span><h2>Insurance</h2></div><p class="section-intro">Life cover, term premium and health cover adequacy.</p></div><div class="grid grid-3 tools-grid" id="insurance">
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">👨‍👩‍👧</span>
+        <span class="badge">Insurance</span>
+        <h3>Life Cover Need Calculator</h3>
+        <p>Estimate how much term life cover your family needs to replace income and clear obligations.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Future family needs · Cover gap · Suggested term cover</p>
+        <div class="card-footer"><a href="tools/life-cover.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🛡️</span>
+        <span class="badge">Insurance</span>
+        <h3>Term Premium Estimator</h3>
+        <p>Get a ballpark annual premium for a term-life policy based on age, cover and lifestyle.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Estimated annual premium · Estimated monthly premium · Premium per ₹1 lakh</p>
+        <div class="card-footer"><a href="tools/term-premium-estimator.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🏥</span>
+        <span class="badge">Insurance</span>
+        <h3>Health Cover Gap</h3>
+        <p>Check whether your family&#x27;s health insurance is adequate for the city you live in.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Recommended cover · Cover gap · Estimated premium range</p>
+        <div class="card-footer"><a href="tools/health-cover-gap.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🛟</span>
+        <span class="badge">Insurance</span>
+        <h3>Emergency Fund Planner</h3>
+        <p>Find the corpus you need to absorb job loss or shocks without selling investments.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Target corpus · Current coverage months · Gap</p>
+        <div class="card-footer"><a href="tools/emergency-fund.html" class="tool-link">Open calculator →</a></div>
+      </article></div><div class="section-head"><div><span class="eyebrow dark">Calculator suite</span><h2>Personal Finance</h2></div><p class="section-intro">Emergency fund, retirement, goals, budgets, inflation and net worth.</p></div><div class="grid grid-3 tools-grid" id="personal">
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">📊</span>
+        <span class="badge">Personal finance</span>
+        <h3>Personal Inflation Rate</h3>
+        <p>See how your own spending mix changes the inflation you feel.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Personal inflation rate · Comparison with headline CPI</p>
+        <div class="card-footer"><a href="tools/personal-inflation.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">💼</span>
+        <span class="badge">Personal finance</span>
+        <h3>Salary Parity</h3>
+        <p>Compare purchasing power across Indian cities with a cost-of-living index.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Equivalent salary · Purchasing-power direction</p>
+        <div class="card-footer"><a href="tools/salary-parity.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🌴</span>
+        <span class="badge">Personal Finance</span>
+        <h3>Retirement Corpus Calculator</h3>
+        <p>Estimate the corpus needed at retirement and the monthly SIP to get there.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Corpus needed · Annual expense at retirement · Monthly SIP required</p>
+        <div class="card-footer"><a href="tools/retirement-corpus.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🎯</span>
+        <span class="badge">Personal Finance</span>
+        <h3>Goal Savings Calculator</h3>
+        <p>Work out the lumpsum or monthly investment needed for a time-bound financial goal.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Monthly SIP needed · Lumpsum needed today · Shortfall without returns</p>
+        <div class="card-footer"><a href="tools/goal-savings.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🧭</span>
+        <span class="badge">Personal Finance</span>
+        <h3>50/30/20 Budget Planner</h3>
+        <p>Split take-home pay into needs, wants and savings with a fixed-obligation check.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Needs budget · Wants budget · Savings budget</p>
+        <div class="card-footer"><a href="tools/budget-split.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">📉</span>
+        <span class="badge">Personal Finance</span>
+        <h3>Inflation Adjuster</h3>
+        <p>Convert an amount between today&#x27;s money and a future year at a chosen inflation rate.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Adjusted value · Purchasing-power change · Multiplier</p>
+        <div class="card-footer"><a href="tools/inflation-adjuster.html" class="tool-link">Open calculator →</a></div>
+      </article>
+      <article class="card tool-card index tool-hub-card">
+        <span class="tool-icon-wrap" aria-hidden="true">🧳</span>
+        <span class="badge">Personal Finance</span>
+        <h3>Net Worth Snapshot</h3>
+        <p>Add up financial and physical assets, subtract liabilities and see your real balance sheet.</p>
+        <p class="tool-output-line"><strong>Outputs:</strong> Total assets · Total liabilities · Net worth</p>
+        <div class="card-footer"><a href="tools/net-worth.html" class="tool-link">Open calculator →</a></div>
+      </article></div><div class="section-head"><div><span class="eyebrow dark">User guide</span><h2>How to use the calculator hub</h2></div><p class="section-intro">Pick a tool, adjust the inputs and read the result alongside the formula and notes.</p></div>
+    <div class="grid grid-3 calc-guide-grid" id="guide">
+      <article class="card calc-guide-card">
+        <span class="guide-step">01</span>
+        <h3>Enter realistic inputs</h3>
+        <p>Defaults are illustrative Indian-market values. Replace them with your actual numbers, rates and tenure.</p>
+      </article>
+      <article class="card calc-guide-card">
+        <span class="guide-step">02</span>
+        <h3>Read the formula</h3>
+        <p>Every page states the exact calculation. This makes it easy to audit a result or compare two offers.</p>
+      </article>
+      <article class="card calc-guide-card">
+        <span class="guide-step">03</span>
+        <h3>Stress-test the answer</h3>
+        <p>Change the rate, inflation or return by a few points. The range matters more than one exact figure.</p>
+      </article>
+    </div>
+    <div class="callout">
+      <strong>Important:</strong> These calculators are decision aids, not financial advice. Lender tariffs, insurer underwriting and tax rules can change the final number.
+    </div>
+      </main>
 
 
   <footer class="site-footer">
@@ -187,7 +370,7 @@
         </a>
         <p class="footer-tagline">Original macro KPIs, benchmarks, and facts derived from public government data.</p>
 
-        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 08:33 UTC</span></p>
+        <p class="footer-meta">Data refreshed: <span id="footer-refresh">2026-11-26 09:17 UTC</span></p>
 
 
       </div>
@@ -284,6 +467,9 @@
 
 
   <script src="scripts/charts.js"></script>
+
+
+  <script src="scripts/tools.js"></script>
 
 
 </body>
