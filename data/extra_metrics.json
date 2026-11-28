@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T12:07:18Z",
+  "generated_at": "2026-11-28T11:39:14Z",
   "methodology": "Public official APIs first. Derived values are computed from the series listed in this file; Yahoo Finance market snapshots are secondary, delayed references.",
   "series": [
     {
@@ -3740,7 +3740,7 @@
     }
   ],
   "global": {
-    "generated_at": "2026-11-27T12:07:18Z",
+    "generated_at": "2026-11-28T11:39:14Z",
     "methodology": "Official-first curated feeds. ECB, BIS, IMF, WTO and World Bank values are published by those institutions. Yahoo Finance quotes are secondary, delayed market references clearly labelled as such. Derived KPIs are calculated here.",
     "sections": [
       {
@@ -3766,10 +3766,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 1.1186
-              },
               {
                 "period": "2026-10-09",
                 "value": 1.1206
@@ -3909,11 +3905,15 @@
               {
                 "period": "2026-11-26",
                 "value": 1.0975
+              },
+              {
+                "period": "2026-11-27",
+                "value": 1.0957
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 1.0975,
-            "change_pct": 0.37
+            "latest_period": "2026-11-27",
+            "latest_value": 1.0957,
+            "change_pct": -0.16
           },
           {
             "key": "ecb-exr-gbp",
@@ -3927,10 +3927,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 0.84698
-              },
               {
                 "period": "2026-10-09",
                 "value": 0.84763
@@ -4070,11 +4066,15 @@
               {
                 "period": "2026-11-26",
                 "value": 0.83755
+              },
+              {
+                "period": "2026-11-27",
+                "value": 0.83504
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 0.83755,
-            "change_pct": 0.03
+            "latest_period": "2026-11-27",
+            "latest_value": 0.83504,
+            "change_pct": -0.3
           },
           {
             "key": "ecb-exr-jpy",
@@ -4088,10 +4088,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 177.05
-              },
               {
                 "period": "2026-10-09",
                 "value": 177.34
@@ -4231,11 +4227,15 @@
               {
                 "period": "2026-11-26",
                 "value": 174.79
+              },
+              {
+                "period": "2026-11-27",
+                "value": 174.81
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 174.79,
-            "change_pct": 0.33
+            "latest_period": "2026-11-27",
+            "latest_value": 174.81,
+            "change_pct": 0.01
           },
           {
             "key": "ecb-exr-inr",
@@ -4249,10 +4249,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 108.2635
-              },
               {
                 "period": "2026-10-09",
                 "value": 108.3965
@@ -4392,11 +4388,15 @@
               {
                 "period": "2026-11-26",
                 "value": 101.464
+              },
+              {
+                "period": "2026-11-27",
+                "value": 101.904
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 101.464,
-            "change_pct": 0.6
+            "latest_period": "2026-11-27",
+            "latest_value": 101.904,
+            "change_pct": 0.43
           },
           {
             "key": "ecb-exr-cny",
@@ -4410,10 +4410,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 7.4972
-              },
               {
                 "period": "2026-10-09",
                 "value": 7.4992
@@ -4553,11 +4549,15 @@
               {
                 "period": "2026-11-26",
                 "value": 7.3096
+              },
+              {
+                "period": "2026-11-27",
+                "value": 7.2912
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 7.3096,
-            "change_pct": 0.13
+            "latest_period": "2026-11-27",
+            "latest_value": 7.2912,
+            "change_pct": -0.25
           },
           {
             "key": "ecb-exr-aud",
@@ -4571,10 +4571,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 1.611
-              },
               {
                 "period": "2026-10-09",
                 "value": 1.6052
@@ -4714,11 +4710,15 @@
               {
                 "period": "2026-11-26",
                 "value": 1.654
+              },
+              {
+                "period": "2026-11-27",
+                "value": 1.6431
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 1.654,
-            "change_pct": -0.62
+            "latest_period": "2026-11-27",
+            "latest_value": 1.6431,
+            "change_pct": -0.66
           },
           {
             "key": "ecb-exr-cad",
@@ -4732,10 +4732,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 1.5953
-              },
               {
                 "period": "2026-10-09",
                 "value": 1.5942
@@ -4875,11 +4871,15 @@
               {
                 "period": "2026-11-26",
                 "value": 1.5617
+              },
+              {
+                "period": "2026-11-27",
+                "value": 1.5608
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 1.5617,
-            "change_pct": 0.17
+            "latest_period": "2026-11-27",
+            "latest_value": 1.5608,
+            "change_pct": -0.06
           },
           {
             "key": "ecb-exr-chf",
@@ -4893,10 +4893,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 0.9326
-              },
               {
                 "period": "2026-10-09",
                 "value": 0.9313
@@ -5036,11 +5032,15 @@
               {
                 "period": "2026-11-26",
                 "value": 0.9153
+              },
+              {
+                "period": "2026-11-27",
+                "value": 0.9157
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 0.9153,
-            "change_pct": 0.75
+            "latest_period": "2026-11-27",
+            "latest_value": 0.9157,
+            "change_pct": 0.04
           },
           {
             "key": "ecb-exr-brl",
@@ -5054,10 +5054,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 5.6118
-              },
               {
                 "period": "2026-10-09",
                 "value": 5.6086
@@ -5197,11 +5193,15 @@
               {
                 "period": "2026-11-26",
                 "value": 6.3272
+              },
+              {
+                "period": "2026-11-27",
+                "value": 6.0246
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 6.3272,
-            "change_pct": -1.95
+            "latest_period": "2026-11-27",
+            "latest_value": 6.0246,
+            "change_pct": -4.78
           },
           {
             "key": "ecb-exr-mxn",
@@ -5215,10 +5215,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 20.1486
-              },
               {
                 "period": "2026-10-09",
                 "value": 20.395
@@ -5358,11 +5354,15 @@
               {
                 "period": "2026-11-26",
                 "value": 21.5893
+              },
+              {
+                "period": "2026-11-27",
+                "value": 21.3794
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 21.5893,
-            "change_pct": 0.22
+            "latest_period": "2026-11-27",
+            "latest_value": 21.3794,
+            "change_pct": -0.97
           },
           {
             "key": "ecb-exr-zar",
@@ -5376,10 +5376,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 18.6252
-              },
               {
                 "period": "2026-10-09",
                 "value": 18.527
@@ -5519,11 +5515,15 @@
               {
                 "period": "2026-11-26",
                 "value": 19.2646
+              },
+              {
+                "period": "2026-11-27",
+                "value": 18.9949
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 19.2646,
-            "change_pct": -0.45
+            "latest_period": "2026-11-27",
+            "latest_value": 18.9949,
+            "change_pct": -1.4
           },
           {
             "key": "ecb-exr-krw",
@@ -5537,10 +5537,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 1502.79
-              },
               {
                 "period": "2026-10-09",
                 "value": 1503.27
@@ -5680,11 +5676,15 @@
               {
                 "period": "2026-11-26",
                 "value": 1475.75
+              },
+              {
+                "period": "2026-11-27",
+                "value": 1462.65
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 1475.75,
-            "change_pct": 0.31
+            "latest_period": "2026-11-27",
+            "latest_value": 1462.65,
+            "change_pct": -0.89
           },
           {
             "key": "ecb-exr-sgd",
@@ -5698,10 +5698,6 @@
             "source_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 1.434
-              },
               {
                 "period": "2026-10-09",
                 "value": 1.4348
@@ -5841,11 +5837,15 @@
               {
                 "period": "2026-11-26",
                 "value": 1.4163
+              },
+              {
+                "period": "2026-11-27",
+                "value": 1.4132
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 1.4163,
-            "change_pct": 0.24
+            "latest_period": "2026-11-27",
+            "latest_value": 1.4132,
+            "change_pct": -0.22
           },
           {
             "key": "ecb-cross-inr-usd",
@@ -5859,10 +5859,6 @@
             "source_url": "https://data-api.ecb.europa.eu/service/data/EXR",
             "status": "live",
             "points": [
-              {
-                "period": "2026-10-08",
-                "value": 96.78482031110316
-              },
               {
                 "period": "2026-10-09",
                 "value": 96.73076923076923
@@ -6002,11 +5998,15 @@
               {
                 "period": "2026-11-26",
                 "value": 92.4501138952164
+              },
+              {
+                "period": "2026-11-27",
+                "value": 93.00355936844028
               }
             ],
-            "latest_period": "2026-11-26",
-            "latest_value": 92.4501138952164,
-            "change_pct": 0.23
+            "latest_period": "2026-11-27",
+            "latest_value": 93.00355936844028,
+            "change_pct": 0.6
           }
         ]
       },
@@ -42549,31 +42549,31 @@
               "exchange": "US",
               "unit": "index pts",
               "currency": "USD",
-              "value": 7182.78,
-              "change_pct": -1.92,
-              "as_of": "2026-11-25 21:32 UTC",
+              "value": 7297.49,
+              "change_pct": 1.7,
+              "as_of": "2026-11-27 18:38 UTC",
               "status": "live",
               "provider_name": "S&P 500",
               "points": [
                 {
                   "period": "0",
-                  "value": 7175.830078125
-                },
-                {
-                  "period": "1",
                   "value": 6910.39013671875
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 7237.169921875
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 7201.08984375
                 },
                 {
-                  "period": "4",
+                  "period": "3",
                   "value": 7182.77978515625
+                },
+                {
+                  "period": "4",
+                  "value": 7297.490234375
                 }
               ],
               "definition": "Delayed market reference quote for S&P 500 (US).",
@@ -42588,31 +42588,31 @@
               "exchange": "US",
               "unit": "index pts",
               "currency": "USD",
-              "value": 23585.803,
-              "change_pct": -3.46,
-              "as_of": "2026-11-25 22:15 UTC",
+              "value": 24129.5,
+              "change_pct": 1.05,
+              "as_of": "2026-11-27 19:15 UTC",
               "status": "live",
               "provider_name": "NASDAQ Composite",
               "points": [
                 {
                   "period": "0",
-                  "value": 23879.19921875
-                },
-                {
-                  "period": "1",
                   "value": 22617.73046875
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 24089.560546875
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 23733.5390625
                 },
                 {
-                  "period": "4",
+                  "period": "3",
                   "value": 23585.80078125
+                },
+                {
+                  "period": "4",
+                  "value": 24129.5
                 }
               ],
               "definition": "Delayed market reference quote for NASDAQ Composite (US).",
@@ -42627,31 +42627,31 @@
               "exchange": "US",
               "unit": "index pts",
               "currency": "USD",
-              "value": 50182.95,
-              "change_pct": -0.03,
-              "as_of": "2026-11-25 21:32 UTC",
+              "value": 50774.94,
+              "change_pct": 3.42,
+              "as_of": "2026-11-27 18:38 UTC",
               "status": "live",
               "provider_name": "Dow Jones Industrial Average",
               "points": [
                 {
                   "period": "0",
-                  "value": 49097.05859375
-                },
-                {
-                  "period": "1",
                   "value": 48147.328125
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 49595.30859375
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 50018.69921875
                 },
                 {
-                  "period": "4",
+                  "period": "3",
                   "value": 50182.94921875
+                },
+                {
+                  "period": "4",
+                  "value": 50774.94140625
                 }
               ],
               "definition": "Delayed market reference quote for Dow Jones Industrial Average (US).",
@@ -42666,31 +42666,31 @@
               "exchange": "US",
               "unit": "index pts",
               "currency": "USD",
-              "value": 2704.061,
-              "change_pct": -0.38,
-              "as_of": "2026-11-25 21:30 UTC",
+              "value": 2750.297,
+              "change_pct": 3.59,
+              "as_of": "2026-11-27 18:20 UTC",
               "status": "live",
               "provider_name": "Russell 2000",
               "points": [
                 {
                   "period": "0",
-                  "value": 2655.110107421875
-                },
-                {
-                  "period": "1",
                   "value": 2581.7900390625
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 2669.659912109375
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 2684.93994140625
                 },
                 {
-                  "period": "4",
+                  "period": "3",
                   "value": 2704.06005859375
+                },
+                {
+                  "period": "4",
+                  "value": 2750.300048828125
                 }
               ],
               "definition": "Delayed market reference quote for Russell 2000 (US).",
@@ -42705,9 +42705,9 @@
               "exchange": "UK",
               "unit": "index pts",
               "currency": "GBP",
-              "value": 10674.17,
-              "change_pct": 3.17,
-              "as_of": "2026-11-27 11:52 UTC",
+              "value": 10698.81,
+              "change_pct": 3.41,
+              "as_of": "2026-11-27 16:35 UTC",
               "status": "live",
               "provider_name": "FTSE 100",
               "points": [
@@ -42729,7 +42729,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 10674.169921875
+                  "value": 10698.7998046875
                 }
               ],
               "definition": "Delayed market reference quote for FTSE 100 (UK).",
@@ -42744,9 +42744,9 @@
               "exchange": "Germany",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 25341.71,
-              "change_pct": 2.17,
-              "as_of": "2026-11-27 11:52 UTC",
+              "value": 25441.24,
+              "change_pct": 2.57,
+              "as_of": "2026-11-27 17:00 UTC",
               "status": "live",
               "provider_name": "DAX                           P",
               "points": [
@@ -42768,7 +42768,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 25341.7109375
+                  "value": 25441.240234375
                 }
               ],
               "definition": "Delayed market reference quote for DAX (Germany).",
@@ -42783,9 +42783,9 @@
               "exchange": "France",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 8117.39,
-              "change_pct": 0.9,
-              "as_of": "2026-11-27 11:52 UTC",
+              "value": 8156.09,
+              "change_pct": 1.38,
+              "as_of": "2026-11-27 17:05 UTC",
               "status": "live",
               "provider_name": "CAC 40",
               "points": [
@@ -42807,7 +42807,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 8117.39013671875
+                  "value": 8156.08984375
                 }
               ],
               "definition": "Delayed market reference quote for CAC 40 (France).",
@@ -43042,6 +43042,10 @@
                 {
                   "period": "4",
                   "value": 8833.599609375
+                },
+                {
+                  "period": "5",
+                  "value": 8833.599609375
                 }
               ],
               "definition": "Delayed market reference quote for S&P/ASX 200 (Australia).",
@@ -43056,31 +43060,31 @@
               "exchange": "Canada",
               "unit": "index pts",
               "currency": "CAD",
-              "value": 34426.88,
-              "change_pct": 1.17,
-              "as_of": "2026-11-26 21:20 UTC",
+              "value": 34839.87,
+              "change_pct": 4.97,
+              "as_of": "2026-11-27 21:20 UTC",
               "status": "live",
               "provider_name": "S&P/TSX Composite index",
               "points": [
                 {
                   "period": "0",
-                  "value": 33189.8984375
-                },
-                {
-                  "period": "1",
                   "value": 34082.1015625
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 33962.30078125
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 34180.0
                 },
                 {
-                  "period": "4",
+                  "period": "3",
                   "value": 34426.8984375
+                },
+                {
+                  "period": "4",
+                  "value": 34839.8984375
                 }
               ],
               "definition": "Delayed market reference quote for S&P/TSX Composite (Canada).",
@@ -43095,9 +43099,9 @@
               "exchange": "Switzerland",
               "unit": "index pts",
               "currency": "CHF",
-              "value": 14846.43,
-              "change_pct": 0.75,
-              "as_of": "2026-11-27 11:52 UTC",
+              "value": 14879.97,
+              "change_pct": 0.98,
+              "as_of": "2026-11-27 16:31 UTC",
               "status": "live",
               "provider_name": "SMI PR",
               "points": [
@@ -43119,7 +43123,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 14846.4296875
+                  "value": 14879.9697265625
                 }
               ],
               "definition": "Delayed market reference quote for SMI (Switzerland).",
@@ -43134,9 +43138,9 @@
               "exchange": "Spain",
               "unit": "index pts",
               "currency": "EUR",
-              "value": 19290.3,
-              "change_pct": 0.57,
-              "as_of": "2026-11-27 11:52 UTC",
+              "value": 19386.6,
+              "change_pct": 1.07,
+              "as_of": "2026-11-27 16:35 UTC",
               "status": "live",
               "provider_name": "IBEX 35",
               "points": [
@@ -43158,7 +43162,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 19290.30078125
+                  "value": 19386.599609375
                 }
               ],
               "definition": "Delayed market reference quote for IBEX 35 (Spain).",
@@ -43179,31 +43183,27 @@
               "exchange": "NYMEX",
               "unit": "USD/barrel",
               "currency": "USD",
-              "value": 85.3,
-              "change_pct": 1.57,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 83.08,
+              "change_pct": 3.63,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Crude Oil Jan 27",
               "points": [
                 {
                   "period": "0",
-                  "value": 83.9800033569336
-                },
-                {
-                  "period": "1",
                   "value": 80.16999816894531
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 82.05000305175781
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 83.68000030517578
                 },
                 {
-                  "period": "4",
-                  "value": 85.30000305175781
+                  "period": "3",
+                  "value": 83.08000183105469
                 }
               ],
               "definition": "Delayed market reference quote for WTI crude oil futures (NYMEX).",
@@ -43218,31 +43218,27 @@
               "exchange": "ICE",
               "unit": "USD/barrel",
               "currency": "USD",
-              "value": 92.06,
-              "change_pct": -0.55,
-              "as_of": "2026-11-27 11:56 UTC",
+              "value": 90.84,
+              "change_pct": 1.64,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Brent Crude Oil Last Day Financ",
               "points": [
                 {
                   "period": "0",
-                  "value": 92.56999969482422
-                },
-                {
-                  "period": "1",
                   "value": 89.37000274658203
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 91.4000015258789
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 94.61000061035156
                 },
                 {
-                  "period": "4",
-                  "value": 92.05999755859375
+                  "period": "3",
+                  "value": 95.44000244140625
                 }
               ],
               "definition": "Delayed market reference quote for Brent crude oil futures (ICE).",
@@ -43257,31 +43253,27 @@
               "exchange": "COMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 3697.4,
-              "change_pct": 5.18,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 3668.5,
+              "change_pct": 0.47,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Gold Dec 26",
               "points": [
                 {
                   "period": "0",
-                  "value": 3515.39990234375
-                },
-                {
-                  "period": "1",
                   "value": 3651.39990234375
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 3561.89990234375
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 3535.800048828125
                 },
                 {
-                  "period": "4",
-                  "value": 3697.39990234375
+                  "period": "3",
+                  "value": 3639.60009765625
                 }
               ],
               "definition": "Delayed market reference quote for Gold futures (COMEX).",
@@ -43296,31 +43288,27 @@
               "exchange": "COMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 44.29,
-              "change_pct": 7.93,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 43.702,
+              "change_pct": 1.29,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Silver Dec 26",
               "points": [
                 {
                   "period": "0",
-                  "value": 41.03499984741211
-                },
-                {
-                  "period": "1",
                   "value": 43.14699935913086
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 40.7599983215332
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 40.051998138427734
                 },
                 {
-                  "period": "4",
-                  "value": 44.290000915527344
+                  "period": "3",
+                  "value": 43.16699981689453
                 }
               ],
               "definition": "Delayed market reference quote for Silver futures (COMEX).",
@@ -43335,31 +43323,27 @@
               "exchange": "COMEX",
               "unit": "USD/lb",
               "currency": "USD",
-              "value": 5.657,
-              "change_pct": 3.29,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 5.6005,
+              "change_pct": -0.47,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Copper Mar 27",
               "points": [
                 {
                   "period": "0",
-                  "value": 5.4770002365112305
-                },
-                {
-                  "period": "1",
                   "value": 5.626999855041504
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 5.362500190734863
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 5.332499980926514
                 },
                 {
-                  "period": "4",
-                  "value": 5.6570000648498535
+                  "period": "3",
+                  "value": 5.517000198364258
                 }
               ],
               "definition": "Delayed market reference quote for Copper futures (COMEX).",
@@ -43374,31 +43358,27 @@
               "exchange": "NYMEX",
               "unit": "USD/mmbtu",
               "currency": "USD",
-              "value": 3.554,
-              "change_pct": 4.19,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 3.491,
+              "change_pct": 9.64,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Natural Gas Jan 27",
               "points": [
                 {
                   "period": "0",
-                  "value": 3.4110000133514404
-                },
-                {
-                  "period": "1",
                   "value": 3.184000015258789
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 3.322999954223633
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 3.2690000534057617
                 },
                 {
-                  "period": "4",
-                  "value": 3.553999900817871
+                  "period": "3",
+                  "value": 3.490999937057495
                 }
               ],
               "definition": "Delayed market reference quote for Natural gas futures (NYMEX).",
@@ -43413,27 +43393,27 @@
               "exchange": "CBOT",
               "unit": "US cents/bushel",
               "currency": "USX",
-              "value": 439.5,
-              "change_pct": 1.15,
-              "as_of": "2026-11-25 19:19 UTC",
+              "value": 463.0,
+              "change_pct": 6.62,
+              "as_of": "2026-11-27 18:04 UTC",
               "status": "live",
               "provider_name": "Corn Futures,Mar-2027",
               "points": [
                 {
                   "period": "0",
-                  "value": 434.5
-                },
-                {
-                  "period": "1",
                   "value": 434.25
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 434.0
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 439.75
+                },
+                {
+                  "period": "3",
+                  "value": 446.75
                 }
               ],
               "definition": "Delayed market reference quote for Corn futures (CBOT).",
@@ -43448,27 +43428,27 @@
               "exchange": "CBOT",
               "unit": "US cents/bushel",
               "currency": "USX",
-              "value": 1243.25,
-              "change_pct": 1.84,
-              "as_of": "2026-11-25 19:19 UTC",
+              "value": 1266.25,
+              "change_pct": 3.05,
+              "as_of": "2026-11-27 18:04 UTC",
               "status": "live",
               "provider_name": "Soybean Futures,Jan-2027",
               "points": [
                 {
                   "period": "0",
-                  "value": 1220.75
-                },
-                {
-                  "period": "1",
                   "value": 1228.75
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 1234.0
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 1244.0
+                },
+                {
+                  "period": "3",
+                  "value": 1266.25
                 }
               ],
               "definition": "Delayed market reference quote for Soybean futures (CBOT).",
@@ -43483,27 +43463,27 @@
               "exchange": "CBOT",
               "unit": "US cents/bushel",
               "currency": "USX",
-              "value": 564.0,
-              "change_pct": -1.78,
-              "as_of": "2026-11-25 19:19 UTC",
+              "value": 591.0,
+              "change_pct": 2.43,
+              "as_of": "2026-11-27 18:04 UTC",
               "status": "live",
               "provider_name": "Chicago SRW Wheat Futures,Mar-2",
               "points": [
                 {
                   "period": "0",
-                  "value": 574.25
-                },
-                {
-                  "period": "1",
                   "value": 577.0
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 569.75
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 565.5
+                },
+                {
+                  "period": "3",
+                  "value": 566.5
                 }
               ],
               "definition": "Delayed market reference quote for Wheat futures (CBOT).",
@@ -43518,31 +43498,27 @@
               "exchange": "ICE",
               "unit": "US cents/lb",
               "currency": "USX",
-              "value": 276.1,
-              "change_pct": 0.45,
-              "as_of": "2026-11-27 11:46 UTC",
+              "value": 275.55,
+              "change_pct": 0.44,
+              "as_of": "2026-11-25 13:25 UTC",
               "status": "live",
               "provider_name": "Coffee Dec 26",
               "points": [
                 {
                   "period": "0",
-                  "value": 274.8500061035156
-                },
-                {
-                  "period": "1",
                   "value": 274.3500061035156
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 268.54998779296875
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 275.6499938964844
                 },
                 {
-                  "period": "4",
-                  "value": 276.1000061035156
+                  "period": "3",
+                  "value": 280.8500061035156
                 }
               ],
               "definition": "Delayed market reference quote for Coffee futures (ICE).",
@@ -43557,31 +43533,27 @@
               "exchange": "ICE",
               "unit": "US cents/lb",
               "currency": "USX",
-              "value": 18.78,
-              "change_pct": 10.28,
-              "as_of": "2026-11-27 11:46 UTC",
+              "value": 18.77,
+              "change_pct": 6.59,
+              "as_of": "2026-11-27 17:59 UTC",
               "status": "live",
               "provider_name": "Sugar #11 Mar 27",
               "points": [
                 {
                   "period": "0",
-                  "value": 17.030000686645508
-                },
-                {
-                  "period": "1",
                   "value": 17.610000610351562
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 17.65999984741211
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 18.34000015258789
                 },
                 {
-                  "period": "4",
-                  "value": 18.780000686645508
+                  "period": "3",
+                  "value": 18.770000457763672
                 }
               ],
               "definition": "Delayed market reference quote for Sugar futures (ICE).",
@@ -43596,31 +43568,27 @@
               "exchange": "NYMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 1339.7,
-              "change_pct": 3.9,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 1312.4,
+              "change_pct": -0.82,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Platinum Jan 27",
               "points": [
                 {
                   "period": "0",
-                  "value": 1289.4000244140625
-                },
-                {
-                  "period": "1",
                   "value": 1323.199951171875
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 1258.699951171875
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 1241.4000244140625
                 },
                 {
-                  "period": "4",
-                  "value": 1339.699951171875
+                  "period": "3",
+                  "value": 1313.9000244140625
                 }
               ],
               "definition": "Delayed market reference quote for Platinum futures (NYMEX).",
@@ -43635,31 +43603,27 @@
               "exchange": "NYMEX",
               "unit": "USD/troy oz",
               "currency": "USD",
-              "value": 911.0,
-              "change_pct": 2.16,
-              "as_of": "2026-11-27 11:57 UTC",
+              "value": 891.0,
+              "change_pct": -0.47,
+              "as_of": "2026-11-27 19:44 UTC",
               "status": "live",
               "provider_name": "Palladium Dec 26",
               "points": [
                 {
                   "period": "0",
-                  "value": 891.7000122070312
-                },
-                {
-                  "period": "1",
                   "value": 895.2000122070312
                 },
                 {
-                  "period": "2",
+                  "period": "1",
                   "value": 858.0
                 },
                 {
-                  "period": "3",
+                  "period": "2",
                   "value": 831.0999755859375
                 },
                 {
-                  "period": "4",
-                  "value": 911.0
+                  "period": "3",
+                  "value": 878.7999877929688
                 }
               ],
               "definition": "Delayed market reference quote for Palladium futures (NYMEX).",
@@ -43680,9 +43644,9 @@
               "exchange": "FX",
               "unit": "USD per EUR",
               "currency": "USD",
-              "value": 1.0969,
-              "change_pct": -0.03,
-              "as_of": "2026-11-27 12:06 UTC",
+              "value": 1.0939,
+              "change_pct": -0.3,
+              "as_of": "2026-11-27 22:29 UTC",
               "status": "live",
               "provider_name": "EUR/USD",
               "points": [
@@ -43704,7 +43668,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 1.0968520641326904
+                  "value": 1.0972130298614502
                 }
               ],
               "definition": "Delayed market reference quote for EUR / USD (FX).",
@@ -43719,9 +43683,9 @@
               "exchange": "FX",
               "unit": "INR per USD",
               "currency": "INR",
-              "value": 92.98,
-              "change_pct": 0.33,
-              "as_of": "2026-11-27 10:05 UTC",
+              "value": 92.99,
+              "change_pct": 0.34,
+              "as_of": "2026-11-28 03:30 UTC",
               "status": "live",
               "provider_name": "USD/INR",
               "points": [
@@ -43743,7 +43707,11 @@
                 },
                 {
                   "period": "4",
-                  "value": 92.9800033569336
+                  "value": 92.44989776611328
+                },
+                {
+                  "period": "5",
+                  "value": 92.98999786376953
                 }
               ],
               "definition": "Delayed market reference quote for USD / INR (FX).",
@@ -43758,9 +43726,9 @@
               "exchange": "FX",
               "unit": "JPY per USD",
               "currency": "JPY",
-              "value": 159.4,
-              "change_pct": 0.3,
-              "as_of": "2026-11-27 12:07 UTC",
+              "value": 159.515,
+              "change_pct": 0.37,
+              "as_of": "2026-11-28 05:20 UTC",
               "status": "live",
               "provider_name": "USD/JPY",
               "points": [
@@ -43782,7 +43750,11 @@
                 },
                 {
                   "period": "4",
-                  "value": 159.39999389648438
+                  "value": 159.281005859375
+                },
+                {
+                  "period": "5",
+                  "value": 159.51499938964844
                 }
               ],
               "definition": "Delayed market reference quote for USD / JPY (FX).",
@@ -43797,9 +43769,9 @@
               "exchange": "FX",
               "unit": "USD per GBP",
               "currency": "USD",
-              "value": 1.3131,
-              "change_pct": 0.27,
-              "as_of": "2026-11-27 12:06 UTC",
+              "value": 1.3099,
+              "change_pct": 0.03,
+              "as_of": "2026-11-27 22:29 UTC",
               "status": "live",
               "provider_name": "GBP/USD",
               "points": [
@@ -43821,7 +43793,7 @@
                 },
                 {
                   "period": "4",
-                  "value": 1.3131287097930908
+                  "value": 1.3107362985610962
                 }
               ],
               "definition": "Delayed market reference quote for GBP / USD (FX).",
@@ -43836,9 +43808,9 @@
               "exchange": "FX",
               "unit": "CNY per USD",
               "currency": "CNY",
-              "value": 6.6437,
-              "change_pct": -0.5,
-              "as_of": "2026-11-27 12:04 UTC",
+              "value": 6.6541,
+              "change_pct": -0.34,
+              "as_of": "2026-11-28 03:30 UTC",
               "status": "live",
               "provider_name": "USD/CNY",
               "points": [
@@ -43860,7 +43832,11 @@
                 },
                 {
                   "period": "4",
-                  "value": 6.643700122833252
+                  "value": 6.664000034332275
+                },
+                {
+                  "period": "5",
+                  "value": 6.654099941253662
                 }
               ],
               "definition": "Delayed market reference quote for USD / CNY (FX).",
@@ -44081,7 +44057,7 @@
         "id": "equity-market-breadth",
         "name": "Equity index breadth",
         "sector": "equity_markets",
-        "value": 62.5,
+        "value": 87.5,
         "unit": "% of indices higher",
         "formula": "share of major indices with a non-negative market change",
         "definition": "How broad the recent move is across major equity markets.",
@@ -44202,7 +44178,7 @@
     }
   },
   "discovery": {
-    "scanned_at": "2026-11-27T12:07:18Z",
+    "scanned_at": "2026-11-28T11:39:14Z",
     "scope": "Curated scan: official portal metadata plus live series actually fetched in this run.",
     "key_mode": "public sample key (rate-limited)",
     "portals": [
